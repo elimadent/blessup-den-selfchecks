@@ -1,0 +1,218 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is this perimenopause? — The Lioness Den</title>
+<style>
+  :root{
+    --navy:#0b1322; --gold:#e6b7a3; --gold2:#cf9784; --ink:#f3ebe0; --ink-soft:#d2d8e2; --muted:#94a0b4;
+    --line:rgba(230,183,163,.24); --good:#8bbf9a; --warn:#e6b567; --alert:#e0897a;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:radial-gradient(900px 500px at 50% -5%, #2a2740 0%, #0d1322 55%, #070c16 100%);
+    color:var(--ink);font-family:var(--serif);line-height:1.72;font-size:19px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 24px 100px}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold2)}
+  h1{font-size:39px;line-height:1.16;margin:0 0 14px;color:#fff;text-wrap:balance;font-weight:700;letter-spacing:-.01em}
+  .lede{font-size:21px;margin:0 0 10px}
+  .ruo{font-family:var(--sans);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;display:inline-block;margin-top:14px}
+  h2{font-size:27px;color:#fff;margin:46px 0 14px;line-height:1.28;text-wrap:balance}
+  h2 .m{color:var(--gold)}
+  h3{font-family:var(--sans);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:28px 0 10px}
+  p{margin:0 0 17px}
+  strong{color:#fff;font-weight:600}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(230,183,163,.42)}
+  a:hover{border-bottom-color:var(--gold)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+  ul{margin:0 0 18px;padding-left:0;list-style:none}
+  li{margin:0 0 12px;padding-left:26px;position:relative;color:var(--ink-soft)}
+  li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border:1.5px solid var(--gold2);transform:rotate(45deg)}
+  li strong{color:var(--ink)}
+  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+  .card{background:linear-gradient(180deg,#1a1f38,#121728);border:1px solid var(--line);border-radius:16px;padding:26px 24px;margin:26px 0;box-shadow:0 14px 40px -20px #000}
+  .card .kicker{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .card h4{font-size:22px;color:#fff;margin:0 0 4px;line-height:1.25}
+  .card .src{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:14px}
+  .bar{display:grid;grid-template-columns:180px 1fr;align-items:center;gap:14px;font-family:var(--sans);margin:12px 0}
+  .bar .lab{font-size:13.5px;color:var(--ink-soft);text-align:right}
+  .bar .track{position:relative;height:30px;background:#151a2e;border-radius:7px;overflow:hidden}
+  .bar .fill{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:7px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .bar .val{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:#0b1322;font-variant-numeric:tabular-nums}
+  .quiz .q{border-top:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .quiz .q:first-of-type{border-top:0}
+  .quiz .qtext{font-family:var(--sans);font-size:15px;color:var(--ink);flex:1 1 240px}
+  .scale{display:flex;gap:6px;flex:0 0 auto}
+  .opt{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);background:#141a2e;border:1px solid #2a3350;border-radius:8px;padding:7px 11px;cursor:pointer;user-select:none;transition:.15s}
+  .opt:hover{border-color:var(--gold2)} .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt.sel{background:rgba(230,183,163,.16);border-color:var(--gold);color:#fff}
+  .opt:focus-within{outline:2px solid var(--gold);outline-offset:2px}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;color:#0b1322;background:linear-gradient(90deg,var(--gold),#f0cbb8);border:0;border-radius:11px;padding:13px 22px;cursor:pointer;margin-top:20px}
+  .btn:hover{filter:brightness(1.05)} .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .result{margin-top:20px;border-radius:12px;padding:18px 20px;font-family:var(--sans);font-size:15px;line-height:1.6;display:none}
+  .result.show{display:block}
+  .result .rt{font-weight:700;font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .result .dot{width:11px;height:11px;border-radius:50%}
+  .callout{background:#141a2e;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:24px 0}
+  .callout .kicker{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .callout ul{margin:0} .callout li{color:var(--ink)}
+  .sources{font-family:var(--sans);font-size:13.5px;color:var(--muted)} .sources li{color:var(--muted)} .sources li::before{border-color:#3a4256} .sources a{color:#c7b6d8}
+  .foot{font-family:var(--sans);text-align:center;color:var(--muted);font-size:12px;margin-top:46px;letter-spacing:.04em}
+  .disc{font-style:italic;color:var(--muted);font-size:16px}
+  @media (max-width:560px){ h1{font-size:30px} .wrap{padding:32px 18px 80px} .bar{grid-template-columns:110px 1fr} .quiz .q{gap:8px} }
+  @media (prefers-reduced-motion:reduce){ .bar .fill{transition:none} }
+</style></head><body>
+<div class="wrap">
+  <div class="eyebrow">The Lioness Den · Women's Health</div>
+  <h1>Feel like you are losing your mind? Here is why.</h1>
+  <p class="lede">If the wheels feel like they are quietly coming off, your sleep, your mood, your cycle, your memory, your body, and no one has given you a straight answer, there is a real physiological reason, it has a name, and most of it is far more manageable than anyone told you. You are not crazy, you are not broken, and you are not alone.</p>
+  <span class="ruo">Education only · not medical advice · RUO · 21+</span>
+
+  <h2>What perimenopause actually is</h2>
+  <p>Menopause is a single day: the one-year mark after your last period. Everything leading up to it is <strong>perimenopause</strong>, and that runway is where the turbulence lives. It commonly begins in the early-to-mid forties (sometimes late thirties) and can last a couple of years to a decade. The key thing almost no one explains: it is not a smooth decline, it is <strong>chaos on the way down</strong>. Estrogen spikes and crashes unpredictably while progesterone (your calming hormone) falls first and steadier. That specific combination, not simply "low hormones," drives most of the misery.</p>
+
+  <div class="card">
+    <div class="kicker">Reduction in hot flashes vs placebo</div>
+    <h4>Even non-hormonal options genuinely work</h4>
+    <div class="bar"><div class="lab">Low-dose SSRI/SNRI</div><div class="track"><div class="fill" data-w="50"></div><span class="val">~50%</span></div></div>
+    <div class="bar"><div class="lab">Placebo</div><div class="track"><div class="fill" data-w="30"></div><span class="val">~30%</span></div></div>
+    <div class="src">In the MsFLASH trials, low-dose escitalopram/venlafaxine cut hot flashes about 50% vs ~30% for placebo, similar to low-dose estradiol. Source: Reed SD, et al. Menopause. 2020. <a href="https://doi.org/10.1097/GME.0000000000001461" target="_blank" rel="noopener">doi</a></div>
+  </div>
+
+  <h2>Why each symptom happens (name it, don't fear it)</h2>
+  <ul>
+    <li><strong>Irregular cycles</strong> — skipped ovulations mean skipped progesterone, so periods get closer, farther, heavier, or vanish and return.</li>
+    <li><strong>Hot flashes and night sweats</strong> — swinging estrogen destabilizes the brain's thermostat (the KNDy neurons), which the newest non-hormonal drug targets directly.</li>
+    <li><strong>Sleep falling apart</strong> — night sweats fragment sleep, and losing calming progesterone makes it harder to fall and stay asleep.</li>
+    <li><strong>Mood swings, new anxiety, low mood</strong> — estrogen steers serotonin, so a swinging estrogen swings your mood. This is a real window of vulnerability, not weakness.</li>
+    <li><strong>Brain fog</strong> — partly direct estrogen effects, partly the tax of months of broken sleep. Real, usually not permanent.</li>
+    <li><strong>Body and bone changes</strong> — muscle slips, fat moves to the middle, and bone loss speeds up right around menopause.</li>
+  </ul>
+
+  <!-- TAILORED SELF-CHECK: Menopause Rating Scale -->
+  <div class="card quiz" id="quiz">
+    <div class="kicker">Quick self-check · education only</div>
+    <h4>How much are symptoms affecting you?</h4>
+    <p style="font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);margin:6px 0 12px">This is the Menopause Rating Scale, a validated symptom questionnaire. Rate each over the last little while. It is a reflection tool to bring to a provider, not a diagnosis.</p>
+    <div id="items"></div>
+    <button class="btn" id="see" type="button">See what this suggests</button>
+    <div class="result" id="result" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="callout">
+    <div class="kicker">Questions to ask yourself</div>
+    <ul>
+      <li>Have my cycles changed (length, flow, skipped months)? That is the signature of perimenopause.</li>
+      <li>Is my sleep breaking in the second half of the night, with or without sweats?</li>
+      <li>Did anxiety or low mood arrive or worsen recently, even if I never struggled before?</li>
+      <li>Am I blaming everything on "hormones" without ruling out thyroid, iron, or blood sugar?</li>
+      <li>How is this affecting my work, relationships, and daily life, honestly?</li>
+    </ul>
+  </div>
+
+  <h2>Rule out the impostors first</h2>
+  <p>Before everything gets blamed on hormones, a careful provider checks what mimics perimenopause, because the fix is different: <strong>thyroid</strong> (nearly identical fatigue, weight gain, low mood, fog — a simple TSH), <strong>iron/ferritin</strong> (especially with heavy bleeding), and <strong>vitamin D, blood sugar/A1c, and sleep apnea</strong>. "Tired, foggy, gaining weight" has more than one cause.</p>
+
+  <h2>The honest menu of options</h2>
+  <ul>
+    <li><strong>Systemic hormone therapy (estrogen, plus progesterone if you have a uterus).</strong> The most effective treatment for hot flashes and night sweats, and it helps sleep, mood, and bone. Starting near the transition (under ~60 or within ~10 years of your last period) carries a more favorable balance (<a href="https://doi.org/10.1001/jama.2013.278040" target="_blank" rel="noopener">Manson, JAMA 2013</a>). If you have a uterus, estrogen is always paired with a progestogen (see the one-rule write-up).</li>
+    <li><strong>Vaginal (local) estrogen</strong> for dryness, pain, or urinary symptoms, with very little absorbed (<a href="https://doi.org/10.7326/ANNALS-24-00610" target="_blank" rel="noopener">Danan, Ann Intern Med 2024</a>).</li>
+    <li><strong>Non-hormonal prescriptions.</strong> Low-dose SSRIs/SNRIs cut hot flashes (chart above) and double as mood support (<a href="https://doi.org/10.1097/GME.0000000000001461" target="_blank" rel="noopener">Reed 2020</a>); <strong>fezolinetant</strong> calms the overactive KNDy neurons directly (<a href="https://doi.org/10.1016/S0140-6736(23)00085-5" target="_blank" rel="noopener">Lederman, Lancet 2023</a>).</li>
+    <li><strong>CBT</strong> for sleep and the distress that rides with symptoms, drug-free and durable (<a href="https://doi.org/10.1097/GME.0000000000001461" target="_blank" rel="noopener">Reed 2020</a>).</li>
+  </ul>
+
+  <h2>The foundation under all of it</h2>
+  <ul>
+    <li><strong>Resistance training plus protein</strong> — the highest-yield habit now; it defends the muscle and bone perimenopause quietly steals (<a href="https://doi.org/10.1007/s00198-020-05441-w" target="_blank" rel="noopener">Shojaa, Osteoporos Int 2020</a>; <a href="https://doi.org/10.3390/nu14194210" target="_blank" rel="noopener">Kuo, Nutrients 2022</a>).</li>
+    <li><strong>Creatine</strong> (~3-5 g/day) — a genuine female case for muscle, bone-with-training, mood and cognition (<a href="https://doi.org/10.3390/nu13030877" target="_blank" rel="noopener">Smith-Ryan, Nutrients 2021</a>).</li>
+    <li><strong>Vitamin D + calcium</strong> for bone, <strong>magnesium</strong> for sleep, and the basics: protect the sleep window, ease off alcohol, watch late caffeine, manage stress.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="kicker">Questions to ask your doctor</div>
+    <ul>
+      <li>"Given my symptoms and timing, am I a candidate for hormone therapy, and what route (patch/gel vs pill)?"</li>
+      <li>"If I have a uterus, how will my uterine lining be protected?"</li>
+      <li>"Can we rule out thyroid, iron, and blood sugar first?"</li>
+      <li>"If I prefer non-hormonal, would a low-dose SSRI/SNRI or fezolinetant fit me?"</li>
+      <li>"What should I be doing now to protect my bones?"</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="kicker">Health numbers &amp; screening to know</div>
+    <ul>
+      <li><strong>Thyroid (TSH)</strong>, <strong>ferritin/iron</strong>, <strong>vitamin D</strong>, and <strong>fasting glucose/A1c</strong> to rule out the impostors.</li>
+      <li>A <strong>bone density (DXA)</strong> conversation, since loss is fastest right around menopause.</li>
+      <li>Blood pressure and a lipid panel, since heart risk shifts in this decade.</li>
+    </ul>
+  </div>
+
+  <h2>When to talk to someone now</h2>
+  <ul>
+    <li>Very heavy bleeding (soaking through protection hourly), bleeding far longer than usual, or between periods.</li>
+    <li>Any bleeding <strong>after</strong> twelve full months with no period — this always gets checked.</li>
+    <li>Mood that turns dark, hopeless, or includes thoughts of self-harm. Urgent and treatable, you deserve help fast.</li>
+  </ul>
+
+  <hr>
+  <p>You deserve the whole map, not a pamphlet, and you deserve to be taken seriously. This is happening, you are not imagining it, and you do not have to walk it alone.</p>
+  <p class="disc">Education only, not medical advice. Hormone therapy and the prescription options here require a licensed provider, your history, and monitoring. Research use only. 21+. Stand strong, lioness.</p>
+
+  <h3>Sources (indexed in PubMed)</h3>
+  <ul class="sources">
+    <li>Manson JE, et al. Menopausal hormone therapy and health outcomes (WHI). JAMA. 2013. <a href="https://doi.org/10.1001/jama.2013.278040" target="_blank" rel="noopener">doi</a></li>
+    <li>Danan ER, et al. Treatments for genitourinary syndrome of menopause. Ann Intern Med. 2024. <a href="https://doi.org/10.7326/ANNALS-24-00610" target="_blank" rel="noopener">doi</a></li>
+    <li>Reed SD, et al. MsFLASH non-hormonal treatments review. Menopause. 2020. <a href="https://doi.org/10.1097/GME.0000000000001461" target="_blank" rel="noopener">doi</a></li>
+    <li>Lederman S, et al. Fezolinetant for vasomotor symptoms (SKYLIGHT 1). Lancet. 2023. <a href="https://doi.org/10.1016/S0140-6736(23)00085-5" target="_blank" rel="noopener">doi</a></li>
+    <li>Shojaa M, et al. Resistance exercise and bone density in postmenopausal women. Osteoporos Int. 2020. <a href="https://doi.org/10.1007/s00198-020-05441-w" target="_blank" rel="noopener">doi</a></li>
+    <li>Kuo YY, et al. Whey protein in postmenopausal women. Nutrients. 2022. <a href="https://doi.org/10.3390/nu14194210" target="_blank" rel="noopener">doi</a></li>
+    <li>Smith-Ryan AE, et al. Creatine in women's health. Nutrients. 2021. <a href="https://doi.org/10.3390/nu13030877" target="_blank" rel="noopener">doi</a></li>
+  </ul>
+  <div class="foot">THE LIONESS DEN · ONEPIN BY BLESSUP · EDUCATION &amp; RESEARCH ONLY</div>
+</div>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Menopause Rating Scale items (0-4 severity)
+  var ITEMS=[
+    "Hot flashes, sweating","Heart discomfort (racing, skipping)","Sleep problems","Depressive mood",
+    "Irritability","Anxiety","Physical &amp; mental exhaustion","Sexual problems (desire/activity)",
+    "Bladder problems","Vaginal dryness","Joint &amp; muscle discomfort"];
+  var LEVELS=["None","Mild","Moderate","Severe","Very severe"];
+  var box=document.getElementById('items');
+  ITEMS.forEach(function(t,i){
+    var scale=LEVELS.map(function(l,v){return '<label class="opt"><input type="radio" name="m'+i+'" value="'+v+'">'+l+'</label>';}).join('');
+    box.insertAdjacentHTML('beforeend','<div class="q"><span class="qtext">'+(i+1)+'. '+t+'</span><div class="scale">'+scale+'</div></div>');
+  });
+  document.querySelectorAll('.opt').forEach(function(opt){
+    var input=opt.querySelector('input');
+    input.addEventListener('change',function(){
+      opt.closest('.scale').querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel');});
+      opt.classList.add('sel');
+    });
+  });
+  document.querySelectorAll('#chart .fill,.bar .fill').forEach(function(f){
+    var w=Math.round((+f.dataset.w)/60*100);
+    if(reduce){f.style.width=w+'%';}else{setTimeout(function(){f.style.width=w+'%';},120);}
+  });
+  document.getElementById('see').addEventListener('click',function(){
+    var total=0,answered=0;
+    for(var i=0;i<ITEMS.length;i++){var el=document.querySelector('input[name="m'+i+'"]:checked'); if(el){total+=+el.value;answered++;}}
+    var res=document.getElementById('result');
+    var color,title,body;
+    if(total<=4){color='var(--good)';title='Little to no bother right now';
+      body='Your symptom load is low. Keep the foundation strong (strength training, protein, sleep). If your cycles are changing or anything shifts, it is still worth mentioning at a visit.';}
+    else if(total<=8){color='var(--good)';title='Mild';
+      body='A mild pattern. Lifestyle levers and, if you want, non-hormonal options can help. A good moment to start protecting your bones and to raise it with a provider.';}
+    else if(total<=16){color='var(--warn)';title='Moderate';
+      body='A moderate symptom load that is genuinely affecting you and very treatable. This is a strong reason to see a provider about hormonal or non-hormonal options, and to rule out thyroid, iron, and blood sugar. Bring the doctor questions below.';}
+    else{color='var(--alert)';title='Severe';
+      body='A heavy symptom load. You do not have to white-knuckle this. Please book a visit to discuss treatment (hormonal or non-hormonal), and if mood is dark or hopeless, seek help promptly. Use the doctor questions below to start.';}
+    res.style.background='linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))';
+    res.style.border='1px solid '+color;
+    res.innerHTML='<div class="rt"><span class="dot" style="background:'+color+'"></span>'+title+' &nbsp;<span style="color:var(--muted);font-weight:400">(score '+total+' of 44)</span></div>'+body+'<br><br><em style="color:var(--muted)">The Menopause Rating Scale is a real symptom questionnaire, a reflection tool and a prompt for a conversation, never a diagnosis.</em>';
+    res.classList.add('show'); res.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+  });
+})();
+</script>
+</body></html>

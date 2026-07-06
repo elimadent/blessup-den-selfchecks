@@ -1,0 +1,239 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Feel like a shell of the man you were? — The Lion's Den</title>
+<style>
+  :root{
+    --navy:#0b1322; --navy2:#121f36; --gold:#e6c169; --gold2:#caa049;
+    --ink:#f1e9d6; --ink-soft:#cdd6e4; --muted:#8d99ae; --line:rgba(230,193,105,.22);
+    --good:#7fb98a; --warn:#e6b567; --alert:#e0897a;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:
+     radial-gradient(1200px 600px at 50% -8%, #16264400 0%, transparent 60%),
+     radial-gradient(900px 500px at 50% -5%, #1d3057 0%, #0b1322 55%, #070c16 100%);
+     color:var(--ink);font-family:var(--serif);line-height:1.72;font-size:19px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:44px 24px 100px}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold2)}
+  h1{font-size:40px;line-height:1.16;margin:0 0 14px;color:#fff;text-wrap:balance;font-weight:700;letter-spacing:-.01em}
+  .lede{font-size:21px;color:var(--ink);margin:0 0 10px}
+  .ruo{font-family:var(--sans);font-size:12.5px;letter-spacing:.03em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;display:inline-block;margin-top:14px}
+  h2{font-size:27px;color:#fff;margin:46px 0 14px;line-height:1.28;text-wrap:balance}
+  h2 .m{color:var(--gold)}
+  h3{font-family:var(--sans);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:28px 0 10px}
+  p{margin:0 0 17px;color:var(--ink)}
+  strong{color:#fff;font-weight:600}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(230,193,105,.4)}
+  a:hover{border-bottom-color:var(--gold)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+  ul{margin:0 0 18px;padding-left:0;list-style:none}
+  li{margin:0 0 12px;padding-left:26px;position:relative;color:var(--ink-soft)}
+  li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border:1.5px solid var(--gold2);transform:rotate(45deg)}
+  li strong{color:var(--ink)}
+  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+  .rule{border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(230,193,105,.07),transparent);padding:14px 20px;border-radius:0 8px 8px 0;font-size:20px;color:#fff;margin:8px 0 22px}
+  .card{background:linear-gradient(180deg,#14223c,#101c31);border:1px solid var(--line);border-radius:16px;padding:26px 24px;margin:26px 0;box-shadow:0 14px 40px -20px #000}
+  .card .kicker{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .card h4{font-family:var(--serif);font-size:22px;color:#fff;margin:0 0 4px;line-height:1.25}
+  .card .src{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:14px}
+  .bar-row{display:grid;grid-template-columns:1fr;gap:14px;margin:20px 0 4px}
+  .bar{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:14px;font-family:var(--sans)}
+  .bar .lab{font-size:13.5px;color:var(--ink-soft);text-align:right}
+  .bar .track{position:relative;height:30px;background:#0c1730;border-radius:7px;overflow:hidden}
+  .bar .fill{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:7px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .bar .val{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:#0b1322;font-variant-numeric:tabular-nums}
+  .quiz .q{border-top:1px solid var(--line);padding:15px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .quiz .q:first-of-type{border-top:0}
+  .quiz .qtext{font-family:var(--sans);font-size:15.5px;color:var(--ink)}
+  .yn{display:flex;gap:8px;flex:0 0 auto}
+  .opt{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);background:#0e1a30;border:1px solid #24365a;border-radius:9px;padding:8px 18px;cursor:pointer;user-select:none;transition:.15s}
+  .opt:hover{border-color:var(--gold2)}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt.sel{background:rgba(230,193,105,.14);border-color:var(--gold);color:#fff}
+  .opt:focus-within{outline:2px solid var(--gold);outline-offset:2px}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.02em;color:#0b1322;background:linear-gradient(90deg,var(--gold),#f0d488);border:0;border-radius:11px;padding:13px 22px;cursor:pointer;margin-top:20px;transition:.15s}
+  .btn:hover{filter:brightness(1.06)}
+  .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .result{margin-top:20px;border-radius:12px;padding:18px 20px;font-family:var(--sans);font-size:15px;line-height:1.6;display:none}
+  .result.show{display:block}
+  .result .rt{font-weight:700;font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .result .dot{width:11px;height:11px;border-radius:50%}
+  .callout{background:#0f1c33;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:24px 0}
+  .callout .kicker{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .callout ul{margin:0}
+  .callout li{color:var(--ink)}
+  .sources{font-family:var(--sans);font-size:13.5px;color:var(--muted)}
+  .sources li{color:var(--muted)}
+  .sources li::before{border-color:#3a4a68}
+  .sources a{color:#a9c2ec}
+  .foot{font-family:var(--sans);text-align:center;color:var(--muted);font-size:12px;margin-top:46px;letter-spacing:.04em}
+  .disc{font-style:italic;color:var(--muted);font-size:16px}
+  @media (max-width:560px){ h1{font-size:31px} .wrap{padding:32px 18px 80px} .bar{grid-template-columns:130px 1fr} .quiz .q{flex-direction:column;align-items:flex-start;gap:8px} }
+  @media (prefers-reduced-motion:reduce){ .bar .fill{transition:none} }
+</style></head><body>
+
+<div class="wrap">
+  <div class="eyebrow">The Lion's Den · Men's Health</div>
+  <h1>Feel like a shell of the man you used to be? Read this.</h1>
+  <p class="lede">If the drive is gone, the edge is gone, the motivation that used to just be there has quietly packed up and left, and you have started to wonder if this is simply what getting older feels like, read this before you accept it. You are not weak, you are not lazy, and you are not imagining it.</p>
+  <span class="ruo">Education only · not medical advice · RUO · 21+</span>
+
+  <h2>What is actually happening</h2>
+  <p>Testosterone does not fall off a cliff the way a woman's estrogen does at menopause. It declines slowly, on the order of about one percent a year starting in your thirties, and modern life (poor sleep, extra body fat, chronic stress, heavy drinking, sedentary days) drags it down faster. When genuinely low testosterone comes with real symptoms, it has a name, hypogonadism, and it is a legitimate medical condition, not a character flaw. Most men who have it never get checked, because the symptoms get waved off as stress or age.</p>
+
+  <h2>Why each symptom happens (so it makes sense, not shame)</h2>
+  <p>Testosterone touches almost everything that makes you feel like yourself: drive and motivation, mood and edge, energy, muscle and strength, and libido. When it drifts low, every one of those can dim at once, which is why it feels less like one symptom and more like a general fading. In a controlled study that manipulated men's hormones directly, androgen deficiency specifically drove the loss of lean mass and strength, while estrogen deficiency (yes, made from your testosterone) primarily drove the gain in body fat (<a href="https://doi.org/10.1056/NEJMoa1206168" target="_blank" rel="noopener">Finkelstein, NEJM 2013</a>). And there is a vicious circle: belly fat converts your testosterone into estrogen, which lowers your testosterone further.</p>
+
+  <h2>The lever most men miss</h2>
+  <p>Because belly fat is where testosterone gets converted away, losing it can raise your levels without any prescription at all. A meta-analysis found the more weight men lost, the more their testosterone rose.</p>
+  <div class="card">
+    <div class="kicker">Average rise in total testosterone after weight loss</div>
+    <h4>Losing weight raises your own testosterone</h4>
+    <div class="bar-row" id="chart" role="img" aria-label="Low-calorie diet raised total testosterone by about 2.9 nmol/L; bariatric surgery by about 8.7 nmol/L.">
+      <div class="bar"><div class="lab">Bariatric surgery</div><div class="track"><div class="fill" data-w="8.73"></div><span class="val">+8.7</span></div></div>
+      <div class="bar"><div class="lab">Low-calorie diet</div><div class="track"><div class="fill" data-w="2.87"></div><span class="val">+2.9</span></div></div>
+    </div>
+    <div class="src">Total testosterone increase, nmol/L. Source: Corona G, et al. Eur J Endocrinol. 2013. <a href="https://doi.org/10.1530/EJE-12-0955" target="_blank" rel="noopener">doi:10.1530/EJE-12-0955</a>. The bigger the weight loss, the bigger the rise.</div>
+  </div>
+
+  <!-- TAILORED SELF-CHECK: ADAM screener -->
+  <div class="card quiz" id="quiz">
+    <div class="kicker">Quick self-check · education only</div>
+    <h4>Could low testosterone be part of it?</h4>
+    <p style="font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);margin:6px 0 8px">This is the ADAM screen, a widely used set of questions for low testosterone. It is a prompt to get bloodwork, not a diagnosis. Answer yes or no.</p>
+
+    <div class="q" data-key="1"><span class="qtext">1. Is your sex drive (libido) lower than it used to be?</span><div class="yn"><label class="opt"><input type="radio" name="q1" value="1">Yes</label><label class="opt"><input type="radio" name="q1" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">2. Do you have a noticeable lack of energy?</span><div class="yn"><label class="opt"><input type="radio" name="q2" value="1">Yes</label><label class="opt"><input type="radio" name="q2" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">3. Has your strength or endurance dropped?</span><div class="yn"><label class="opt"><input type="radio" name="q3" value="1">Yes</label><label class="opt"><input type="radio" name="q3" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">4. Are you enjoying life less?</span><div class="yn"><label class="opt"><input type="radio" name="q4" value="1">Yes</label><label class="opt"><input type="radio" name="q4" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">5. Are you sad, grumpy, or short-fused more often?</span><div class="yn"><label class="opt"><input type="radio" name="q5" value="1">Yes</label><label class="opt"><input type="radio" name="q5" value="0">No</label></div></div>
+    <div class="q" data-key="6"><span class="qtext">6. Are your erections weaker or less frequent?</span><div class="yn"><label class="opt"><input type="radio" name="q6" value="1">Yes</label><label class="opt"><input type="radio" name="q6" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">7. Do you fall asleep after dinner?</span><div class="yn"><label class="opt"><input type="radio" name="q7" value="1">Yes</label><label class="opt"><input type="radio" name="q7" value="0">No</label></div></div>
+    <div class="q"><span class="qtext">8. Has your performance at work slipped?</span><div class="yn"><label class="opt"><input type="radio" name="q8" value="1">Yes</label><label class="opt"><input type="radio" name="q8" value="0">No</label></div></div>
+
+    <button class="btn" id="see" type="button">See what this suggests</button>
+    <div class="result" id="result" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="callout">
+    <div class="kicker">Questions to ask yourself</div>
+    <ul>
+      <li>Did this creep in slowly over years, or arrive suddenly? (Sudden can point to a medication, illness, or stress; gradual fits the slow hormone slide.)</li>
+      <li>Is my desire down, or just my energy? (Low desire points more strongly to hormones.)</li>
+      <li>How is my sleep, really? Do I snore or wake unrefreshed? (Sleep apnea both mimics and causes low T.)</li>
+      <li>Have I gained weight around the middle? (That fat actively lowers your testosterone.)</li>
+      <li>How much am I drinking, and how much am I actually training?</li>
+    </ul>
+  </div>
+
+  <h2>Rule out the impostors first</h2>
+  <p>Before everything gets blamed on "low T," a careful provider checks the conditions that impersonate it: <strong>thyroid</strong> (same fatigue and low mood), <strong>sleep apnea</strong> (the guideline says treat severe apnea before starting testosterone: <a href="https://doi.org/10.1210/jc.2018-00229" target="_blank" rel="noopener">Bhasin, JCEM 2018</a>), <strong>depression</strong>, <strong>poorly controlled blood sugar</strong>, and <strong>medications</strong> like long-term opioids and steroids.</p>
+
+  <h2>The honest menu of options</h2>
+  <ul>
+    <li><strong>Testosterone therapy (gels, injections, pellets).</strong> Real evidence for the sexual side (<a href="https://doi.org/10.1210/jc.2018-00404" target="_blank" rel="noopener">Ponce, JCEM 2018</a>) plus a modest mood lift in the Testosterone Trials, which honestly found <em>no</em> reliable benefit for energy or walking (<a href="https://doi.org/10.1056/NEJMoa1506119" target="_blank" rel="noopener">Snyder, NEJM 2016</a>). It shuts down your own production and fertility, and must be monitored (see the one-rule write-up).</li>
+    <li><strong>Restart your own engine (enclomiphene, hCG).</strong> Raises your testosterone while keeping fertility, in a head-to-head it matched a gel and kept sperm counts up where the gel suppressed them (<a href="https://doi.org/10.1111/jsm.12116" target="_blank" rel="noopener">Kaminetsky, J Sex Med 2013</a>). Often the smarter first move for younger men.</li>
+    <li><strong>Treat the root cause.</strong> Weight loss and treating sleep apnea can normalize levels with no drug at all (<a href="https://doi.org/10.1530/EJE-12-0955" target="_blank" rel="noopener">Corona 2013</a>).</li>
+    <li><strong>Build the foundation (below).</strong> No downside, and for many men it is enough.</li>
+  </ul>
+
+  <h2>Build the foundation</h2>
+  <ul>
+    <li><strong>Lift heavy and sprint sometimes</strong> — the most reliable natural levers for testosterone and muscle.</li>
+    <li><strong>Lose the belly fat</strong>, the single biggest lever (chart above).</li>
+    <li><strong>Guard your sleep</strong> — most of your daily testosterone is made in deep sleep.</li>
+    <li><strong>Cut heavy drinking and manage stress</strong>, both direct suppressors.</li>
+  </ul>
+  <h3>Supplements, honestly graded</h3>
+  <ul>
+    <li><strong>Vitamin D</strong> raised testosterone in deficient men in a randomized trial (<a href="https://doi.org/10.1055/s-0030-1269854" target="_blank" rel="noopener">Pilz, Horm Metab Res 2011</a>) — check your level.</li>
+    <li><strong>Ashwagandha</strong> gave a ~15% greater testosterone rise than placebo, though no clear edge on fatigue (<a href="https://doi.org/10.1177/1557988319835985" target="_blank" rel="noopener">Lopresti, Am J Mens Health 2019</a>).</li>
+    <li><strong>Zinc and magnesium</strong> help if you are low. Most shelf "test boosters" are junk, do not expect a capsule to rescue a genuinely low level.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="kicker">Questions to ask your doctor</div>
+    <ul>
+      <li>"I have low drive, energy, and libido. Can we check my testosterone properly, two morning readings?"</li>
+      <li>"Can we also check LH and FSH, to see if the problem is my testes or the signal from my brain?"</li>
+      <li>"Should we rule out thyroid, blood sugar, and sleep apnea first?"</li>
+      <li>"If my level is low and I want to keep my fertility, are enclomiphene or hCG options for me?"</li>
+      <li>"If I start testosterone, how will you monitor my blood count, estrogen, and prostate?"</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="kicker">Health numbers &amp; screening to know</div>
+    <ul>
+      <li><strong>Two morning total testosterone</strong> readings (a single low value can be a fluke), plus <strong>free testosterone</strong>, <strong>LH/FSH</strong>, and <strong>estradiol</strong>.</li>
+      <li><strong>Thyroid (TSH)</strong>, <strong>fasting glucose / A1c</strong>, and an <strong>iron/ferritin</strong> check for the impostors.</li>
+      <li>Baseline <strong>hematocrit</strong> and <strong>PSA</strong> before any testosterone therapy.</li>
+    </ul>
+  </div>
+
+  <h2>When to talk to someone now</h2>
+  <ul>
+    <li>Mood that has turned dark, hopeless, or includes thoughts of self-harm. That is urgent and treatable, and you deserve help fast.</li>
+    <li>New erectile dysfunction, which can be an early flag for heart disease, get your heart checked (see the ED write-up).</li>
+    <li>A breast lump or new breast tenderness.</li>
+  </ul>
+
+  <hr>
+  <p>Feeling like a shell of yourself is not the unavoidable price of getting older. For a lot of men it is a real, measurable hormone shift tangled up with sleep, body fat, stress, and training, and almost every piece of that has a lever. Get properly tested, fix the foundation first, and if your levels are genuinely low, there is honest, evidence-based help, run the right way. You are not done.</p>
+  <p class="disc">Education only, not medical advice. Testing and any prescription or peptide require a licensed provider. Research use only. 21+. Stand strong, lion.</p>
+
+  <h3>Sources (indexed in PubMed)</h3>
+  <ul class="sources">
+    <li>Finkelstein JS, et al. Gonadal steroids and body composition, strength, and sexual function in men. N Engl J Med. 2013;369(11):1011-1022. <a href="https://doi.org/10.1056/NEJMoa1206168" target="_blank" rel="noopener">doi</a></li>
+    <li>Bhasin S, et al. Testosterone Therapy in Men With Hypogonadism (Endocrine Society guideline). J Clin Endocrinol Metab. 2018;103(5):1715-1744. <a href="https://doi.org/10.1210/jc.2018-00229" target="_blank" rel="noopener">doi</a></li>
+    <li>Ponce OJ, et al. Testosterone replacement therapy in hypogonadal men: meta-analysis. J Clin Endocrinol Metab. 2018;103(5):1745-1754. <a href="https://doi.org/10.1210/jc.2018-00404" target="_blank" rel="noopener">doi</a></li>
+    <li>Snyder PJ, et al. Effects of Testosterone Treatment in Older Men (Testosterone Trials). N Engl J Med. 2016;374(7):611-624. <a href="https://doi.org/10.1056/NEJMoa1506119" target="_blank" rel="noopener">doi</a></li>
+    <li>Kaminetsky J, et al. Enclomiphene citrate vs testosterone gel. J Sex Med. 2013;10(6):1628-1635. <a href="https://doi.org/10.1111/jsm.12116" target="_blank" rel="noopener">doi</a></li>
+    <li>Corona G, et al. Body weight loss reverts obesity-associated hypogonadism. Eur J Endocrinol. 2013;168(6):829-843. <a href="https://doi.org/10.1530/EJE-12-0955" target="_blank" rel="noopener">doi</a></li>
+    <li>Pilz S, et al. Effect of vitamin D supplementation on testosterone levels in men. Horm Metab Res. 2011;43(3):223-225. <a href="https://doi.org/10.1055/s-0030-1269854" target="_blank" rel="noopener">doi</a></li>
+    <li>Lopresti AL, et al. Ashwagandha in aging, overweight males (RCT). Am J Mens Health. 2019;13(2). <a href="https://doi.org/10.1177/1557988319835985" target="_blank" rel="noopener">doi</a></li>
+  </ul>
+
+  <div class="foot">THE LION'S DEN · ONEPIN BY BLESSUP · EDUCATION &amp; RESEARCH ONLY · DRAFT FOR APPROVAL</div>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){
+    document.querySelectorAll('#chart .fill').forEach(function(f){
+      var w = Math.round((+f.dataset.w) / 9 * 100);
+      if(reduce){ f.style.width = w+'%'; } else { setTimeout(function(){ f.style.width = w+'%'; }, 120); }
+    });
+  });
+  document.querySelectorAll('.opt').forEach(function(opt){
+    var input = opt.querySelector('input');
+    input.addEventListener('change', function(){
+      opt.closest('.yn').querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel');});
+      opt.classList.toggle('sel', input.checked);
+    });
+  });
+  document.getElementById('see').addEventListener('click', function(){
+    function v(n){ var el=document.querySelector('input[name="'+n+'"]:checked'); return el?+el.value:0; }
+    var q1=v('q1'), q6=v('q6');
+    var total=0; for(var i=1;i<=8;i++){ total+=v('q'+i); }
+    // ADAM logic: positive if yes to libido(1) or erections(6), OR yes to any 3 total
+    var positive = (q1===1 || q6===1 || total>=3);
+    var res=document.getElementById('result');
+    var color, title, body;
+    if(!positive){
+      color='var(--good)'; title='Screens negative';
+      body='Low testosterone is a less likely driver of what you are feeling right now. That does not mean nothing is going on, so if symptoms bother you, still mention them and consider basic bloodwork. Keep the foundation strong.';
+    } else {
+      color='var(--warn)'; title='Screens positive';
+      body='Important honesty: this screen is intentionally oversensitive, so a positive result does NOT mean you have low testosterone. What it does mean is that it is worth confirming with bloodwork, two morning total-testosterone readings plus LH and FSH. Rule out thyroid, blood sugar, and sleep apnea too. Bring the doctor questions below to your visit.';
+    }
+    res.style.background='linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))';
+    res.style.border='1px solid '+color;
+    res.innerHTML='<div class="rt"><span class="dot" style="background:'+color+'"></span>'+title+'</div>'+body+'<br><br><em style="color:var(--muted)">The ADAM screen is a real questionnaire with high sensitivity and low specificity, a prompt for testing, never a diagnosis. Only a provider and bloodwork can tell you your levels.</em>';
+    res.classList.add('show');
+    res.scrollIntoView({behavior: reduce?'auto':'smooth', block:'nearest'});
+  });
+})();
+</script>
+</body></html>
