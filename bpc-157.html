@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BPC-157: The Repair Peptide, Honestly - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - BPC-157 (re-skinned "Thick Blood" layout)
+  Skin: repair/regeneration - teal primary + copper secondary (NOT blood red).
+  Hero motif: a soft-tissue fiber bridging a gap (BPC-157's signature: tissue repair).
+  ASCII + HTML entities only. No em dashes. RUO / education-only / 21+.
+-->
+<style>
+  :root{
+    --paper:#F1F0EC; --surface:#FBFAF7; --surface-2:#F2F1EA;
+    --ink:#182420; --ink-soft:#33413B; --muted:#5F6B64;
+    --line:#D8D6CC; --line-soft:#E6E3DA;
+    /* PRIMARY accent (teal / regeneration) - keeps the --blood var name, new value */
+    --blood:#127C74; --blood-deep:#0B4E49; --blood-tint:#D6EBE8;
+    /* SECONDARY warm accent (copper) */
+    --plasma:#C0803A; --plasma-soft:#E3C48F; --plasma-tint:#F3E7D2;
+    --good:#3E8E5A; --good-tint:#DEEDE2;
+    --amber:#BE7E24; --amber-tint:#F3E6CC;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#141C19;color:#E9EEE9;border-top:1px solid #26302B;border-bottom:1px solid #26302B}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(36px,6.6vw,62px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:38ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:200px}}
+  /* repair hero motif */
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#a8791f,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#2c6a41,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.short{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.long{background:var(--good-tint);color:var(--good)}
+  .tag.both{background:var(--plasma-tint);color:#8a6416}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--blood)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--blood-tint);border-color:#bfe0dc}
+  .plan .later{background:var(--good-tint);border-color:#c9ddd0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--blood-deep)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--blood)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(24,36,32,.07)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  select.hct{font-family:var(--sans);font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%;max-width:420px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6d5aa}
+  .result.watch .band{color:#8a6416}
+  .result.act{background:var(--blood-tint);border:1px solid #bfe0dc}
+  .result.act .band{color:var(--blood-deep)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .tl{width:100%;height:auto;display:block}
+  .flags{background:#221614;border:1px solid #4a2420;border-radius:14px;padding:24px 26px;color:#F1DAD4}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFC9;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#D98A5A}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC8BF}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Recovery &amp; Repair</b></p>
+        <h1>BPC-157, honestly</h1>
+        <p class="lede" style="max-width:36ch;margin:.1em 0 .5em">The most talked-about repair peptide, and the honest line between what the research shows and what the internet promises.</p>
+        <p class="thesis">Genuinely interesting science, mostly in animals, worth learning slowly and treating with respect.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a soft-tissue fiber bundle bridging a gap (tissue repair). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="190" height="330" viewBox="0 0 190 330" fill="none" xmlns="http://www.w3.org/2000/svg" id="repairArt">
+          <!-- upper fiber bundle -->
+          <g stroke="#0B4E49" stroke-width="6" stroke-linecap="round" opacity="0.92">
+            <path d="M60 8 C 58 40, 62 70, 60 104"/>
+            <path d="M95 8 C 93 42, 97 72, 95 104"/>
+            <path d="M130 8 C 132 40, 128 70, 130 104"/>
+          </g>
+          <!-- lower fiber bundle -->
+          <g stroke="#0B4E49" stroke-width="6" stroke-linecap="round" opacity="0.92">
+            <path d="M60 226 C 58 260, 62 292, 60 322"/>
+            <path d="M95 226 C 93 258, 97 290, 95 322"/>
+            <path d="M130 226 C 132 260, 128 292, 130 322"/>
+          </g>
+          <!-- the gap glow -->
+          <rect x="34" y="104" width="122" height="122" rx="14" fill="#127C74" opacity="0.06"/>
+          <!-- copper new-growth bridging filaments (drawn in via JS) -->
+          <g stroke="#C0803A" stroke-width="3.4" stroke-linecap="round" fill="none" class="bridge">
+            <path d="M60 104 C 74 140, 118 186, 130 226" class="bfib"/>
+            <path d="M95 104 C 95 150, 95 176, 95 226" class="bfib"/>
+            <path d="M130 104 C 116 142, 74 184, 60 226" class="bfib"/>
+          </g>
+          <!-- angiogenesis nodes -->
+          <g fill="#127C74">
+            <circle cx="70" cy="150" r="3.2"/><circle cx="120" cy="150" r="3.2"/>
+            <circle cx="95" cy="165" r="3.6"/>
+            <circle cx="74" cy="182" r="3.2"/><circle cx="118" cy="182" r="3.2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">15</div><div class="lbl">amino acids: a stable fragment of a protein found in gastric juice</div></div>
+      <div class="stat"><div class="n">1 of 36</div><div class="lbl">studies in a 2025 systematic review were human; the other 35 were preclinical</div></div>
+      <div class="stat"><div class="n">0</div><div class="lbl">completed randomized human trials confirming it, to date</div></div>
+    </div>
+    <p class="src">Chang 2010, J Appl Physiol (structure) &middot; Vasireddi 2025, HSS J systematic review (36 studies, 35 preclinical and 1 clinical) &middot; Gwyer 2019, Cell Tissue Res. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">If you have been anywhere near recovery or gut-health talk, you have heard this one name over and over. Let us slow it down and look at it honestly, together.</p>
+    <p>BPC-157 is probably the single most hyped peptide in the whole conversation, and some of that excitement is earned. The early research really is intriguing. But most of it lives in animal and laboratory studies, and the gap between "promising in rats" and "proven in people" is exactly where a careful person learns to stand. This guide walks the whole picture: what it is, how it is thought to work, what the evidence actually says, how it is used and studied, and where the honest limits are.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician or your own labs. BPC-157 is an investigational compound, not an approved medicine. Anything named here, including any dose, is an example for discussion and learning, never a prescription. For research and educational purposes, adults 21 and over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you approaching this the wise way?</h2>
+    <p>This is not about whether a compound is "good." It is a reflection on whether you are setting yourself up to make a calm, informed decision. It is education, not a diagnosis, and it does not replace a real evaluation.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Recovery readiness check</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">Has the issue you are focused on actually been looked at by a professional?</p>
+        <select class="hct" id="q_hct" aria-label="evaluation status">
+          <option value="0">I am just learning, no specific issue</option>
+          <option value="0">Yes, it has been properly evaluated</option>
+          <option value="4">Sort of, I self-assessed it</option>
+          <option value="7">No, and it has been lingering</option>
+          <option value="11">No, and it is severe or getting worse</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which best describes your situation?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Curious / general learning</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">A nagging recovery plateau</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Rehabbing a known injury</span></label>
+          <label><input type="radio" name="route" value="3"><span class="chip">An unexplained, persistent symptom</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which of these are true right now? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="1"><span class="chip">Sleeping under 6 hours most nights</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Protein intake is low or I am not sure</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Have not addressed training load or form</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these lately? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">Pain with fever or feeling unwell</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">A joint that is hot, red, or swollen</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Numbness, weakness, or lost function</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pain that wakes me at night or keeps worsening</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I stand</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis. A real evaluation by your provider is what tells the story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>What BPC-157 actually is</h2>
+    <p>BPC stands for Body Protection Compound. BPC-157 is a small chain of 15 amino acids, a stable partial sequence of a protective protein that researchers originally isolated from gastric juice. That gut origin is not a coincidence, it is the whole starting point of the story. The research on it has been carried, in large part, by a single group at the University of Zagreb in Croatia over the last few decades.</p>
+    <h3>What it is not</h3>
+    <p>It is not a hormone, not a steroid, and not growth hormone. It does not build muscle directly the way people sometimes assume. It is best understood as a signaling peptide that appears, in the research, to support the body's own repair and protective processes rather than force a new one. And importantly, it is investigational: it is not an approved drug, it is banned in professional sport, and it is sold and discussed in a research-use context.</p>
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"It heals everything." That line comes from the fact that in animal studies BPC-157 shows healing signals across a remarkable range of tissues, from tendon to gut to nerve. That breadth is real in the lab. What it does not tell you is that this has almost entirely not been confirmed in humans. Breadth in rodents is a reason to be curious, not a reason to be certain.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS STUDIED FOR + BAR CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Where the research actually points</p>
+    <h2>What it has been explored for, and how strong each area is</h2>
+    <p>Not all of the BPC-157 research is equal. Some areas have a real depth of animal work behind them; others are a thin handful of studies or pure theory. Here is an honest read of where the weight of the evidence sits, by area of interest. Longer bars mean more research attention and more consistent animal signal, not proof in people.</p>
+
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of research signal, by area</p>
+      <p class="csub">A judgment read of the literature, all preclinical unless noted. Not a ranking of how well it "works" in humans.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Tendon / ligament / muscle</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Strongest animal signal</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Gut lining &amp; GI protection</div><div class="bar-track"><div class="bar-fill b-blood" data-w="88">Deep, its origin</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Wound &amp; skin healing</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="70">Solid animal work</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Nerve / brain</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="52">Interesting, early</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Vascular / organ rescue</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="46">Emerging, one group</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Human clinical proof</div><div class="bar-track"><div class="bar-fill b-good" data-w="12">Thin, small reports</div></div></div>
+      </div>
+      <p class="src">Synthesized from Gwyer 2019 (Cell Tissue Res), Seiwerth 2021 (Front Pharmacol), Park 2020 (Curr Pharm Des), Staresinic 2022 (Biomedicines). Human bar reflects the small retrospective evidence base.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How it is thought to work</h2>
+    <p>Researchers do not describe BPC-157 as flipping one switch. They describe it nudging several repair systems at once. Three threads come up the most.</p>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Builds blood supply</h4><p>It is studied for promoting new blood-vessel growth (angiogenesis) toward an injured area, and for keeping vessels open, so repair has fuel and oxygen to work with.</p></div>
+      <div class="step"><div class="n">02</div><h4>Moves repair cells</h4><p>In tendon-cell studies it activated the FAK-paxillin pathway, helping repair cells survive stress, migrate, and spread into the gap, the mechanical work of closing a wound.</p></div>
+      <div class="step"><div class="n">03</div><h4>Protects the gut lining</h4><p>It is studied for stabilizing the intestinal barrier and protecting the gut against irritants, including damage from anti-inflammatory drugs, the "leaky gut" thread.</p></div>
+    </div>
+    <p>Underneath all three is one recurring idea the researchers call cytoprotection: the peptide seems to help tissue defend and rebuild itself rather than override it. According to PubMed, the tendon-cell mechanism is detailed in Chang 2010 <a href="https://doi.org/10.1152/japplphysiol.00945.2010">doi:10.1152/japplphysiol.00945.2010</a>, and the gut-barrier work in Park 2020 <a href="https://doi.org/10.2174/1381612826666200523180301">doi:10.2174/1381612826666200523180301</a>.</p>
+  </div>
+</section>
+
+<!-- =============== HONEST RISK PICTURE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The question everyone actually wants answered</p>
+    <h2>Is it safe?</h2>
+    <h3>What the research suggests</h3>
+    <p>In animal studies, BPC-157 has a notably clean safety record. Review after review reports very few adverse reactions, and the Zagreb group notes that a lethal dose was not reached in their testing (LD1 not achieved). That is reassuring as far as it goes, and it is part of why interest has stayed alive for so long.</p>
+    <h3>What we do <em>not</em> know</h3>
+    <p>We do not have the thing that would actually settle it: large, controlled, long-term human trials. As the 2019 soft-tissue review put it plainly, the effects have been consistent in small rodent models but efficacy is yet to be confirmed in humans, and only a handful of research groups have studied it in depth. "Safe in rats" and "few reports of harm" are not the same as "proven safe in people over years." Honesty means holding both the clean animal record and that open question at the same time.</p>
+    <div class="note blood">
+      <p class="h">Where the real-world risk actually lives</p>
+      <p>For most people the bigger practical risk is not the peptide's biology, it is the unregulated market around it: no oversight of purity, dose accuracy, or sterility, and product that can contain who-knows-what. Add the theoretical caution that a compound which promotes blood-vessel growth deserves real thought for anyone with an active or recent cancer. This is a "talk to a provider and verify your source" compound, not a "order it and wing it" one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ROUTES LADDER (bar chart) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The practical part people get wrong</p>
+    <h2>Route changes what it is even studied for</h2>
+    <p>One compound name tells you very little on its own. In the research, how BPC-157 is delivered changes which questions it is even relevant to. This is the single most useful thing to understand before anything else.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">How well each route matches each goal</p>
+      <p class="csub">General pattern from the research and practitioner reference, not a dosing instruction.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Injectable, for tissue repair</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Most complete route</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Injectable, for systemic / neuro</div><div class="bar-track"><div class="bar-fill b-blood" data-w="82">Reaches the whole body</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Oral, for gut topics</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="72">Meets the gut directly</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Oral, for injury repair</div><div class="bar-track"><div class="bar-fill b-good" data-w="30">Much milder</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Intranasal, for brain / mood</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="44">Niche, early</div></div></div>
+      </div>
+      <p class="src">Directional synthesis from our research notes and practitioner/educator references; label as pattern, not proof.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== TIMELINE (SVG) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">What a repair arc tends to look like</p>
+    <h2>The honest timeline</h2>
+    <div class="chart" data-animate>
+      <p class="ctitle">Illustrative repair-support curve over a cycle</p>
+      <p class="csub">A shape drawn from how repair is generally discussed, not a promise for any one person or injury.</p>
+      <svg class="tl" viewBox="0 0 640 260" role="img" aria-label="Illustrative curve rising over weeks then leveling">
+        <line x1="50" y1="20" x2="50" y2="210" stroke="#D8D6CC" stroke-width="1"/>
+        <line x1="50" y1="210" x2="610" y2="210" stroke="#D8D6CC" stroke-width="1"/>
+        <line x1="50" y1="80" x2="610" y2="80" stroke="#C7E0DC" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="614" y="84" font-family="ui-monospace,monospace" font-size="11" fill="#127C74">plateau</text>
+        <path d="M50,196 C130,192 150,150 210,120 C280,96 330,90 400,86 C480,84 540,84 610,84"
+          fill="none" stroke="#127C74" stroke-width="3" stroke-linecap="round"/>
+        <path d="M50,196 C130,192 150,150 210,120 C280,96 330,90 400,86 C480,84 540,84 610,84 L610,210 L50,210 Z"
+          fill="#127C74" opacity="0.07"/>
+        <g font-family="ui-monospace,monospace" font-size="11" fill="#5F6B64" text-anchor="middle">
+          <text x="50" y="228">Day 1</text><text x="210" y="228">Week 2</text>
+          <text x="330" y="228">Week 4</text><text x="470" y="228">Week 8</text><text x="590" y="228">Week 12</text>
+        </g>
+      </svg>
+      <p class="src">Illustrative. Real response depends on the injury, the person, and everything else in the plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RULE OUT IMPOSTORS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Before you credit the peptide</p>
+    <h2>Give the credit honestly</h2>
+    <p>If something improves, it is worth asking what actually did the work, so you learn the right lesson for next time.</p>
+    <ul>
+      <li><strong>Time and rest.</strong> Many injuries and gut flares settle on their own. A peptide started mid-recovery can easily get credit that healing itself earned.</li>
+      <li><strong>The foundation you fixed at the same time.</strong> Better sleep, more protein, smarter training load, and less of the irritant that caused the problem are powerful on their own, and people often change these at the exact moment they start a compound.</li>
+      <li><strong>The real diagnosis you skipped.</strong> Persistent pain or gut symptoms can have a specific cause that needs specific care. A peptide is not a substitute for finding out what is actually wrong.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== THE ROUTES MENU (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The honest toolkit, route by route</p>
+    <h2>How it is actually used, with real pros and cons</h2>
+    <p>Here is each common route, what it is reached for, and the honest trade-off of each. Tags show whether it is mainly for a <span style="color:var(--blood-deep);font-weight:600">local repair</span> goal, a <span style="color:var(--good);font-weight:600">systemic</span> goal, or <span style="color:#8a6416;font-weight:600">both</span>. Every dose named is an example for discussion, not a prescription.</p>
+
+    <div class="lever">
+      <div class="top"><h3>Subcutaneous, near the site</h3><span class="tag short">Local repair</span></div>
+      <p class="mech">A small injection into the fat layer near the area of interest, the most-studied route for soft-tissue goals.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The route with the strongest supporting research</li>
+          <li>Delivers a full, predictable amount</li>
+          <li>Lets people target a specific area</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Requires injecting, which many will not do</li>
+          <li>Source quality and sterile technique matter a lot</li>
+          <li>Still investigational, human proof is thin</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference example:</b> community and practitioner references commonly discuss roughly 250 micrograms once daily as a starting point, stepping up only for acute cases. An example for learning, to finalize with a provider.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Subcutaneous, abdomen (systemic)</h3><span class="tag both">Both</span></div>
+      <p class="mech">The same injection into the belly fat, used when the goal is whole-body rather than one spot.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Reaches the whole system, not just one site</li>
+          <li>Used as the base of many recovery discussions</li>
+          <li>Simple, consistent technique</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Same injecting and sourcing cautions</li>
+          <li>Systemic effects in humans are the least proven</li>
+          <li>Easy to over-attribute general "feel better" to it</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference example:</b> discussed in blocks of weeks rather than open-ended, on-then-off, so nothing runs forever without a reason.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Oral (gut-focused)</h3><span class="tag long">GI topics</span></div>
+      <p class="mech">Taken by mouth so it meets the digestive tract directly, the route that fits BPC-157's gut origin.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>No needle, the biggest practical barrier removed</li>
+          <li>Matches the gut-lining research thread</li>
+          <li>Meets the gut tissue where the interest is</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Far less useful for injury or systemic goals</li>
+          <li>How much survives digestion is uncertain</li>
+          <li>Human gut evidence is still preclinical and theory</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference example:</b> gut-focused discussions often use a higher oral amount than the injectable, taken on an empty stomach. Example only, provider-guided.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Intranasal</h3><span class="tag both">Niche / neuro</span></div>
+      <p class="mech">A spray into the nose, reached for almost only in the brain and mood conversation.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The route people discuss for neuro goals</li>
+          <li>Needle-free</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The thinnest evidence of any route</li>
+          <li>Not meaningful for injury or gut goals</li>
+          <li>Dosing and absorption poorly characterized</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference:</b> treat as the most experimental and least established option here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SHORT vs LONG PLAN =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>If you are researching this, do it in order</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First, before anything</p><h4>Foundation</h4>
+        <ul><li>Get the actual problem evaluated</li><li>Fix sleep, protein, and training load</li><li>Remove the irritant that caused it</li><li>Verify any source is legitimate</li></ul>
+      </div>
+      <div class="p later">
+        <p class="k">Only then, and with a provider</p><h4>If you go further</h4>
+        <ul><li>Pick the route that matches the goal</li><li>Start low, one variable at a time</li><li>Run in defined blocks, not forever</li><li>Track honestly, including what else changed</li></ul>
+      </div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule, if you take nothing else</p>
+      <p>A peptide is the last 10 percent, never the first. If the foundation is not handled, no compound will save it, and you will not even be able to tell whether it helped.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>Recovery is built here first</h2>
+    <h4>Protein and overall fuel</h4><p>Repair is a building project and protein is the material. Consistently getting enough, spread across the day, does more for tissue recovery than almost anything else you can add. Under-eating stalls healing no matter what else is on board.</p>
+    <h4>Sleep</h4><p>The bulk of real tissue repair happens while you sleep. Chasing recovery with a compound while running on five hours a night is working against yourself. This is the highest-leverage free lever there is.</p>
+    <h4>Load management and movement</h4><p>Tissue heals to the demands you place on it. Gentle, progressive loading guided by a good rehab plan builds stronger tendon and ligament than rest alone. The compound conversation should sit on top of smart loading, never replace it.</p>
+    <h4>Calming the gut</h4><p>For gut goals, the foundation is removing what irritates the lining in the first place, including unnecessary anti-inflammatory drug use, alongside the diet that settles your own system. That is where the durable change lives.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support supplements, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Adequate protein and, for connective tissue, collagen or gelatin with vitamin C around training</h4><p>The genuinely well-supported base of any repair effort. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Omega-3s and creatine</h4><p>Well-studied for recovery and general resilience, sensible for many people, useful alongside the basics rather than as a fix.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Curcumin and other whole-food anti-inflammatories</h4><p>Modest, real support for some, best framed as helping the environment healing happens in.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>The endless "tendon repair" and "gut healing" proprietary blends</h4><p>Mostly marketing wrapped around a few reasonable ingredients at token doses. Read the label, not the front of the bottle.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Anything sold as a "cure" or a shortcut past the foundation</h4><p>The claim itself is the red flag. Repair does not come in a shortcut.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== PEPTIDES =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The honest peptide angle</p>
+    <h2>Where BPC-157 honestly fits</h2>
+    <p>If someone has the foundation handled, has had the real problem evaluated, is working with a provider, and has a legitimate source, BPC-157 is one of the more interesting research compounds to learn about, especially for soft-tissue and gut topics. That is a real place. It is also a narrow one. It is not a first move, not a substitute for a diagnosis, and not the miracle the loudest posts sell. Held in that honest frame, it is worth understanding well.</p>
+    <p>You will also hear it discussed in combinations: paired with TB-500 for repair, with copper peptides in skin and tissue blends, or with KPV for gut goals. Those pairings are popular in the community, but they inherit every one of the same caveats, thin human proof and an unregulated market, so the honesty does not halve when you stack, it doubles.</p>
+    <p class="small">You can map goals to compounds and keep your own notes in the OnePin app. Treat everything there as education to research, never as a protocol to copy.</p>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I actually had this problem evaluated, or am I guessing?</p></div>
+      <div class="row"><span class="box"></span><p>Is my sleep, protein, and training load genuinely handled first?</p></div>
+      <div class="row"><span class="box"></span><p>If this helps, will I honestly be able to tell what did the work?</p></div>
+      <div class="row"><span class="box"></span><p>Do I have a legitimate, verifiable source, or am I trusting a stranger?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER + SCREENING =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, is there any reason I should not explore this?</p></div>
+      <div class="row"><span class="box"></span><p>What should actually be evaluated or ruled out about my issue first?</p></div>
+      <div class="row"><span class="box"></span><p>What would you want to monitor if I chose to go further?</p></div>
+    </div>
+    <h3>Worth knowing going in</h3>
+    <ul>
+      <li><strong>Your actual diagnosis:</strong> the single most valuable thing to have before any compound.</li>
+      <li><strong>Any cancer history:</strong> a compound that promotes blood-vessel growth deserves real caution here.</li>
+      <li><strong>Your source and its testing:</strong> purity, dose accuracy, and sterility are not guaranteed in this market.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>See a professional promptly, not a peptide</h3>
+      <p style="color:#EFCFC9;margin:0 0 12px;max-width:none">Some things are not recovery questions at all. If any of these fit, get evaluated first.</p>
+      <ul>
+        <li>Pain with fever or feeling generally unwell</li>
+        <li>A joint that is hot, red, and swollen</li>
+        <li>Numbness, weakness, or loss of function</li>
+        <li>Pain that wakes you at night or steadily worsens</li>
+        <li>Any gut bleeding, black stool, or unexplained weight loss</li>
+        <li>An injury that is not improving on a sensible timeline</li>
+      </ul>
+      <p class="fast">These deserve a real evaluation, not a workaround. Getting the right diagnosis is the fastest path to healing, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Curious, not credulous</h2>
+    <p>BPC-157 is a genuinely fascinating piece of science, and the animal research has earned the attention it gets. But fascinating is not the same as proven, and breadth in rats is not certainty in people. The most powerful thing you can do is hold both truths at once: stay curious enough to learn it deeply, and grounded enough to keep the foundation first, verify your source, and involve a real provider. That is not the cautious choice. That is the strong one.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:60ch;margin:0 auto 18px">Education only, not medical advice. BPC-157 is investigational and not an approved medicine. Nothing here is a prescription or a substitute for your own clinician and your own labs. Compounds and doses named are examples for discussion. For research and educational purposes, adults 21 and over.</p>
+    <p class="sig">Learn it slow. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Peer-reviewed references retrieved from PubMed. The human evidence base is small and largely retrospective or preclinical, and this list reflects that honestly.</p>
+    <ol>
+      <li>Vasireddi N, Hahamyan H, Salata MJ, et al. Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review. <em>HSS J.</em> 2025. Of 36 included studies, 35 were preclinical and 1 clinical; no completed randomized trials. <a href="https://doi.org/10.1177/15563316251355551">doi:10.1177/15563316251355551</a></li>
+      <li>Gwyer D, Wragg NM, Wilson SL. Gastric pentadecapeptide body protection compound BPC 157 and its role in accelerating musculoskeletal soft tissue healing. <em>Cell Tissue Res.</em> 2019. <a href="https://doi.org/10.1007/s00441-019-03016-8">doi:10.1007/s00441-019-03016-8</a></li>
+      <li>Chang CH, Tsai WC, Lin MS, Hsu YH, Pang JHS. The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration. <em>J Appl Physiol.</em> 2010. <a href="https://doi.org/10.1152/japplphysiol.00945.2010">doi:10.1152/japplphysiol.00945.2010</a></li>
+      <li>Seiwerth S, et al. Stable Gastric Pentadecapeptide BPC 157 and Wound Healing. <em>Front Pharmacol.</em> 2021. <a href="https://doi.org/10.3389/fphar.2021.627533">doi:10.3389/fphar.2021.627533</a></li>
+      <li>Park JM, Lee HJ, Sikiric P, Hahm KB. BPC 157 Rescued NSAID-cytotoxicity Via Stabilizing Intestinal Permeability and Enhancing Cytoprotection. <em>Curr Pharm Des.</em> 2020. <a href="https://doi.org/10.2174/1381612826666200523180301">doi:10.2174/1381612826666200523180301</a></li>
+      <li>Staresinic M, et al. Stable Gastric Pentadecapeptide BPC 157 and Striated, Smooth, and Heart Muscle. <em>Biomedicines.</em> 2022. <a href="https://doi.org/10.3390/biomedicines10123221">doi:10.3390/biomedicines10123221</a></li>
+      <li>Sikiric P, et al. Stable Gastric Pentadecapeptide BPC 157 - Possible Novel Therapy of Glaucoma and Other Ocular Conditions. <em>Pharmaceuticals (Basel).</em> 2023. <a href="https://doi.org/10.3390/ph16071052">doi:10.3390/ph16071052</a></li>
+      <li>Lee E, Padgett B. Intra-Articular Injection of BPC 157 for Multiple Types of Knee Pain. <em>Altern Ther Health Med.</em> 2021;27(4):8-13. Small retrospective chart review (n=16); PMID 34324435.</li>
+    </ol>
+    <p class="small">Citations sourced via PubMed. BPC-157 is investigational; the strongest evidence remains preclinical (animal and laboratory), and human data is limited to small retrospective reports.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero: draw in the copper bridging fibers
+  var fibs=document.querySelectorAll('#repairArt .bfib');
+  fibs.forEach(function(p){
+    var len=p.getTotalLength();
+    p.style.strokeDasharray=len; p.style.strokeDashoffset=reduce?0:len;
+    p.style.transition=reduce?'none':'stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1)';
+  });
+  setTimeout(function(){fibs.forEach(function(p){p.style.strokeDashoffset=0;});}, reduce?0:350);
+
+  // animate bars/flow on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bar-fill').forEach(function(f){
+          if(reduce){f.style.transition='none';}
+          f.style.width=f.getAttribute('data-w')+'%';
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('[data-animate]').forEach(function(el){
+    if(reduce){el.querySelectorAll('.bar-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById('runQuiz');
+  var resetBtn=document.getElementById('resetQuiz');
+  var result=document.getElementById('result');
+  var quiz=document.getElementById('quiz');
+  if(runBtn && quiz){
+    function score(){
+      var s=0, key=parseInt(document.getElementById('q_hct').value,10)||0; s+=key;
+      var r=quiz.querySelector('input[name="route"]:checked'); if(r) s+=parseInt(r.value,10);
+      var flags=0;
+      quiz.querySelectorAll('#symptoms input:checked').forEach(function(c){flags+=parseInt(c.value,10);});
+      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
+      return {s:s, key:key, flags:flags};
+    }
+    function show(band,cls,head,body){
+      result.className='result show '+cls;
+      document.getElementById('rBand').textContent=band;
+      document.getElementById('rHead').textContent=head;
+      document.getElementById('rBody').textContent=body;
+      result.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+    runBtn.addEventListener('click',function(){
+      var r=score();
+      if(r.flags>=2 || r.key>=11){ show('Get evaluated first','act','This is a see-someone situation','What you described is not a recovery-compound question. Please get it properly evaluated by a professional before considering anything else. That is the fastest path to healing.'); return; }
+      if(r.s>=8){ show('Evaluation before compounds','act','Get the real picture first','There is enough here that a proper evaluation should come before reaching for any compound. Learn all you want, but let a provider look at the actual issue first.'); return; }
+      if(r.s>=4){ show('Foundation first','watch','Handle the basics before the extras','Your foundation has some gaps to close first: sleep, protein, training load, and the actual cause. Fix those, and you may not need anything else. Keep learning in the meantime.'); return; }
+      show('Thinking about it the right way','low','You are approaching this wisely','You are learning before leaping, which is exactly right. Keep the foundation first, verify any source, and involve a provider before going further. Enjoy the education.');
+    });
+    resetBtn.addEventListener('click',function(){
+      document.getElementById('q_hct').value='0';
+      quiz.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});
+      result.className='result';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
