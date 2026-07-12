@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Copper Peptides, Decoded: GHK-Cu vs AHK-Cu vs KLOW - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - Copper Peptides (re-skinned "Thick Blood" layout)
+  Skin: copper/verdigris - verdigris teal-blue (the copper solution's blue tint) primary + warm copper/bronze secondary.
+  Hero motif: a tripeptide escorting a copper atom (the whole mechanism in one image).
+  ASCII + HTML entities only. No em dashes. RUO / education-only / 21+.
+  Content grounded in the produced Copper Peptides deep-dive + PubMed-verified citations.
+-->
+<style>
+  :root{
+    --paper:#F1EFEA; --surface:#FBFAF6; --surface-2:#F2F0E8;
+    --ink:#182320; --ink-soft:#333F3B; --muted:#5F6A65;
+    --line:#D9D6CB; --line-soft:#E6E3D9;
+    /* PRIMARY accent (verdigris copper-blue = the signature blue tint) - keeps --blood var name */
+    --blood:#157E8E; --blood-deep:#0C4E58; --blood-tint:#D3E9ED;
+    /* SECONDARY warm accent (copper / bronze) */
+    --plasma:#B0742F; --plasma-soft:#E0BE87; --plasma-tint:#F2E6D0;
+    --good:#3E8E5A; --good-tint:#DEEDE2;
+    --amber:#BE7E24; --amber-tint:#F3E6CC;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#131C1A;color:#E9EEEB;border-top:1px solid #26302D;border-bottom:1px solid #26302D}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(34px,6.2vw,58px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:38ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:200px}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#8f5d23,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#2c6a41,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.short{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.long{background:var(--good-tint);color:var(--good)}
+  .tag.both{background:var(--plasma-tint);color:#8a6416}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--blood)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--plasma);line-height:1}
+  .rules .r p{margin:0;font-size:15.5px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--blood)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(24,36,32,.07)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  select.hct{font-family:var(--sans);font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%;max-width:420px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6d5aa}
+  .result.watch .band{color:#8a6416}
+  .result.act{background:var(--blood-tint);border:1px solid #bcdfe6}
+  .result.act .band{color:var(--blood-deep)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#221615;border:1px solid #4a2422;border-radius:14px;padding:24px 26px;color:#F1DAD6}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFCB;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#D98A5A}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC8C2}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Skin, Hair &amp; Repair</b></p>
+        <h1>Copper peptides, decoded</h1>
+        <p class="lede" style="max-width:36ch;margin:.1em 0 .5em">GHK-Cu, AHK-Cu, and KLOW: the same copper trick, pointed at different tissue, and honestly, at very different evidence.</p>
+        <p class="thesis">The marketing ladder is the exact reverse of the evidence ladder. Here is how to read it.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a tripeptide escorting a copper atom (the whole mechanism). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="196" height="320" viewBox="0 0 196 320" fill="none" xmlns="http://www.w3.org/2000/svg" id="cuArt">
+          <!-- blue-tint glow (the copper solution) -->
+          <ellipse cx="98" cy="150" rx="86" ry="120" fill="#157E8E" opacity="0.07"/>
+          <!-- peptide backbone: three linked amino-acid beads (G-H-K) -->
+          <g class="pep" stroke="#0C4E58" stroke-width="4" fill="#D3E9ED">
+            <line x1="60" y1="70" x2="98" y2="120" class="bond"/>
+            <line x1="98" y1="120" x2="136" y2="70" class="bond"/>
+            <line x1="98" y1="120" x2="98" y2="196" class="bond"/>
+            <circle cx="60" cy="70" r="17"/><circle cx="136" cy="70" r="17"/><circle cx="98" cy="120" r="17"/>
+          </g>
+          <g font-family="ui-monospace,monospace" font-size="12" fill="#0C4E58" font-weight="700" text-anchor="middle">
+            <text x="60" y="75">G</text><text x="136" y="75">H</text><text x="98" y="125">K</text>
+          </g>
+          <!-- the copper atom, escorted (bronze sphere with a glint) -->
+          <circle cx="98" cy="210" r="26" fill="#B0742F"/>
+          <circle cx="98" cy="210" r="26" fill="none" stroke="#7d4f1c" stroke-width="2"/>
+          <ellipse cx="89" cy="201" rx="8" ry="5" fill="#E0BE87" opacity="0.85"/>
+          <text x="98" y="215" font-family="ui-monospace,monospace" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">Cu</text>
+          <!-- new-growth spark lines drawn in via JS -->
+          <g stroke="#157E8E" stroke-width="2.6" stroke-linecap="round" class="spark">
+            <path d="M98 236 C 92 262, 104 280, 98 300" class="sfib"/>
+            <path d="M72 224 C 58 250, 60 272, 52 292" class="sfib"/>
+            <path d="M124 224 C 138 250, 136 272, 144 292" class="sfib"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">3</div><div class="lbl">copper peptides in play: GHK-Cu (skin), AHK-Cu (hair), KLOW (a blend)</div></div>
+      <div class="stat"><div class="n">4,000+</div><div class="lbl">human genes GHK can turn up or down, resetting tissue toward repair</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">small lab study behind the "AHK-Cu beats GHK for hair" claim</div></div>
+    </div>
+    <p class="src">Pickart 2015, Biomed Res Int (gene modulation) &middot; Pyo 2007, Arch Pharm Res (AHK-Cu hair, in vitro). Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen the copper peptides sold three ways: GHK-Cu for your face, AHK-Cu for your hair, KLOW as the do-everything repair pin. Three names, three promises, and a blue tint that makes the whole thing look like science fiction.</p>
+    <p>Here is the honest version. Underneath the marketing, these are the same idea wearing different clothes: a tiny peptide grabs a copper atom and walks it into your tissue, where copper is the thing your repair enzymes were waiting on. What changes from one to the next is mostly which tissue the peptide is shaped to talk to, and how strong the evidence is that it does what the label says. We do honest, not hype, so let us take it slowly.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice. None of these is an FDA-approved drug. Topical GHK-Cu and AHK-Cu are sold cosmetically; the injectable forms are research peptides, and KLOW is a research blend with no trials of its own. Any dose or concentration mentioned is an example to finalize with a licensed provider, never a prescription. For research and educational purposes, adults 21 and over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Which one fits you, and are you set up to use it wisely?</h2>
+    <p>This points you toward the copper peptide that matches your goal and flags whether you are approaching it the smart way. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Copper peptide fit check</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the one hard stop: do you have Wilson's disease or another copper-metabolism disorder?</p>
+        <select class="hct" id="q_hct" aria-label="copper disorder">
+          <option value="0">No</option>
+          <option value="0">Not sure, but no known copper problem</option>
+          <option value="11">Yes, or I have a copper-metabolism disorder</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually trying to improve?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Skin quality, firmness, scars, wound healing</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Hair density and scalp</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Broad recovery from injury or surgery</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which of these are true right now? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="2"><span class="chip">Planning to inject, not use it topically</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to mix it in a syringe with other peptides</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Source is a random vendor I have not vetted</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Have you got the basics covered? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="1"><span class="chip">I do not really protect my skin from the sun</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Protein and sleep are hit or miss</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider about your own goals and product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>One trick, three shapes</h2>
+    <p>Every compound here runs the same two-part play. Get the play, and the rest is just details.</p>
+    <h3>Part one: copper delivery</h3>
+    <p>Copper is not optional in your body. A handful of important enzymes simply do not work without it. The headliner is lysyl oxidase, the enzyme that cross-links collagen and elastin, turning loose protein strands into the firm, springy scaffold of young skin and healthy tissue. The catch is that free copper is reactive, so the body keeps it on a tight leash. A copper peptide solves that by handing copper over in an escorted, bioavailable form. The peptide is the chaperone; copper is the cargo.</p>
+    <h3>Part two: a gene-expression switch</h3>
+    <p>This is the part most people miss. These tripeptides do not just drop off copper and leave. The peptide itself gets inside the cell and shifts which genes are turned up and down. GHK is the best-studied example: it up-regulates repair genes (collagen, decorin, matrix-remodeling enzymes) and quiets inflammatory and tissue-destruction genes. So you get two effects stacked, copper enzymology on the outside of the cell and a remodeling signal rewritten on the inside.</p>
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"Copper peptides are natural, so they are safe and proven." Half true. GHK is genuinely a peptide your own body makes, and its levels fall with age. But natural is not the same as proven for every use, the injectable and blend forms are research compounds, and copper carries real handling rules. Natural earns curiosity, not a free pass.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE BAR CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The part the marketing flips</p>
+    <h2>The evidence ladder is the reverse of the sales ladder</h2>
+    <p>The three are sold as if they are equally established. They are not. Here is an honest read of how much real evidence sits behind each, and how much of it is human. Longer bars mean deeper, more human evidence, not "works better for you."</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of evidence, by compound</p>
+      <p class="csub">A judgment read of the literature. GHK-Cu is strongest on topical skin; the rest thins out fast.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">GHK-Cu (skin, topical)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Deepest, human data</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">GHK-Cu (injectable, systemic)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="52">Extrapolated from biology</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">AHK-Cu (hair)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="26">One in-vitro study + mechanism</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">KLOW (as a blend)</div><div class="bar-track"><div class="bar-fill b-good" data-w="8">No blend-level trials</div></div></div>
+      </div>
+      <p class="src">Synthesized from Pickart &amp; Margolina 2018 (Int J Mol Sci), Pickart 2015 (Biomed Res Int), Pyo 2007 (Arch Pharm Res). KLOW has no trials of the combination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How the copper trick actually works</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Escort the copper</h4><p>The tripeptide binds a copper atom and carries it into tissue in a safe, usable form, feeding copper-dependent enzymes.</p></div>
+      <div class="step"><div class="n">02</div><h4>Cross-link the scaffold</h4><p>Copper powers lysyl oxidase, which cross-links collagen and elastin, the step that firms loose protein into springy structure.</p></div>
+      <div class="step"><div class="n">03</div><h4>Rewrite the signal</h4><p>Inside the cell, GHK shifts gene expression toward repair and away from inflammation and breakdown, resetting tissue toward a younger pattern.</p></div>
+    </div>
+    <p>According to PubMed, the mechanism review is Pickart &amp; Margolina 2018 <a href="https://doi.org/10.3390/ijms19071987">doi:10.3390/ijms19071987</a>, and the gene-modulation work (GHK influencing at least 4,000 human genes) is Pickart 2015 <a href="https://doi.org/10.1155/2015/648108">doi:10.1155/2015/648108</a>. That breadth is real in the lab; it is also why the marketing can promise almost anything.</p>
+  </div>
+</section>
+
+<!-- =============== THE THREE COMPOUNDS (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The three, with honest pros and cons</p>
+    <h2>GHK-Cu, AHK-Cu, and KLOW, side by side</h2>
+    <p>They barely compete, because they aim at different things. Tags show the target: <span style="color:var(--blood-deep);font-weight:600">skin</span>, <span style="color:#8a6416;font-weight:600">hair</span>, or <span style="color:var(--good);font-weight:600">broad recovery</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>GHK-Cu</h3><span class="tag short">Skin &amp; collagen</span></div>
+      <p class="mech">The copper tripeptide your body already makes, and the one with the deepest evidence. Copper to lysyl oxidase, plus a repair gene-switch, pointed at skin.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>By far the deepest evidence of the three</li>
+          <li>A genuine human peptide that declines with age</li>
+          <li>Strong human data for topical skin, firmness, scars, wounds</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The strong data is topical, injectable systemic use is extrapolated</li>
+          <li>Not FDA-approved as a drug</li>
+          <li>Carries all the copper-handling rules below</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Best route by evidence:</b> topical for skin. A sensible first copper peptide for most people.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>AHK-Cu</h3><span class="tag both">Hair follicle</span></div>
+      <p class="mech">GHK-Cu's cousin with a one-letter swap that aims it at the hair follicle and the dermal papilla cell rather than the skin matrix.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Mechanism is sensible: it is studied for supporting the follicle's growth phase</li>
+          <li>In the lab it raised follicle-supporting signals and reduced follicle-cell death</li>
+          <li>Same well-understood copper backbone as GHK-Cu</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The "beats GHK for hair" claim rests on essentially ONE in-vitro study</li>
+          <li>No human clinical trial, and no head-to-head against known options</li>
+          <li>Best-evidenced route is topical, not injectable</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> a reasonable bet, not a settled result. For someone comfortable being an early adopter on thin data (Pyo 2007).</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>KLOW</h3><span class="tag long">Broad recovery blend</span></div>
+      <p class="mech">Not a fourth copper peptide, a four-peptide research blend built around GHK-Cu, commonly GHK-Cu plus KPV, BPC-157, and TB-500 in one pin.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Broad coverage in one shot: anti-inflammatory + structural + regenerative</li>
+          <li>Convenient, one pin instead of four</li>
+          <li>Its strongest leg (GHK-Cu) is genuinely well-evidenced</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Zero trials of the blend as a blend</li>
+          <li>You cannot independently titrate the four ingredients</li>
+          <li>Two of its legs (BPC-157, TB-500) are the least proven, mostly animal data</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> real convenience, no proof of the combination. Best when the goal is general recovery, not one specific outcome.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE COPPER RULES =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The most practical section here</p>
+    <h2>The copper-handling rules they all share</h2>
+    <p>This applies to every compound here, including KLOW, because every one of them carries copper. Get these wrong and you do not get a side effect, you get a dead dose: you destroy the peptide you paid for and never know it.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Draw copper LAST, always</h4><p>In any multi-peptide draw, the copper peptide goes into the syringe last and gets injected promptly. Copper transfers to the needle and syringe and can oxidize partner peptides from there. A universal habit, not a special case.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>Never co-mix with sulfur-bearing peptides</h4><p>Copper chews up methionine and thiol residues. In the same syringe, never combine a copper peptide with VIP (copper destroys its methionine, a total loss), full-length TB-500 (oxidizable methionine, run it separately), or CJC-1295 with DAC. Separate pins.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>Keep it away from glutathione and NAC</h4><p>Same chemistry, wider category. Antioxidant thiols like glutathione and NAC are exactly what copper reacts with. If you run them, run them on their own, at their own time.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>The blue tint is normal, cloudy is not</h4><p>A copper solution turning clear blue is the copper, expected. A brief blue-green mark at the site is also harmless. What is NOT normal is a cloudy or particulate solution, that is a throw-it-out sign.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Wilson's disease: do not use</h4><p>The whole point of these is to deliver more bioavailable copper, which is exactly what a copper-metabolism disorder cannot handle. Anyone with Wilson's disease should avoid them. For long-term injectable use, copper and ceruloplasmin are the labs to watch.</p></div></div>
+    </div>
+    <div class="note good">
+      <p class="h">The clean-pairing exception</p>
+      <p>GHK-Cu pairs cleanly in a syringe with BPC-157 (the "GLOW" idea) and with KPV (the "KLOW" idea), because those partners have no copper-oxidizable residues. The copper peptide still goes in last. Anything sulfur-bearing stays a separate pin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ROUTE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The practical part people skip</p>
+    <h2>Topical has the real human data</h2>
+    <p>For both GHK-Cu and AHK-Cu, the route with the strongest human evidence is topical, applied to skin or scalp. The injectable, whole-body versions are more extrapolation from the biology than trial-proven. That does not make injectable use wrong, it makes it the more experimental choice that deserves a provider, a vetted source, and the same "start low, hold, only step up if needed" discipline the rest of the library runs on.</p>
+    <p class="small">Reconstitution math, concentrations, and specific dosing live in the individual GHK-Cu and AHK-Cu guides and in OnePin, framed as examples to finalize with a provider. This report is the honest map, not a dosing sheet.</p>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>What actually builds skin and hair</h2>
+    <h4>Sun protection</h4><p>For skin goals this is the highest-leverage free lever there is. Ultraviolet damage breaks down the exact collagen and elastin a copper peptide is trying to build. Chasing firmness with a peptide while skipping daily sun protection is working against yourself.</p>
+    <h4>Protein and vitamin C</h4><p>Collagen is a building project. Enough protein supplies the material, and vitamin C is a required cofactor for collagen cross-linking. Under-fuel the system and no topical or peptide fully makes up for it.</p>
+    <h4>Sleep and the basics</h4><p>The bulk of skin and tissue repair happens overnight. Hydration, not smoking, and steady sleep move skin and hair quality more reliably than any single add-on, and they make anything you add work better.</p>
+    <h4>For hair, treat the whole scalp</h4><p>Hair is a long game measured in months and photos, not days. Managing the real drivers, stress, iron and thyroid status, and known evidence-based options with a provider, is the foundation any copper peptide sits on top of.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Adequate protein, vitamin C, and daily sun protection for skin</h4><p>The genuinely supported base of any skin-repair effort. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Collagen or gelatin with vitamin C, and omega-3s</h4><p>Sensible support for connective tissue and skin, useful alongside the basics rather than as a fix.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>Extra copper supplements to "help the peptide work"</h4><p>Unnecessary and potentially counterproductive. The peptide delivers the copper it needs; piling on oral copper is not the lever, and it is the wrong move if you have any copper-handling concern.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Any "copper peptide" sold with cure-all skin, hair, and anti-aging promises at once</h4><p>The broad promise is the red flag. Match the specific compound to your specific goal instead.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Am I matching the compound to my actual goal (skin, hair, or broad recovery), or chasing the name with the best marketing?</p></div>
+      <div class="row"><span class="box"></span><p>Have I ruled out Wilson's disease or any copper-metabolism concern?</p></div>
+      <div class="row"><span class="box"></span><p>If I inject, do I know the draw-last rule and the never-mix partners cold?</p></div>
+      <div class="row"><span class="box"></span><p>Is my source verifiable, and is the foundation (sun, protein, sleep) actually handled first?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get guidance</h3>
+      <p style="color:#EFCFCB;margin:0 0 12px;max-width:none">A few situations are not "start slower," they are "not without a professional first."</p>
+      <ul>
+        <li>Known Wilson's disease or copper-metabolism disorder</li>
+        <li>A solution that is cloudy or has visible particles (discard it)</li>
+        <li>Planning to mix copper with VIP, full-length TB-500, or CJC-1295 with DAC</li>
+        <li>Any new skin lesion, mole change, or non-healing wound you are trying to "treat"</li>
+        <li>Signs of infection, spreading redness, or fever at an injection site</li>
+      </ul>
+      <p class="fast">Copper mistakes rarely hurt you, they quietly waste the dose. But a changing skin lesion or an infected site is a real-provider question, not a peptide one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Match the tool to the evidence you can stand on</h2>
+    <p>The mechanism is the easy part, and it is genuinely good: copper delivery to lysyl oxidase plus a repair gene-switch is real, well-described biology, and GHK-Cu is the one peptide in the bunch with human data to match its reputation. The variable people skip is evidence depth, and the marketing ladder is the reverse of it. GHK-Cu has the data. AHK-Cu has essentially one lab study and a sensible mechanism. KLOW has no trials of itself at all. Newer, more specialized, or more convenient does not mean better proven. Pick the compound that fits your goal, respect the copper rules like they are not optional (because a copper mistake destroys the dose silently), keep the foundation first, and stand on the evidence level you are actually comfortable with, with a provider. That is not the cautious move. It is the strong one.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:60ch;margin:0 auto 18px">Education only, not medical advice. No copper peptide here is FDA-approved: topical cosmetic forms are sold over the counter, injectable forms are research peptides, and KLOW is a research blend with no trials of its own. Cross-compound comparisons are directional, not head to head. Doses and concentrations named are examples for discussion. For research and educational purposes, adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Peer-reviewed references retrieved from PubMed. Note that GHK-Cu carries the deepest evidence (strongest topical/skin), AHK-Cu rests largely on one in-vitro study, and KLOW has no trials as a blend.</p>
+    <ol>
+      <li>Pickart L, Margolina A. Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data. <em>Int J Mol Sci.</em> 2018. <a href="https://doi.org/10.3390/ijms19071987">doi:10.3390/ijms19071987</a></li>
+      <li>Pickart L, Vasquez-Soltero JM, Margolina A. GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration. <em>Biomed Res Int.</em> 2015. <a href="https://doi.org/10.1155/2015/648108">doi:10.1155/2015/648108</a></li>
+      <li>Pyo HK, Yoo HG, Won CH, et al. The effect of tripeptide-copper complex on human hair growth in vitro. <em>Arch Pharm Res.</em> 2007;30(7):834-9. <a href="https://doi.org/10.1007/BF02978833">doi:10.1007/BF02978833</a> (the AHK-Cu ex-vivo / in-vitro study)</li>
+      <li>Chen H, Yang P, Xue P, et al. Food-Derived Tripeptide-Copper Self-Healing Hydrogel for Infected Wound Healing. <em>Biomater Res.</em> 2025. <a href="https://doi.org/10.34133/bmr.0139">doi:10.34133/bmr.0139</a> (recent GHK-Cu wound-healing work)</li>
+    </ol>
+    <p class="small">Citations sourced via PubMed. KLOW is a research blend with no published trials of the combination; claims about it are extrapolated from its individual ingredients.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero: draw in the spark filaments
+  var fibs=document.querySelectorAll('#cuArt .sfib');
+  fibs.forEach(function(p){var len=p.getTotalLength();p.style.strokeDasharray=len;p.style.strokeDashoffset=reduce?0:len;p.style.transition=reduce?'none':'stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)';});
+  setTimeout(function(){fibs.forEach(function(p){p.style.strokeDashoffset=0;});}, reduce?0:350);
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bar-fill').forEach(function(f){ if(reduce){f.style.transition='none';} f.style.width=f.getAttribute('data-w')+'%'; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('[data-animate]').forEach(function(el){
+    if(reduce){el.querySelectorAll('.bar-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById('runQuiz');
+  var resetBtn=document.getElementById('resetQuiz');
+  var result=document.getElementById('result');
+  var quiz=document.getElementById('quiz');
+  if(runBtn && quiz){
+    function goal(){
+      var chips=quiz.querySelectorAll('input[name="route"]');
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 skin, 1 hair, 2 recovery, 3 learning
+    }
+    function score(){
+      var s=0, key=parseInt(document.getElementById('q_hct').value,10)||0; s+=key;
+      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
+      return {s:s, key:key, goal:goal()};
+    }
+    function show(band,cls,head,body){
+      result.className='result show '+cls;
+      document.getElementById('rBand').textContent=band;
+      document.getElementById('rHead').textContent=head;
+      document.getElementById('rBody').textContent=body;
+      result.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+    runBtn.addEventListener('click',function(){
+      var r=score();
+      if(r.key>=11){ show('The one hard stop','act','Copper peptides are not for you','With Wilson\'s disease or a copper-metabolism disorder, copper peptides are the wrong tool, their whole job is to deliver more bioavailable copper. Please skip them and talk to your provider about other options.'); return; }
+      if(r.s>=4){ show('Handle the setup first','watch','Slow down and get the basics right','Before anything: verify your source, learn the copper draw-last and never-mix rules cold if you plan to inject, and get the foundation (sun protection, protein, sleep) handled. Those decide most of your result. Then match the compound to your goal below.'); return; }
+      var map={0:['GHK-Cu direction','GHK-Cu is the fit to research','Your goal is skin, firmness, scars, or wounds, which is GHK-Cu\'s home turf and the compound with the deepest, most human evidence. Topical has the strongest data. Read its card and rules above, and finalize with a provider.'],
+               1:['AHK-Cu direction, eyes open','AHK-Cu is the closest fit, on thin data','Your goal is hair, which points to AHK-Cu, but be honest that its case is essentially one lab study plus mechanism. Topical is the evidenced route. A reasonable early-adopter bet, not a settled result.'],
+               2:['KLOW direction','KLOW is the closest fit, with a caveat','Broad recovery points to the KLOW blend, useful for one-pin coverage, but remember it has no trials as a blend and you cannot titrate the four ingredients. Best when the goal is general recovery, not one specific outcome.'],
+               3:['Thinking about it the right way','You are learning before leaping','Exactly right. Read the three cards and the copper rules, match the compound to a real goal, verify a source, and involve a provider before going further. Enjoy the education.']};
+      var m=map[r.goal>=0?r.goal:3];
+      show(m[0],'low',m[1],m[2]);
+    });
+    resetBtn.addEventListener('click',function(){
+      document.getElementById('q_hct').value='0';
+      quiz.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});
+      result.className='result';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
