@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TB-500: The Systemic Repair Signal, Honestly - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - TB-500 (re-skinned "Thick Blood" layout)
+  Sibling to the BPC-157 report; together they are the "Wolverine stack" pair (two-way cross-link).
+  Skin: systemic travel / whole-body migration - INDIGO primary + BRONZE secondary (NOT teal, NOT blood-red).
+  Hero motif: one release point sending repair-cell migration trails body-wide (the systemic contrast to BPC's single local-gap bridge).
+  ASCII + HTML entities only. No em dashes. RUO / education-only / 21+.
+-->
+<style>
+  :root{
+    --paper:#EFF0F4; --surface:#FAFAFB; --surface-2:#EAEBF1;
+    --ink:#1A1E2C; --ink-soft:#333A50; --muted:#5D6478;
+    --line:#D6D8E2; --line-soft:#E5E7EF;
+    /* PRIMARY accent (indigo / systemic travel) - keeps the --blood var name, new value */
+    --blood:#4453A6; --blood-deep:#272F63; --blood-tint:#DFE2F2;
+    /* SECONDARY warm accent (bronze - the shared healing-stack metallic that rhymes with the BPC copper) */
+    --plasma:#B07C3A; --plasma-soft:#E0C088; --plasma-tint:#F1E7D3;
+    --good:#3E8E5A; --good-tint:#DEEDE2;
+    --amber:#B5822A; --amber-tint:#F1E6CC;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#14172A;color:#E7E9F2;border-top:1px solid #262B45;border-bottom:1px solid #262B45}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(36px,6.6vw,62px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:38ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:200px}}
+  /* systemic-migration hero motif */
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#8f6222,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#2c6a41,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.short{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.long{background:var(--good-tint);color:var(--good)}
+  .tag.both{background:var(--plasma-tint);color:#8a6416}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--blood)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--blood-tint);border-color:#c3c9ea}
+  .plan .later{background:var(--good-tint);border-color:#c9ddd0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--blood-deep)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--blood)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(26,30,44,.08)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  select.hct{font-family:var(--sans);font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%;max-width:460px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6d5aa}
+  .result.watch .band{color:#8a6416}
+  .result.act{background:var(--blood-tint);border:1px solid #c3c9ea}
+  .result.act .band{color:var(--blood-deep)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .tl{width:100%;height:auto;display:block}
+  .flags{background:#221614;border:1px solid #4a2420;border-radius:14px;padding:24px 26px;color:#F1DAD4}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFC9;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#D98A5A}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC8BF}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  .xlink{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;letter-spacing:.02em;text-decoration:none;background:var(--blood-tint);color:var(--blood-deep);border:1px solid #c3c9ea;border-radius:24px;padding:8px 16px;font-weight:600;margin-top:6px}
+  .xlink:hover{background:#d2d7ef;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Recovery &amp; Repair</b></p>
+        <h1>TB-500, honestly</h1>
+        <p class="lede" style="max-width:37ch;margin:.1em 0 .5em">The repair signal that travels. BPC-157's systemic partner, and the honest line between whole-body promise and what the research actually shows.</p>
+        <p class="thesis">A real mechanism, studied mostly as a different molecule than the one people inject. Worth learning slowly, and reading the label.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: one release point sending repair-cell migration trails body-wide (systemic contrast to BPC's single local-gap bridge). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="190" height="330" viewBox="0 0 190 330" fill="none" xmlns="http://www.w3.org/2000/svg" id="migrateArt">
+          <!-- faint actin-cable field -->
+          <g stroke="#4453A6" stroke-width="1" opacity="0.14">
+            <path d="M20 40 C 60 90, 130 120, 172 60"/>
+            <path d="M18 150 C 70 130, 120 180, 174 150"/>
+            <path d="M20 260 C 60 220, 130 250, 172 280"/>
+          </g>
+          <!-- central release point -->
+          <circle cx="95" cy="58" r="12" fill="#4453A6" opacity="0.12"/>
+          <circle cx="95" cy="58" r="6" fill="#B07C3A"/>
+          <!-- systemic migration trails fanning out to distant repair sites (drawn in via JS) -->
+          <g stroke="#272F63" stroke-width="2.4" stroke-linecap="round" fill="none" class="routes">
+            <path d="M95 58 C 66 96, 46 120, 40 156" class="rfib"/>
+            <path d="M95 58 C 128 92, 146 116, 150 150" class="rfib"/>
+            <path d="M95 58 C 92 130, 88 200, 92 250" class="rfib"/>
+            <path d="M95 58 C 70 150, 56 210, 52 262" class="rfib"/>
+            <path d="M95 58 C 122 150, 136 214, 140 264" class="rfib"/>
+          </g>
+          <!-- repair-site cell nodes -->
+          <g fill="#B07C3A">
+            <circle cx="40" cy="156" r="5"/><circle cx="150" cy="150" r="5"/>
+            <circle cx="92" cy="250" r="5.4"/><circle cx="52" cy="262" r="4.6"/><circle cx="140" cy="264" r="4.6"/>
+          </g>
+          <!-- soft halo around each site -->
+          <g fill="#4453A6" opacity="0.08">
+            <circle cx="40" cy="156" r="12"/><circle cx="150" cy="150" r="12"/>
+            <circle cx="92" cy="250" r="13"/><circle cx="52" cy="262" r="11"/><circle cx="140" cy="264" r="11"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">7 <small>aa</small></div><div class="lbl">the LKKTETQ actin-binding fragment that "TB-500" strictly refers to, not the full 43-amino-acid protein</div></div>
+      <div class="stat"><div class="n">~4-7 <small>days</small></div><div class="lbl">how long the repair signal lasts, even though the molecule clears plasma in about a day, the reason for weekly dosing</div></div>
+      <div class="stat"><div class="n">0</div><div class="lbl">human efficacy trials of the injected "TB-500" fragment itself, to date</div></div>
+    </div>
+    <p class="src">Goldstein 2005, Trends Mol Med (actin-sequestering biology) &middot; Philp 2003, Wound Repair Regen (the LKKTETQ fragment) &middot; Kleinman 2016, Vitam Horm (Tb4 phase-2 dermal trials). Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">If BPC-157 is the peptide that works where you put it, TB-500 is the one people reach for when the ache is everywhere. Let us slow it down and look at it honestly, together.</p>
+    <p>TB-500 is the classic partner in the most popular repair pairing in the whole conversation, the one the community nicknamed the Wolverine stack. The idea behind it is genuinely interesting: a signal that helps repair cells move to wherever the damage is, body-wide, instead of staying at one injection site. But there is a catch most posts skip, and it is not a small one, so we are going to put it right up front. This guide walks the whole picture: what it actually is, how it is thought to work, what the evidence really says, how it is used and studied, and where the honest limits are.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician or your own labs. TB-500 is an investigational compound, not an approved medicine, and it is prohibited in tested sport. Anything named here, including any dose, is an example for discussion and learning, never a prescription. For research and educational purposes, adults 21 and over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you approaching this the wise way?</h2>
+    <p>This is not about whether a compound is "good." It is a reflection on whether you are setting yourself up to make a calm, informed decision. It is education, not a diagnosis, and it does not replace a real evaluation.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Recovery readiness check</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">Has the issue you are focused on actually been looked at by a professional?</p>
+        <select class="hct" id="q_hct" aria-label="evaluation status">
+          <option value="0">I am just learning, no specific issue</option>
+          <option value="0">Yes, it has been properly evaluated</option>
+          <option value="4">Sort of, I self-assessed it</option>
+          <option value="7">No, and it has been lingering</option>
+          <option value="11">No, and it is severe or getting worse</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which best describes your situation?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Curious / general learning</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Multi-site or whole-body aches</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">A chronic, stubborn tissue issue</span></label>
+          <label><input type="radio" name="route" value="3"><span class="chip">An unexplained, persistent symptom</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Are you subject to drug testing in your sport or job?</p>
+        <div class="opt" data-single="wada">
+          <label><input type="radio" name="wada" value="0"><span class="chip">No</span></label>
+          <label><input type="radio" name="wada" value="1"><span class="chip">Not sure</span></label>
+          <label><input type="radio" name="wada" value="9"><span class="chip">Yes, I get tested</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which of these are true right now? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="1"><span class="chip">Sleeping under 6 hours most nights</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Protein intake is low or I am not sure</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Have not addressed training load or form</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these lately? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">Pain with fever or feeling unwell</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">A joint that is hot, red, or swollen</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Numbness, weakness, or lost function</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pain that wakes me at night or keeps worsening</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I stand</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis. A real evaluation by your provider is what tells the story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>What TB-500 actually is</h2>
+    <p>TB-500 is a synthetic peptide built around the actin-binding part of a natural repair protein called thymosin beta-4. In the body, thymosin beta-4 is one of the main proteins that manages actin, the scaffolding that gives cells their shape and lets them move. That movement is the whole point: repair cells have to migrate to a site of damage before they can rebuild it, and this is the signal that helps them do it. Because it distributes body-wide rather than staying at the injection site, people describe it as the systemic counterpart to BPC-157.</p>
+    <h3>What it is not</h3>
+    <p>It is not a hormone, not a steroid, and not growth hormone. It does not build muscle directly. It is best understood as a signaling peptide that supports the body's own repair-cell movement and tissue remodeling. And it is investigational: not an approved drug, banned in tested sport, and sold and discussed in a research-use context.</p>
+    <div class="note blood">
+      <p class="h">The honest catch you need up front</p>
+      <p>"TB-500" is a research-chemical trade name, not one defined molecule. Strictly, it means the short 7-amino-acid LKKTETQ fragment, but the human trials in the evidence base used the full 43-amino-acid thymosin beta-4 protein, not that fragment. Worse, vials sold as "TB-500" vary in what they actually contain: some hold the full protein, some the shorter fragment, and the label rarely says which. They differ in mass and possibly in behavior. That is exactly why a Certificate of Analysis and a trustworthy source matter more here than with a tightly defined peptide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS STUDIED FOR + BAR CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Where the research actually points</p>
+    <h2>What it has been explored for, and how strong each area is</h2>
+    <p>Almost all of this research is on thymosin beta-4, the parent protein, in animal models and cell culture, not on the injected fragment as sold. That is the honest evidence base behind "TB-500." Here is a fair read of where the weight of that work sits, by area. Longer bars mean more research attention and more consistent preclinical signal, not proof in people.</p>
+
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of research signal, by area</p>
+      <p class="csub">A judgment read of the thymosin beta-4 literature, all preclinical unless noted. Not a ranking of how well it "works" in humans.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Dermal &amp; wound healing</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Deepest, with early trials</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cell migration / actin biology</div><div class="bar-track"><div class="bar-fill b-blood" data-w="92">The core mechanism</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Corneal / anti-inflammatory</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="70">Solid animal work</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cardiac / vascular repair</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="58">Interesting, animal</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Tendon / soft-tissue recovery</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="44">Popular use, thin data</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Human proof of the fragment</div><div class="bar-track"><div class="bar-fill b-good" data-w="8">Essentially none</div></div></div>
+      </div>
+      <p class="src">Synthesized from Goldstein 2005 (Trends Mol Med), Philp 2003 (Wound Repair Regen), Kleinman 2016 (Vitam Horm), Sosne 2007 (Clin Ophthalmol), Shrivastava 2010 (Ann NY Acad Sci). Human bar reflects the absence of fragment efficacy trials.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How it is thought to work</h2>
+    <p>Researchers do not describe thymosin beta-4 as flipping one switch. They describe it managing the movement and survival of repair cells. Three threads come up the most.</p>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Binds actin, frees movement</h4><p>Through the LKKTET motif it binds G-actin, the free building block of the cell skeleton, and regulates how it assembles, which is what lets repair cells migrate into damaged tissue. This is the best-characterized action.</p></div>
+      <div class="step"><div class="n">02</div><h4>Draws cells and vessels in</h4><p>It promotes cell migration and new blood-vessel growth toward the repair site, pulling in the cells that rebuild tissue. In the literature this migration-and-vessel effect runs through dermal, corneal, and cardiac models alike.</p></div>
+      <div class="step"><div class="n">03</div><h4>Calms and un-scars</h4><p>Thymosin beta-4 has documented anti-inflammatory and cell-death-limiting activity, and it modulates how the body lays down scaffolding, which is the basis for its anti-fibrotic, anti-scarring reputation.</p></div>
+    </div>
+    <p>That is why it is framed as the systemic counterpart to BPC-157: where BPC drives local blood-vessel growth at the injection site, this actin-migration effect distributes body-wide. According to PubMed, the actin-sequestering biology is laid out in Goldstein 2005 <a href="https://pubmed.ncbi.nlm.nih.gov/16099219/">PMID 16099219</a>, and the active fragment's wound-repair activity in Philp 2003 <a href="https://pubmed.ncbi.nlm.nih.gov/12581423/">PMID 12581423</a>.</p>
+  </div>
+</section>
+
+<!-- =============== HONEST RISK PICTURE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The question everyone actually wants answered</p>
+    <h2>Is it safe?</h2>
+    <h3>What the research suggests</h3>
+    <p>In the thymosin beta-4 animal and early-clinical work, tolerability has generally looked reasonable, and the early-phase human dermal-wound studies of the full protein did not raise a major alarm. Community reports on the injected fragment mostly describe mild, short-lived effects: injection-site reactions, an occasional first-dose head-rush or flush, and sometimes a brief flu-like feeling in the first week, plausibly tied to thymosin beta-4's immune activity.</p>
+    <h3>What we do <em>not</em> know</h3>
+    <p>We do not have long-term human safety data on the injected "TB-500" fragment, because it has not been through those trials. "Reasonable in animal models of the parent protein" and "few community complaints" are not the same as "proven safe in people over years." And because products vary between the full protein and the fragment, even applying the existing literature requires knowing which form is in your vial. Honesty means holding the encouraging preclinical record and that open human question at the same time.</p>
+    <div class="note blood">
+      <p class="h">Where the real-world risk actually lives</p>
+      <p>Two things carry more practical weight than the biology. First, the unregulated market: no oversight of purity, dose accuracy, sterility, or even which form of the molecule you are getting, which is why a Certificate of Analysis is the single most important safety lever here. Second, a theoretical caution worth taking seriously: a signal that promotes cell migration and new blood-vessel growth deserves real thought for anyone with an active or recent cancer concern. That is a provider conversation, not a community call.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PK: PLASMA vs ACTIVITY (bar chart) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The practical part people get wrong</p>
+    <h2>Why weekly, not daily</h2>
+    <p>The most useful thing to understand about running TB-500 is that the molecule and its effect live on completely different clocks. The peptide itself clears your blood in about a day, but the repair signal it sets off, cell migration and tissue remodeling, keeps working for days after. Time it like a daily peptide and you would be chasing a level that no longer matters.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">How long each thing actually lasts, after one subcutaneous dose</p>
+      <p class="csub">From the TB-500 pharmacokinetic reference. The gap between the top bars and the bottom one is the whole reason for weekly dosing.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Peaks in blood (Tmax)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="10">~1.5 hours</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Plasma half-life</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="16">~2.5 hours</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cleared from plasma</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="30">~12.5 hours</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Repair signal keeps working</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">~4 to 7 days</div></div></div>
+      </div>
+      <p class="src">TB-500 PK reference (Tmax, half-life, plasma clearance, activity duration). Bars are scaled to show the plasma-versus-activity gap, not to exact hours.</p>
+    </div>
+    <div class="note">
+      <p class="h">The takeaway</p>
+      <p>Plasma life is hours, activity life is days, so a single weekly injection gives whole-body repair signaling without daily pinning. Because the effect lasts days, the exact day you dose matters far less than staying consistent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== TIMELINE (SVG) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">What a repair arc tends to look like</p>
+    <h2>The honest timeline</h2>
+    <div class="chart" data-animate>
+      <p class="ctitle">Illustrative recovery curve over a cycle</p>
+      <p class="csub">A shape drawn from how the mechanism and community experience are generally described, not a promise for any one person.</p>
+      <svg class="tl" viewBox="0 0 640 260" role="img" aria-label="Illustrative curve staying flat early, then rising through weeks and leveling">
+        <line x1="50" y1="20" x2="50" y2="210" stroke="#D6D8E2" stroke-width="1"/>
+        <line x1="50" y1="210" x2="610" y2="210" stroke="#D6D8E2" stroke-width="1"/>
+        <line x1="50" y1="80" x2="610" y2="80" stroke="#C6CBEA" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="614" y="84" font-family="ui-monospace,monospace" font-size="11" fill="#4453A6">plateau</text>
+        <path d="M50,198 C110,196 150,192 205,168 C270,138 320,110 400,98 C480,90 540,88 610,88"
+          fill="none" stroke="#4453A6" stroke-width="3" stroke-linecap="round"/>
+        <path d="M50,198 C110,196 150,192 205,168 C270,138 320,110 400,98 C480,90 540,88 610,88 L610,210 L50,210 Z"
+          fill="#4453A6" opacity="0.08"/>
+        <g font-family="ui-monospace,monospace" font-size="11" fill="#5D6478" text-anchor="middle">
+          <text x="50" y="228">Day 1</text><text x="205" y="228">Week 2</text>
+          <text x="330" y="228">Week 4</text><text x="470" y="228">Week 8</text><text x="590" y="228">Week 12</text>
+        </g>
+        <text x="120" y="150" font-family="ui-monospace,monospace" font-size="10.5" fill="#8a6416">often quiet early</text>
+      </svg>
+      <p class="src">Illustrative. Real response depends on the issue, the person, and everything else in the plan. Weeks 1-2 are often quiet by design, the signal works through slow migration and remodeling.</p>
+    </div>
+    <div class="flow" data-animate style="margin-top:1.4em">
+      <div class="step"><div class="n">WK 1-2</div><h4>Often quiet</h4><p>You are loading the repair signal. Because it works through cell migration and remodeling, week one rarely produces a dramatic felt effect. Do not read the quiet as failure and pile on dose.</p></div>
+      <div class="step"><div class="n">WK 2-6</div><h4>Where most notice</h4><p>Commonly reported: less day-to-day soreness, easier range of motion, faster bounce-back. Multi-site or hard-to-localize aches tend to shift first, consistent with the systemic framing.</p></div>
+      <div class="step"><div class="n">WK 6-12</div><h4>The cumulative stretch</h4><p>Where the anti-fibrotic, remodeling side is most discussed: gradual softening of stubborn areas, plus consolidation of the mid-cycle gains. Then cycle off rather than running open-ended.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RULE OUT IMPOSTORS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Before you credit the peptide</p>
+    <h2>Give the credit honestly</h2>
+    <p>If something improves, it is worth asking what actually did the work, so you learn the right lesson for next time.</p>
+    <ul>
+      <li><strong>Time and rest.</strong> Many soft-tissue issues settle on their own over weeks. A weekly peptide started mid-recovery can easily get credit that healing itself earned, especially since TB-500's window overlaps the natural repair timeline.</li>
+      <li><strong>The foundation you fixed at the same time.</strong> Better sleep, more protein, smarter training load, and backing off the aggravating activity are powerful on their own, and people often change these at the exact moment they start a compound.</li>
+      <li><strong>The real diagnosis you skipped.</strong> Persistent or multi-site pain can have a specific cause that needs specific care. A systemic-feeling ache is not automatically a "whole-body repair" problem, and a peptide is not a substitute for finding out what is actually wrong.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== THE STACKS MENU (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The honest toolkit, pairing by pairing</p>
+    <h2>How it is actually stacked, with real pros and cons</h2>
+    <p>TB-500's most distinctive use is as the systemic anchor other repair compounds build around. Here are the pairings people reach for and the honest trade-off of each. Tags show whether the partner adds mainly <span style="color:var(--blood-deep);font-weight:600">local</span> repair, a <span style="color:var(--good);font-weight:600">different system</span> entirely, or <span style="color:#8a6416;font-weight:600">structure-building</span>. These are effect-level pairings for learning, not prescriptions, and none of it is about mixing compounds in one syringe.</p>
+
+    <div class="lever">
+      <div class="top"><h3>+ BPC-157, the "Wolverine" stack</h3><span class="tag short">Local + systemic</span></div>
+      <p class="mech">The most popular repair combination, and the base everything else builds on. TB-500 drives systemic cell migration, body-wide; BPC-157 drives local blood-vessel growth right at the injury site. Different jobs, same goal.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Covers local and whole-body repair at once</li>
+          <li>The two most-discussed repair peptides, paired</li>
+          <li>Schedules rarely clash: BPC is usually daily, TB-500 weekly</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Doubles the same caveats: thin human proof, unregulated market</li>
+          <li>Easy to over-attribute a general "feel better" to the pair</li>
+          <li>Two compounds means two sourcing and sterility risks</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>On mixing:</b> the BlessUp default is separate pins for this pair, it keeps dose tracking clean and removes handling guesswork. <a href="https://den.onepin.app/bpc-157.html" style="font-weight:600">Read the BPC-157 report</a> for the local half of the stack.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>+ GHK-Cu, the "GLOW" pairing</h3><span class="tag both">Structure-building</span></div>
+      <p class="mech">TB-500 populates the repair site with cells; the copper peptide GHK-Cu then builds and cross-links the collagen scaffold and supports skin. Complementary jobs, migration first, structure on top.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Pairs cell movement with actual scaffold-building</li>
+          <li>Popular for skin, connective tissue, and appearance goals</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>A community convention, not a clinically studied formula</li>
+          <li>Never mix in one syringe, copper degrades TB-500's methionine</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Hard rule:</b> keep TB-500 and GHK-Cu in separate pins. The copper drives oxidation that damages TB-500 in the barrel.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>+ GH-axis peptides (Ipamorelin/CJC-1295, Tesamorelin)</h3><span class="tag long">Different system</span></div>
+      <p class="mech">Growth-hormone-releasing peptides add a separate pro-repair signal alongside TB-500's migration effect, amplifying recovery from a different angle.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Adds a genuinely different repair lever, not more of the same</li>
+          <li>Common in recovery and body-composition discussions</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>More compounds, more caveats and more to track</li>
+          <li>Timing matters: GH-axis peptides need a fasted window</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Timing note:</b> run the GH-axis peptide in a fasted window (food blunts the GH pulse); TB-500 itself is food-flexible and timing-agnostic.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>+ SS-31, cellular-energy support</h3><span class="tag long">Different system</span></div>
+      <p class="mech">SS-31 supports the mitochondria, the cell's energy plants, on a pathway entirely separate from TB-500's repair signal. A non-overlapping pairing people use when fatigue and slow recovery run together.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Targets energy, not repair, so the mechanisms do not compete</li>
+          <li>Reasonable when low energy is part of the picture</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Purely theory/anecdotal as a pairing</li>
+          <li>Another research compound with its own caveats</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference:</b> treat as an add-on for a specific reason, not a default part of the stack.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== DOSING (reference example) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The numbers people ask about</p>
+    <h2>How it is dosed, honestly labeled</h2>
+    <p>Here is the community-standard cadence, with the honest label attached: there is no human trial of the LKKTETQ fragment on any dose or schedule. The weekly numbers come from real-world practice plus the multi-day activity window, not a study. Every figure is an example to finalize with a provider, not a prescription.</p>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">The governing idea</p><h4>Minimum effective dose</h4>
+        <ul>
+          <li>Start <strong>2 mg once weekly</strong>, subcutaneous</li>
+          <li>Hold there ~3 to 4 weeks and assess</li>
+          <li>Give the repair signal its multi-week runway</li>
+          <li>Food-flexible; no fasting window needed</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Only if recovery lags</p><h4>Optional loading</h4>
+        <ul>
+          <li>Add a second weekly dose (~<strong>4 mg/week</strong>) for 4 to 6 weeks</li>
+          <li>Then drop back to <strong>2 mg weekly</strong> maintenance</li>
+          <li>Typical cycle: <strong>8 to 12 weeks on, 4 weeks off</strong></li>
+          <li>Structure, not endless use</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule, if you take nothing else</p>
+      <p>Do not load just because week one is quiet, that quiet is the mechanism, not a failure. Give the 2 mg weekly start its full runway before adding a second dose or another compound. Patience beats stacking up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SHORT vs LONG PLAN =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>If you are researching this, do it in order</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First, before anything</p><h4>Foundation</h4>
+        <ul><li>Get the actual problem evaluated</li><li>Fix sleep, protein, and training load</li><li>Back off what is aggravating it</li><li>Verify any source, and ask for a COA</li></ul>
+      </div>
+      <div class="p later">
+        <p class="k">Only then, and with a provider</p><h4>If you go further</h4>
+        <ul><li>Start at the minimum, one variable at a time</li><li>Give it the multi-week runway before judging</li><li>Run in defined blocks, not forever</li><li>Track the real outcome, including what else changed</li></ul>
+      </div>
+    </div>
+    <div class="note good">
+      <p class="h">The same rule that governs its louder cousin</p>
+      <p>A peptide is the last 10 percent, never the first. If the foundation is not handled, no compound will save it, and you will not even be able to tell whether it helped.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>Recovery is built here first</h2>
+    <h4>Protein and overall fuel</h4><p>Repair is a building project and protein is the material. TB-500 can signal repair cells to migrate, but amino acids are the bricks they build with. Consistently getting enough, spread across the day, is the highest-leverage thing on this whole page. Under-eating stalls healing no matter what else is on board.</p>
+    <h4>Sleep</h4><p>The bulk of real tissue repair happens while you sleep. Chasing recovery with a weekly compound while running on five hours a night is working against yourself. This is the highest-leverage free lever there is.</p>
+    <h4>Load management and movement</h4><p>Tissue heals to the demands you place on it. Gentle, progressive loading guided by a good rehab plan builds stronger tendon and ligament than rest alone. The compound conversation should sit on top of smart loading, never replace it.</p>
+    <h4>Protect the blood flow</h4><p>Because repair depends on getting cells and oxygen to the site, the everyday things that choke circulation work directly against the goal. Nicotine in any form narrows vessels and cuts blood flow to healing tissue; heavy alcohol wrecks both collagen-building and sleep. Cutting these does more than most supplements.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support supplements, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Adequate protein, plus vitamin C for collagen</h4><p>Protein is the raw material; vitamin C is a required cofactor for the enzymes that cross-link and stabilize new collagen. The genuinely well-supported base of any repair effort. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Collagen peptides, zinc, vitamin D, omega-3s</h4><p>Each has real support for the repair environment, correcting a zinc or vitamin D deficiency measurably helps healing, and omega-3s help inflammation resolve cleanly. Useful alongside the basics, not as a fix.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Creatine and magnesium</h4><p>Creatine supports the strength and rehab work that turns healed tissue into resilient tissue; magnesium supports muscle, connective tissue, and the sleep where recovery actually happens. Indirect, but sensible.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>The endless "tendon repair" and "recovery stack" proprietary blends</h4><p>Mostly marketing wrapped around a few reasonable ingredients at token doses. Read the label, not the front of the bottle.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Chronic NSAIDs and heavy alcohol while rebuilding tissue</h4><p>Not a supplement, but worth naming: daily anti-inflammatories can blunt the tendon and bone healing you are trying to support, and alcohol pushes against nearly every recovery goal at once. If an NSAID is prescribed, do not stop it for this, raise the timing with your provider.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== PEPTIDES =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The honest peptide angle</p>
+    <h2>Where TB-500 honestly fits</h2>
+    <p>If someone has the foundation handled, has had the real problem evaluated, is working with a provider, and has a legitimate source with a COA, TB-500 is one of the more interesting research compounds to learn about, especially for systemic, multi-site, or stubborn connective-tissue recovery. That is a real place. It is also a narrow one. It is not a first move, not a substitute for a diagnosis, and not the whole-body miracle the loudest posts sell, and the fragment-versus-protein question means you may not even have the molecule you think you do.</p>
+    <p>You will most often hear it discussed with BPC-157 in the Wolverine stack, with GHK-Cu in the GLOW pairing, or as part of the four-peptide KLOW blend. Those combinations are popular, but they inherit every one of the same caveats, thin human proof and an unregulated market, so the honesty does not halve when you stack, it doubles.</p>
+    <a class="xlink" href="https://den.onepin.app/bpc-157.html">&rarr;&nbsp; Read the companion BPC-157 report</a>
+    <p class="small" style="margin-top:1.2em">You can map goals to compounds and keep your own notes in the OnePin app. Treat everything there as education to research, never as a protocol to copy.</p>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I actually had this problem evaluated, or am I guessing it is a "whole-body repair" issue?</p></div>
+      <div class="row"><span class="box"></span><p>Is my sleep, protein, and training load genuinely handled first?</p></div>
+      <div class="row"><span class="box"></span><p>Am I subject to drug testing? TB-500 is prohibited in tested sport.</p></div>
+      <div class="row"><span class="box"></span><p>Do I have a legitimate source and a COA that says which form this actually is?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER + SCREENING =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, is there any reason I should not explore this?</p></div>
+      <div class="row"><span class="box"></span><p>What should actually be evaluated or ruled out about my issue first?</p></div>
+      <div class="row"><span class="box"></span><p>What would you want to monitor if I chose to go further?</p></div>
+    </div>
+    <h3>Worth knowing going in</h3>
+    <ul>
+      <li><strong>Your actual diagnosis:</strong> the single most valuable thing to have before any compound, especially for a systemic-feeling problem.</li>
+      <li><strong>Any cancer history:</strong> a signal that promotes cell migration and blood-vessel growth deserves real caution here.</li>
+      <li><strong>Whether you are tested:</strong> TB-500 is WADA-prohibited (class S2) at all times, in and out of competition.</li>
+      <li><strong>Your source and its COA:</strong> purity, dose accuracy, sterility, and which form of the molecule are not guaranteed in this market.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>See a professional promptly, not a peptide</h3>
+      <p style="color:#EFCFC9;margin:0 0 12px;max-width:none">Some things are not recovery questions at all. If any of these fit, get evaluated first.</p>
+      <ul>
+        <li>Pain with fever or feeling generally unwell</li>
+        <li>A joint that is hot, red, and swollen</li>
+        <li>Numbness, weakness, or loss of function</li>
+        <li>Pain that wakes you at night or steadily worsens</li>
+        <li>New, widespread, or unexplained pain</li>
+        <li>An injury that is not improving on a sensible timeline</li>
+      </ul>
+      <p class="fast">These deserve a real evaluation, not a workaround. Getting the right diagnosis is the fastest path to healing, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Curious, not credulous</h2>
+    <p>TB-500 sits on a genuinely interesting mechanism, the movement of repair cells to wherever the body needs them, and as BPC-157's systemic partner it earns a place in the conversation. But interesting is not the same as proven, most of the evidence is on a different molecule than the one in the vial, and the fragment people inject has essentially no human trial behind it. The strong move is to hold all of that at once: learn it deeply, keep the foundation first, verify your source and its COA, respect that it is banned in tested sport, and involve a real provider. That is not the cautious choice. That is the wise one.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:60ch;margin:0 auto 18px">Education only, not medical advice. TB-500 is investigational, not an approved medicine, and prohibited in tested sport. Nothing here is a prescription or a substitute for your own clinician and your own labs. Compounds and doses named are examples for discussion. For research and educational purposes, adults 21 and over.</p>
+    <p class="sig">Repair travels. Learn it slow, bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Peer-reviewed references retrieved from PubMed. Nearly all are thymosin beta-4 (the parent protein) in animal models, cell culture, and early-phase human dermal studies, not the injected "TB-500" fragment as sold. This list reflects that honestly.</p>
+    <ol>
+      <li>Goldstein AL, Hannappel E, Kleinman HK. Thymosin beta4: actin-sequestering protein moonlights to repair injured tissues. <em>Trends Mol Med.</em> 2005. The foundational overview of thymosin beta-4 as the major actin-sequestering molecule in tissue repair. <a href="https://pubmed.ncbi.nlm.nih.gov/16099219/">PMID 16099219</a></li>
+      <li>Philp D, Badamchian M, Scheremeta B, et al. Thymosin beta 4 and a synthetic peptide containing its actin-binding domain promote dermal wound repair in db/db diabetic mice and in aged mice. <em>Wound Repair Regen.</em> 2003. The 7-amino-acid LKKTETQ fragment matched the parent molecule's wound-repair activity, directly relevant to the fragment-versus-protein question. <a href="https://pubmed.ncbi.nlm.nih.gov/12581423/">PMID 12581423</a></li>
+      <li>Kleinman HK, Sosne G. Thymosin beta4 Promotes Dermal Healing. <em>Vitam Horm.</em> 2016. Reviews preclinical dermal models and reports that thymosin beta-4 accelerated repair in phase 2 trials of pressure ulcers, stasis ulcers, and epidermolysis bullosa wounds. <a href="https://pubmed.ncbi.nlm.nih.gov/27450738/">PMID 27450738</a></li>
+      <li>Sosne G, Qiu P, Kurpakus-Wheater M. Thymosin beta 4: A novel corneal wound healing and anti-inflammatory agent. <em>Clin Ophthalmol.</em> 2007. Summarizes thymosin beta-4's pro-migration, anti-inflammatory, and anti-apoptotic effects. <a href="https://pubmed.ncbi.nlm.nih.gov/19668473/">PMID 19668473</a></li>
+      <li>Shrivastava S, Srivastava D, Olson EN, DiMaio JM, Bock-Marquette I. Thymosin beta4 and cardiac repair. <em>Ann N Y Acad Sci.</em> 2010. Reviews systemic thymosin beta-4's ability to limit cardiac cell death, stimulate vessel growth, and activate progenitor cells in animal models. <a href="https://pubmed.ncbi.nlm.nih.gov/20536454/">PMID 20536454</a></li>
+    </ol>
+    <p class="small">Citations sourced via PubMed. TB-500 is investigational; the strongest evidence is preclinical thymosin beta-4 work with early-phase human data for the full protein, and there is no robust human efficacy trial of the injected fragment as sold.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero: draw in the systemic migration trails
+  var fibs=document.querySelectorAll('#migrateArt .rfib');
+  fibs.forEach(function(p){
+    var len=p.getTotalLength();
+    p.style.strokeDasharray=len; p.style.strokeDashoffset=reduce?0:len;
+    p.style.transition=reduce?'none':'stroke-dashoffset 1.7s cubic-bezier(.4,0,.2,1)';
+  });
+  setTimeout(function(){fibs.forEach(function(p){p.style.strokeDashoffset=0;});}, reduce?0:350);
+
+  // animate bars/flow on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bar-fill').forEach(function(f){
+          if(reduce){f.style.transition='none';}
+          f.style.width=f.getAttribute('data-w')+'%';
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('[data-animate]').forEach(function(el){
+    if(reduce){el.querySelectorAll('.bar-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById('runQuiz');
+  var resetBtn=document.getElementById('resetQuiz');
+  var result=document.getElementById('result');
+  var quiz=document.getElementById('quiz');
+  if(runBtn && quiz){
+    function score(){
+      var s=0, key=parseInt(document.getElementById('q_hct').value,10)||0; s+=key;
+      var r=quiz.querySelector('input[name="route"]:checked'); if(r) s+=parseInt(r.value,10);
+      var w=quiz.querySelector('input[name="wada"]:checked'); var wada=w?parseInt(w.value,10):0;
+      var flags=0;
+      quiz.querySelectorAll('#symptoms input:checked').forEach(function(c){flags+=parseInt(c.value,10);});
+      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
+      return {s:s, key:key, flags:flags, wada:wada};
+    }
+    function show(band,cls,head,body){
+      result.className='result show '+cls;
+      document.getElementById('rBand').textContent=band;
+      document.getElementById('rHead').textContent=head;
+      document.getElementById('rBody').textContent=body;
+      result.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+    runBtn.addEventListener('click',function(){
+      var r=score();
+      if(r.wada>=9){ show('Prohibited in tested sport','act','This one is off the table for you','TB-500 is WADA-prohibited (class S2) at all times, in and out of competition. If you are tested, this is not a compound to explore. Put your energy into the foundation and provider-guided rehab instead.'); return; }
+      if(r.flags>=2 || r.key>=11){ show('Get evaluated first','act','This is a see-someone situation','What you described is not a recovery-compound question. Please get it properly evaluated by a professional before considering anything else. That is the fastest path to healing.'); return; }
+      if(r.s>=8){ show('Evaluation before compounds','act','Get the real picture first','There is enough here that a proper evaluation should come before reaching for any compound. Learn all you want, but let a provider look at the actual issue first.'); return; }
+      if(r.s>=4){ show('Foundation first','watch','Handle the basics before the extras','Your foundation has some gaps to close first: sleep, protein, training load, and the actual cause. Fix those, and you may not need anything else. Keep learning in the meantime.'); return; }
+      show('Thinking about it the right way','low','You are approaching this wisely','You are learning before leaping, which is exactly right. Keep the foundation first, verify any source and its COA, and involve a provider before going further. Enjoy the education.');
+    });
+    resetBtn.addEventListener('click',function(){
+      document.getElementById('q_hct').value='0';
+      quiz.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});
+      result.className='result';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
