@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Mitochondrial Peptide Class, Decoded: MOTS-c, Humanin, SS-31 (Elamipretide) - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - The Mitochondrial Peptide Class (re-skinned "Thick Blood" layout)
+  Skin: copper-flame (energy / the cell's furnace) primary + electric cyan (the charged membrane) secondary. Theme: "the furnace".
+  Hero motif: a mitochondrion cross-section with folded inner-membrane cristae + an ATP spark (the powerhouse).
+  Report #10 in the series (siblings: bpc-157, tb-500, copper-peptides, glp-class, gh-secretagogues, melanocortins, cognitive-peptides, longevity-senolytics, immune-thymic). ASCII + HTML entities only. No em dashes. Education-only / 21+.
+  Load-bearing citations PubMed-verified: Lee 2015 (MOTS-c discovery, PMID 25738459), Karaa 2020 (elamipretide MMPOWER-2, primary endpoint missed, PMID 32096613). MMPOWER-3 (Phase 3) is the honest negative anchor.
+-->
+<style>
+  :root{
+    --paper:#F3EEE8; --surface:#FBF8F4; --surface-2:#EBE3DA;
+    --ink:#241A12; --ink-soft:#453629; --muted:#6E6155;
+    --line:#DBD1C5; --line-soft:#E8E0D6;
+    /* PRIMARY accent (copper-flame = cellular energy / the furnace) - keeps --blood var name */
+    --blood:#BC5A28; --blood-deep:#8A3A16; --blood-tint:#F3DBCA;
+    /* SECONDARY accent (electric cyan = the charged inner membrane) */
+    --plasma:#1E8CA3; --plasma-soft:#9FCFDA; --plasma-tint:#D6EBF0;
+    --good:#4F8A46; --good-tint:#DEEBD8;
+    --amber:#BC8B1C; --amber-tint:#F5EBCA;
+    --danger:#A22E1F; --danger-tint:#F1D8D2;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#1D130C;color:#F1E2D6;border-top:1px solid #3A2416;border-bottom:1px solid #3A2416}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(31px,5.6vw,52px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:176px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#166477,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#3a6c34,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .matrix-wrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px}
+  .matrix{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);min-width:600px}
+  .matrix th,.matrix td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .matrix .ev-h{color:var(--good);font-weight:600}
+  .matrix .ev-m{color:var(--plasma);font-weight:600}
+  .matrix .ev-l{color:var(--danger);font-weight:600}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.approved{background:var(--good-tint);color:var(--good)}
+  .tag.modest{background:var(--plasma-tint);color:#166477}
+  .tag.thin{background:var(--blood-tint);color:var(--blood-deep)}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--danger)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--blood);line-height:1}
+  .rules .r p{margin:0;font-size:15px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--danger-tint);border-color:#e5c3bc}
+  .plan .later{background:var(--good-tint);border-color:#caddc4}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--danger)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--danger)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(36,26,18,.08)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--danger);border-color:var(--danger)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #caddc4}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #b6d3dc}
+  .result.watch .band{color:#166477}
+  .result.act{background:var(--danger-tint);border:1px solid #e5c3bc}
+  .result.act .band{color:var(--danger)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#1F130C;border:1px solid #48281a;border-radius:14px;padding:24px 26px;color:#F1D9CC}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFC0;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#D08A5F}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC4B2}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Energy &amp; Longevity</b></p>
+        <h1>The mitochondrial peptide class, decoded</h1>
+        <p class="lede" style="max-width:38ch;margin:.1em 0 .5em">MOTS-c, Humanin, and SS-31. Three peptides aimed at the cell's power plant, with wildly different amounts of proof.</p>
+        <p class="thesis">Two send a signal. One repairs the hardware. Only one has real human trials, and even those are mixed.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a mitochondrion cross-section, folded inner-membrane cristae + an ATP energy spark (the powerhouse). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="184" height="316" viewBox="0 0 184 316" fill="none" xmlns="http://www.w3.org/2000/svg" id="mitoArt">
+          <rect x="14" y="24" width="156" height="268" rx="16" fill="#1D130C"/>
+          <!-- outer membrane (copper) -->
+          <ellipse cx="92" cy="150" rx="58" ry="86" fill="none" stroke="#C4632E" stroke-width="4"/>
+          <ellipse cx="92" cy="150" rx="47" ry="75" fill="none" stroke="#7A3A1B" stroke-width="2"/>
+          <!-- cristae (cyan folds), each draws in -->
+          <g stroke="#2FA6BC" stroke-width="3" stroke-linecap="round" fill="none" class="crista">
+            <path class="fold" d="M55 108 C 84 100, 84 128, 55 122"/>
+            <path class="fold" d="M129 116 C 100 108, 100 138, 129 132"/>
+            <path class="fold" d="M55 150 C 90 142, 90 172, 55 164"/>
+            <path class="fold" d="M129 158 C 96 150, 96 182, 129 176"/>
+            <path class="fold" d="M60 192 C 88 184, 88 210, 62 204"/>
+          </g>
+          <!-- ATP energy spark -->
+          <g class="spark">
+            <circle cx="92" cy="150" r="9" fill="#F0A65C"/>
+            <path d="M92 137 L86 152 L94 152 L88 165" stroke="#FCE3B6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text x="92" y="262" font-family="ui-monospace,monospace" font-size="8.5" fill="#C79B7E" text-anchor="middle">the cell's furnace, folded for surface</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">3</div><div class="lbl">mitochondrial peptides in play, all aimed at the same organelle from different angles</div></div>
+      <div class="stat"><div class="n">700<small>+</small></div><div class="lbl">patients studied for the one synthetic member (SS-31), yet its biggest trial missed its main goal</div></div>
+      <div class="stat"><div class="n">0</div><div class="lbl">completed human dosing trials for the two natural members. Mechanism and biomarkers only</div></div>
+    </div>
+    <p class="src">SS-31 (elamipretide) is FDA-approved for one rare disease and has real trials, but its largest myopathy trial missed its primary endpoints. MOTS-c and Humanin have compelling biology and little-to-no human outcome data. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen them sold as the same idea: MOTS-c, Humanin, and SS-31, a set of peptides that all promise to fix your mitochondria, the tiny power plants inside every cell that turn food and oxygen into usable energy.</p>
+    <p>Here is the honest version. These three do not do the same job, and they are not backed by the same proof. Two of them (MOTS-c and Humanin) are <strong>mitochondrial-derived peptides</strong>, tiny signals your own mitochondria actually make, that decline as you age. They are messengers: MOTS-c tunes your metabolism, Humanin protects stressed cells from dying. The third, SS-31, is a <strong>synthetic</strong> peptide that does something different entirely, it physically stabilizes the inner membrane where energy is made. And it is the only one of the three with real human clinical trials behind it. The catch is that those trials have been mostly disappointing. So the useful thing we can do is line each one up against what it actually does and the proof it actually has. We do honest, not hype.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician. Of this class, only SS-31 (elamipretide) is an approved medicine, and only for one rare condition (Barth syndrome); every other use is off-label and investigational. MOTS-c and Humanin are research compounds with no completed human dosing trials. Any dose named here is an example for discussion, never a prescription.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you cleared to explore this class, and which one fits?</h2>
+    <p>This flags the real hard stops, and if you are clear, points toward the compound that matches your goal. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Mitochondrial peptide readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the hard stops. Do any of these apply to you? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">Active or recent cancer, or currently in cancer treatment</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pregnant, breastfeeding, or trying to conceive</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually weighing this class for?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Metabolism, insulin sensitivity, or endurance</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Cellular protection, brain, or longevity</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">A mechanism-first energy or recovery tool</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these in your picture? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="2"><span class="chip">On a glucose-lowering drug (metformin, insulin, a GLP-1)</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Reduced kidney function or on kidney-stressing drugs</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">A drug-tested competitive athlete</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is the real energy foundation in place? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">I am mostly sedentary / not training</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Sleep or nutrition are hit or miss</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to source it with no provider involved</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider about your own history and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + MATRIX =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>Three peptides, one power plant</h2>
+    <p>Your <strong>mitochondria</strong> are the power plants inside your cells: they take food and oxygen and produce ATP, the fuel that runs everything you do. As you age, mitochondria get fewer, leakier, and less efficient, which is a genuine part of why energy and resilience fade. All three of these peptides aim at that decline, but from very different angles:</p>
+    <ul>
+      <li><strong>MOTS-c.</strong> A 16-amino-acid peptide your own mitochondria make (encoded in mitochondrial DNA). It acts like an <strong>exercise signal</strong>, switching on AMPK, the same master energy sensor a hard workout or a fast turns on. Studied for insulin sensitivity, fat burning, and endurance.</li>
+      <li><strong>Humanin.</strong> The first mitochondrial-derived peptide ever discovered, a <strong>cell-survival signal</strong>. It raises a stressed cell's threshold for dying, and higher natural levels track with human longevity. Studied for neuroprotection and cellular resilience.</li>
+      <li><strong>SS-31 (elamipretide).</strong> The outlier, a <strong>synthetic</strong> peptide, not one your body makes. It concentrates in the inner mitochondrial membrane and stabilizes <strong>cardiolipin</strong>, the fat that holds the energy machinery in place. The only member with real clinical trials and an FDA approval.</li>
+    </ul>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>Compound</th><th>What it does to the mitochondria</th><th>Studied for</th><th>Evidence level</th><th>Route</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>MOTS-c</th><td>Signals: switches on AMPK (an exercise / fasting mimic)</td><td>Insulin sensitivity, fat burning, endurance</td><td class="ev-m">Strong animal data; no human dosing trials</td><td>SubQ</td></tr>
+          <tr><th>Humanin</th><td>Signals: protects stressed cells from dying (anti-apoptotic)</td><td>Neuroprotection, cellular resilience, longevity</td><td class="ev-l">Mechanism plus human association; no efficacy trials</td><td>SubQ</td></tr>
+          <tr><th>SS-31 / elamipretide</th><td>Repairs: stabilizes cardiolipin, holds the membrane together</td><td>Mitochondrial myopathy, heart, eye disease</td><td class="ev-h">700+ patients, FDA-approved (Barth); trials mixed</td><td>SubQ / IV</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small">One name to keep straight: SS-31 goes by several labels, elamipretide, MTP-131, and the older research name Bendavia. They are the same molecule. And "mitochondrial peptides" here means these three specifically, not NAD+ boosters like NMN or NR, which chase a different mitochondrial problem and are covered in our <a href="https://den.onepin.app/longevity-senolytics.html">longevity and senolytics guide</a>.</p>
+
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"They fix your mitochondria." That flattens three very different stories into one. MOTS-c sends a metabolic signal, Humanin sends a survival signal, and only SS-31 physically repairs anything. More importantly, "fix" implies proven results in people. For the two natural peptides there are essentially no human outcome trials, and for the synthetic one the biggest trial was disappointing. The mechanisms are elegant. Proven benefit is a separate thing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The part the marketing flattens</p>
+    <h2>Elegant biology is not the same as human proof</h2>
+    <p>They get sold on the same shelf as if the evidence were equal. It is not. Here is an honest read of how much real human data sits behind each. Longer bars mean deeper human evidence, not "works better," and even the longest bar comes with a heavy asterisk.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of human evidence, by compound</p>
+      <p class="csub">SS-31 has by far the most human data, and its biggest trial still missed its primary endpoint. The two natural peptides are mechanism and biomarkers.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">SS-31 (elamipretide)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">700+ patients, FDA-approved, trials mixed</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">MOTS-c</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="34">Strong animal data; human biomarker only</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Humanin</div><div class="bar-track"><div class="bar-fill b-good" data-w="20">Mechanism plus longevity association</div></div></div>
+      </div>
+      <p class="src">SS-31: MMPOWER-2 (Karaa 2020) showed a signal but missed its primary walking endpoint, and the larger Phase 3 (MMPOWER-3) missed its primary endpoints. MOTS-c: the discovery and metabolic work is preclinical (Lee 2015). Humanin: human data is associative. Full citations below.</p>
+    </div>
+    <p>Read the shape honestly. Even the compound with the deepest record, SS-31, has a mixed clinical track record, and its FDA approval covers only one rare disease. The two natural peptides are earlier still, exciting biology waiting on human outcome trials that have not been done. If you are drawn to this class, go in knowing the proof is thinner than the promise.</p>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>Three different ways to help a power plant</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>MOTS-c tunes the software</h4><p>MOTS-c flips on AMPK, your cell's master energy switch, the same one exercise and fasting trigger. That pushes muscle to burn fuel more efficiently. It is a signal that fades fast but whose effect on your metabolism lingers for a day or two.</p></div>
+      <div class="step"><div class="n">02</div><h4>Humanin guards the cell</h4><p>Humanin blocks the internal "self-destruct" step (it neutralizes a protein called BAX) and flips on survival signaling. It does not add energy, it keeps a stressed cell, especially a neuron, from tipping over into death.</p></div>
+      <div class="step"><div class="n">03</div><h4>SS-31 rebuilds the hardware</h4><p>SS-31 concentrates in the inner membrane and clamps onto cardiolipin, the fat that keeps the energy-producing machinery lined up. That preserves structure and cuts the leak of damaging free radicals at the source, rather than mopping them up after.</p></div>
+    </div>
+    <p>That is the whole class in three sentences: a metabolic signal, a survival signal, and a structural repair. It is why they do not really compete, and also why "stack them all" is a marketing idea, not an evidence-based one. Each is aimed at a different problem, and each carries a different (mostly unproven) level of support.</p>
+  </div>
+</section>
+
+<!-- =============== THE THREE (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The three, with honest pros and cons</p>
+    <h2>Each one, against its evidence</h2>
+    <p>Same target organelle, very different levels of proof. Tags show the standing: <span style="color:var(--good);font-weight:600">clinical</span>, <span style="color:#166477;font-weight:600">emerging</span>, or <span style="color:var(--blood-deep);font-weight:600">preclinical</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>SS-31 (elamipretide)</h3><span class="tag approved">Clinical &middot; the evidenced one</span></div>
+      <p class="mech">A synthetic peptide that stabilizes cardiolipin in the inner membrane. The only member with real human trials and an FDA approval, and the only one whose disappointing results we can actually see.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>By far the deepest record: over 700 patients studied and FDA-approved for the rare mitochondrial disease Barth syndrome</li>
+          <li>The best-defined mechanism of the three: it concentrates about a thousand-fold in the inner membrane and reduces free-radical leak at the source</li>
+          <li>Generally well tolerated in trials, with injection-site reactions the most common issue and no major organ toxicity flagged</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Its largest myopathy trial (Phase 3) missed its primary endpoints; only a genetic subgroup benefited</li>
+          <li>Its heart, eye, and kidney programs are early-stage signals, not proven wins</li>
+          <li>FDA approval is for one rare disease only. Energy, performance, and anti-aging use is entirely off-label</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the proven mechanism and the only real trials, but a mixed clinical scorecard. A provider-supervised, mechanism-first tool, not a sure thing. Given by injection or IV.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>MOTS-c</h3><span class="tag modest">Emerging &middot; the exercise mimic</span></div>
+      <p class="mech">A natural mitochondrial peptide that switches on AMPK, the same energy sensor exercise triggers. Exciting metabolic biology, with the human dosing evidence still missing.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Well-characterized "exercise in a signal" biology: activates AMPK, improves insulin sensitivity and fat burning in animals</li>
+          <li>A naturally occurring human peptide, generally very well tolerated, not a stimulant</li>
+          <li>Established in humans as a biomarker, its natural level tracks with metabolic health and rises with exercise</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The robust data is animal. There are no completed human trials of injecting it</li>
+          <li>It amplifies the exercise signal, so a sedentary user has far less for it to amplify</li>
+          <li>Can push blood sugar lower, so it stacks poorly with metformin, insulin, or GLP-1 drugs</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the most promising metabolic story, but human translation is still an assumption, not a result. Best paired with actual training. Given by subcutaneous injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Humanin</h3><span class="tag thin">Preclinical &middot; the survival signal</span></div>
+      <p class="mech">The first mitochondrial-derived peptide discovered, a cell-protection signal. The most speculative of the three, strong on mechanism, thin on human proof.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Solid protective biochemistry: blocks the cell's self-destruct step and switches on survival signaling</li>
+          <li>Higher natural levels are associated with human longevity, an intriguing signal</li>
+          <li>Real cell and animal neuroprotection data, especially in models of brain stress</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The most preclinical of the class: human data is purely associative, with no efficacy trials of supplementing it</li>
+          <li>A pro-survival signal is theoretically the wrong direction in active cancer, where cells already resist dying</li>
+          <li>Reported doses span a wide range with no validated window, human pharmacology, or safety ceiling</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> fascinating longevity biology, run it like a careful experiment, not a protocol. Cancer history is a real caution here. Given by subcutaneous injection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HONESTY NOTE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The line that matters most</p>
+    <h2>A great mechanism is not a result</h2>
+    <p>The single most important idea in this class is the gap between <strong>mechanism</strong> and <strong>outcome</strong>. Every one of these three has genuinely elegant biology, and mitochondrial decline is a real hallmark of aging, so the target is legitimate. But in humans, that is where it mostly stops. SS-31 has real trials and a mixed record. MOTS-c and Humanin have almost no human outcome data at all. Raising a lab value, activating a pathway, or protecting a cell in a dish is step one of a very long road to "this makes people healthier."</p>
+    <div class="note blood">
+      <p class="h">Two things to hold onto</p>
+      <p>First, these do not compete, so "stack all three" is a sales idea, not an evidence-based plan, each is aimed at a different piece with a different (mostly thin) level of proof. Second, the compound with the most human study, SS-31, is also the one whose disappointments we can actually see. That honesty cuts both ways: it is the most proven mechanism and the most clearly mixed results. Go in with clear eyes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SAFETY =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The most important section here</p>
+    <h2>The hard stops and cautions</h2>
+    <p>These are generally well tolerated, but a few situations are genuinely off-limits or need a provider, and the reasons come straight from the mechanisms.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Active or recent cancer</h4><p>This is the sharpest caution, and it is strongest for Humanin. Humanin is a pro-survival, anti-death signal, and resisting cell death is exactly what cancer cells do, so pushing that signal is theoretically the wrong direction. MOTS-c's AMPK pathway also intersects with cancer metabolism in complicated ways. This is a mechanistic concern, not a documented harm, but it is a firm reason to stop and clear it with an oncologist.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>Pregnancy and breastfeeding</h4><p>None of the three has human safety data in pregnancy or breastfeeding. Do not use if you are pregnant, breastfeeding, or trying to conceive. Clear that first.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>MOTS-c plus glucose-lowering drugs</h4><p>MOTS-c activates AMPK, the same pathway metformin works through, and it can lower blood sugar. Combined with metformin, insulin, or a GLP-1 drug, that risks pushing blood sugar too low. If you take any of those, this is a provider conversation, not a solo stack.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>SS-31 and kidney function</h4><p>SS-31 is cleared mainly by the kidneys. If your kidney function is reduced, or you take kidney-stressing drugs (certain antibiotics, chronic high-dose anti-inflammatories), that raises the load. Kidney function is the thing to monitor with this one.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Research status and competition testing</h4><p>MOTS-c and Humanin are research compounds with no approval and thin safety data, treat them as experimental. And MOTS-c is banned by the World Anti-Doping Agency (metabolic modulator class), so it is off-limits for drug-tested athletes.</p></div></div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule under all of it</p>
+      <p>If you have an active cancer history, this class (Humanin especially) is not a self-directed project, clear it with an oncologist first. Otherwise, match the compound to a real goal, respect the drug interactions, and build the energy foundation below first, because for most people it does more than any of these.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HOW TO CHOOSE (now/later plan) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>How to think about choosing, honestly</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First question</p><h4>Are you cleared at all?</h4>
+        <ul>
+          <li>No active or recent cancer (the sharpest line, especially for Humanin)</li>
+          <li>Not pregnant, breastfeeding, or trying to conceive</li>
+          <li>Glucose-lowering meds and kidney issues handled with a provider</li>
+          <li>Not a drug-tested athlete if MOTS-c is on the table</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Second question</p><h4>Which one, and is it worth it?</h4>
+        <ul>
+          <li>Metabolism and endurance point toward MOTS-c, best if you actually train</li>
+          <li>Cellular protection and longevity point toward Humanin, the most speculative</li>
+          <li>A proven mechanism with real (if mixed) trials points toward SS-31</li>
+          <li>For most people, the foundation below outperforms all three</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>Ask what specific problem you are solving. "Better mitochondria" is not a target, insulin sensitivity, endurance, recovery, or cellular protection are. Match the tool to the real goal, respect that the human proof is thin, and keep a provider in the loop. Matching beats maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>What actually builds mitochondria</h2>
+    <p>Here is the part no peptide wants you to hear: the single most powerful mitochondrial intervention known is free, and it is exercise. These peptides at best nudge on top of a foundation. Without it, there is far less for them to do.</p>
+    <h4>Exercise, the real driver</h4><p>Endurance work (steady zone-two cardio) plus resistance training is what actually builds new mitochondria and improves the ones you have. MOTS-c literally mimics the exercise signal, which is exactly why the best responders are people already training. There is no version of this where the injection replaces the work.</p>
+    <h4>Sleep and recovery</h4><p>Mitochondria repair and clear out damaged parts during sleep. Short or broken sleep measurably degrades energy metabolism. No peptide compensates for chronic sleep debt. Fix this first.</p>
+    <h4>Nutrition and body composition</h4><p>A protein-adequate, whole-food diet and a healthy weight keep mitochondria efficient; chronic overfeeding and excess fat make them leak. Periods of genuine hunger (a real fast or a lower-carb window) also flip on the same AMPK pathway MOTS-c targets, for free.</p>
+    <h4>Heat, cold, and not smoking</h4><p>Sauna and cold exposure are mild mitochondrial stressors that prompt adaptation, and smoking directly poisons the machinery. These are ordinary, evidence-aligned levers that dwarf what any of these peptides has been shown to do in people.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Exercise (endurance plus resistance), real sleep, and a healthy body composition</h4><p>The genuinely evidence-backed way to build and protect mitochondria. This does more than any peptide in this class. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>SS-31 as a provider-supervised, mechanism-first tool for a specific reason</h4><p>The one member with a proven mechanism and real trials, worth a measured, monitored trial with a defined endpoint, with the honest caveat that its clinical record is mixed. Not a casual purchase.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>MOTS-c or Humanin for general "mitochondrial optimization"</h4><p>Compelling biology, but no completed human dosing trials. Curiosity and a careful experiment, not confidence, and MOTS-c only really earns its keep alongside training.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Any of these (Humanin above all) with an active cancer history, without an oncologist</h4><p>The exact situation where a pro-survival or pro-growth signal can push the wrong way. This is a specialist decision, never a self-directed one.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I honestly ruled out the hard stops: active or recent cancer, and pregnancy?</p></div>
+      <div class="row"><span class="box"></span><p>What specific problem am I actually solving, metabolism, endurance, protection, or just "energy" in the abstract?</p></div>
+      <div class="row"><span class="box"></span><p>Am I already training, sleeping, and eating in a way that gives a mitochondrial peptide something to work with?</p></div>
+      <div class="row"><span class="box"></span><p>If I take a glucose-lowering drug or have kidney issues, have I accounted for the interaction?</p></div>
+      <div class="row"><span class="box"></span><p>Am I clear that the human proof here is thin, and is a provider genuinely involved?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, especially any cancer, is any mitochondrial peptide safe for me to consider?</p></div>
+      <div class="row"><span class="box"></span><p>If I take metformin, insulin, or a GLP-1, how would MOTS-c affect my blood sugar?</p></div>
+      <div class="row"><span class="box"></span><p>Should we check kidney function before and during anything like SS-31?</p></div>
+      <div class="row"><span class="box"></span><p>Given how thin the human evidence is, what realistic result should I even expect, and when would we call it and stop?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get medical help</h3>
+      <p style="color:#EFCFC0;margin:0 0 12px;max-width:none">A few situations are not "go slower," they are "stop and be seen."</p>
+      <ul>
+        <li>Symptoms of low blood sugar (shaking, sweating, confusion), especially on a glucose-lowering drug</li>
+        <li>Signs of a kidney problem: much less urine, swelling, unusual fatigue</li>
+        <li>A severe allergic reaction: swelling of the face or throat, trouble breathing</li>
+        <li>A spreading, hot, or painful injection site (a possible infection)</li>
+        <li>Any new or unusual lump or symptom you are worried about</li>
+      </ul>
+      <p class="fast">A mild injection-site reaction settles. A hypoglycemic episode, a kidney warning sign, or an allergic reaction do not wait. When in doubt, be seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Chase the mechanism, respect the missing proof</h2>
+    <p>The idea here is genuinely beautiful: your mitochondria are the furnace of every cell, they fade with age, and these three peptides each grab a different lever, MOTS-c the metabolic signal, Humanin the survival signal, SS-31 the structural repair. But two honest truths run underneath the marketing. First, they do not do the same job, so "stack all three for mitochondrial health" is a sales pitch, not a plan, each targets a different piece with a different level of support. Second, and this is the big one, the proof is thinner than the promise. The two natural peptides have almost no human outcome trials at all. The one synthetic peptide with real trials, SS-31, has a mixed-to-disappointing record and an FDA approval for exactly one rare disease. So enjoy the elegant biology, but do not confuse it with a result. For most people, the most powerful thing you can do for your mitochondria is not an injection, it is training, sleep, and hunger, the very signals MOTS-c is trying to imitate. If you do have a real reason and a clear head, favor the mechanism you can actually monitor, watch the cancer and blood-sugar and kidney lines, and do it with a provider. That is not the timid move. It is the one that respects how little we still know.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">This is educational information only and not a recommendation to use, purchase, or dose any compound; it does not replace evaluation by your own licensed provider. Of this class, only SS-31 (elamipretide) is an approved medicine, and only for the rare disease Barth syndrome; all other uses are off-label and investigational, and MOTS-c and Humanin are research compounds with no completed human dosing trials. Doses named are examples for discussion. Intended for adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Retrieved from PubMed. SS-31 (elamipretide) carries the class's real clinical evidence, shown here as both a signal (MMPOWER-2) and a missed primary endpoint (MMPOWER-2 walking test), with the larger Phase 3 also missing its primary endpoints. MOTS-c and Humanin rest on preclinical and associative data.</p>
+    <ol>
+      <li>Lee C, Zeng J, Drew BG, et al. The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance. <em>Cell Metab.</em> 2015;21(3):443-454. <a href="https://doi.org/10.1016/j.cmet.2015.02.009">doi:10.1016/j.cmet.2015.02.009</a> (the MOTS-c discovery and metabolic mechanism paper, preclinical)</li>
+      <li>Karaa A, Haas R, Goldstein A, et al. A randomized crossover trial of elamipretide in adults with primary mitochondrial myopathy. <em>J Cachexia Sarcopenia Muscle.</em> 2020;11(4):909-918. <a href="https://doi.org/10.1002/jcsm.12559">doi:10.1002/jcsm.12559</a> (MMPOWER-2: the six-minute walk primary endpoint was not met, P=0.08, though fatigue scores improved)</li>
+      <li>Chavez JD, Tang X, Campbell MD, et al. Mitochondrial protein interaction landscape reveals SS-31 stabilizes cardiolipin interactions and improves ADP sensitivity in aged mitochondria. <em>GeroScience.</em> 2023;45(6):3419-3434. <a href="https://doi.org/10.1007/s11357-023-00819-0">doi:10.1007/s11357-023-00819-0</a> (mechanism: how SS-31 acts on the aged inner membrane)</li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. SS-31's strong human record is in specific diseases (and its largest myopathy trial, MMPOWER-3, missed its primary endpoints, with benefit only in a genetic subgroup). MOTS-c has robust animal data but no completed human dosing trials; Humanin's human evidence is associative, higher natural levels track with longevity, without efficacy trials of supplementing it. This report is an honest educational map of the class, not a dosing sheet or a recommendation to use any compound.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: the cristae folds draw in, then the ATP spark pulses
+  var folds=document.querySelectorAll("#mitoArt .fold");
+  folds.forEach(function(s,i){
+    if(reduce) return;
+    var len=s.getTotalLength();
+    s.style.strokeDasharray=len; s.style.strokeDashoffset=len;
+    s.style.transition="stroke-dashoffset .8s cubic-bezier(.4,0,.2,1) "+(0.3+i*0.14)+"s";
+  });
+  setTimeout(function(){ folds.forEach(function(s){ s.style.strokeDashoffset=0; }); }, reduce?0:300);
+  var spark=document.querySelector("#mitoArt .spark");
+  if(spark && !reduce){
+    spark.style.opacity=0; spark.style.transition="opacity .6s ease 1.1s";
+    setTimeout(function(){ spark.style.opacity=1; }, 300);
+  }
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 metabolic, 1 protection/longevity, 2 mechanism-first, 3 learning
+    }
+    function anyStop(){
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      if(anyStop()){
+        show("A hard stop applies","act","This class is not a self-directed project for you",
+          "You marked one of the firm lines: an active or recent cancer history, or pregnancy. Because these peptides act on cell survival and growth signaling (Humanin in particular is a pro-survival signal, the wrong direction when cells already resist dying), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your oncologist or provider about your goal.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
+          "You flagged things that change the calculus: a glucose-lowering drug (which MOTS-c can compound into low blood sugar), reduced kidney function (which matters for SS-31), being sedentary (MOTS-c mostly amplifies training you are already doing), or planning to source it with no provider. None is an automatic no, but each needs a provider in the loop and the energy foundation (training, sleep, nutrition) handled first, because for most people that does more than any of these. Then revisit whether this class fits.");
+        return;
+      }
+      var map={
+        0:["Metabolism and endurance","MOTS-c is the fit, and it rewards training",
+           "A metabolic or endurance goal points to MOTS-c, which switches on AMPK, the same energy pathway exercise triggers. Two honest caveats: there are no completed human dosing trials yet, so this is extrapolated from strong animal data, and it amplifies the exercise signal, so it works best if you are already training. If you take a glucose-lowering drug, clear the interaction with a provider first."],
+        1:["Cellular protection and longevity","Humanin is the fit, and the most speculative",
+           "A protection or longevity goal points to Humanin, the cell-survival signal whose higher natural levels track with human lifespan. Be clear-eyed: this is the most preclinical member, its human data is purely associative, and a pro-survival signal is a real caution with any cancer history. Treat it as a careful experiment, not a protocol, and involve a provider."],
+        2:["A mechanism-first energy tool","SS-31 is the fit, with the most proof and the most caveats",
+           "Wanting a defined mechanism points to SS-31 (elamipretide), the only member with real human trials and an FDA approval. The honest catch: its biggest myopathy trial missed its primary endpoints, and its approval covers just one rare disease, so energy and anti-aging use is off-label. It is the mechanism you can actually monitor (watch kidney function), just not a sure thing. Do it with a provider."],
+        3:["Learning first","You are thinking about it the right way",
+           "Reading the whole class before reaching for one is exactly right. Learn that these are three different jobs, MOTS-c a metabolic signal, Humanin a survival signal, SS-31 a structural repair, and that the human proof is thin across all three. Rule out the cancer and pregnancy hard stops, put the energy foundation (training, sleep, nutrition) first, and if there is a real reason, favor the mechanism you can monitor with a provider. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
