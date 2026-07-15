@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Muscle &amp; Myostatin Peptide Class, Decoded: Follistatin, ACE-031, IGF-1 LR3, MGF - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - The Muscle & Myostatin Peptide Class (re-skinned "Thick Blood" layout)
+  Skin: oxblood/wine (strain, the brake) primary + pewter-slate (clinical, the honest gauge) secondary. Theme: "release the brake".
+  Hero motif: a muscle-fiber bundle growing, above a BROKEN chain link (myostatin = the removed brake).
+  Report #11 in the series (siblings: bpc-157, tb-500, copper-peptides, glp-class, gh-secretagogues, melanocortins, cognitive-peptides, longevity-senolytics, immune-thymic, mitochondrial-peptides). ASCII + HTML entities only. No em dashes. Education-only / 21+.
+  Load-bearing citations PubMed-verified: Campbell 2017 (ACE-031 DMD, HALTED for epistaxis/telangiectasias, PMID 27462804), Mendell 2015 (follistatin GENE THERAPY not injectable peptide, PMID 25322757), Rooks 2017 (bimagrumab mass-vs-function, PMID 28653345).
+-->
+<style>
+  :root{
+    --paper:#F1ECE6; --surface:#FBF7F2; --surface-2:#E8DFD7;
+    --ink:#241C1A; --ink-soft:#463831; --muted:#6E6058;
+    --line:#DAD0C7; --line-soft:#E7DFD7;
+    /* PRIMARY accent (oxblood / wine = strain, the brake) - keeps --blood var name */
+    --blood:#7A2A3C; --blood-deep:#521A28; --blood-tint:#EBD2D8;
+    /* SECONDARY accent (pewter-slate = the clinical, honest gauge) */
+    --plasma:#566169; --plasma-soft:#AEB8BF; --plasma-tint:#E1E5E8;
+    --good:#4E7A50; --good-tint:#DDE9DC;
+    --amber:#B0851E; --amber-tint:#F3EBCB;
+    --danger:#BE3A1C; --danger-tint:#F3DACF;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#1F1315;color:#F0E2E1;border-top:1px solid #3A2226;border-bottom:1px solid #3A2226}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(31px,5.6vw,52px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:176px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#3f4850,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#3a6039,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .matrix-wrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px}
+  .matrix{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);min-width:600px}
+  .matrix th,.matrix td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .matrix .ev-h{color:var(--good);font-weight:600}
+  .matrix .ev-m{color:var(--plasma);font-weight:600}
+  .matrix .ev-l{color:var(--danger);font-weight:600}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.approved{background:var(--good-tint);color:var(--good)}
+  .tag.modest{background:var(--plasma-tint);color:#3f4850}
+  .tag.thin{background:var(--blood-tint);color:var(--blood-deep)}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--danger)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--blood);line-height:1}
+  .rules .r p{margin:0;font-size:15px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--danger-tint);border-color:#e6c3b6}
+  .plan .later{background:var(--good-tint);border-color:#c8ddc6}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--danger)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--danger)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(36,28,26,.09)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--danger);border-color:var(--danger)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c8ddc6}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #bcc6cd}
+  .result.watch .band{color:#3f4850}
+  .result.act{background:var(--danger-tint);border:1px solid #e6c3b6}
+  .result.act .band{color:var(--danger)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#1E1210;border:1px solid #4a271f;border-radius:14px;padding:24px 26px;color:#F1D7CE}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCCC0;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#CE7A63}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC1B2}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Strength &amp; Growth</b></p>
+        <h1>The muscle and myostatin peptide class, decoded</h1>
+        <p class="lede" style="max-width:38ch;margin:.1em 0 .5em">Follistatin, ACE-031, IGF-1 LR3, and MGF. Four peptides sold as shortcuts to muscle, and the honest evidence is thin.</p>
+        <p class="thesis">Bigger is not the same as stronger, and a signal that says "grow" to every cell is not a free lunch.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a muscle-fiber bundle growing above a BROKEN chain link (myostatin = the removed brake). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="184" height="316" viewBox="0 0 184 316" fill="none" xmlns="http://www.w3.org/2000/svg" id="muscleArt">
+          <rect x="14" y="24" width="156" height="268" rx="16" fill="#1F1315"/>
+          <!-- broken brake chain (myostatin) at the top: two links pulling apart -->
+          <g stroke="#9A8890" stroke-width="3" fill="none">
+            <rect class="link link-l" x="66" y="52" width="22" height="15" rx="7"/>
+            <rect class="link link-r" x="96" y="52" width="22" height="15" rx="7"/>
+          </g>
+          <!-- muscle-fiber bundle (oxblood), each grows up from the baseline -->
+          <g class="bundle">
+            <rect class="fiber" x="52" y="96" width="16" height="128" rx="8" fill="#8A3348"/>
+            <rect class="fiber" x="74" y="80" width="16" height="144" rx="8" fill="#A23E52"/>
+            <rect class="fiber" x="96" y="88" width="16" height="136" rx="8" fill="#8A3348"/>
+            <rect class="fiber" x="118" y="104" width="16" height="120" rx="8" fill="#6E273A"/>
+          </g>
+          <!-- baseline -->
+          <rect x="46" y="224" width="92" height="4" rx="2" fill="#3A2226"/>
+          <text x="92" y="256" font-family="ui-monospace,monospace" font-size="8.5" fill="#B7929B" text-anchor="middle">release the brake, the body still decides</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">4</div><div class="lbl">muscle-building peptides in play, aimed at the same goal from two different directions</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">of the four (ACE-031) ever had real human trials, and that program was halted for safety</div></div>
+      <div class="stat"><div class="n">0</div><div class="lbl">are approved for building muscle, and the growth factors carry a real cancer caution</div></div>
+    </div>
+    <p class="src">Myostatin blockade reliably adds muscle mass, but human trials repeatedly failed to turn that into strength, and the one in-class human program (ACE-031) was stopped over bleeding side effects. The growth-factor members have no human muscle trials at all. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen them sold as the cheat code: Follistatin, ACE-031, IGF-1 LR3, and MGF, peptides that promise to override your body's limits and pack on muscle faster than training alone ever could.</p>
+    <p>Here is the honest version. These four split into two completely different strategies. Follistatin and ACE-031 are <strong>myostatin inhibitors</strong>: they release a natural brake. Your body makes a protein called <strong>myostatin</strong> whose whole job is to LIMIT how much muscle you build, and these mop it up so the brake comes off. IGF-1 LR3 and MGF work the opposite way, they are <strong>growth factors</strong> that press the accelerator, directly signaling muscle to grow. Both sound great on paper. But the proof is not there. The only member ever tested in real human trials, ACE-031, was halted for safety. The growth factors have never been trialed for muscle in people and carry a genuine cancer caution, because a signal that tells cells to grow does not only talk to muscle. So the useful thing we can do is line each one up against what it actually does and the proof it actually has. We do honest, not hype.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician. None of these four is approved for building muscle. ACE-031 was an investigational drug whose trials were stopped; Follistatin, IGF-1 LR3, and MGF are research compounds with essentially no human efficacy data for this use. All are banned in tested sport. Any dose named here is an example for discussion, never a prescription.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you cleared to explore this class, and which one fits?</h2>
+    <p>This flags the real hard stops, and if you are clear, points toward the compound that matches your goal. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Muscle peptide readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the hard stops. Do any of these apply to you? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">Active or recent cancer, or currently in cancer treatment</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pregnant, breastfeeding, or trying to conceive</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually weighing this class for?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Size and muscle mass</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Recovery and muscle repair</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">The most evidence-backed option</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these in your picture? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="2"><span class="chip">On a blood thinner, or a bleeding disorder</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Diabetes, or on insulin / glucose-lowering meds</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">A drug-tested competitive athlete</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is the real muscle-building foundation in place? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">I am not training hard or consistently</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Protein or sleep are hit or miss</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to source it with no provider involved</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider about your own history and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + MATRIX =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>Two strategies, one goal</h2>
+    <p>Your body actively limits its own muscle. A protein called <strong>myostatin</strong> is the brake: animals born without it (and a handful of rare humans) grow enormous, dense muscle. That single fact is the seed of this whole class. Two of these peptides release that brake; the other two skip it and push a growth signal directly:</p>
+    <ul>
+      <li><strong>Follistatin (FST-344).</strong> A natural protein that binds and neutralizes myostatin (and related "activins"), taking the brake off. The dramatic muscle results come from gene therapy, not the injectable version sold online.</li>
+      <li><strong>ACE-031.</strong> An engineered decoy receptor that soaks up myostatin before it can act, a broader, longer-lasting brake release. The only member with real human trials, and they were halted for safety.</li>
+      <li><strong>IGF-1 LR3.</strong> A long-acting version of a natural growth factor (IGF-1) that presses the accelerator directly. Powerful on paper, unproven in people, and the highest-caution member.</li>
+      <li><strong>MGF (IGF-1Ec).</strong> A local "mechano-growth" splice of IGF-1 your muscle releases in a brief pulse after hard training, studied for local repair. Almost no human trial data for the injected form.</li>
+    </ul>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>Compound</th><th>How it works</th><th>Studied for</th><th>Evidence level</th><th>Route</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>ACE-031</th><td>Brake release: decoy soaks up myostatin + activins</td><td>Muscular dystrophy, sarcopenia, cachexia</td><td class="ev-h">Real human trials, then HALTED for safety</td><td>SubQ</td></tr>
+          <tr><th>Follistatin</th><td>Brake release: neutralizes myostatin + activins</td><td>Muscle-wasting disease (via gene therapy)</td><td class="ev-m">Strong via gene therapy; injectable unproven</td><td>SubQ</td></tr>
+          <tr><th>IGF-1 LR3</th><td>Accelerator: long-acting IGF-1, direct growth</td><td>Muscle growth, recovery (research)</td><td class="ev-l">No human muscle trials; cancer + low-sugar risk</td><td>SubQ</td></tr>
+          <tr><th>MGF (IGF-1Ec)</th><td>Accelerator: local IGF-1 splice, satellite cells</td><td>Local muscle repair (research)</td><td class="ev-l">No controlled human trials of the injected form</td><td>Local IM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small">A note on the neighbors: these are NOT growth hormone or its releasers. If you are comparing muscle tools, our <a href="https://den.onepin.app/gh-secretagogues.html">GH secretagogue guide</a> and the <a href="https://den.onepin.app/hgh-191aa.html">HGH guide</a> cover that separate class, which drives IGF-1 indirectly through your own liver rather than injecting a growth signal directly.</p>
+
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"They let you break past your genetic limit." Two problems. First, releasing the myostatin brake reliably adds muscle SIZE, but human trials repeatedly failed to turn that size into real STRENGTH or function, and your genetics still set a ceiling. Second, the growth-factor members do not have human muscle trials at all, and "tell every cell to grow" is exactly why the cancer caution is real. Impressive mechanism, thin and cautionary proof.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The part the marketing flattens</p>
+    <h2>Mechanism is loud, human proof is quiet</h2>
+    <p>They get sold as if the science were settled. It is not. Here is an honest read of how much real human evidence sits behind each. Longer bars mean deeper human data, not "works better," and even the longest one ends in a halted trial.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of human evidence, by compound</p>
+      <p class="csub">ACE-031 is the only one with real human trials, and they were stopped for safety. The rest are gene therapy or preclinical.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">ACE-031</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Real trials, halted for safety</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Follistatin</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="46">Gene therapy only; injectable unproven</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">MGF (IGF-1Ec)</div><div class="bar-track"><div class="bar-fill b-good" data-w="16">No controlled human trials</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">IGF-1 LR3</div><div class="bar-track"><div class="bar-fill b-good" data-w="14">No human muscle trials</div></div></div>
+      </div>
+      <p class="src">ACE-031: Campbell 2017 (DMD trial stopped for epistaxis and telangiectasias). Follistatin: Mendell 2015 (gene-therapy trial, not the injectable peptide). IGF-1 LR3 and MGF: animal and cell data only for muscle. Full citations below.</p>
+    </div>
+    <p>Read the shape honestly. The one member with real human trials, ACE-031, was halted over bleeding side effects, not a lack of muscle effect. Follistatin's impressive results are gene therapy delivered into the muscle, a different thing from the vial people inject. And the two growth factors have never been tested for building muscle in people. If you are drawn to this class, you are betting on mechanism, not results.</p>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>Release the brake, or press the accelerator</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>The brake (myostatin)</h4><p>Follistatin and ACE-031 mop up myostatin, the protein your body uses to cap muscle growth. Take the brake off and the muscle-building pathway runs more freely. You are removing a limit, not adding fuel.</p></div>
+      <div class="step"><div class="n">02</div><h4>The accelerator (IGF-1)</h4><p>IGF-1 LR3 and MGF are growth signals. They switch on muscle protein synthesis and wake up satellite cells (the repair crew). This is pressing the gas directly, which is more potent and less selective.</p></div>
+      <div class="step"><div class="n">03</div><h4>Why the difference matters</h4><p>A brake release has a ceiling (your genes still set the limit) and touches other tissues, ACE-031's off-target effect on blood vessels is what halted its trial. An accelerator that says "grow" to every cell is exactly why IGF-1 LR3 and MGF carry a cancer caution. Neither route is free muscle.</p></div>
+    </div>
+    <p>That is the class in one idea: two very different ways to push on muscle, each with a real, mechanism-based catch. Understanding which lever a compound pulls tells you what it can do and, more importantly, where its risk lives.</p>
+  </div>
+</section>
+
+<!-- =============== THE FOUR (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The four, with honest pros and cons</p>
+    <h2>Each one, against its evidence</h2>
+    <p>Same goal, very different levels of proof. Tags show the standing: <span style="color:var(--good);font-weight:600">clinical</span>, <span style="color:#3f4850;font-weight:600">gene-therapy</span>, or <span style="color:var(--blood-deep);font-weight:600">preclinical</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>ACE-031</h3><span class="tag approved">Clinical &middot; the evidenced one</span></div>
+      <p class="mech">An engineered decoy receptor that soaks up myostatin and related growth-limiters. The only member with real human trials, and the only one whose safety problem we can actually see.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The deepest evidence of the class: real human trials in muscular dystrophy and in healthy adults</li>
+          <li>Produced measurable gains in lean mass and bone density in early trials</li>
+          <li>A broad, long-lasting brake release, mechanistically the most complete of the inhibitors</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Its Duchenne trial was stopped early over bleeding side effects (nosebleeds, spider veins, gum bleeding) from off-target effects on blood vessels</li>
+          <li>The lean-mass gains did not translate into a clear strength or walking benefit</li>
+          <li>Development was discontinued; it is not available as an approved medicine for any muscle use</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the most-studied member, and its own trials are the clearest warning in this class: mass went up, function did not, and safety stopped it. Given by injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Follistatin (FST-344)</h3><span class="tag modest">Gene-therapy &middot; the split story</span></div>
+      <p class="mech">A natural myostatin neutralizer. The eye-popping muscle results come from gene therapy delivered into muscle, which is a very different thing from the injectable peptide sold online.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>A genuinely elegant mechanism: it blocks myostatin and the activins with high potency</li>
+          <li>Gene-therapy trials in muscular dystrophy showed real walking-distance gains and healthier muscle tissue</li>
+          <li>The strongest "brake off" biology of the natural inhibitors</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Those results are gene therapy (a one-time genetic delivery), not the repeat-injection peptide, which has essentially no human trials</li>
+          <li>By blocking activins it also lowers reproductive hormones (FSH), a real, mechanism-based side effect</li>
+          <li>Long-term effects on the heart (which myostatin also regulates) are unknown</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the mechanism is a ten; the injectable people actually buy is an open question with almost no human data. Do not confuse the gene therapy for the vial. Given by injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>IGF-1 LR3</h3><span class="tag thin">Preclinical &middot; the highest caution</span></div>
+      <p class="mech">A long-acting, engineered version of the growth factor IGF-1 that presses the accelerator directly. The most potent-sounding and, honestly, the riskiest of the four.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>A direct, powerful anabolic signal in animal and cell studies</li>
+          <li>Engineered to stay active far longer than natural IGF-1</li>
+          <li>Its natural cousin is an approved medicine for a rare deficiency, so the biology is real</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>No human trials for building muscle, and much of the fast "gain" is water and glycogen, not lasting tissue</li>
+          <li>A real, mechanism-based cancer concern: it is a growth signal to every cell, not just muscle</li>
+          <li>Can drop blood sugar dangerously (it cross-reacts with insulin), with a long tail that makes a low linger</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> loud on paper, unproven and high-risk in practice. The cancer and low-blood-sugar cautions are the headline, not the muscle. Given by injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>MGF (IGF-1Ec)</h3><span class="tag thin">Preclinical &middot; the local repair signal</span></div>
+      <p class="mech">A local "mechano-growth" splice of IGF-1 that muscle releases in a brief pulse after hard training, studied for kick-starting repair. Interesting biology, barely any human product data.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>A real, well-described natural signal: training genuinely raises MGF in muscle</li>
+          <li>Wakes up satellite cells, the repair crew, in animal models</li>
+          <li>Aimed locally at the muscle worked, in theory a targeted recovery nudge</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The injected peptide has essentially no controlled human trials, and native MGF lasts only minutes in the body</li>
+          <li>Most reported effects are hard to separate from the training that would happen anyway</li>
+          <li>Being an IGF-family growth signal, it carries the same cancer caution, more so in the longer-lasting PEG version</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> a small local nudge on top of training at best, and unproven in people. The training itself is doing most of the work. Given by local injection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HONESTY NOTE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The line that matters most</p>
+    <h2>Bigger is not the same as stronger</h2>
+    <p>The single most important idea in this class is the gap between <strong>size</strong> and <strong>function</strong>. Releasing the myostatin brake reliably makes muscles bigger, that part is real. But when researchers measured whether that extra size made people actually stronger or more mobile, the benefit kept failing to show up. A larger muscle that is not proportionally stronger is a cosmetic result with real risk attached, not a performance breakthrough. And that is the member with the BEST data. The growth factors skip human testing entirely.</p>
+    <div class="note blood">
+      <p class="h">Two things to hold onto</p>
+      <p>First, the only in-class human program (ACE-031) was stopped for safety, not for lack of muscle effect, that tells you the risk is real and specific. Second, the two accelerator peptides (IGF-1 LR3, MGF) are growth signals, so a cancer history is a genuine stop, not a footnote. This is a class where the mechanism is genuinely exciting and the honest human evidence is genuinely thin. Hold both truths at once.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SAFETY =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The most important section here</p>
+    <h2>The hard stops and cautions</h2>
+    <p>Each of these carries a specific, mechanism-based risk. A few situations are genuinely off-limits or need a provider.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Active or recent cancer</h4><p>This is the sharpest line, and it is strongest for the growth factors, IGF-1 LR3 and MGF. They are signals that tell cells to grow and resist dying, and that is precisely the wrong message anywhere a malignancy exists or might. This is a mechanistic concern rather than a documented event, but it is a firm reason to stop and involve an oncologist, never to self-experiment.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>Pregnancy and breastfeeding</h4><p>None of these has human safety data in pregnancy or breastfeeding, and Follistatin also lowers reproductive hormones (FSH), which matters if you are trying to conceive. Clear all of this first.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>IGF-1 LR3 and blood sugar</h4><p>IGF-1 LR3 cross-reacts with the insulin receptor and can drop blood sugar sharply, with a long tail that makes a low linger for hours. Never inject it fasted, never stack it with insulin or glucose-lowering drugs, and keep fast-acting sugar on hand. Diabetes makes this a provider-only conversation.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>ACE-031 and bleeding</h4><p>The exact thing that halted ACE-031's trial was off-target effects on blood vessels: nosebleeds, spider veins, and gum bleeding. A bleeding disorder or a blood thinner turns that from a nuisance into a real risk. This is a specific, documented caution, not a theoretical one.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Research status and competition testing</h4><p>None of these is approved for building muscle, purity and sourcing are unregulated, and long-term safety is unknown. All are banned by the World Anti-Doping Agency (growth factors and gene doping), so they are strictly off-limits for any drug-tested athlete.</p></div></div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule under all of it</p>
+      <p>If you have any cancer history, the growth factors here are not a self-directed project, clear it with an oncologist first. Otherwise, be honest that the human proof is thin, respect the specific risk each one carries, and build the foundation below first, because for actual muscle it does far more than any of these.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HOW TO CHOOSE (now/later plan) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>How to think about choosing, honestly</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First question</p><h4>Are you cleared at all?</h4>
+        <ul>
+          <li>No active or recent cancer (the sharpest line, especially for IGF-1 LR3 and MGF)</li>
+          <li>Not pregnant, breastfeeding, or trying to conceive</li>
+          <li>Bleeding disorders and diabetes handled with a provider</li>
+          <li>Not a drug-tested athlete (all four are banned)</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Second question</p><h4>Which one, and is it worth it?</h4>
+        <ul>
+          <li>The only member with real (halted) human data is ACE-031</li>
+          <li>Follistatin's results are gene therapy, not the injectable vial</li>
+          <li>IGF-1 LR3 and MGF are unproven for muscle and carry the cancer caution</li>
+          <li>For real muscle, the foundation below beats all four</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>Ask whether the goal is real size, real strength, or just the feeling of doing something extra. These add risk far faster than they add proven muscle, and the honest answer for almost everyone is that training, protein, sleep, and patience will out-build any of them. Match the tool to a real, honest need. Matching beats maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>What actually builds muscle</h2>
+    <p>Here is the part no muscle peptide wants you to hear: the things that reliably build muscle are free, proven, and boring, and they dwarf everything on this list. These peptides, at best, nudge on top of a foundation. Without it, there is nothing to nudge.</p>
+    <h4>Progressive resistance training</h4><p>Lifting with steadily increasing challenge is the actual signal that builds muscle. Nothing here replaces it; the growth factors are literally trying to imitate a fraction of what a hard set already does. Train hard and consistently first.</p>
+    <h4>Protein and enough calories</h4><p>Muscle is built from protein, and you cannot grow in a deep deficit. Roughly 1.6 to 2.2 grams of protein per kilogram of bodyweight, plus enough total food, does more for muscle than any compound in this class. This is the real lever.</p>
+    <h4>Sleep and recovery</h4><p>Muscle is built during recovery, not during the workout. Short or broken sleep blunts growth and strength directly. No peptide compensates for chronic under-recovery. Protect it.</p>
+    <h4>Patience and honest genetics</h4><p>Real muscle takes years, and your genetics set a ceiling that no brake-release fully overrides. Chasing a shortcut usually trades a small, unproven bump for a real risk. The slow way is the one that actually works.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Progressive training, adequate protein, sleep, and recovery</h4><p>The genuinely evidence-backed way to build muscle. This does more than every compound on this page combined. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Creatine monohydrate</h4><p>The one cheap, deeply proven, safe supplement that reliably supports muscle and strength. If you want to add something with real evidence, it is this, not a peptide.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>Follistatin, IGF-1 LR3, or MGF injections for muscle</h4><p>No human muscle trials, mostly community anecdote, and real (cancer, low-sugar, hormonal) cautions. Curiosity at your own risk, not confidence.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Any growth-factor peptide with a cancer history, or ACE-031 with a bleeding disorder, without a specialist</h4><p>The exact situations where these compounds' specific mechanisms push the wrong way. This is a specialist decision, never a self-directed one.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I honestly ruled out the hard stops: active or recent cancer, and pregnancy?</p></div>
+      <div class="row"><span class="box"></span><p>Am I actually chasing strength and function, or just size, and do I know these often add the first without the second?</p></div>
+      <div class="row"><span class="box"></span><p>Is my training, protein, and sleep genuinely dialed in, so there is even something for a peptide to add to?</p></div>
+      <div class="row"><span class="box"></span><p>If I take a blood thinner or have diabetes, have I accounted for the specific risk (bleeding, low blood sugar)?</p></div>
+      <div class="row"><span class="box"></span><p>Am I clear that the human proof here is thin to nonexistent, and is a provider genuinely involved?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, especially any cancer, is any of these growth-factor or myostatin peptides safe for me to consider?</p></div>
+      <div class="row"><span class="box"></span><p>If I take insulin or a glucose-lowering drug, how dangerous is the blood-sugar drop from IGF-1 LR3?</p></div>
+      <div class="row"><span class="box"></span><p>If I am on a blood thinner, does ACE-031's bleeding effect rule it out for me?</p></div>
+      <div class="row"><span class="box"></span><p>Given how thin the human evidence is, what realistic result should I even expect, and when would we call it and stop?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get medical help</h3>
+      <p style="color:#EFCCC0;margin:0 0 12px;max-width:none">A few situations are not "go slower," they are "stop and be seen."</p>
+      <ul>
+        <li>Symptoms of low blood sugar (shaking, sweating, confusion), especially on IGF-1 LR3</li>
+        <li>Unusual bleeding: frequent nosebleeds, bleeding gums, or new spider veins</li>
+        <li>A severe allergic reaction: swelling of the face or throat, trouble breathing</li>
+        <li>A spreading, hot, or painful injection site (a possible infection)</li>
+        <li>Any new or unusual lump or symptom you are worried about</li>
+      </ul>
+      <p class="fast">A mild injection-site reaction settles. A low-blood-sugar episode, unusual bleeding, or an allergic reaction do not wait. When in doubt, be seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Respect the mechanism, doubt the shortcut</h2>
+    <p>The idea here is genuinely seductive: your body caps its own muscle with a brake called myostatin, and these peptides either release that brake or press the accelerator directly. The biology is real and, in the lab, dramatic. But the honest human story is a long way behind the hype. Releasing the brake reliably adds SIZE, and then repeatedly fails to add real STRENGTH. The one member ever tested in people, ACE-031, was stopped over bleeding side effects. And the two growth factors that sound the most powerful, IGF-1 LR3 and MGF, have never been trialed for muscle in humans and carry a real cancer caution, because a signal that shouts "grow" does not only reach your biceps. So do not confuse an exciting mechanism for a proven result, and do not confuse a gene-therapy headline for the vial in your fridge. For actual muscle, the boring foundation, hard progressive training, enough protein, real sleep, and years of patience, out-builds every one of these, at zero risk. If you still have a real reason to explore this class, go in knowing the proof is thin, respect the specific danger each one carries, and do it with a provider. That is not the timid move. It is the one that respects both how the body grows and how little we have actually proven.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">This is educational information only and not a recommendation to use, purchase, or dose any compound; it does not replace evaluation by your own licensed provider. None of these four is approved for building muscle: ACE-031 is an investigational drug whose trials were halted, and Follistatin, IGF-1 LR3, and MGF are research compounds with essentially no human efficacy data for this use. All are prohibited in tested sport, and the growth-factor members carry a cancer caution. Doses named are examples for discussion. Intended for adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Retrieved from PubMed. ACE-031 carries the class's real human evidence (in a trial that was halted for safety); Follistatin's muscle data is gene therapy, not the injectable peptide; and myostatin-pathway blockade broadly has shown mass gains without reliable functional benefit.</p>
+    <ol>
+      <li>Campbell C, McMillan HJ, Mah JK, et al. Myostatin inhibitor ACE-031 treatment of ambulatory boys with Duchenne muscular dystrophy: Results of a randomized, placebo-controlled clinical trial. <em>Muscle Nerve.</em> 2017;55(4):458-464. <a href="https://doi.org/10.1002/mus.25268">doi:10.1002/mus.25268</a> (the trial was stopped after the second dosing regimen over epistaxis and telangiectasias; lean-mass trend, no significant walk-test benefit)</li>
+      <li>Mendell JR, Sahenk Z, Malik V, et al. A phase 1/2a follistatin gene therapy trial for Becker muscular dystrophy. <em>Mol Ther.</em> 2015;23(1):192-201. <a href="https://doi.org/10.1038/mt.2014.200">doi:10.1038/mt.2014.200</a> (the impressive follistatin muscle data is AAV GENE THERAPY into muscle, not the injectable peptide sold for performance)</li>
+      <li>Rooks D, Praestgaard J, Hariry S, et al. Treatment of Sarcopenia with Bimagrumab: Results from a Phase II, Randomized, Controlled, Proof-of-Concept Study. <em>J Am Geriatr Soc.</em> 2017;65(9):1988-1995. <a href="https://doi.org/10.1111/jgs.14927">doi:10.1111/jgs.14927</a> (a myostatin-pathway blocker: muscle mass rose reliably, but functional benefit appeared only in the slowest-walking subgroup, the "bigger, not clearly stronger" pattern)</li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. ACE-031's own trial is the clearest in-class caution: mass gains, no clear function, halted for safety. Follistatin's muscle results are gene therapy, a fundamentally different intervention from the injectable peptide. IGF-1 LR3 and MGF have animal and cell data for muscle but no controlled human efficacy trials, and as growth factors carry a mechanism-based cancer caution. This report is an honest educational map of the class, not a dosing sheet or a recommendation to use any compound.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: the muscle fibers grow up, then the brake chain breaks apart
+  var fibers=document.querySelectorAll("#muscleArt .fiber");
+  fibers.forEach(function(f,i){
+    if(reduce) return;
+    f.style.transformBox="fill-box"; f.style.transformOrigin="bottom";
+    f.style.transform="scaleY(0.12)";
+    f.style.transition="transform .8s cubic-bezier(.34,1.2,.4,1) "+(0.25+i*0.13)+"s";
+  });
+  setTimeout(function(){ fibers.forEach(function(f){ f.style.transform="scaleY(1)"; }); }, reduce?0:250);
+  var linkL=document.querySelector("#muscleArt .link-l"), linkR=document.querySelector("#muscleArt .link-r");
+  if(linkL && linkR && !reduce){
+    [linkL,linkR].forEach(function(el){ el.style.transition="transform .6s ease 1.05s, opacity .6s ease 1.05s"; });
+    setTimeout(function(){ linkL.style.transform="translateX(-9px) rotate(-8deg)"; linkR.style.transform="translateX(9px) rotate(8deg)"; linkL.style.opacity="0.55"; linkR.style.opacity="0.55"; }, 250);
+  }
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 size, 1 recovery, 2 evidence, 3 learning
+    }
+    function anyStop(){
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      if(anyStop()){
+        show("A hard stop applies","act","This class is not a self-directed project for you",
+          "You marked one of the firm lines: an active or recent cancer history, or pregnancy. Because two of these peptides (IGF-1 LR3 and MGF) are growth-factor signals that tell cells to grow, active or recent cancer is a stop-and-ask-a-specialist situation, not a self-clear one. Please do not pursue these on your own, and talk with your oncologist or provider about your goal.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
+          "You flagged things that change the calculus: a blood thinner or bleeding disorder (which matters for ACE-031), diabetes or glucose-lowering meds (which make IGF-1 LR3's blood-sugar drop dangerous), not training hard (there is little for a muscle peptide to add to), or planning to source it with no provider. None is an automatic no, but each needs a provider in the loop and the foundation (training, protein, sleep) genuinely handled first, because for real muscle that does more than any of these. Then revisit whether this class fits.");
+        return;
+      }
+      var map={
+        0:["Size and mass","Know that mass and strength are not the same thing",
+           "Wanting size is the most common reason people look here, so be clear-eyed: releasing the myostatin brake (Follistatin, ACE-031) reliably adds mass but repeatedly failed to add real strength in trials, and the growth factors (IGF-1 LR3, MGF) are unproven for muscle and carry a cancer caution. If anything in this class has real human data it is ACE-031, and its own trial was halted for safety. For genuine size, training, protein, sleep, and creatine out-build all of them at zero risk."],
+        1:["Recovery and repair","The theory points to MGF, the proof points to the basics",
+           "A recovery goal points, in theory, to MGF, the local repair signal your muscle already makes after training, or to IGF-1 LR3. Honestly though, neither has controlled human trials for this, and MGF lasts only minutes in the body. The interventions that actually drive recovery are sleep, protein, and sensible training load. Fix those first; a peptide is a small unproven nudge on top, with its own cautions."],
+        2:["You want real evidence","ACE-031 is the only one with any, and it was halted",
+           "Valuing evidence leads to an uncomfortable answer: ACE-031 is the only member ever tested in real human trials, and that program was stopped over bleeding side effects, with mass gains that did not become strength. The other three have gene-therapy data (Follistatin) or none at all for muscle (IGF-1 LR3, MGF). So the honest 'most evidence' pick is also a cautionary tale. If you proceed, do it with a provider and clear eyes about what was actually shown."],
+        3:["Learning first","You are thinking about it the right way",
+           "Reading the whole class before reaching for one is exactly right. Learn the two strategies (release the myostatin brake vs press the IGF-1 accelerator), the core truth that bigger is not the same as stronger, and that the growth factors carry a real cancer caution. Rule out the cancer and pregnancy hard stops, put the foundation (training, protein, sleep) first, and if there is a real reason, involve a provider and favor the one thing here with actual human data. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
