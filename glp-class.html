@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The GLP Class, Decoded: Retatrutide vs Tirzepatide vs Semaglutide vs Cagrilintide - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - The GLP Class, Decoded (re-skinned "Thick Blood" layout)
+  Skin: gut-brain / satiety - orchid-plum (the brain's appetite center) primary + amber-honey (the gut's satiety warmth) secondary.
+  Hero motif: the gut-brain axis - a gut sending incretin messengers up the bloodstream to dial appetite down at the brain.
+  Report #4 in the series (siblings: bpc-157, tb-500, copper-peptides). ASCII + HTML entities only. No em dashes. RUO / education-only / 21+.
+  Numbers PubMed-verified (STEP 1, SURMOUNT-1, retatrutide Phase 2, REDEFINE 1); PK grounded in the OnePin compound data.
+-->
+<style>
+  :root{
+    --paper:#F3F0EC; --surface:#FBFAF7; --surface-2:#F1ECE5;
+    --ink:#241A26; --ink-soft:#443A47; --muted:#6E6570;
+    --line:#DBD5D2; --line-soft:#E7E2DE;
+    /* PRIMARY accent (orchid-plum = the brain's appetite center) - keeps --blood var name */
+    --blood:#8A2D6B; --blood-deep:#591945; --blood-tint:#EFDAE9;
+    /* SECONDARY warm accent (amber-honey = the gut's satiety warmth) */
+    --plasma:#C4841E; --plasma-soft:#E6C480; --plasma-tint:#F5E9CF;
+    --good:#2F7A55; --good-tint:#DEEBE2;
+    --amber:#B9791F; --amber-tint:#F3E6CC;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#1D1521;color:#ECE4EA;border-top:1px solid #322639;border-bottom:1px solid #322639}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(33px,6vw,56px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:180px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#9a6716,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#245c40,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  /* receptor matrix */
+  .matrix{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .matrix th,.matrix td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{text-align:left;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--ink)}
+  .matrix .yes{color:var(--blood);font-weight:700}
+  .matrix .no{color:var(--line);font-weight:700}
+  .matrix .cls{font-family:var(--mono);font-size:11px;color:var(--plasma);letter-spacing:.04em}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  @media(max-width:560px){.matrix{font-size:13px}.matrix th,.matrix td{padding:9px 5px}}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.single{background:var(--good-tint);color:var(--good)}
+  .tag.dual{background:var(--plasma-tint);color:#8a5c16}
+  .tag.triple{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.amylin{background:#e7ddef;color:#5d3b7a}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--blood)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--blood);line-height:1}
+  .rules .r p{margin:0;font-size:15px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--blood-tint);border-color:#e3c3da}
+  .plan .later{background:var(--good-tint);border-color:#c9ddd0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--blood)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--blood)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(36,26,38,.07)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--blood-deep);border-color:var(--blood-deep)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6d5aa}
+  .result.watch .band{color:#8a5c16}
+  .result.act{background:var(--blood-tint);border:1px solid #e3c3da}
+  .result.act .band{color:var(--blood-deep)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .tl{width:100%;height:auto;display:block}
+  .flags{background:#221320;border:1px solid #4a2440;border-radius:14px;padding:24px 26px;color:#F1D9EC}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFE6;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#C98AB8}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC8E0}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Metabolic &amp; Appetite</b></p>
+        <h1>The GLP class, decoded</h1>
+        <p class="lede" style="max-width:37ch;margin:.1em 0 .5em">Retatrutide, tirzepatide, semaglutide, and cagrilintide are not four versions of one drug. They pull different levers on the same gut-brain circuit.</p>
+        <p class="thesis">More receptors is not automatically more for you. Here is how to read the whole class honestly.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: the gut-brain axis. Gut (amber) sends incretin messengers up the bloodstream to the brain's appetite center (plum), which dials appetite down. -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="184" height="330" viewBox="0 0 184 330" fill="none" xmlns="http://www.w3.org/2000/svg" id="axisArt">
+          <!-- soft plum glow behind the brain -->
+          <ellipse cx="92" cy="58" rx="70" ry="52" fill="#8A2D6B" opacity="0.06"/>
+          <!-- the bloodstream channel -->
+          <line x1="92" y1="96" x2="92" y2="250" stroke="#DBD5D2" stroke-width="10" stroke-linecap="round"/>
+          <!-- rising incretin messengers (animated in via JS) -->
+          <g class="msgs">
+            <circle class="msg" cx="92" cy="238" r="6" fill="#C4841E"/>
+            <circle class="msg" cx="92" cy="206" r="6" fill="#C4841E"/>
+            <circle class="msg" cx="92" cy="174" r="6" fill="#C4841E"/>
+            <circle class="msg" cx="92" cy="142" r="6" fill="#C4841E"/>
+            <circle class="msg" cx="92" cy="112" r="6" fill="#C4841E"/>
+          </g>
+          <!-- the brain: appetite center (plum) with a dial turning DOWN -->
+          <path d="M62 66 C 58 44, 78 30, 92 38 C 106 28, 128 42, 122 64 C 134 70, 132 92, 116 94 L 68 94 C 52 92, 50 72, 62 66 Z"
+                fill="#EFDAE9" stroke="#591945" stroke-width="3"/>
+          <path d="M92 44 C 92 60, 82 62, 84 78" fill="none" stroke="#8A2D6B" stroke-width="2.4" opacity="0.7"/>
+          <path d="M104 50 C 100 64, 110 66, 106 82" fill="none" stroke="#8A2D6B" stroke-width="2.4" opacity="0.7"/>
+          <!-- appetite dial arc, needle swung to low -->
+          <path d="M76 84 A 16 16 0 0 1 108 84" fill="none" stroke="#8A2D6B" stroke-width="2.2"/>
+          <line x1="92" y1="84" x2="80" y2="77" stroke="#8A2D6B" stroke-width="2.6" stroke-linecap="round" class="needle"/>
+          <!-- the gut / stomach (amber), source of the signal -->
+          <path d="M74 270 C 60 262, 60 244, 78 244 C 96 240, 118 246, 116 268 C 116 290, 96 300, 82 296 C 66 292, 66 278, 74 270 Z"
+                fill="#F5E9CF" stroke="#8a5c16" stroke-width="3"/>
+          <text x="92" y="276" font-family="ui-monospace,monospace" font-size="10" fill="#8a5c16" font-weight="700" text-anchor="middle">GUT</text>
+          <!-- receptor tick labels on the channel -->
+          <g font-family="ui-monospace,monospace" font-size="8.5" fill="#6E6570" text-anchor="start">
+            <text x="104" y="150">GLP-1</text>
+            <text x="104" y="182">GIP</text>
+            <text x="104" y="214">GCG</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">4</div><div class="lbl">receptors in play across this class: GLP-1, GIP, glucagon, and amylin</div></div>
+      <div class="stat"><div class="n">-24.2<small>%</small></div><div class="lbl">body weight at 48 weeks on the triple agonist, the deepest single-agent result to date</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">shared side-effect story: the gut. Almost everything you feel starts there</div></div>
+    </div>
+    <p class="src">Retatrutide Phase 2, Jastreboff 2023, N Engl J Med (48-week 12 mg group). Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen the names traded like tiers of the same thing: semaglutide, then tirzepatide, then retatrutide, each sold as the newer and stronger one, with cagrilintide floating alongside as the up-and-comer. It reads like a ladder, where the top rung is simply the best.</p>
+    <p>Here is the honest version. These are not four strengths of one drug. They are different combinations of levers on one shared circuit, the gut-brain axis that decides how hungry you feel and how your body handles fuel. Semaglutide pulls one lever. Tirzepatide pulls two. Retatrutide pulls three. Cagrilintide pulls a different one entirely. More levers can mean more weight lost on average, and it can also mean more to feel and more to monitor. The right question is never "which is strongest," it is "which set of levers fits my body, my goal, and my safety picture." We do honest, not hype, so let us take it slowly.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician or your own labs. Of this class, semaglutide and tirzepatide are approved medicines in many places; retatrutide is investigational and still in trials; cagrilintide is investigational, studied mostly in combination. Any dose named here is an example for discussion, never a prescription. These compounds carry real contraindications, covered below. For research and educational purposes, adults 21 and over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you cleared to explore this class, and which lever fits?</h2>
+    <p>This does two things: it flags the hard stops that mean this class is not for you, and if you are clear, it points toward the kind of lever that matches your goal. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>GLP-class readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the hard stops. Do any of these apply to you? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">Personal or family history of medullary thyroid cancer</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Multiple Endocrine Neoplasia type 2 (MEN2)</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">A history of pancreatitis</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pregnant, breastfeeding, or trying to conceive</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually weighing this class for?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">A large amount to lose, other things have not worked</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">A moderate amount, I want the gentlest effective option</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Mainly blood sugar or metabolic reasons</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these in your picture? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="3"><span class="chip">Gastroparesis or a serious gut-motility problem</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Gallbladder problems or gallstones</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Type 1 diabetes, or on insulin / a sulfonylurea</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">A past or present eating disorder</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is the foundation actually in place? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="1"><span class="chip">Protein intake is hit or miss</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">I do little or no resistance training</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to source it with no provider involved</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider about your own history and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + RECEPTOR MATRIX =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>One circuit, four levers</h2>
+    <p>When you eat, your gut releases hormones that travel to the brain and pancreas and quietly run the show: they tell you that you are full, they slow how fast the stomach empties, and they sharpen the insulin response to the meal. Two of those gut hormones are called <strong>incretins</strong>: GLP-1 and GIP. A third pancreatic hormone, <strong>glucagon</strong>, raises how much energy you burn and helps the liver clear fat. And a fourth, <strong>amylin</strong>, is released with insulin and reinforces fullness through its own separate receptor.</p>
+    <p>Every compound in this class is a synthetic hormone shaped to switch one or more of those receptors on and to last for days instead of minutes. That is the entire trick. What changes from one to the next is simply <strong>which receptors it hits</strong>.</p>
+
+    <table class="matrix">
+      <thead>
+        <tr><th>Compound</th><th>GLP-1</th><th>GIP</th><th>Glucagon</th><th>Amylin</th><th>Class</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Semaglutide</th><td class="yes">&check;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="cls">single</td></tr>
+        <tr><th>Tirzepatide</th><td class="yes">&check;</td><td class="yes">&check;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="cls">dual</td></tr>
+        <tr><th>Retatrutide</th><td class="yes">&check;</td><td class="yes">&check;</td><td class="yes">&check;</td><td class="no">&mdash;</td><td class="cls">triple</td></tr>
+        <tr><th>Cagrilintide</th><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&check;</td><td class="cls">amylin</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Cagrilintide is the odd one out on purpose: it works an entirely different receptor, which is exactly why it is being paired with a GLP-1 rather than competing with one. More on that below.</p>
+
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"Retatrutide is just the strongest one, so it is the best." Half true. On average it produces the deepest weight loss in trials, but it is also the least far along, still investigational, hits the most receptors, and adds glucagon effects (a faster heart rate, and a need to watch liver and glucose) that a single agonist does not. Strongest on the group average is not the same as best for one specific person. The class rewards matching, not maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HEAD-TO-HEAD EFFICACY (bar chart, CENTERPIECE) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The number everyone wants</p>
+    <h2>How much weight, honestly, in the trials</h2>
+    <p>Here are the headline average results from the pivotal trials, placed side by side. Read them as directional, not as a fair head-to-head: the trials differ in length (48 to 72 weeks), in population, and in design, so this is the shape of the class, not a photo finish. Every bar is a real, published, peer-reviewed number.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Average body-weight reduction at the top studied dose</p>
+      <p class="csub">Least-squares mean change from baseline, placebo-subtracted effects are larger still. Longer bar = more average weight lost.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Retatrutide 12 mg (triple, 48 wk)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">-24.2%</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Tirzepatide 15 mg (dual, 72 wk)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="86">-20.9%</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cagrilintide + semaglutide (68 wk)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="84">-20.4%</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Semaglutide 2.4 mg (single, 68 wk)</div><div class="bar-track"><div class="bar-fill b-good" data-w="62">-14.9%</div></div></div>
+      </div>
+      <p class="src">Retatrutide: Jastreboff 2023 NEJM (Phase 2). Tirzepatide: SURMOUNT-1, Jastreboff 2022 NEJM. CagriSema: REDEFINE 1, Garvey 2025 NEJM. Semaglutide: STEP 1, Wilding 2021 NEJM. Doses and durations differ; not a head-to-head.</p>
+    </div>
+    <p>Notice the shape. Adding the second receptor (GIP) took semaglutide's roughly 15% up toward 21%. Adding the third (glucagon) nudged it further, toward 24%. And pairing a GLP-1 with the amylin lever (cagrilintide plus semaglutide) landed right alongside the dual agonist. The levers stack, but with clearly diminishing returns and rising complexity. That trade is the whole story of this class.</p>
+    <div class="note">
+      <p class="h">Two honest footnotes to that chart</p>
+      <p>First, only one real head-to-head exists in this whole class: a diabetes trial where the dual agonist beat the single one on both blood sugar and weight. Everything else is separate trials placed side by side. Second, the triple agonist's later, larger Phase 3 results have been announced but not yet peer-reviewed, so we are quoting its published Phase 2 figure of about 24%, not the higher topline numbers you may have seen in headlines. When the number is not fully validated yet, we say so.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How the gut-brain trick actually works</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>The gut signals fullness</h4><p>A meal triggers incretin release from the gut. These hormones reach the brain's appetite centers and register satiety, so hunger and food-seeking quiet down.</p></div>
+      <div class="step"><div class="n">02</div><h4>The stomach slows</h4><p>The same signaling slows gastric emptying, so food leaves the stomach more gradually. You feel full longer and eat less at the next meal, which is also where most of the nausea comes from.</p></div>
+      <div class="step"><div class="n">03</div><h4>Fuel handling sharpens</h4><p>At the pancreas, insulin is released in step with glucose and glucagon is tuned, smoothing blood sugar. The added levers (GIP, glucagon, amylin) each deepen or broaden this metabolic effect.</p></div>
+    </div>
+    <p>The reason these compounds work for days instead of minutes, unlike your own gut hormones that clear in a couple of minutes, is that each is engineered to resist breakdown and to bind albumin in the blood, which parks it in circulation. That is why the whole class is dosed roughly once weekly rather than with every meal.</p>
+  </div>
+</section>
+
+<!-- =============== WHY ADD EACH LEVER =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The design logic</p>
+    <h2>Why anyone adds a second, third, or different lever</h2>
+    <p>Stacking receptors is not showing off. Each added lever is there for a specific, honest reason, and each brings its own cost.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">+</div><div><h4>GIP, the metabolic-efficiency lever (the second lever)</h4><p>Adding GIP to GLP-1 is not just a louder copy of the same signal. GIP appears to improve insulin sensitivity and fat metabolism, and it adds its own appetite signal on top, so it deepens the average weight effect rather than duplicating it. This is the tirzepatide idea, and its trial results (about 21%) are why the dual approach took off.</p></div></div>
+      <div class="r"><div class="rn">+</div><div><h4>Glucagon, the burn lever (the third lever)</h4><p>Glucagon gets a bad name from diabetes, but at the receptor it raises energy expenditure and helps the liver mobilize and clear fat. Add it on top of GLP-1 and GIP and you get retatrutide, with the deepest weight loss seen so far. Its standout is liver fat: in a Phase 2a liver substudy, liver fat fell by roughly 81 to 82% at the higher doses over 24 weeks. The cost of the extra lever: a dose-related rise in heart rate and a need to watch glucose and the liver more closely.</p></div></div>
+      <div class="r"><div class="rn">+</div><div><h4>Amylin, the different door (a separate lever)</h4><p>Cagrilintide does not touch the incretin receptors at all. It mimics amylin, the fullness hormone co-released with insulin, hitting satiety through a separate pathway. Paired with a GLP-1, it hits fullness from two independent directions at once, which is the logic behind combining it with semaglutide rather than running it solo.</p></div></div>
+    </div>
+    <div class="note">
+      <p class="h">The pattern to hold onto</p>
+      <p>Every lever you add can buy more average weight loss and adds something to feel and to monitor. There is no free receptor. The most advanced-looking option is not automatically the wisest one for a given person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE FOUR COMPOUNDS (lever cards) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The four, with honest pros and cons</p>
+    <h2>Semaglutide, tirzepatide, retatrutide, and cagrilintide</h2>
+    <p>Same circuit, different levers, and honestly, different stages of proof. Tags show the receptor set: <span style="color:var(--good);font-weight:600">single</span>, <span style="color:#8a5c16;font-weight:600">dual</span>, <span style="color:var(--blood-deep);font-weight:600">triple</span>, or <span style="color:#5d3b7a;font-weight:600">amylin</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>Semaglutide</h3><span class="tag single">Single &middot; GLP-1</span></div>
+      <p class="mech">The single GLP-1 agonist that opened this whole era, and the one with the longest real-world track record in this class.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The most established of the class, with large approved-use experience and cardiovascular outcome data</li>
+          <li>The simplest lever: fewest moving parts to feel and to monitor</li>
+          <li>Roughly 15% average weight loss over 68 weeks is genuinely substantial</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The smallest average weight effect of the four here</li>
+          <li>Shares the full GI side-effect profile and the class contraindications</li>
+          <li>A diabetic-retinopathy signal deserves attention in people with diabetic eye disease</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the sensible, best-proven starting point for most people. Weekly, titrated slowly from 0.25 mg toward 2.4 mg. Half-life about 7 days.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Tirzepatide</h3><span class="tag dual">Dual &middot; GLP-1 + GIP</span></div>
+      <p class="mech">Adds the GIP lever to GLP-1. The dual approach that pushed average results into the low twenties.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Deeper average weight loss than the single agonist (about 21% at 15 mg over 72 weeks)</li>
+          <li>The one true head-to-head in this class went its way: it beat semaglutide on both blood sugar and weight in a diabetes trial</li>
+          <li>Approved for use in many places, with a growing evidence base</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Two levers mean the same GI profile, sometimes more, especially during escalation</li>
+          <li>Carries the same class contraindications (thyroid C-cell, pancreatitis, and the rest)</li>
+          <li>A longer, patient titration is needed to land the top dose comfortably</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> a strong step up in effect for someone who needs more than the single lever delivers. Weekly, titrated from 2.5 mg toward 15 mg. Half-life about 5 days.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Retatrutide</h3><span class="tag triple">Triple &middot; GLP-1 + GIP + glucagon</span></div>
+      <p class="mech">Adds the glucagon burn lever on top of both incretins. The deepest weight loss recorded to date, and the least far along.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The largest average weight loss of the class so far (about 24% at 48 weeks, still climbing at the trial's end)</li>
+          <li>A standout liver-fat effect from the glucagon lever: roughly 81 to 82% reduction in liver fat at the higher doses in a Phase 2a substudy</li>
+          <li>Deep responder rates: most participants lost 15% or more at the higher doses</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Investigational, Phase 2 data, not an approved medicine and not fully characterized</li>
+          <li>A dose-related rise in heart rate, plus closer glucose and liver watching from the glucagon lever</li>
+          <li>The most receptors means the most to feel and the most to monitor</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the most powerful and the least proven. Exciting, but the newest and the one that most demands a knowledgeable provider. Weekly, titrated from about 1 mg upward in trials. Half-life about 6 days.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Cagrilintide</h3><span class="tag amylin">Amylin &middot; a different door</span></div>
+      <p class="mech">Not an incretin at all. A long-acting amylin analog that hits fullness through its own receptor, built to pair with a GLP-1 rather than replace one.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>A separate satiety pathway, so it stacks with GLP-1 without hitting the same receptor twice</li>
+          <li>Paired with semaglutide, average loss reached about 20% over 68 weeks</li>
+          <li>A genuinely different mechanism to add, rather than a stronger dose of the same one</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Investigational, and studied mostly in combination, not as a stand-alone answer</li>
+          <li>On its own it is more modest, roughly 6 to 11% in a dose-finding trial, well below the GLP-1 agonists</li>
+          <li>Shares the same GI side-effect story and needs the same careful escalation</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the interesting complement, not a competitor. Its role is combination therapy. Weekly dosing; very long half-life, roughly a week or more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PHARMACOKINETICS COMPARISON (bar chart) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The practical part people skip</p>
+    <h2>Why the whole class is dosed once a week</h2>
+    <p>Each of these is engineered to linger in the blood for days, which is what makes weekly dosing possible and what makes patient titration non-negotiable: a compound this long-lived cannot be rushed, because you cannot un-take this week's dose.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Approximate half-life, in days</p>
+      <p class="csub">How long the compound lingers. All support once-weekly dosing; none should be escalated quickly.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Semaglutide</div><div class="bar-track"><div class="bar-fill b-good" data-w="88">~7 days</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cagrilintide</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="88">~7 days or more</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Retatrutide</div><div class="bar-track"><div class="bar-fill b-blood" data-w="75">~6 days</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Tirzepatide</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="63">~5 days</div></div></div>
+      </div>
+      <p class="src">Approximate elimination half-lives from the OnePin compound reference and product labeling. Individual figures vary; the point is the shared once-weekly cadence.</p>
+    </div>
+    <p>The universal rule the whole class shares: <strong>start low, hold, and only step up if the current dose is well tolerated and has stopped delivering.</strong> Chasing the top dose fast is how people turn a manageable compound into a miserable week. And because each is a distinct GLP-class compound, the standard practice is to pin it on its own, never mixed in a syringe with other peptides.</p>
+  </div>
+</section>
+
+<!-- =============== SIDE EFFECTS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">What you will actually feel</p>
+    <h2>The side effects are mostly one story: the gut</h2>
+    <p>Across this entire class, the common adverse events are gastrointestinal: <strong>nausea, vomiting, diarrhea, and constipation</strong>, plus reduced appetite and sometimes reflux. In the trials these were mostly mild to moderate, were worst during dose escalation, and settled with time. They are not a mysterious reaction, they are the direct result of the mechanism, slowed stomach emptying and dialed-down appetite, turned up a little too far. That is also why they track so closely with how fast you escalate.</p>
+    <p>The higher-lever compounds tend to bring more of this on average, and retatrutide adds one non-GI item worth naming: a <strong>dose-related increase in heart rate</strong> from the glucagon lever, which peaked and then eased in the trial. The practical throughline is the same for all four: most of the misery is preventable by going slow, eating smaller and lower-fat meals during escalation, staying hydrated, and holding a dose rather than forcing the next step.</p>
+    <div class="note blood">
+      <p class="h">When gut symptoms are NOT just the mechanism</p>
+      <p>Ordinary nausea that eases between doses is expected. Severe, persistent abdominal pain, especially pain that bores through to the back with vomiting, is different. That is the pancreatitis picture, and it is a stop-and-get-seen situation, not a push-through-it one. The safety section below spells out where the real lines are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HARD-STOP SAFETY =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The most important section here</p>
+    <h2>The hard stops and the real cautions</h2>
+    <p>This is the part that matters more than any weight-loss number. Some of these are absolute lines for the whole class, not "go slower" but "not without a professional, and in some cases not at all."</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Thyroid C-cell tumors, medullary thyroid cancer, and MEN2</h4><p>The GLP-1 class carries a boxed warning built on rodent thyroid C-cell tumors. Anyone with a personal or family history of medullary thyroid carcinoma, or with Multiple Endocrine Neoplasia type 2, should not use these compounds. This is a firm line, not a caution.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>A history of pancreatitis</h4><p>Pancreatitis has been reported with this class, and a prior history raises the stakes. A past episode is a reason to avoid these or to proceed only under close specialist supervision. New severe abdominal pain on therapy is a stop-and-be-evaluated event.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>Gallbladder disease</h4><p>Rapid weight loss and this class both raise gallstone risk. Existing gallbladder disease is a real caution, and new right-upper-abdominal pain, especially after fatty meals, deserves evaluation.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>Gastroparesis and severe gut-motility disorders</h4><p>These compounds slow stomach emptying on purpose. In someone whose stomach already empties too slowly, that can tip into a genuine problem. Significant gastroparesis is a reason to steer clear.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Pregnancy, breastfeeding, and trying to conceive</h4><p>This class is not for use in pregnancy or breastfeeding, and it is generally stopped well before a planned conception. Because it can also affect how oral medicines are absorbed, it can interact with the reliability of oral contraception, one more reason this belongs in a provider conversation.</p></div></div>
+      <div class="r"><div class="rn">6</div><div><h4>Diabetic eye disease, and low-blood-sugar stacking</h4><p>A diabetic-retinopathy signal was seen with semaglutide and warrants attention in people with diabetic eye disease. And combining this class with insulin or a sulfonylurea can drive blood sugar too low, so those regimens need a provider to adjust them.</p></div></div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule under all of it</p>
+      <p>None of these compounds is a solo project. The contraindications are real, the titration is unforgiving of shortcuts, and the investigational members are not fully characterized. A knowledgeable provider is not the cautious add-on here, it is part of doing this at all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MUSCLE / LEAN MASS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The cost nobody puts on the label</p>
+    <h2>Fast weight loss is not all fat</h2>
+    <p>When weight comes off quickly, a meaningful share of it can be lean tissue, muscle and other fat-free mass, not just fat. This is true of rapid weight loss in general, and this class produces rapid weight loss, so it applies here across the board. Losing muscle you did not mean to lose is how people end up lighter but weaker, with a slower metabolism that makes the weight easier to regain later.</p>
+    <p>Here is the honest part: the single biggest lever you personally control is the foundation below, enough protein and real resistance training. That is not optional garnish, it is what decides whether the weight you lose is fat or muscle, and it works no matter which compound you use. You will sometimes hear the amylin lever floated as a muscle-friendly option, and it is an interesting idea worth watching, but the evidence that cagrilintide protects lean mass better than the others is still early and thin. Do not treat it as a shortcut around the protein and the training. Nothing is. Some people also pair the class with a growth-hormone secretagogue to push back on lean-mass loss, which is community practice rather than a proven combination, covered honestly in the <a href="https://den.onepin.app/hgh-191aa.html">HGH deep-dive</a>.</p>
+  </div>
+</section>
+
+<!-- =============== HOW TO CHOOSE (now/later plan) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>How to think about choosing, honestly</h2>
+    <p>There is no universally best lever, only the best fit for a person and a goal. Two questions sort most of it.</p>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First question</p><h4>Are you cleared at all?</h4>
+        <ul>
+          <li>No thyroid C-cell / MEN2 history, no pancreatitis history</li>
+          <li>Not pregnant, breastfeeding, or trying to conceive</li>
+          <li>Gallbladder, gut-motility, and insulin/sulfonylurea questions handled with a provider</li>
+          <li>If any hard stop is present, the answer is this class is not the tool, full stop</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Second question</p><h4>Which lever fits the goal?</h4>
+        <ul>
+          <li>Best-proven and simplest: the single GLP-1 lever is the sensible default</li>
+          <li>Needs more effect: the dual lever steps it up with a longer track record than the triple</li>
+          <li>Deepest effect, willing to be early: the triple lever, only with a provider who knows it</li>
+          <li>Protecting lean mass or combining pathways: where the amylin lever enters the conversation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>Start at the lowest effective lever, not the strongest one. You can always add or step up. You cannot easily walk back a rough escalation on a compound that lingers for a week. Matching beats maxing, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>What actually decides your result</h2>
+    <h4>Protein, first and non-negotiable</h4><p>When appetite drops hard, protein is the first thing people under-eat, and it is the exact thing that protects muscle during weight loss. Anchoring meals around adequate protein is the highest-leverage habit on this entire class. Eat the protein even when you are not hungry for it.</p>
+    <h4>Resistance training</h4><p>Protein supplies the material; lifting gives the body a reason to keep the muscle. Regular resistance training is the other half of keeping the weight you lose as fat rather than lean tissue. Cardio is fine, but the muscle-protecting work is the strength work.</p>
+    <h4>Smaller, lower-fat meals during escalation</h4><p>Most nausea is a meal-size and meal-fat problem meeting a slowed stomach. Smaller, more frequent, lower-fat meals take the edge off the GI effects far more than any supplement will.</p>
+    <h4>Hydration and fiber</h4><p>Slowed digestion plus reduced intake is a recipe for dehydration and constipation. Deliberate fluids and steady fiber keep the gut moving and blunt two of the most common complaints in one move.</p>
+    <h4>Sleep and the basics</h4><p>Short sleep raises appetite hormones and works directly against everything this class is doing. Steady sleep, limited alcohol, and consistent meal timing quietly make the compound work better and feel better.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Adequate protein and real resistance training</h4><p>The genuinely supported base of a good result on this class. This is what keeps the loss mostly fat and protects the metabolism. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Fiber, electrolytes, and a general multivitamin while intake is low</h4><p>Sensible support when you are simply eating much less: fiber and fluids for the gut, electrolytes for the same reason, and basic micronutrient cover during a low-intake stretch.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>"Natural GLP-1 booster" supplements and berberine as a stand-in</h4><p>Marketed as gentle versions of these compounds. They are not equivalent, the evidence is thin, and treating them as a substitute mostly wastes money and time.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Anything sold to "supercharge" your dose or let you escalate faster</h4><p>The whole safety of this class lives in slow, patient titration. A product whose pitch is speeding that up is selling you the exact mistake to avoid.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I honestly ruled out every hard stop: thyroid C-cell or MEN2 history, pancreatitis history, and pregnancy or trying to conceive?</p></div>
+      <div class="row"><span class="box"></span><p>Am I choosing the lowest lever that fits my goal, or reaching for the strongest name because it sounds like the best?</p></div>
+      <div class="row"><span class="box"></span><p>Is my protein and resistance training actually in place, so the weight I lose is fat and not muscle?</p></div>
+      <div class="row"><span class="box"></span><p>Am I set up to titrate slowly and hold, rather than chasing the top dose fast?</p></div>
+      <div class="row"><span class="box"></span><p>Is a knowledgeable provider genuinely involved, especially if I am considering the investigational members?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER + SCREENING =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, is any member of this class off the table for me, and which lever fits my goal best?</p></div>
+      <div class="row"><span class="box"></span><p>What titration schedule do you want me on, and at what point do we hold rather than step up?</p></div>
+      <div class="row"><span class="box"></span><p>If I am on insulin, a sulfonylurea, or oral contraception, how should those be adjusted?</p></div>
+      <div class="row"><span class="box"></span><p>What symptoms should make me stop and call you right away?</p></div>
+    </div>
+    <h3>The numbers and checks worth knowing</h3>
+    <ul>
+      <li><strong>Personal and family thyroid and endocrine history:</strong> the first screen, because MTC and MEN2 are hard contraindications.</li>
+      <li><strong>Baseline weight, and body composition if available:</strong> so you can tell fat loss from lean-mass loss, not just watch the scale.</li>
+      <li><strong>Glucose and A1c:</strong> especially if you are diabetic or on glucose-lowering medicines that may need dialing back.</li>
+      <li><strong>Heart rate:</strong> worth tracking on the higher-lever compounds, retatrutide in particular.</li>
+      <li><strong>Any diabetic eye disease:</strong> flagged before starting, given the retinopathy signal.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get medical help now</h3>
+      <p style="color:#EFCFE6;margin:0 0 12px;max-width:none">A few situations are not "go slower," they are "stop and be seen."</p>
+      <ul>
+        <li>Severe, persistent abdominal pain, especially boring through to the back with vomiting</li>
+        <li>Signs of a severe allergic reaction: swelling of the face, lips, tongue, or trouble breathing</li>
+        <li>A new lump or swelling in the neck, hoarseness, or trouble swallowing</li>
+        <li>Right-upper-abdominal pain with fever, or yellowing of the skin or eyes</li>
+        <li>Vomiting or diarrhea severe enough to leave you dehydrated and unable to keep fluids down</li>
+        <li>Symptoms of very low blood sugar if you also take insulin or a sulfonylurea</li>
+      </ul>
+      <p class="fast">Ordinary nausea eases between doses. Pain that bores through to your back, a neck lump, or a swelling-and-breathing reaction are different animals. When in doubt, be seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Match the lever to the person, not the marketing to your hope</h2>
+    <p>The mechanism here is genuinely good and genuinely simple: hand the gut-brain circuit a signal that lasts for days instead of minutes, and appetite, fullness, and fuel handling all shift. The confusion is entirely in the marketing, which stacks these into a ladder and implies the top rung is best for everyone. It is not. Semaglutide is the best-proven and simplest. Tirzepatide adds a lever and real extra effect with a solid track record. Retatrutide is the most powerful and the least proven, still investigational, and asks the most of both you and your provider. Cagrilintide is not a competitor at all, it is a different door that shines alongside a GLP-1. The honest move is to clear the hard stops first, then choose the lowest lever that fits your goal, build the protein-and-training foundation that decides whether you lose fat or muscle, titrate slowly, and do the whole thing with a provider who knows this class. That is not the timid choice. It is the one that actually works.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">Education only, not medical advice. Semaglutide and tirzepatide are approved medicines in many regions; retatrutide and cagrilintide are investigational and studied in trials, cagrilintide mostly in combination. Cross-compound comparisons are directional, drawn from separate trials of differing length and design, not head-to-head. Doses named are examples for discussion, never a prescription. For research and educational purposes, adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Headline weight-loss figures are the published least-squares mean results from each compound's pivotal trial, retrieved from PubMed. Trials differ in length, dose, and population, so comparisons are directional. Half-life figures are approximate, from product labeling and the OnePin compound reference.</p>
+    <ol>
+      <li>Wilding JPH, Batterham RL, Calanna S, et al. Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP 1). <em>N Engl J Med.</em> 2021;384(11):989-1002. <a href="https://doi.org/10.1056/NEJMoa2032183">doi:10.1056/NEJMoa2032183</a></li>
+      <li>Jastreboff AM, Aronne LJ, Ahmad NN, et al. Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1). <em>N Engl J Med.</em> 2022;387(3):205-216. <a href="https://doi.org/10.1056/NEJMoa2206038">doi:10.1056/NEJMoa2206038</a></li>
+      <li>Jastreboff AM, Kaplan LM, Frias JP, et al. Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial. <em>N Engl J Med.</em> 2023;389(6):514-526. <a href="https://doi.org/10.1056/NEJMoa2301972">doi:10.1056/NEJMoa2301972</a></li>
+      <li>Garvey WT, Bluher M, Osorto Contreras CK, et al. Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity (REDEFINE 1). <em>N Engl J Med.</em> 2025;393(7):635-647. <a href="https://doi.org/10.1056/NEJMoa2502081">doi:10.1056/NEJMoa2502081</a></li>
+      <li>Frias JP, Davies MJ, Rosenstock J, et al. Tirzepatide versus Semaglutide Once Weekly in Patients with Type 2 Diabetes (SURPASS-2, the one direct head-to-head). <em>N Engl J Med.</em> 2021;385(6):503-515. <a href="https://doi.org/10.1056/NEJMoa2107519">doi:10.1056/NEJMoa2107519</a></li>
+      <li>Coskun T, Urva S, Roell WC, et al. LY3437943, a novel triple glucagon, GIP, and GLP-1 receptor agonist: from discovery to clinical proof of concept (retatrutide mechanism). <em>Cell Metab.</em> 2022;34(9):1234-1247.e9. <a href="https://doi.org/10.1016/j.cmet.2022.07.013">doi:10.1016/j.cmet.2022.07.013</a></li>
+      <li>Sanyal AJ, Kaplan LM, Frias JP, et al. Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a phase 2a trial (the liver-fat figures). <em>Nat Med.</em> 2024;30(7):2037-2048. <a href="https://doi.org/10.1038/s41591-024-03018-2">doi:10.1038/s41591-024-03018-2</a></li>
+      <li>Lau DCW, Erichsen L, Francisco AM, et al. Once-weekly cagrilintide for weight management in people with overweight and obesity: a phase 2 trial (cagrilintide monotherapy figures). <em>Lancet.</em> 2021;398(10317):2160-2172. <a href="https://doi.org/10.1016/S0140-6736(21)01751-7">doi:10.1016/S0140-6736(21)01751-7</a></li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. Retatrutide and cagrilintide are investigational; their long-term safety is not fully characterized. This report is an honest educational map of the class, not a dosing sheet or a recommendation to use any compound.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: rising incretin messengers travel up the channel
+  var msgs=document.querySelectorAll("#axisArt .msg");
+  msgs.forEach(function(c,i){
+    if(reduce) return;
+    c.style.transformBox="fill-box";
+    c.style.transformOrigin="center";
+    c.style.opacity="0";
+    c.style.transition="opacity .5s ease "+(i*0.18)+"s, transform 1.1s cubic-bezier(.4,0,.2,1) "+(i*0.18)+"s";
+  });
+  setTimeout(function(){
+    msgs.forEach(function(c){ c.style.opacity=reduce?"1":"0.9"; if(!reduce) c.style.transform="translateY(-14px)"; });
+  }, reduce?0:300);
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 large, 1 moderate/gentle, 2 metabolic, 3 learning
+    }
+    function anyStop(){
+      // the first four stop checkboxes carry value 1; "None of these" carries 0
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      // HARD STOP overrides everything
+      if(anyStop()){
+        show("A hard stop applies","act","This class is not the right tool for you",
+          "You marked one of the absolute lines for this class: a thyroid C-cell or MEN2 history, a history of pancreatitis, or pregnancy, breastfeeding, or trying to conceive. Those are firm contraindications, not cautions. Please do not pursue these compounds, and talk with your provider about safer options for your goal.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
+          "You flagged things that change the calculus: a motility, gallbladder, insulin, or eating-disorder factor, or a shaky foundation and no provider. None of these is an automatic no, but every one of them needs a provider in the loop before you go further, and the protein-and-training base handled first. Get those right, then revisit which lever fits.");
+        return;
+      }
+      var map={
+        0:["A larger goal","The higher-effect levers are the conversation, with a provider",
+           "A large amount to lose, with other things having failed, is where the dual and triple levers earn their place. Even so, start with the best-proven option that fits and step up only as needed. The strongest name is not automatically your best fit, and the investigational members ask the most of your provider."],
+        1:["A moderate, gentle goal","The single lever is the sensible default",
+           "Wanting the gentlest effective option points to the single GLP-1 lever, the best-proven and simplest of the class. Start low, titrate slowly, and only consider a stronger lever if the simplest one genuinely is not enough. Match, do not max."],
+        2:["A metabolic goal","This is a provider-led, glucose-aware conversation",
+           "Blood-sugar and metabolic reasons put this squarely in provider territory, especially if you take insulin or a sulfonylurea, which may need adjusting. The incretin levers all help here; which one fits depends on your full picture, not on which is strongest."],
+        3:["Learning first","You are thinking about it the right way",
+           "Reading the whole class before reaching for one is exactly right. Learn the four levers, rule out the hard stops honestly, get the foundation in place, and involve a provider before going further. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
