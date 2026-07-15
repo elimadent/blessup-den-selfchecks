@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Melanocortin Class, Decoded: Melanotan I vs Melanotan II vs PT-141 - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - The Melanocortin Class (re-skinned "Thick Blood" layout)
+  Skin: bronze/sienna (melanin, sun) primary + dusk-rose (the MC4R libido side) secondary. Theme: "desert sun".
+  Hero motif: a low sun over a deepening skin-tone gradient - MC1R makes the tan, MC4R works the brain.
+  Report #6 in the series (siblings: bpc-157, tb-500, copper-peptides, glp-class, gh-secretagogues). ASCII + HTML entities only. No em dashes. Education-only / 21+.
+  Numbers PubMed-verified (Langendonk 2015 afamelanotide, Wessells 2000 MT-II, Kingsberg 2019 RECONNECT PT-141); PK grounded in the OnePin compound data.
+-->
+<style>
+  :root{
+    --paper:#F2EEE6; --surface:#FBF9F4; --surface-2:#EEE9DE;
+    --ink:#241A16; --ink-soft:#463831; --muted:#6F645C;
+    --line:#DBD3C7; --line-soft:#E7E0D5;
+    /* PRIMARY accent (bronze/sienna = melanin, sun) - keeps --blood var name */
+    --blood:#AE6A34; --blood-deep:#7A4620; --blood-tint:#F0E0CC;
+    /* SECONDARY warm accent (dusk rose = the MC4R libido side) */
+    --plasma:#B04A5E; --plasma-soft:#E4A9B3; --plasma-tint:#F6E2E5;
+    --good:#5E8A3E; --good-tint:#E4EBD6;
+    --amber:#C08A1E; --amber-tint:#F5EACB;
+    --danger:#A6382E; --danger-tint:#F2D8D3;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#201512;color:#F0E5DE;border-top:1px solid #38251C;border-bottom:1px solid #38251C}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(32px,5.8vw,54px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:180px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#8f3a4b,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#4a6f30,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .matrix-wrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px}
+  .matrix{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);min-width:560px}
+  .matrix th,.matrix td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .matrix .yes{color:var(--blood);font-weight:700}
+  .matrix .par{color:var(--plasma);font-weight:700}
+  .matrix .no{color:var(--line);font-weight:700}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.tan{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.both{background:var(--plasma-tint);color:#8a3547}
+  .tag.libido{background:#e7ddef;color:#6d3b7a}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--danger)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--blood);line-height:1}
+  .rules .r p{margin:0;font-size:15px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--danger-tint);border-color:#e6c6bf}
+  .plan .later{background:var(--good-tint);border-color:#d3ddc0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--danger)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--danger)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(36,26,22,.07)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--danger);border-color:var(--danger)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #d3ddc0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6bcc4}
+  .result.watch .band{color:#8a3547}
+  .result.act{background:var(--danger-tint);border:1px solid #e6c6bf}
+  .result.act .band{color:var(--danger)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#20130f;border:1px solid #4a281c;border-radius:14px;padding:24px 26px;color:#F1DBD1}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFD0C4;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#CE8A5F}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC6B6}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Skin &amp; Sexual Health</b></p>
+        <h1>The melanocortin class, decoded</h1>
+        <p class="lede" style="max-width:38ch;margin:.1em 0 .5em">Melanotan I, Melanotan II, and PT-141 all work the same receptor family. What changes is which receptor, and whether it is tan, libido, or both.</p>
+        <p class="thesis">One family, two very different effects, and one hard stop you do not skip.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a low sun over a deepening skin-tone gradient. MC1R makes the tan (the fill rises); MC4R works the brain. -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="188" height="316" viewBox="0 0 188 316" fill="none" xmlns="http://www.w3.org/2000/svg" id="tanArt">
+          <defs>
+            <linearGradient id="skinGrad" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#7A4620"/>
+              <stop offset="0.5" stop-color="#AE6A34"/>
+              <stop offset="1" stop-color="#E9C79B"/>
+            </linearGradient>
+          </defs>
+          <!-- sky panel -->
+          <rect x="14" y="18" width="160" height="280" rx="16" fill="#F3E7D6"/>
+          <!-- sun -->
+          <circle cx="94" cy="74" r="24" fill="#E7A72E"/>
+          <g stroke="#E7A72E" stroke-width="3" stroke-linecap="round">
+            <line x1="94" y1="32" x2="94" y2="42"/><line x1="94" y1="106" x2="94" y2="116"/>
+            <line x1="52" y1="74" x2="62" y2="74"/><line x1="126" y1="74" x2="136" y2="74"/>
+            <line x1="64" y1="44" x2="71" y2="51"/><line x1="117" y1="97" x2="124" y2="104"/>
+            <line x1="124" y1="44" x2="117" y2="51"/><line x1="71" y1="97" x2="64" y2="104"/>
+          </g>
+          <!-- skin-tone gradient bar (the tan), fill rises via JS -->
+          <rect x="46" y="140" width="96" height="140" rx="10" fill="#F1E5D2" stroke="#D9CDB8" stroke-width="1.5"/>
+          <clipPath id="skinClip"><rect x="46" y="140" width="96" height="140" rx="10"/></clipPath>
+          <g clip-path="url(#skinClip)">
+            <rect id="tanFill" x="46" y="280" width="96" height="0" fill="url(#skinGrad)"/>
+          </g>
+          <text x="94" y="300" font-family="ui-monospace,monospace" font-size="8.5" fill="#8A7A66" text-anchor="middle">MC1R builds the tan</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">2</div><div class="lbl">receptors that split the class: MC1R (pigment) and MC4R (libido and appetite)</div></div>
+      <div class="stat"><div class="n">2</div><div class="lbl">of the three have a real approval behind them, for specific medical conditions</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">hard stop matters more than any of it: your moles and your skin-cancer history</div></div>
+    </div>
+    <p class="src">Afamelanotide (Melanotan I) is FDA-approved for a rare light disorder; bremelanotide (PT-141) for a sexual-desire disorder. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen them sold as three separate things: Melanotan I and II for a tan, PT-141 for libido. In truth they are close cousins, all synthetic versions of the same natural hormone (alpha-MSH), all working the same small family of receptors.</p>
+    <p>Here is the honest version. Your body has a set of <strong>melanocortin receptors</strong>, and two of them matter here. One, <strong>MC1R</strong>, sits on your skin's pigment cells and drives tanning. The other, <strong>MC4R</strong>, sits in your brain and drives sexual arousal and appetite. Each of these three compounds simply hits those receptors in a different mix: one leans toward the tan, one hits everything at once, and one is tuned for the libido effect with the tan dialed down. That single idea explains the whole class. And because two of them stimulate pigment cells, the most important part of this entire report is not the tan or the libido, it is your moles. We do honest, not hype, so let us take it slowly.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician, or a dermatologist. Two members are approved for specific medical conditions (afamelanotide for a rare light-sensitivity disorder, bremelanotide for a sexual-desire disorder); Melanotan II is not approved anywhere and is a gray-market research peptide. Because these stimulate pigment cells, a skin and mole check is part of doing this safely. Any dose named here is an example for discussion, never a prescription.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you cleared to explore this class, and which one fits?</h2>
+    <p>This flags the hard stops (your skin above all), and if you are clear, points toward the compound that matches your goal. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Melanocortin readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the hard stops. Do any of these apply to you? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">Personal or family history of melanoma or skin cancer</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Atypical / dysplastic moles, or a lot of moles</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pregnant, breastfeeding, or trying to conceive</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually weighing this class for?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">A tan, and the cleaner option</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Both a tan and a libido effect</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Libido or arousal only</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these in your picture? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="3"><span class="chip">Uncontrolled high blood pressure or heart disease</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">On blood-pressure or ED medication</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Fair skin that burns easily, or lots of freckles</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is the safety groundwork in place? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">I have not had a baseline skin / mole check</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">I would be skipping sunscreen because I am "tanning"</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to source it with no provider involved</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider, and a dermatologist, about your own skin and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + RECEPTOR MATRIX =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>One hormone, two receptors</h2>
+    <p>All three are lab-made versions of <strong>alpha-MSH</strong>, a natural hormone that talks to your melanocortin receptors. Two of those receptors do the work you hear about:</p>
+    <ul>
+      <li><strong>MC1R</strong> lives on the pigment cells in your skin. Switch it on and those cells make more <strong>melanin</strong>, the brown pigment, so your skin darkens. That is the tan.</li>
+      <li><strong>MC4R</strong> lives in your brain, in the circuits for sexual arousal and appetite. Switch it on and you get more <strong>desire and arousal</strong>, and less hunger. That is the libido (and the appetite-drop) effect.</li>
+    </ul>
+    <p>Every difference between these three compounds comes down to which of those two receptors it favors:</p>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>Compound</th><th>MC1R (tan)</th><th>MC4R (libido)</th><th>Approved?</th><th>Route &amp; use</th><th>The differentiator</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Melanotan I</th><td class="yes">&check; strong</td><td class="no">minimal</td><td>Yes (for a light disorder)</td><td>SubQ; tan</td><td>Cleaner, more selective tan; the approved pigment one</td></tr>
+          <tr><th>Melanotan II</th><td class="yes">&check; strong</td><td class="yes">&check; strong</td><td class="no">No</td><td>SubQ; tan + libido</td><td>Tan, libido, and appetite drop; the most side effects</td></tr>
+          <tr><th>PT-141</th><td class="par">residual</td><td class="yes">&check; strong</td><td>Yes (for low desire)</td><td>SubQ as needed; libido</td><td>Libido only, tanning dialed down; approved, BP caution</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">PT-141 (bremelanotide) is derived from Melanotan II but re-tuned to reduce the tanning effect and keep the sexual-function one. Some skin darkening can still occur with repeated use.</p>
+
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"They are just tanning peptides, basically harmless." Half true. The tan is real and the mechanism is well understood, but two of these broadly stimulate the pigment cells that can turn into melanoma, they darken existing moles, and the long-term safety of that has never been established in a trial. Melanotan II in particular is not approved anywhere and comes from an unregulated supply. Natural-sounding is not the same as safe, and the mole risk is the real story.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE / APPROVAL CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The part the marketing flips</p>
+    <h2>The evidence ladder, honestly</h2>
+    <p>These get sold as if they are equally legitimate. They are not. Two have real regulatory approval and trial data (for specific medical uses); one has neither and rests on gray-market experience. Longer bars mean deeper, real human evidence, not "works better for a tan."</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of real human evidence, by compound</p>
+      <p class="csub">Approval and trial data, not popularity. Note the approvals are for specific medical conditions, not for cosmetic tanning.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">PT-141 (bremelanotide)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Approved, Phase 3 trials</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Melanotan I (afamelanotide)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="92">Approved, Phase 3 trials</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Melanotan II</div><div class="bar-track"><div class="bar-fill b-good" data-w="20">A small ED study; no approval</div></div></div>
+      </div>
+      <p class="src">PT-141: Kingsberg 2019 (RECONNECT Phase 3). Afamelanotide: Langendonk 2015, NEJM. Melanotan II: Wessells 2000 (20-man erectile study); not approved anywhere. Full citations below.</p>
+    </div>
+    <p>The twist worth naming: the two with real evidence are approved for <strong>medical</strong> uses (a rare light-sensitivity disorder, and a sexual-desire disorder), not for cosmetic tanning. And the most popular tanning compound, Melanotan II, is the one with the least oversight and the most side effects. Popular is not the same as proven, or safe.</p>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How one hormone does three things</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Bind the receptor</h4><p>Each compound is an alpha-MSH analog. Melanotan I leans on MC1R; Melanotan II hits the whole family; PT-141 favors the brain's MC4R.</p></div>
+      <div class="step"><div class="n">02</div><h4>MC1R makes the pigment</h4><p>On skin cells, MC1R activation switches on melanin production. Fresh pigment builds over weeks, so the tan is cumulative and fades slowly, and it stimulates every pigment cell, including your moles.</p></div>
+      <div class="step"><div class="n">03</div><h4>MC4R works the brain</h4><p>In the brain, MC4R activation raises sexual desire and arousal (upstream of the plumbing, unlike the usual ED pills) and lowers appetite. The same brain region also drives the nausea.</p></div>
+    </div>
+    <p>That last point matters: the nausea so many people feel is not a contaminant or a bad batch, it is the MC4R effect itself, coming from the same brain circuitry that produces the benefit. It usually settles over the first several doses, which is why starting low exists.</p>
+  </div>
+</section>
+
+<!-- =============== THE THREE (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The three, with honest pros and cons</p>
+    <h2>Melanotan I, Melanotan II, and PT-141</h2>
+    <p>Same hormone family, different receptor mix. Tags show the lean: <span style="color:var(--blood-deep);font-weight:600">tan</span>, <span style="color:#8a3547;font-weight:600">tan and libido</span>, or <span style="color:#6d3b7a;font-weight:600">libido</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>Melanotan I (afamelanotide)</h3><span class="tag tan">Tan &middot; MC1R</span></div>
+      <p class="mech">The more MC1R-selective one, and the version with an actual approval. The cleaner tanning member.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>More selective for pigment, so fewer of the central effects (little nausea, no libido or appetite change)</li>
+          <li>The approved member: real trial data and long-term safety monitoring behind the medical version</li>
+          <li>A longer-lasting, more even tan</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Slower to show, and it still needs some UV to develop a visible tan</li>
+          <li>Its approval is for a rare light disorder, not for cosmetic tanning; off-label tanning use is unstudied</li>
+          <li>Still stimulates pigment cells, so moles and freckles can darken</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the cleaner tan for someone whose only goal is pigment. Still requires the mole discipline below. Approved medically as an implant; off-label tanning use is by injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Melanotan II</h3><span class="tag both">Tan + libido &middot; broad</span></div>
+      <p class="mech">The non-selective one: it hits the whole melanocortin family at once, so it does everything, and brings the most side effects.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>The strongest, fastest tan, and it works largely without UV</li>
+          <li>A real libido and erectile effect (in a small study, erections in 17 of 20 men), plus appetite suppression</li>
+          <li>Potent at tiny doses, so a vial lasts</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The most side effects: nausea and facial flushing are common, plus the strongest mole-darkening burden</li>
+          <li>Not approved anywhere; gray-market supply with no quality oversight</li>
+          <li>Carries a real priapism (prolonged, painful erection) risk and transient blood-pressure rises</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the do-everything one, with the heaviest safety load. Only for someone who accepts the flags and does the mole discipline. Start at the lowest dose to gauge nausea.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>PT-141 (bremelanotide)</h3><span class="tag libido">Libido &middot; MC4R</span></div>
+      <p class="mech">Derived from Melanotan II but re-tuned toward the brain's MC4R, with the tanning minimized. The libido one, with an approval behind it.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Approved (as Vyleesi) for low sexual desire in premenopausal women, with Phase 3 trial data</li>
+          <li>Works on desire itself, in the brain, which the usual blood-flow ED pills do not reach</li>
+          <li>Taken as needed, and it clears the same day; minimal tanning</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Nausea is common (around 40% in trials), plus flushing and headache</li>
+          <li>Causes transient blood-pressure changes and is contraindicated in uncontrolled high blood pressure or heart disease</li>
+          <li>Some skin darkening can still occur with repeated use; limited to a set number of doses per month</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the evidence-backed, tanning-minimized libido option, but not for uncontrolled blood pressure. As-needed, about 45 minutes before; not for uncontrolled hypertension or known heart disease.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE MOLE RULES =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The most important section here</p>
+    <h2>The skin rules they all share</h2>
+    <p>This applies to every compound here, because every one of them stimulates the pigment cells that can become melanoma. Get this wrong and the risk is not a side effect, it is a missed cancer. This is the discipline that makes the difference.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Get a baseline skin check FIRST</h4><p>Before your first dose, see a dermatologist for a full skin and mole check, and photograph your moles. You cannot tell whether a mole changed later if you never mapped it at the start. This is the single most important step.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>Melanoma or atypical-mole history is a hard stop</h4><p>A personal or family history of melanoma, atypical (dysplastic) moles, or a large number of moles is a firm contraindication, not a caution. Stimulating pigment cells is exactly the wrong move for that skin, full stop.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>Watch every mole by the ABCDE rule</h4><p>For the whole time you use it: Asymmetry, Border irregularity, Color change, Diameter growth, Evolving. Any new, growing, or asymmetrically changing mole is a stop-and-see-a-dermatologist signal, not a wait-and-see one.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>A tanning peptide is not sunscreen</h4><p>A darker tan gives only a little UV protection and does not replace sun protection. Keep wearing sunscreen. Chasing a tan while skipping SPF, and stimulating pigment cells at the same time, is working against yourself twice.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Start low, for the nausea</h4><p>Nausea and flushing are the common early effects (worst with Melanotan II and PT-141). Start at the lowest dose, dose in the evening, and consider a small meal or an anti-nausea aid beforehand. It usually eases within a few doses.</p></div></div>
+    </div>
+    <div class="note blood">
+      <p class="h">The Melanotan II extra</p>
+      <p>Melanotan II carries a specific priapism risk: an erection that will not go down. An erection lasting more than four hours is a medical emergency, not something to wait out, because it can permanently damage tissue. Know that going in, especially with unregulated product at uncertain doses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HOW TO CHOOSE (now/later plan) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>How to think about choosing, honestly</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First question</p><h4>Are you cleared at all?</h4>
+        <ul>
+          <li>No melanoma or skin-cancer history, no atypical moles or heavy mole count</li>
+          <li>A baseline dermatology skin check done and moles photographed</li>
+          <li>Not pregnant or breastfeeding; blood pressure controlled (especially for PT-141)</li>
+          <li>If a skin hard stop is present, this class is not the tool, full stop</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Second question</p><h4>Which one fits the goal?</h4>
+        <ul>
+          <li>Tan, cleaner profile: Melanotan I</li>
+          <li>Tan plus libido, eyes open on side effects: Melanotan II</li>
+          <li>Libido only, with an approval behind it: PT-141</li>
+          <li>Never same-day-stack two of these: they hit overlapping receptors</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>The dermatology baseline is not optional garnish, it is the whole safety story. Do that first, match the compound to the actual goal, start low, and do not combine two melanocortins. Matching beats maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE / SAFETY FOUNDATION =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>The habits that make this safe</h2>
+    <h4>Mole-mapping and an annual skin check</h4><p>Photograph your moles before you start, watch them by the ABCDE rule throughout, and keep an annual dermatology check. This is the single highest-leverage habit on this entire class, and it is free.</p>
+    <h4>Sun protection, still</h4><p>The tan is not armor. Keep using sunscreen, especially since you are actively stimulating pigment cells. Sensible sun exposure, not more of it.</p>
+    <h4>Nausea management</h4><p>Start low, dose in the evening, eat a little first, and give it a few doses to settle. Most people adapt within a week; if you never do, that compound may not be for you.</p>
+    <h4>Blood-pressure awareness for PT-141</h4><p>PT-141 nudges blood pressure transiently. Know your numbers, and do not use it if your blood pressure is uncontrolled or you have known heart disease.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS / SUPPORT GRADED =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>A baseline dermatology check, mole photos, and daily SPF</h4><p>The genuinely protective base of using any of these. Boring, free, and the thing that actually matters.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>An anti-nausea aid and evening dosing during the first week</h4><p>Sensible, short-term comfort measures while your body adapts to the MC4R nausea. Not a fix, a bridge.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>"Tan accelerator" lotions and sunbed stacking</h4><p>Piling on UV to speed the tan just adds the exact skin damage you should be minimizing while stimulating pigment cells. The wrong lever.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Melanotan II from an unvetted source while ignoring your moles</h4><p>Gray-market product at an uncertain dose, with no baseline skin check, is the exact combination that turns a cosmetic choice into a missed melanoma. Do not.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I honestly ruled out the skin hard stops: melanoma or skin-cancer history, and atypical or heavy moles?</p></div>
+      <div class="row"><span class="box"></span><p>Have I had a baseline dermatology check and photographed my moles?</p></div>
+      <div class="row"><span class="box"></span><p>Am I matching the compound to my real goal (tan, libido, or both), not just chasing the popular one?</p></div>
+      <div class="row"><span class="box"></span><p>If PT-141, is my blood pressure controlled and am I clear of heart disease?</p></div>
+      <div class="row"><span class="box"></span><p>Do I know the priapism warning if I am considering Melanotan II?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my skin and mole history, is any of this safe for me at all?</p></div>
+      <div class="row"><span class="box"></span><p>Can we do a baseline full-body skin check and set a monitoring schedule?</p></div>
+      <div class="row"><span class="box"></span><p>If PT-141, is it safe with my blood pressure and any medications I take?</p></div>
+      <div class="row"><span class="box"></span><p>What changes in a mole, or what symptoms, should make me stop and call you?</p></div>
+    </div>
+    <h3>The checks worth knowing</h3>
+    <ul>
+      <li><strong>A full-body skin and mole map:</strong> the first and most important screen for this whole class.</li>
+      <li><strong>Blood pressure:</strong> especially before and on PT-141.</li>
+      <li><strong>Personal and family melanoma history:</strong> can take the class off the table entirely.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get medical help</h3>
+      <p style="color:#EFD0C4;margin:0 0 12px;max-width:none">A few situations are not "go slower," they are "stop and be seen."</p>
+      <ul>
+        <li>Any new, growing, or changing mole (Asymmetry, Border, Color, Diameter, Evolving)</li>
+        <li>An erection lasting more than four hours (a medical emergency)</li>
+        <li>Severe or persistent headache, chest pain, or signs of very high blood pressure</li>
+        <li>A mole that bleeds, itches, or will not heal</li>
+        <li>Severe allergic reaction: swelling of the face or throat, trouble breathing</li>
+      </ul>
+      <p class="fast">A little nausea or flushing settles. A changing mole or a four-hour erection do not wait, they are emergencies. When in doubt about your skin, see a dermatologist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Understand the receptor, and respect your skin</h2>
+    <p>The mechanism here is genuinely simple and worth knowing: one hormone family, two receptors, and each compound just leans a different way. Melanotan I toward the tan, PT-141 toward libido, Melanotan II toward all of it, with the most side effects. Two of the three have real approvals, for medical uses, not cosmetic tanning, and Melanotan II, the most popular for tanning, is the one with the least oversight. But the honest headline is not the tan or the libido. It is that two of these stimulate the pigment cells that can become melanoma, and they darken your moles. So the whole game is the skin discipline: a baseline dermatology check, mole photos, the ABCDE rule, sunscreen anyway, and a hard stop if you have a melanoma or atypical-mole history. Match the compound to your real goal, start low, never stack two, and put your skin first. That is not the cautious move. It is the one that keeps a cosmetic choice from becoming a serious one.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">This is educational information only and not a recommendation to use, purchase, or dose any compound; it does not replace evaluation by your own licensed provider or a dermatologist. Afamelanotide and bremelanotide are approved for specific medical conditions, not cosmetic tanning; Melanotan II is not approved anywhere. Because these stimulate pigment cells, a baseline and ongoing skin check is part of using them safely. Doses named are examples for discussion. Intended for adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Human figures are the published results from each compound's key trial, retrieved from PubMed. Afamelanotide and bremelanotide have real Phase 3 approvals; Melanotan II rests on a small study and gray-market experience, with no approval. Priapism and blood-pressure effects are documented in case reports and product labeling.</p>
+    <ol>
+      <li>Langendonk JG, Balwani M, Balwani M, et al. Afamelanotide for Erythropoietic Protoporphyria. <em>N Engl J Med.</em> 2015;373(1):48-59. <a href="https://doi.org/10.1056/NEJMoa1411481">doi:10.1056/NEJMoa1411481</a> (Melanotan I / afamelanotide, the approved-use Phase 3 trials)</li>
+      <li>Kingsberg SA, Clayton AH, Portman D, et al. Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials (RECONNECT). <em>Obstet Gynecol.</em> 2019;134(5):899-908. <a href="https://doi.org/10.1097/AOG.0000000000003500">doi:10.1097/AOG.0000000000003500</a> (PT-141 / bremelanotide)</li>
+      <li>Wessells H, Gralnek D, Dorr R, et al. Melanocortin receptor agonists, penile erection, and sexual motivation: human studies with Melanotan II. <em>Int J Impot Res.</em> 2000;12(Suppl 4):S74-S79. <a href="https://doi.org/10.1038/sj.ijir.3900582">doi:10.1038/sj.ijir.3900582</a> (Melanotan II erectile study, 20 men)</li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. Both approvals are for specific medical conditions, not for cosmetic tanning. Melanotan II is not approved in any country; the long-term safety of chronic pigment-cell stimulation, and standardized mole-monitoring for these compounds, is not established. This report is an honest educational map of the class, not a dosing sheet or a recommendation to use any compound.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: the tan fills up the skin-tone bar
+  var tanFill=document.getElementById("tanFill");
+  if(tanFill){
+    if(reduce){ tanFill.setAttribute("y","140"); tanFill.setAttribute("height","140"); }
+    else{
+      tanFill.style.transition="y 1.6s cubic-bezier(.4,0,.2,1), height 1.6s cubic-bezier(.4,0,.2,1)";
+      setTimeout(function(){ tanFill.setAttribute("y","140"); tanFill.setAttribute("height","140"); }, 350);
+    }
+  }
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 tan, 1 both, 2 libido, 3 learning
+    }
+    function anyStop(){
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      if(anyStop()){
+        show("A hard stop applies","act","This class is not the right tool for you",
+          "You marked one of the firm skin lines: a melanoma or skin-cancer history, atypical or heavy moles, or pregnancy. Because these compounds stimulate the pigment cells that can become melanoma (and darken existing moles), those are contraindications, not cautions. Please do not pursue these, and see a dermatologist about your skin and safer options for your goal.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
+          "You flagged things that change the calculus: a blood-pressure or heart factor, fair burn-prone skin, no baseline skin check, or no provider. None is an automatic no, but each needs handling first, above all a baseline dermatology skin check, and for PT-141 a controlled blood pressure. Get those right, then revisit which one fits.");
+        return;
+      }
+      var map={
+        0:["A tan, cleaner profile","Melanotan I is the more selective tan",
+           "Wanting a tan with fewer central effects points to Melanotan I, the more MC1R-selective and the one with a real (medical) approval behind it. It is slower and still needs some UV, and it still stimulates your moles, so the baseline skin check and ABCDE monitoring are non-negotiable. Start low."],
+        1:["Tan and libido","Melanotan II is the fit, eyes wide open",
+           "Wanting both points to Melanotan II, the broad agonist. Be honest that it also carries the most side effects: the most nausea, the heaviest mole-darkening burden, a priapism risk, and no approval or quality oversight. If you go this way, the dermatology baseline and mole discipline matter more here than anywhere."],
+        2:["Libido only","PT-141 is the evidenced, tanning-minimized option",
+           "Wanting the libido effect without the tan points to PT-141, the one with a real approval and Phase 3 data. The catch is blood pressure: it causes transient rises and is not for uncontrolled hypertension or known heart disease. Nausea is common early. Used as needed, not daily."],
+        3:["Learning first","You are thinking about it the right way",
+           "Reading the whole class before reaching for one is exactly right. Learn the two receptors, rule out the skin hard stops honestly, get a baseline dermatology check, and involve a provider before going further. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
