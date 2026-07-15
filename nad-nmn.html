@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>NAD+, NMN &amp; NR: The Longevity Marker, Honestly - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - NAD+ / NMN / NR (re-skinned "Thick Blood" layout)
+  Skin: cellular longevity / energy - PLUM primary + GOLD secondary (NOT teal, NOT indigo, NOT copper).
+  Hero motif: a cell recharging - a depleted vessel refilled by a precursor (NAD+ falls with age, NMN/NR refill it).
+  Built from the Hermes NAD/NMN research brief AFTER Claude's citation-verification pass.
+  DROPPED per verification: the "398% IV NAD+ rise" claim (Grant 2019 abstract contradicts it) - used instead for "IV clears fast."
+  ASCII + HTML entities only. No em dashes. RUO / education-only / 21+.
+-->
+<style>
+  :root{
+    --paper:#F2EFF1; --surface:#FBF9FB; --surface-2:#EBE6EA;
+    --ink:#241A22; --ink-soft:#3E2F3A; --muted:#6A5C66;
+    --line:#DCD5DA; --line-soft:#E8E2E7;
+    /* PRIMARY accent (plum / cellular longevity) - keeps the --blood var name, new value */
+    --blood:#8A3E77; --blood-deep:#4E2343; --blood-tint:#EEDDEA;
+    /* SECONDARY warm accent (gold / vitality) */
+    --plasma:#BE9540; --plasma-soft:#E3CB8C; --plasma-tint:#F4EBD4;
+    --good:#3E8E5A; --good-tint:#DEEDE2;
+    --amber:#B5822A; --amber-tint:#F1E6CC;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#1E1420;color:#EFE7ED;border-top:1px solid #322338;border-bottom:1px solid #322338}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(34px,6.2vw,58px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:190px}}
+  .hero-art{display:flex;justify-content:center}
+  .chargeWrap{transition:transform 1.6s cubic-bezier(.3,0,.2,1)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(26px,4.4vw,38px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:180px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#9a7628,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#2c6a41,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.short{background:var(--blood-tint);color:var(--blood-deep)}
+  .tag.long{background:var(--good-tint);color:var(--good)}
+  .tag.both{background:var(--plasma-tint);color:#8a6416}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--blood)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--blood-tint);border-color:#dcc4d5}
+  .plan .later{background:var(--good-tint);border-color:#c9ddd0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--blood-deep)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--blood)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(36,26,34,.08)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  select.hct{font-family:var(--sans);font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%;max-width:460px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #e6d5aa}
+  .result.watch .band{color:#8a6416}
+  .result.act{background:var(--blood-tint);border:1px solid #dcc4d5}
+  .result.act .band{color:var(--blood-deep)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .tl{width:100%;height:auto;display:block}
+  .flags{background:#221614;border:1px solid #4a2420;border-radius:14px;padding:24px 26px;color:#F1DAD4}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFC9;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#D98A5A}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC8BF}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Longevity &amp; Cellular Energy</b></p>
+        <h1>NAD+, honestly</h1>
+        <p class="lede" style="max-width:38ch;margin:.1em 0 .5em">The most hyped molecule in longevity, and the honest gap between raising a number in your blood and actually aging slower.</p>
+        <p class="thesis">The decline is real. Raising it is real. Feeling younger for it is the part the marketing outruns.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a cell recharging - depleted vessel refilled by a precursor. -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg" id="chargeArt">
+          <defs><clipPath id="cellClip"><rect x="54" y="30" width="72" height="256" rx="30"/></clipPath></defs>
+          <!-- cell vessel -->
+          <rect x="54" y="30" width="72" height="256" rx="30" fill="#8A3E77" opacity="0.05"/>
+          <!-- rising gold charge (clipped + animated up) -->
+          <g clip-path="url(#cellClip)"><g class="chargeWrap"><rect x="50" y="150" width="80" height="200" fill="#BE9540" opacity="0.85"/></g></g>
+          <!-- vessel outline on top -->
+          <rect x="54" y="30" width="72" height="256" rx="30" fill="none" stroke="#8A3E77" stroke-width="3" opacity="0.9"/>
+          <!-- energy sparks in the charged zone -->
+          <g fill="#4E2343">
+            <circle cx="78" cy="205" r="3"/><circle cx="104" cy="230" r="3"/><circle cx="90" cy="258" r="3.4"/>
+          </g>
+          <!-- precursor molecule feeding in + dashed intake path (drawn via JS) -->
+          <g stroke="#8A3E77" stroke-width="2.4" fill="none" class="intake">
+            <path d="M30 292 C 44 286, 52 292, 66 284" class="nfib"/>
+          </g>
+          <circle cx="24" cy="294" r="6.5" fill="#BE9540"/>
+          <!-- NAD+ label hint -->
+          <text x="90" y="22" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#8A3E77" font-weight="700">NAD+</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">~50<small>%</small></div><div class="lbl">how much NAD+ falls between roughly age 40 and 60, the real biology behind the interest</div></div>
+      <div class="stat"><div class="n">+142<small>%</small></div><div class="lbl">how much a 1000 mg NR dose raised blood NAD+ in one trial: the marker genuinely moves</div></div>
+      <div class="stat"><div class="n">0</div><div class="lbl">human studies showing NMN or NR actually extends lifespan, to date</div></div>
+    </div>
+    <p class="src">Fang 2017, Trends Mol Med (NAD+ decline) &middot; Conze 2019, Sci Rep (NR raised NAD+ 22-142% by dose) &middot; NAD+ boosters raise the marker; no human lifespan trial exists. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">Every few months a new headline promises that one supplement will slow aging from the inside. NAD+ is the molecule behind most of them. Let us slow it down and look at it honestly, together.</p>
+    <p>Here is the honest shape of the whole thing before we go deep. NAD+ really does fall as you age, and that decline really is tied to how cells make energy and repair themselves. Supplements like NMN and NR really do raise NAD+ back up in your blood. What is not settled, at all, is whether raising that number makes you live longer or feel meaningfully better. That gap, between moving a marker and changing your life, is the entire story, and it is the part the loudest posts skip.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician or your own labs. NMN, NR, and injectable NAD+ are sold as supplements or research compounds, not approved anti-aging medicines. Anything named here, including any dose, is an example for discussion and learning, never a prescription. For research and educational purposes, adults 21 and over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you approaching this the wise way?</h2>
+    <p>This is not about whether NAD+ boosters are "good." It is a reflection on whether you are setting yourself up to spend money and attention well. It is education, not a diagnosis, and it does not replace a real evaluation.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Longevity-supplement readiness check</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">What is actually driving your interest?</p>
+        <select class="hct" id="q_hct" aria-label="motivation">
+          <option value="0">General longevity and healthspan, learning</option>
+          <option value="0">Supporting my metabolism or energy, foundation already handled</option>
+          <option value="4">Low energy or fatigue I have not had checked</option>
+          <option value="7">A specific symptom I am hoping it will fix</option>
+          <option value="11">A worsening or unexplained symptom</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is your foundation genuinely handled? (tap all that are NOT yet)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="1"><span class="chip">Sleeping under 6-7 hours most nights</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Not exercising regularly</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Diet is inconsistent</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Do you have an active or recent history of cancer?</p>
+        <div class="opt" data-single="onco">
+          <label><input type="radio" name="onco" value="0"><span class="chip">No</span></label>
+          <label><input type="radio" name="onco" value="0"><span class="chip">Fully resolved, long ago</span></label>
+          <label><input type="radio" name="onco" value="9"><span class="chip">Active or recent</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these lately? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">Fatigue with unexplained weight loss</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Night sweats or a fever that lingers</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">New shortness of breath or chest discomfort</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Exhaustion that is steadily worsening</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I stand</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis. A real evaluation by your provider is what tells the story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>What NAD+ actually is</h2>
+    <p>NAD+ (nicotinamide adenine dinucleotide) is a coenzyme found in every cell, involved in hundreds of reactions, most importantly turning food into usable energy. Think of it as a rechargeable battery: it cycles between an empty form (NAD+) that accepts electrons and a charged form (NADH) that carries them into the machinery that makes ATP, your cellular energy currency. On top of that, NAD+ is the required fuel for three families of workers: sirtuins (the "longevity" enzymes that tune metabolism and stress resistance), PARPs (which repair DNA), and CD38 (an immune enzyme).</p>
+    <h3>NMN and NR are the refill</h3>
+    <p>You do not take NAD+ by mouth in any efficient way, so the popular approach is to take a precursor, a raw material your cells convert into NAD+. The two most common are NMN (nicotinamide mononucleotide) and NR (nicotinamide riboside). Both reliably raise blood NAD+ in humans. They are supplements, not drugs, and neither is an approved treatment for aging or any disease.</p>
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"It reverses aging." That claim rides on one real fact, NAD+ declines with age and these compounds raise it back up, and then leaps to a conclusion the science has not reached. Raising NAD+ is a proven biochemical effect. Living longer or feeling younger because of it is a hypothesis, and a dedicated human trial has even found no cognitive benefit at all. Moving the marker is a bet on aging, not a demonstrated win against it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE BAR CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Where the evidence actually points</p>
+    <h2>How solid is each claim, honestly</h2>
+    <p>This is the single most useful chart in the whole topic. NAD+ boosters are not "unproven" across the board, nor are they proven miracles. The truth is specific: they are rock-solid at one thing and thin at the things people actually want. Longer bars mean stronger human evidence, not a bigger effect on your life.</p>
+
+    <div class="chart" data-animate>
+      <p class="ctitle">Strength of human evidence, claim by claim</p>
+      <p class="csub">A judgment read of the human NMN and NR trials. This ranks how well-supported each claim is, not how good it would feel.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Raises blood NAD+</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Proven, every trial</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Muscle insulin sensitivity</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="55">One good RCT (NMN)</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Blood pressure</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="42">Subgroup only (NR)</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Energy, how you feel</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="30">Mixed, subtle</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Cognition</div><div class="bar-track"><div class="bar-fill b-good" data-w="14">A dedicated trial found none</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Longer lifespan</div><div class="bar-track"><div class="bar-fill b-good" data-w="6">Zero human evidence</div></div></div>
+      </div>
+      <p class="src">Synthesized from Yoshino 2021 (Science), Martens 2018 (Nat Commun), the NAD+-MCI cognition trial 2023 (GeroScience), and the broader NMN/NR human trial set. Human lifespan bar reflects the absence of any such trial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>Why it falls, and how a refill works</h2>
+    <p>The mechanism is genuinely clean, which is part of why the idea is so appealing. Three steps.</p>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>The tank drains</h4><p>With age NAD+ gets squeezed from both sides: an enzyme called CD38 rises and chews through it, while NAMPT, the main on-ramp that recycles NAD+, slows down. Less made, more spent.</p></div>
+      <div class="step"><div class="n">02</div><h4>Precursors refill it</h4><p>NMN sits one step from NAD+ in the recycling pathway; NR converts into NMN first, then to NAD+. Both hand your cells raw material that skips the slow step, and both reliably raise blood NAD+.</p></div>
+      <div class="step"><div class="n">03</div><h4>NAD+ powers the workers</h4><p>Refilled NAD+ is the fuel for sirtuins, PARP DNA-repair, and the mitochondria that make energy. The hope is that topping up the fuel keeps those systems running younger. That is the hypothesis being tested.</p></div>
+    </div>
+    <p>According to PubMed, the NAD+-in-aging biology is reviewed in Fang 2017 <a href="https://doi.org/10.1016/j.molmed.2017.08.001">doi:10.1016/j.molmed.2017.08.001</a> and Covarrubias 2021 <a href="https://doi.org/10.1038/s41580-020-00313-x">doi:10.1038/s41580-020-00313-x</a>. The catch is in step three: we can confirm the fuel goes up, but not that the workers meaningfully do more with it in humans.</p>
+  </div>
+</section>
+
+<!-- =============== HONEST RISK PICTURE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The question everyone actually wants answered</p>
+    <h2>Is it safe?</h2>
+    <h3>What the research suggests</h3>
+    <p>On safety, the news is genuinely reassuring, and this is where NAD+ boosters look better than most compounds in the conversation. Across controlled human trials, NMN up to 900 mg per day and NR from 100 to 1000 mg per day have had side-effect rates comparable to placebo. The most common issues are mild: some nausea, bloating, or loose stool at higher doses, usually managed by taking it with a little food or splitting the dose.</p>
+    <h3>What we do <em>not</em> know, and one real caution</h3>
+    <p>The honest limit is time: human trials run weeks to months, not years, so very-long-term safety is inferred, not proven, and reviewers consistently ask for longer studies. And there is one caution worth taking seriously rather than waving off.</p>
+    <div class="note blood">
+      <p class="h">The cancer-history caution</p>
+      <p>Anyone with an active or recent cancer history should discuss NAD+ boosters with their oncologist before starting. The reasoning is straightforward: NAD+ fuels the same cellular growth and repair machinery that cancer cells rely on, so in principle a signal that supports metabolism could also favor existing abnormal cells. This is a precautionary principle, not a demonstrated harm, but it is the consistent recommendation across reviews of the NAD+ literature, and it is a provider conversation, not a community call.</p>
+    </div>
+    <p class="small">Pregnancy and breastfeeding are a standard exclusion, safety data is absent, so the honest answer is not while pregnant, trying to conceive, or nursing. And because NMN in particular is heat and moisture sensitive and degrades at room temperature, actual content varies widely by product, quality and storage genuinely matter here.</p>
+  </div>
+</section>
+
+<!-- =============== THE OPTIONS MENU (lever cards) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The honest toolkit, option by option</p>
+    <h2>The ways people raise NAD+, with real pros and cons</h2>
+    <p>Here is each common route to a higher NAD+, and the honest trade-off of each. Notice which one leads. Tags show whether the evidence behind it is <span style="color:var(--good);font-weight:600">proven</span>, <span style="color:#8a6416;font-weight:600">real but modest</span>, or <span style="color:var(--blood-deep);font-weight:600">least established</span>. Any dose named is an example for discussion, not a prescription.</p>
+
+    <div class="lever">
+      <div class="top"><h3>The free levers: exercise, sleep, fasting</h3><span class="tag long">Proven</span></div>
+      <p class="mech">The most overlooked NAD+ strategy, and the only one with proven anti-aging behind it. Exercise has been shown to reverse the age-related decline in the body's NAD+ salvage capacity in human muscle.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Addresses both sides of the squeeze: more production and less waste</li>
+          <li>The only NAD+ levers with real anti-aging evidence</li>
+          <li>Free, and they help everything else too</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Requires actual effort and consistency</li>
+          <li>Not a pill, so it does not feel like "doing something new"</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference:</b> per PubMed, exercise training reversed the age-related drop in NAD+ salvage capacity in human skeletal muscle (de Guia 2019). If you want proven anti-aging, it lives here first.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>NR (nicotinamide riboside)</h3><span class="tag both">Best-studied</span></div>
+      <p class="mech">A precursor that converts to NMN and then NAD+. The most thoroughly studied oral NAD+ booster, with the deepest safety and NAD+-elevation record.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Cleanly and safely raises NAD+ across every dose studied</li>
+          <li>The largest human safety dataset of the options</li>
+          <li>Generally cheaper, no niacin-style flushing</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Downstream benefits are modest, mixed, or subgroup-only</li>
+          <li>One dedicated trial found no cognitive benefit at all</li>
+          <li>No human study shows it extends lifespan</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference example:</b> longevity discussions commonly cite 300 mg daily, up to 1000 mg in metabolic trials, sometimes paired with TMG for methylation support. Example only, provider-guided.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>NMN (nicotinamide mononucleotide)</h3><span class="tag both">Real but modest</span></div>
+      <p class="mech">One enzymatic step closer to NAD+ than NR. Its single strongest human result is improved muscle insulin sensitivity, which makes metabolic support the most defensible reason to run it.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>One step nearer NAD+ in the pathway</li>
+          <li>Best single result: improved muscle insulin sensitivity</li>
+          <li>Very well tolerated to 900 mg per day</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Heat and moisture sensitive, so real content varies by product</li>
+          <li>Whether cells absorb it directly is still debated</li>
+          <li>Same modest, still-unsettled long-term benefit picture</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference example:</b> discussed around 250 to 600 mg in the morning, where the dose-ranging effect peaked, taken consistently. Store it cold. Example only, provider-guided.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Injectable / IV NAD+</h3><span class="tag short">Least established</span></div>
+      <p class="mech">Skipping the gut by injecting or infusing NAD+ directly. Popular in clinics, but the human outcome evidence for anti-aging is the thinnest of any option here.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Bypasses digestion entirely</li>
+          <li>Some people report a strong subjective effect</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The acidic solution stings, injection-site burning is the defining side effect</li>
+          <li>Infused NAD+ is cleared from the blood quickly, it does not simply flood your levels</li>
+          <li>No route is clinically validated for anti-aging outcomes</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Reference:</b> a human infusion study (Grant 2019) found directly infused NAD+ was rapidly removed from plasma, useful context that "more direct" does not mean "more effective." Treat this as the most experimental option.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== NMN vs NR NOTE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The debate people spend the most time on</p>
+    <h2>NMN or NR, which is better?</h2>
+    <p>This is the argument that fills the forums, and the honest answer is anticlimactic. NMN is one step closer to NAD+ in the pathway; NR has the longer, deeper safety record and is usually cheaper. Both reliably raise NAD+ in people, and there is no clear human evidence that one produces better real-world outcomes than the other.</p>
+    <div class="note good">
+      <p class="h">The honest bottom line</p>
+      <p>For most people they are functionally similar NAD+ boosters. The internet debate over which is "better" is largely marketing noise. Choose on cost, product quality, and trust in the source, not on hype, and most people simply pick one and stay consistent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== TIMELINE (SVG) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">What to actually expect</p>
+    <h2>The honest timeline</h2>
+    <div class="chart" data-animate>
+      <p class="ctitle">Two different curves: the marker vs the feeling</p>
+      <p class="csub">The blood NAD+ number rises fast and clearly. Whatever you might feel is slower, subtler, and not guaranteed.</p>
+      <svg class="tl" viewBox="0 0 640 260" role="img" aria-label="One curve rising quickly to a plateau, a second much flatter curve rising only slightly">
+        <line x1="50" y1="20" x2="50" y2="210" stroke="#DCD5DA" stroke-width="1"/>
+        <line x1="50" y1="210" x2="610" y2="210" stroke="#DCD5DA" stroke-width="1"/>
+        <path d="M50,196 C90,150 120,96 180,86 C300,70 480,70 610,68"
+          fill="none" stroke="#8A3E77" stroke-width="3" stroke-linecap="round"/>
+        <text x="410" y="60" font-family="ui-monospace,monospace" font-size="11" fill="#8A3E77">blood NAD+ (rises clearly)</text>
+        <path d="M50,200 C160,198 300,192 420,184 C500,179 560,176 610,174"
+          fill="none" stroke="#BE9540" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+        <text x="360" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#9a7628">how you feel (modest, if at all)</text>
+        <g font-family="ui-monospace,monospace" font-size="11" fill="#6A5C66" text-anchor="middle">
+          <text x="50" y="228">Day 1</text><text x="180" y="228">Week 2</text>
+          <text x="330" y="228">Month 1</text><text x="480" y="228">Month 3</text><text x="590" y="228">Month 6</text>
+        </g>
+      </svg>
+      <p class="src">Illustrative. The NAD+ rise is established within about 2 weeks and holds (Conze 2019); the felt-benefit curve is drawn to reflect how modest and variable human results are, not a promise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RULE OUT IMPOSTORS =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Before you credit the supplement</p>
+    <h2>Give the credit honestly</h2>
+    <p>If you start a NAD+ booster and feel better, it is worth asking what actually did the work, because the answer changes what you should keep doing.</p>
+    <ul>
+      <li><strong>The habits you upgraded at the same time.</strong> People who start a longevity supplement very often clean up sleep, training, and diet in the same month. Those genuinely raise NAD+ and genuinely make you feel better, and they will happily take the credit the capsule is getting.</li>
+      <li><strong>Placebo and hope.</strong> Longevity supplements are a category where expectation runs high, and expectation moves how you feel. That is not a knock, it is a reason to track honestly.</li>
+      <li><strong>A real issue you have not addressed.</strong> Persistent fatigue can have a specific, treatable cause, thyroid, iron, sleep apnea, mood. A supplement is not a substitute for finding out what is actually going on.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== FOUNDATION =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>The proven anti-aging is free</h2>
+    <p>This is the part worth sitting with, because it is where the real leverage is. The free levers do not just raise NAD+, they address both sides of the age-related squeeze at once, more production and less waste, which is something a precursor supplement cannot do on its own.</p>
+    <h4>Exercise</h4><p>The strongest of the free levers. Training has been shown to reverse the age-related decline in the body's NAD+ salvage capacity in human muscle. No capsule in this topic has an anti-aging result that clean.</p>
+    <h4>Sleep</h4><p>NAD+ and the whole repair economy run on circadian rhythm, and sleep is when much of the cellular housekeeping happens. Chasing cellular energy while short on sleep is working against your own biology.</p>
+    <h4>A fasted morning window and a whole-food diet</h4><p>Fasting and the metabolic stress of real food nudge the same NAD+ and sirtuin systems the supplements are aiming at, for free, and they carry benefits far beyond any single molecule.</p>
+    <div class="note good">
+      <p class="h">The one rule, if you take nothing else</p>
+      <p>A NAD+ supplement is the last 10 percent, never the first. If the foundation is not handled, the capsule is not going to save it, and you will not even be able to tell whether it helped.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>The longevity shelf, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Exercise, sleep, and a whole-food diet</h4><p>The genuinely proven anti-aging, and the proven way to raise NAD+. Boring, free, and it works. Everything below is built on top of this or it is built on sand.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>NR or NMN (pick one), for metabolic support</h4><p>Reliably raises NAD+ and is very safe. Run it as a modest, plausible bet, strongest case is metabolic support, not as the thing that will make you younger.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>The co-stack: spermidine, urolithin A</h4><p>Different longevity routes (autophagy, mitophagy) with early human data. Plausible complements to a NAD+ booster, still with modest and still-emerging evidence.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>Resveratrol as a "longevity switch," and proprietary NAD-boosting blends</h4><p>The idea that resveratrol flips a longevity switch was largely a lab-assay artifact. The blends are mostly a few reasonable ingredients at token doses behind a big claim. Read the label, not the front.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Anything sold as "reverse your age" or a shortcut past the foundation</h4><p>The claim itself is the red flag. No molecule here has earned that sentence.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== WHERE IT FITS =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The honest bottom line</p>
+    <h2>Where NAD+ boosters honestly fit</h2>
+    <p>If your foundation is genuinely handled, if you understand you are buying a modest and unsettled bet rather than a proven result, and if you have a quality source, a NAD+ booster is one of the more reasonable, better-tolerated longevity supplements to run. That is a real place. It is also a humble one. Raising NAD+ is well established; the functional human benefits, how much better you feel, live, or perform, are modest, mixed, and smaller than the marketing implies.</p>
+    <p>Held honestly, the picture is clear: NR is the best-studied, cleanest NAD+ booster, backing a plausible idea whose real-world payoff is not yet established. NMN's most defensible reason to run is metabolic support. And the proven anti-aging you are actually after lives in the exercise, diet, and sleep that raise NAD+ for free. Take the capsule if you want, understanding exactly what it is: a well-executed bet, not a demonstrated outcome.</p>
+    <p class="small">You can map goals to compounds and keep your own notes in the OnePin app. Treat everything there as education to research, never as a protocol to copy.</p>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Is my sleep, exercise, and diet genuinely handled, the levers that raise NAD+ for free?</p></div>
+      <div class="row"><span class="box"></span><p>Am I clear that I am buying a modest bet, not a proven anti-aging result?</p></div>
+      <div class="row"><span class="box"></span><p>If I feel better, will I honestly be able to tell what did the work?</p></div>
+      <div class="row"><span class="box"></span><p>Do I have a quality source, given NMN degrades with heat and storage?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER + SCREENING =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, is there any reason I should not take a NAD+ booster?</p></div>
+      <div class="row"><span class="box"></span><p>Could my fatigue have a specific cause worth checking first?</p></div>
+      <div class="row"><span class="box"></span><p>If I run NR or NMN, is there anything you would want to monitor?</p></div>
+    </div>
+    <h3>Worth knowing going in</h3>
+    <ul>
+      <li><strong>Any cancer history:</strong> NAD+ fuels the machinery cancer cells use, so this is an oncologist conversation before starting.</li>
+      <li><strong>Your real energy picture:</strong> thyroid, iron, sleep, and mood are common, treatable drivers of fatigue that a supplement will not fix.</li>
+      <li><strong>Your source and its quality:</strong> NMN content varies widely by product, and storage matters.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>See a professional promptly, not a supplement</h3>
+      <p style="color:#EFCFC9;margin:0 0 12px;max-width:none">Fatigue and "low energy" can be symptoms of something real. If any of these fit, get evaluated first.</p>
+      <ul>
+        <li>Fatigue with unexplained weight loss</li>
+        <li>Night sweats or a lingering fever</li>
+        <li>New shortness of breath or chest discomfort</li>
+        <li>Exhaustion that is steadily worsening</li>
+        <li>Fatigue plus paleness, easy bruising, or bleeding</li>
+        <li>Any new symptom that is clearly not "just aging"</li>
+      </ul>
+      <p class="fast">These deserve a real evaluation, not a longevity capsule. Finding the actual cause is the fastest path to feeling better, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Proven marker, unproven miracle</h2>
+    <p>NAD+ is real biology, its decline with age is real, and raising it with NMN or NR is a real, well-tolerated effect. What has not been shown is the part everyone is buying: that moving that number makes you age slower or feel meaningfully younger. The wise stance holds both truths at once. Build the free foundation that raises NAD+ with actual evidence behind it, and if you add a booster on top, add it knowing it is a modest bet, not a rescue. That is not the cynical read. It is the honest one, and honesty is the whole point.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:60ch;margin:0 auto 18px">Education only, not medical advice. NMN, NR, and injectable NAD+ are supplements or research compounds, not approved anti-aging medicines. Nothing here is a prescription or a substitute for your own clinician and your own labs. Compounds and doses named are examples for discussion. For research and educational purposes, adults 21 and over.</p>
+    <p class="sig">The real fuel is free. Learn it slow, bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Peer-reviewed references retrieved from PubMed. The through-line is consistent: these compounds reliably raise NAD+, and the downstream human benefits are modest, mixed, or still unproven.</p>
+    <ol>
+      <li>Yoshino M, Yoshino J, Kayser BD, et al. Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women. <em>Science.</em> 2021. NMN's single strongest human result. <a href="https://doi.org/10.1126/science.abe9985">doi:10.1126/science.abe9985</a></li>
+      <li>Yi L, et al. The effect of NMN supplementation on metabolism and biological age markers, a randomized dose-ranging trial. <em>GeroScience.</em> 2023. NAD+ rose at all doses; effects peaked near 600 mg. <a href="https://doi.org/10.1007/s11357-022-00705-1">doi:10.1007/s11357-022-00705-1</a></li>
+      <li>Igarashi M, et al. Chronic NMN supplementation raises whole-blood NAD+ in healthy older men. <em>npj Aging.</em> 2022. <a href="https://doi.org/10.1038/s41514-022-00084-z">doi:10.1038/s41514-022-00084-z</a></li>
+      <li>Conze D, Brenner C, Kruger CL. Safety and metabolism of long-term nicotinamide riboside supplementation. <em>Sci Rep.</em> 2019. NAD+ rose 22% to 142% by dose within about 2 weeks. <a href="https://doi.org/10.1038/s41598-019-46120-z">doi:10.1038/s41598-019-46120-z</a></li>
+      <li>Trammell SAJ, et al. Nicotinamide riboside is uniquely and orally bioavailable in mice and humans. <em>Nat Commun.</em> 2016. <a href="https://doi.org/10.1038/ncomms12948">doi:10.1038/ncomms12948</a></li>
+      <li>Martens CR, et al. Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD+ in healthy middle-aged and older adults. <em>Nat Commun.</em> 2018. Blood-pressure benefit mainly in the stage-1 hypertension subgroup. <a href="https://doi.org/10.1038/s41467-018-03421-7">doi:10.1038/s41467-018-03421-7</a></li>
+      <li>Brakedal B, et al. (NADPARK). The NADPARK study, a randomized trial of nicotinamide riboside in Parkinson disease. <em>Cell Metab.</em> 2022. Brain NAD+ rose; clinical change was small and tied to the biggest responders. <a href="https://doi.org/10.1016/j.cmet.2022.02.001">doi:10.1016/j.cmet.2022.02.001</a></li>
+      <li>Orr ME, et al. A randomized placebo-controlled trial of nicotinamide riboside in mild cognitive impairment. <em>GeroScience.</em> 2023. NAD+ rose 2.6-fold and did not alter cognition, the honest null cognitive finding. <a href="https://doi.org/10.1007/s11357-023-00999-9">doi:10.1007/s11357-023-00999-9</a></li>
+      <li>de Guia RM, et al. Aerobic and resistance exercise training reverses age-dependent decline in NAD+ salvage capacity in human skeletal muscle. <em>Physiol Rep.</em> 2019. The proven free lever. <a href="https://doi.org/10.14814/phy2.14139">doi:10.14814/phy2.14139</a></li>
+      <li>Covarrubias AJ, Perrone R, Grozio A, Verdin E. NAD+ metabolism and its roles in cellular processes during ageing. <em>Nat Rev Mol Cell Biol.</em> 2021. <a href="https://doi.org/10.1038/s41580-020-00313-x">doi:10.1038/s41580-020-00313-x</a></li>
+      <li>Grant R, et al. A pilot study of changes in the plasma and urine NAD+ metabolome during a 6-hour intravenous NAD+ infusion. <em>Front Aging Neurosci.</em> 2019. Infused NAD+ was rapidly removed from plasma. <a href="https://doi.org/10.3389/fnagi.2019.00257">doi:10.3389/fnagi.2019.00257</a></li>
+      <li>Fang EF, et al. NAD+ in aging, molecular mechanisms and translational implications. <em>Trends Mol Med.</em> 2017. <a href="https://doi.org/10.1016/j.molmed.2017.08.001">doi:10.1016/j.molmed.2017.08.001</a></li>
+    </ol>
+    <p class="small">Citations sourced via PubMed and verified by PMID/DOI. The strongest, most consistent finding across this literature is that NAD+ boosters raise NAD+; human anti-aging outcomes remain modest and unproven.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+'%';}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero: rise the gold charge + draw the precursor intake path
+  var wrap=document.querySelector('#chargeArt .chargeWrap');
+  if(wrap){ wrap.style.transform=reduce?'translateY(0)':'translateY(90px)';
+    setTimeout(function(){wrap.style.transform='translateY(0)';}, reduce?0:400); }
+  var fibs=document.querySelectorAll('#chargeArt .nfib');
+  fibs.forEach(function(p){
+    var len=p.getTotalLength();
+    p.style.strokeDasharray=len; p.style.strokeDashoffset=reduce?0:len;
+    p.style.transition=reduce?'none':'stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1)';
+  });
+  setTimeout(function(){fibs.forEach(function(p){p.style.strokeDashoffset=0;});}, reduce?0:500);
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.bar-fill').forEach(function(f){
+          if(reduce){f.style.transition='none';}
+          f.style.width=f.getAttribute('data-w')+'%';
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('[data-animate]').forEach(function(el){
+    if(reduce){el.querySelectorAll('.bar-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById('runQuiz');
+  var resetBtn=document.getElementById('resetQuiz');
+  var result=document.getElementById('result');
+  var quiz=document.getElementById('quiz');
+  if(runBtn && quiz){
+    function score(){
+      var s=0, key=parseInt(document.getElementById('q_hct').value,10)||0; s+=key;
+      var o=quiz.querySelector('input[name="onco"]:checked'); var onco=o?parseInt(o.value,10):0;
+      var flags=0;
+      quiz.querySelectorAll('#symptoms input:checked').forEach(function(c){flags+=parseInt(c.value,10);});
+      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
+      return {s:s, key:key, flags:flags, onco:onco};
+    }
+    function show(band,cls,head,body){
+      result.className='result show '+cls;
+      document.getElementById('rBand').textContent=band;
+      document.getElementById('rHead').textContent=head;
+      document.getElementById('rBody').textContent=body;
+      result.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+    runBtn.addEventListener('click',function(){
+      var r=score();
+      if(r.onco>=9){ show('Talk to your oncologist first','act','This one is a provider conversation','With an active or recent cancer history, NAD+ boosters are specifically an oncologist conversation before starting, because NAD+ fuels the same growth machinery cancer cells use. Please clear it there first rather than starting on your own.'); return; }
+      if(r.flags>=2 || r.key>=11){ show('Get evaluated first','act','This is a see-someone situation','What you described is not a supplement question. Fatigue with those signs needs a real evaluation before you reach for anything. That is the fastest path to feeling better.'); return; }
+      if(r.s>=8){ show('Evaluation before supplements','act','Get the real picture first','There is enough here that your energy deserves a proper look, thyroid, iron, sleep, mood, before a longevity capsule. Learn all you want, but let a provider check the actual cause first.'); return; }
+      if(r.s>=4){ show('Foundation first','watch','The free levers come before the capsule','Your foundation has gaps to close first: sleep, exercise, diet, which are the proven, free ways to raise NAD+. Handle those and you may not need anything else. Keep learning in the meantime.'); return; }
+      show('Thinking about it the right way','low','You are approaching this wisely','You are treating it as a modest bet on top of a handled foundation, which is exactly right. Pick a quality source, keep expectations honest, and enjoy the education.');
+    });
+    resetBtn.addEventListener('click',function(){
+      document.getElementById('q_hct').value='0';
+      quiz.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});
+      result.className='result';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
