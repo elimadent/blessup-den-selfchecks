@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Immune &amp; Thymic Peptide Class, Decoded: Thymosin Alpha-1, Thymulin, Thymogen, Thymopentin - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - The Immune & Thymic Peptide Class (re-skinned "Thick Blood" layout)
+  Skin: crimson-rose (defense) primary + cool slate-blue (clinical/immune) secondary. Theme: "the shield".
+  Hero motif: a shield enclosing a trained T-cell (the thymus is where T-cells mature).
+  Report #9 in the series (siblings: bpc-157, tb-500, copper-peptides, glp-class, gh-secretagogues, melanocortins, cognitive-peptides, longevity-senolytics). ASCII + HTML entities only. No em dashes. Education-only / 21+.
+  Numbers PubMed-verified (Wu 2013 ETASS sepsis, Liu 2020 COVID); PK grounded in the OnePin compound data.
+-->
+<style>
+  :root{
+    --paper:#F1EEEC; --surface:#FBFAF8; --surface-2:#EBE5E4;
+    --ink:#26191C; --ink-soft:#47373B; --muted:#6E6367;
+    --line:#DAD2D1; --line-soft:#E7E0DF;
+    /* PRIMARY accent (crimson-rose = defense / the immune response) - keeps --blood var name */
+    --blood:#A83252; --blood-deep:#741F39; --blood-tint:#F0D8DF;
+    /* SECONDARY warm/cool accent (slate-blue = clinical, the trained cell) */
+    --plasma:#4E6C8C; --plasma-soft:#A9BDD2; --plasma-tint:#DCE6EF;
+    --good:#3E8757; --good-tint:#DCEBE1;
+    --amber:#BE8A1E; --amber-tint:#F5EACB;
+    --danger:#94271F; --danger-tint:#F0D6D2;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#221318;color:#F0E2E5;border-top:1px solid #3B2229;border-bottom:1px solid #3B2229}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(31px,5.6vw,52px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:176px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#3a5470,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#2f6a43,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .matrix-wrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px}
+  .matrix{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);min-width:600px}
+  .matrix th,.matrix td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .matrix .ev-h{color:var(--good);font-weight:600}
+  .matrix .ev-m{color:var(--plasma);font-weight:600}
+  .matrix .ev-l{color:var(--danger);font-weight:600}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.approved{background:var(--good-tint);color:var(--good)}
+  .tag.modest{background:var(--plasma-tint);color:#3a5470}
+  .tag.thin{background:var(--blood-tint);color:var(--blood-deep)}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--danger)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 24px;margin:1.4em 0}
+  .rules .r{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rules .r:last-child{border-bottom:0}
+  .rules .rn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--blood);line-height:1}
+  .rules .r p{margin:0;font-size:15px}
+  .rules .r h4{margin:0 0 3px;font-size:16px}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--danger-tint);border-color:#e5c4bf}
+  .plan .later{background:var(--good-tint);border-color:#c9ddd0}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--danger)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--danger)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(38,25,28,.08)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--danger);border-color:var(--danger)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c9ddd0}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #b9cbdd}
+  .result.watch .band{color:#3a5470}
+  .result.act{background:var(--danger-tint);border:1px solid #e5c4bf}
+  .result.act .band{color:var(--danger)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#22130f;border:1px solid #4a271c;border-radius:14px;padding:24px 26px;color:#F1D9CF}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#EFCFC3;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#CE7A6A}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#EBC4B6}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Immune &amp; Recovery</b></p>
+        <h1>The immune peptide class, decoded</h1>
+        <p class="lede" style="max-width:38ch;margin:.1em 0 .5em">Thymosin Alpha-1, Thymulin, Thymogen, Thymopentin. Four peptides from your thymus, and only one with real clinical evidence.</p>
+        <p class="thesis">These modulate your immune system, they do not simply boost it. That distinction is the whole point.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: a shield enclosing a trained T-cell (the thymus is where T-cells learn to defend). -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="184" height="316" viewBox="0 0 184 316" fill="none" xmlns="http://www.w3.org/2000/svg" id="shieldArt">
+          <rect x="14" y="24" width="156" height="268" rx="16" fill="#221318"/>
+          <!-- shield -->
+          <path d="M92 66 C 74 74, 56 76, 46 76 C 46 150, 58 200, 92 224 C 126 200, 138 150, 138 76 C 128 76, 110 74, 92 66 Z"
+                fill="none" stroke="#C4506C" stroke-width="4" stroke-linejoin="round"/>
+          <!-- trained T-cell inside -->
+          <circle cx="92" cy="146" r="26" fill="#3E5A78" stroke="#7C99B8" stroke-width="2"/>
+          <circle cx="84" cy="138" r="5" fill="#22344A"/>
+          <!-- T-cell receptors (spikes), animate in -->
+          <g stroke="#7C99B8" stroke-width="3" stroke-linecap="round" class="tcr">
+            <line class="spike" x1="92" y1="120" x2="92" y2="108"/>
+            <line class="spike" x1="112" y1="132" x2="122" y2="125"/>
+            <line class="spike" x1="114" y1="158" x2="125" y2="164"/>
+            <line class="spike" x1="92" y1="172" x2="92" y2="184"/>
+            <line class="spike" x1="70" y1="158" x2="59" y2="164"/>
+            <line class="spike" x1="70" y1="132" x2="59" y2="125"/>
+          </g>
+          <text x="92" y="256" font-family="ui-monospace,monospace" font-size="8.5" fill="#C79BAA" text-anchor="middle">a trained defender, not a boost</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">4</div><div class="lbl">thymic peptides in play, all studied for modulating immune function</div></div>
+      <div class="stat"><div class="n">35<small>+</small></div><div class="lbl">countries where Thymosin Alpha-1 is an approved medicine, for specific conditions</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">of the four carries genuine clinical evidence. The rest are far thinner</div></div>
+    </div>
+    <p class="src">Thymosin Alpha-1 reduced mortality in severe COVID and in an earlier sepsis trial, though its largest, most rigorous sepsis trial (2025) was negative. Real evidence, honestly mixed. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">You have seen them sold as immune boosters: Thymosin Alpha-1, Thymulin, Thymogen, Thymopentin, a family of peptides that come from or mimic hormones made by your thymus, the small gland behind your breastbone where your T-cells learn to fight.</p>
+    <p>Here is the honest version. The word "boost" is the wrong word. These are immune <strong>modulators</strong>: depending on the situation, they can help a worn-down or under-responsive immune system respond better, or help calm one that is over-firing. That is a genuinely different, and more interesting, idea than simply turning immunity up. And within the family, the evidence is wildly uneven. One member, Thymosin Alpha-1, is an approved medicine in dozens of countries with real clinical trials behind it. The other three are older, narrower, or rest mostly on Eastern-European studies. So the useful thing we can do is line each one up against what it actually does and the proof it actually has, honestly. We do honest, not hype.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician. Of this class, only Thymosin Alpha-1 is a widely approved medicine (for specific conditions like hepatitis and as an immune adjunct); Thymulin, Thymogen, and Thymopentin are research peptides or approved only in certain regions. Because these change how your immune system behaves, they carry real cautions, especially in autoimmune disease and transplant. Any dose named here is an example for discussion, never a prescription.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Are you cleared to explore this class, and which one fits?</h2>
+    <p>This flags the immune hard stops, and if you are clear, points toward the compound that matches your goal. It is education, not a diagnosis or a recommendation to use anything.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Immune peptide readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the hard stops. Do any of these apply to you? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">An autoimmune disease (lupus, RA, MS, thyroid, IBD, and others)</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">An organ transplant, or on immunosuppressant medication</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Pregnant, breastfeeding, or trying to conceive</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What are you actually weighing this class for?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Immune support around illness or recovery</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">General resilience / getting sick less</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">The most evidence-backed option</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Any of these in your picture? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="2"><span class="chip">A history of cancer (or in treatment now)</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">On other prescription or immune-related medication</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">A family history of autoimmune disease</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Is the real immune foundation in place? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">My sleep is genuinely poor or short</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Nutrition, protein, or vitamin D are hit or miss</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Planning to source it with no provider involved</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis or a recommendation to use any compound. Talk to a licensed provider about your own history and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + MATRIX =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>Four peptides from one gland</h2>
+    <p>Your <strong>thymus</strong> is where T-cells, the coordinating cells of your immune system, are trained. It shrinks as you age, which is part of why immunity weakens over time. All four of these peptides are made by, or copied from, thymic hormones, and each nudges the immune system in a slightly different way:</p>
+    <ul>
+      <li><strong>Thymosin Alpha-1.</strong> A 28-amino-acid thymic peptide that helps T-cells mature and sharpens the response of dendritic cells (the immune system's scouts). The one with real clinical use.</li>
+      <li><strong>Thymulin.</strong> A small thymic hormone that only works when bound to <strong>zinc</strong>, studied for restoring immune balance and calming inflammation.</li>
+      <li><strong>Thymogen.</strong> A tiny two-amino-acid peptide, studied (largely in Eastern Europe) for mucosal and respiratory immune resistance, often given intranasally.</li>
+      <li><strong>Thymopentin.</strong> A five-amino-acid fragment of another thymic hormone, studied for immune deficiency, with a very short life in the body.</li>
+    </ul>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>Compound</th><th>Thymic mechanism</th><th>Studied for</th><th>Evidence level</th><th>Route</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Thymosin Alpha-1</th><td>T-cell maturation; dendritic / TLR signaling</td><td>Hepatitis, sepsis, cancer adjunct, vaccines</td><td class="ev-h">Approved in 35+ countries; real RCTs</td><td>SubQ</td></tr>
+          <tr><th>Thymulin</th><td>Zinc-dependent thymic hormone; anti-inflammatory</td><td>Immune restoration, inflammation, pain</td><td class="ev-m">Modest; needs zinc; thinner human data</td><td>SubQ</td></tr>
+          <tr><th>Thymogen</th><td>Dipeptide immunomodulator; mucosal immunity</td><td>Respiratory infection resistance</td><td class="ev-l">Mostly Eastern-European studies</td><td>Intranasal / IM</td></tr>
+          <tr><th>Thymopentin</th><td>Thymopoietin fragment; T-cell maturation</td><td>Immune deficiency, some autoimmune</td><td class="ev-m">Older, narrow-indication data</td><td>SubQ / IM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small">Two names to keep straight: this is Thymosin <strong>Alpha</strong>-1, not Thymosin <strong>Beta</strong>-4 (TB-500), which is a different, actin-based <a href="https://den.onepin.app/tb-500.html">healing and repair peptide</a>, not an immune modulator. And Thymalin is a thymus-extract complex (a mixture, not a single defined peptide), so it sits alongside this family rather than in it.</p>
+
+    <div class="note blood">
+      <p class="h">The honest half-truth you will hear</p>
+      <p>"They boost your immune system." Wrong verb. These modulate it, they help it respond appropriately, which in a healthy person is not obviously an improvement, and in someone with an over-active immune system could be the wrong direction entirely. And only Thymosin Alpha-1 has the clinical evidence to back specific medical uses. For the other three, the marketing is well ahead of the human data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EVIDENCE CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The part the marketing flattens</p>
+    <h2>One of these is not like the others</h2>
+    <p>They get sold on the same shelf as if the proof were equal. It is not, and the gap is dramatic. Here is an honest read of how much real human evidence sits behind each. Longer bars mean deeper, more rigorous human data, not "works better."</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">Depth of human evidence, by compound</p>
+      <p class="csub">Thymosin Alpha-1 is the clear outlier, an approved medicine with randomized trials. The rest thin out fast.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Thymosin Alpha-1</div><div class="bar-track"><div class="bar-fill b-blood" data-w="100">Approved, randomized trials</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Thymopentin</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="40">Older, narrow-indication data</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Thymulin</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="30">Modest; mostly mechanistic</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Thymogen</div><div class="bar-track"><div class="bar-fill b-good" data-w="18">Mostly Eastern-European studies</div></div></div>
+      </div>
+      <p class="src">Thymosin Alpha-1: Liu 2020 (COVID) and Wu 2013 (an early sepsis RCT), with the honest counterweight that the larger 2025 sepsis trial (Wu, BMJ) was negative. The other three rest on older, regional, or mechanistic data. Full citations below.</p>
+    </div>
+    <p>Read the shape honestly. Thymosin Alpha-1 is a genuine, approved immune medicine with real randomized data. Thymopentin has older clinical use in a narrow indication. Thymulin and Thymogen are mostly mechanism and regional studies. If you are drawn to this class, the evidence points at one compound, not four.</p>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>How a thymic peptide tunes immunity</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Train the T-cells</h4><p>Thymic peptides help immature T-cells finish maturing into functional immune cells, the exact job the shrinking thymus does less of with age. More trained defenders, better coordinated.</p></div>
+      <div class="step"><div class="n">02</div><h4>Sharpen the scouts</h4><p>Thymosin Alpha-1 in particular tunes dendritic cells and toll-like receptor signaling, the system that spots a threat and shifts the response toward the right kind of attack.</p></div>
+      <div class="step"><div class="n">03</div><h4>Modulate, not just amplify</h4><p>The key word is modulate. In an under-responsive or exhausted immune system these can help it respond; the same signaling can also help rebalance an over-firing one. Context decides the direction, which is why autoimmunity is a caution.</p></div>
+    </div>
+    <p>That last point is the whole reason to be careful. A drug that helps your immune system respond more strongly is a good thing when you are fighting an infection and a potentially bad thing when your immune system is already attacking your own tissue. The mechanism cuts both ways.</p>
+  </div>
+</section>
+
+<!-- =============== THE FOUR (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The four, with honest pros and cons</p>
+    <h2>Each one, against its evidence</h2>
+    <p>Same thymic family, very different levels of proof. Tags show the standing: <span style="color:var(--good);font-weight:600">approved</span>, <span style="color:#3a5470;font-weight:600">modest</span>, or <span style="color:var(--blood-deep);font-weight:600">thin</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>Thymosin Alpha-1</h3><span class="tag approved">Approved &middot; the evidenced one</span></div>
+      <p class="mech">The 28-amino-acid thymic peptide that matures T-cells and sharpens the immune response. The one with real clinical trials and multi-country approval.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>By far the deepest evidence of the class: approved in dozens of countries for specific conditions</li>
+          <li>A randomized trial reduced mortality in severe COVID by restoring exhausted T-cells, and an earlier sepsis trial suggested benefit</li>
+          <li>Used clinically for hepatitis B and C and as a vaccine and cancer-therapy adjunct, with a clean safety record over thousands of patients</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Its largest, most rigorous sepsis trial (2025, over 1,000 patients) found no mortality benefit, so even its clinical picture is genuinely mixed</li>
+          <li>The strong data is in specific illnesses; general immune "optimization" in healthy people is extrapolated</li>
+          <li>Not FDA-approved in the United States (approved in many other countries)</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the sensible, best-proven choice if this class fits your situation, ideally with a provider. Given by subcutaneous injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Thymulin</h3><span class="tag modest">Modest &middot; zinc-dependent</span></div>
+      <p class="mech">A small thymic hormone that only works when bound to zinc, studied for restoring immune balance and calming inflammation.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>An interesting anti-inflammatory and immune-balancing mechanism</li>
+          <li>Its zinc dependency ties it to a genuine, correctable nutrient (zinc status)</li>
+          <li>Studied for inflammation and pain models</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Thinner human data than Thymosin Alpha-1; much is mechanistic or preclinical</li>
+          <li>Its activity depends on adequate zinc, an easy thing to overlook</li>
+          <li>A research peptide, not an established therapy for general use</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> mechanistically interesting, clinically under-proven. Zinc status matters. Given by subcutaneous injection.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Thymogen</h3><span class="tag thin">Thin &middot; mucosal</span></div>
+      <p class="mech">A tiny two-amino-acid peptide, studied largely in Eastern Europe for respiratory and mucosal immune resistance, often given intranasally.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Simple, well-tolerated, and convenient by the intranasal route</li>
+          <li>A real history of use for respiratory-infection resistance in its region</li>
+          <li>Low-drama profile in the available data</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The human evidence is mostly Eastern-European and does not meet Western trial standards</li>
+          <li>General immune benefit is extrapolated, not demonstrated in rigorous trials</li>
+          <li>A research peptide outside its approval regions</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the lightest and least-proven of the group. Real regional use, thin rigorous data. Often intranasal.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Thymopentin</h3><span class="tag modest">Modest &middot; older data</span></div>
+      <p class="mech">A five-amino-acid fragment of the thymic hormone thymopoietin, studied for immune deficiency, with a very short life in the body.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Genuine older clinical use in immune deficiency and some autoimmune contexts</li>
+          <li>A well-defined active fragment with a clear mechanism</li>
+          <li>Decades of accumulated experience in its indications</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Its data is older and narrow, not a broad modern evidence base</li>
+          <li>A very short half-life in the body means frequent dosing</li>
+          <li>Largely superseded by Thymosin Alpha-1 in modern practice</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> a real but dated immune-deficiency tool, outpaced by Thymosin Alpha-1. Given by injection, dosed frequently.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HONESTY NOTE =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The line that matters most</p>
+    <h2>Modulation is not the same as more</h2>
+    <p>The single most important idea in this class is the difference between <strong>boosting</strong> and <strong>modulating</strong>. Marketing sells the fantasy of turning your immune system up like a dial. What thymic peptides actually do is help the immune system respond more appropriately, which is genuinely useful when it is worn down, exhausted, or under-responding, and genuinely risky when it is already over-firing. A healthy, well-functioning immune system is not obviously improved by pushing on it.</p>
+    <div class="note blood">
+      <p class="h">Two things to hold onto</p>
+      <p>First, the evidence points at one compound: Thymosin Alpha-1 is the member with real clinical trials, and even its strong data is in specific illnesses, not general wellness. Second, because these change immune behavior, autoimmune disease and transplant are not "go slower" situations, they are stop-and-ask-a-specialist ones. The mechanism is the caution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SAFETY =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The most important section here</p>
+    <h2>The immune hard stops and cautions</h2>
+    <p>Because these change how your immune system behaves, a few situations are genuinely off-limits without a specialist, and the reasons are the mechanism itself.</p>
+    <div class="rules">
+      <div class="r"><div class="rn">1</div><div><h4>Autoimmune disease</h4><p>In an autoimmune condition, your immune system is already attacking your own tissue. A compound that helps the immune system respond more strongly can push in exactly the wrong direction. Lupus, rheumatoid arthritis, MS, autoimmune thyroid, inflammatory bowel disease, and others are firm reasons to stop and involve a specialist, not to self-experiment.</p></div></div>
+      <div class="r"><div class="rn">2</div><div><h4>Organ transplant or immunosuppressant medication</h4><p>After a transplant, the entire goal of your medication is to hold your immune system down so it does not reject the organ. An immune-stimulating peptide works directly against that. This is a hard stop.</p></div></div>
+      <div class="r"><div class="rn">3</div><div><h4>Pregnancy and breastfeeding</h4><p>These are not established as safe in pregnancy or breastfeeding. Clear that first.</p></div></div>
+      <div class="r"><div class="rn">4</div><div><h4>Cancer: nuanced, and a provider decision</h4><p>This one is genuinely context-dependent. Thymosin Alpha-1 is actually studied as an add-on to cancer immunotherapy, so immune support can be part of a plan, but only one directed by an oncologist. Do not improvise it around active cancer or treatment.</p></div></div>
+      <div class="r"><div class="rn">5</div><div><h4>Research-compound status of the other three</h4><p>Thymulin, Thymogen, and Thymopentin are research peptides or approved only in certain regions, with thinner safety data and uncertain sourcing. Treat them as experimental, and favor the evidenced option if you proceed at all.</p></div></div>
+    </div>
+    <div class="note good">
+      <p class="h">The one rule under all of it</p>
+      <p>If you have any autoimmune condition or a transplant, this class is not a self-directed project, full stop. Otherwise, favor the one with real evidence (Thymosin Alpha-1), involve a provider, and build the immune foundation below first, because it does more than any of these for a healthy person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== HOW TO CHOOSE (now/later plan) =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>How to think about choosing, honestly</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">First question</p><h4>Are you cleared at all?</h4>
+        <ul>
+          <li>No autoimmune disease</li>
+          <li>No transplant and not on immunosuppressants</li>
+          <li>Not pregnant or breastfeeding; cancer handled with an oncologist</li>
+          <li>If an immune hard stop is present, this class is not the tool, full stop</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Second question</p><h4>Which one, and is it worth it?</h4>
+        <ul>
+          <li>If anything, the evidenced choice is Thymosin Alpha-1</li>
+          <li>The other three are thinner, older, or regional, treat as experimental</li>
+          <li>For a healthy person, the foundation below outperforms all of them</li>
+          <li>Anything here belongs in a provider conversation, not a solo protocol</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>Ask whether your immune system actually needs modulating. For a healthy person, sleep, nutrition, and stress do far more than any of these. Match the tool to a real need, favor the evidenced option, and keep a provider in the loop. Matching beats maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LIFESTYLE =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The foundation under everything</p>
+    <h2>What actually builds immunity</h2>
+    <p>For a healthy person, the immune interventions with the strongest evidence are not peptides, they are habits. These do more than anything on the shelf, and the peptides only nudge on top.</p>
+    <h4>Sleep</h4><p>Sleep is where the immune system consolidates and repairs. Short or broken sleep measurably weakens your response to infection and vaccines. No peptide compensates for it. Fix this first.</p>
+    <h4>Nutrition: protein, zinc, vitamin D</h4><p>Your immune system is built from protein, and it depends on specific nutrients, zinc (which Thymulin literally requires to work) and vitamin D chief among them. Correcting a real deficiency does more than any peptide.</p>
+    <h4>Exercise and a healthy weight</h4><p>Regular moderate exercise and good metabolic health keep the immune system responsive; chronic inactivity and excess weight blunt it. Free, and evidence-backed.</p>
+    <h4>Stress, and not smoking</h4><p>Chronic stress and smoking both suppress immune function directly. Managing stress and not smoking are among the highest-leverage immune moves there are, and they cost nothing.</p>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Support, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Sleep, adequate protein, and correcting real zinc or vitamin D deficiency</h4><p>The genuinely evidence-backed base of immune health. This does more than any peptide for a healthy person. Boring, and it works.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Zinc (especially if low), vitamin D to a normal level, and exercise</h4><p>Sensible, well-supported support, especially zinc given its direct role in thymic-hormone activity. Follow the labs, not the hype.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>Thymulin, Thymogen, or Thymopentin for general "immune boosting"</h4><p>Thin, older, or regional evidence, and "boosting" a healthy immune system is not a clear benefit. Curiosity, not confidence.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Any immune peptide while you have an autoimmune condition or a transplant, without a specialist</h4><p>The exact situation where an immune modulator can push in the wrong direction. This is a specialist decision, never a self-directed one.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Have I honestly ruled out the hard stops: any autoimmune disease, a transplant or immunosuppressants, and pregnancy?</p></div>
+      <div class="row"><span class="box"></span><p>Does my immune system actually need modulating, or is a healthy one being pushed for no reason?</p></div>
+      <div class="row"><span class="box"></span><p>Is my sleep, nutrition (including zinc and vitamin D), and stress actually handled first?</p></div>
+      <div class="row"><span class="box"></span><p>If I proceed, am I choosing the one with real evidence (Thymosin Alpha-1), not the thinnest option?</p></div>
+      <div class="row"><span class="box"></span><p>Is a knowledgeable provider genuinely involved?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS FOR PROVIDER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Bring these to your visit</p>
+    <h2>Questions to ask your provider</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Given my history, is any immune-modulating peptide safe for me, especially with my autoimmune or medication picture?</p></div>
+      <div class="row"><span class="box"></span><p>Is there an actual reason to modulate my immune system, or is the foundation the better lever?</p></div>
+      <div class="row"><span class="box"></span><p>Should we check zinc, vitamin D, and other immune-relevant labs first?</p></div>
+      <div class="row"><span class="box"></span><p>What symptoms (a flare, an infection) should make me stop and call you?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <div class="flags">
+      <h3>Stop and get medical help</h3>
+      <p style="color:#EFCFC3;margin:0 0 12px;max-width:none">A few situations are not "go slower," they are "stop and be seen."</p>
+      <ul>
+        <li>A flare of an autoimmune condition (new or worsening joint, skin, gut, or nerve symptoms)</li>
+        <li>Signs of transplant rejection if you have a transplant</li>
+        <li>A severe allergic reaction: swelling of the face or throat, trouble breathing</li>
+        <li>A new fever, spreading redness, or feeling very unwell</li>
+        <li>Any new or unusual lump or symptom you are worried about</li>
+      </ul>
+      <p class="fast">A mild injection-site reaction settles. An autoimmune flare or signs of rejection do not wait, they are specialist emergencies. When in doubt, be seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">Modulate with respect, and stand on the evidence</h2>
+    <p>The idea here is real and elegant: your thymus trains your immune defenders, it fades with age, and these peptides are studied for helping that system respond better. But two honest truths run underneath all the marketing. First, this is modulation, not a boost, which means it is genuinely useful when the immune system is worn down and genuinely risky when it is over-firing, so autoimmune disease and transplant are hard lines, not cautions. Second, the evidence is not spread evenly across the four. Thymosin Alpha-1 is a real, approved medicine with randomized trials behind it, with a genuine mortality benefit in severe COVID and an early sepsis trial, even if its largest recent sepsis trial came back negative. The other three are older, narrower, or regional. So do not confuse the family for the evidence. For a healthy person, sleep, nutrition, zinc, and stress do more than any of these. And if you do have a real reason to modulate immunity, favor the one with the proof, and do it with a provider. That is not the cautious move. It is the one that respects how immunity actually works.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">This is educational information only and not a recommendation to use, purchase, or dose any compound; it does not replace evaluation by your own licensed provider. Thymosin Alpha-1 is an approved medicine in many countries (not the United States) for specific conditions; Thymulin, Thymogen, and Thymopentin are research peptides or regionally approved, with thinner data. These modulate immune function and carry real cautions in autoimmune disease and transplant. Doses named are examples for discussion. Intended for adults 21 and over.</p>
+    <p class="sig">Learn it honest. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Retrieved from PubMed. Thymosin Alpha-1 carries the class's real randomized-trial evidence (shown here in sepsis and severe COVID); the other three rest on older, regional, or mechanistic data without comparable rigorous trials.</p>
+    <ol>
+      <li>Wu J, Zhou L, Liu J, et al. The efficacy of thymosin alpha 1 for severe sepsis (ETASS): a multicenter, single-blind, randomized and controlled trial. <em>Crit Care.</em> 2013;17(1):R8. <a href="https://doi.org/10.1186/cc11932">doi:10.1186/cc11932</a> (361-patient RCT; 28-day mortality 26% vs 35%)</li>
+      <li>Liu Y, Pan Y, Hu Z, et al. Thymosin Alpha 1 Reduces the Mortality of Severe Coronavirus Disease 2019 by Restoration of Lymphocytopenia and Reversion of Exhausted T Cells. <em>Clin Infect Dis.</em> 2020;71(16):2150-2157. <a href="https://doi.org/10.1093/cid/ciaa630">doi:10.1093/cid/ciaa630</a> (severe COVID mortality 11% vs 30%)</li>
+      <li>Wu J, Pei F, Zhou L, et al. The efficacy and safety of thymosin alpha 1 for sepsis (TESTS): multicentre, double-blinded, randomised, placebo-controlled, phase 3 trial. <em>BMJ.</em> 2025;388:e082583. <a href="https://doi.org/10.1136/bmj-2024-082583">doi:10.1136/bmj-2024-082583</a> (the honest counterweight: no mortality benefit in 1,106 patients, HR 0.99)</li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. Thymosin Alpha-1's strong evidence is in specific illnesses, not general wellness in healthy people. Thymulin, Thymogen, and Thymopentin have thinner (modest, older, or Eastern-European) evidence and are research or regionally-approved compounds. This report is an honest educational map of the class, not a dosing sheet or a recommendation to use any compound.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: the T-cell receptors extend (the trained defender)
+  var spikes=document.querySelectorAll("#shieldArt .spike");
+  spikes.forEach(function(s,i){
+    if(reduce) return;
+    var len=s.getTotalLength();
+    s.style.strokeDasharray=len; s.style.strokeDashoffset=len;
+    s.style.transition="stroke-dashoffset .7s cubic-bezier(.4,0,.2,1) "+(0.3+i*0.12)+"s";
+  });
+  setTimeout(function(){ spikes.forEach(function(s){ s.style.strokeDashoffset=0; }); }, reduce?0:300);
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 support-around-illness, 1 resilience, 2 evidence, 3 learning
+    }
+    function anyStop(){
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      if(anyStop()){
+        show("A hard stop applies","act","This class is not a self-directed project for you",
+          "You marked one of the firm immune lines: an autoimmune disease, a transplant or immunosuppressant medication, or pregnancy. Because these peptides modulate immune behavior (they can push an over-firing or suppressed system in the wrong direction), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your specialist about your goal.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
+          "You flagged things that change the calculus: a cancer history, other immune-related or prescription medication, an autoimmune family history, or a shaky foundation. None is an automatic no, but each needs a provider in the loop, and the immune foundation (sleep, nutrition, zinc and vitamin D, stress) handled first, because for a healthy person that does more than any of these. Then revisit whether this class fits.");
+        return;
+      }
+      var map={
+        0:["Support around illness or recovery","Thymosin Alpha-1 is the evidenced option, with a provider",
+           "Wanting immune support around an illness or recovery points to Thymosin Alpha-1, the one member with real trials (it reduced mortality in sepsis and severe COVID by restoring T-cell function). Even so, its strong evidence is in specific medical settings, so this belongs with a provider, not a solo protocol."],
+        1:["General resilience","Be honest: the foundation beats the peptide here",
+           "Wanting to get sick less is a reasonable goal, but for a healthy person the honest answer is that sleep, nutrition (zinc and vitamin D especially), exercise, and stress do far more than any of these peptides, which are modulators, not general boosters. Fix the foundation first; a well-functioning immune system is not clearly improved by pushing on it."],
+        2:["You want real evidence","Thymosin Alpha-1 is the only one with it",
+           "Valuing evidence points cleanly to Thymosin Alpha-1, the approved, randomized-trial-backed member. The other three (Thymulin, Thymogen, Thymopentin) are thinner, older, or regional. If you proceed, favor the evidenced one and involve a provider, and remember its proof is in specific illnesses, not general wellness."],
+        3:["Learning first","You are thinking about it the right way",
+           "Reading the whole class before reaching for one is exactly right. Learn that these modulate rather than boost, rule out the autoimmune and transplant hard stops honestly, and put the immune foundation (sleep, nutrition, zinc, stress) first. Then, if there is a real reason, favor the evidenced option with a provider. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
