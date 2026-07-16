@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Insulin Resistance, Decoded: the quiet driver, and why it is largely reversible - BlessUp Peptide Library</title>
+</head>
+<body>
+<!--
+  BLESSUP SKOOL REPORT - "Insulin Resistance, Decoded" - TOPIC-DECODED line #2 (metabolic health).
+  Same Thick Blood layout + component system; re-skinned. Skin: berry-magenta (the metabolic signal) primary + steel-slate (clinical) secondary. Theme: "the quiet driver".
+  Hero motif: two post-meal glucose-response curves - healthy (returns to baseline) vs insulin-resistant (stays elevated).
+  ASCII + HTML entities only. No em dashes. Education-only / 21+.
+  Load-bearing citations PubMed-verified: Knowler 2002 DPP (lifestyle cut diabetes 58%, beat metformin 31%, PMID 11832527), Lean 2018 DiRECT (weight loss -> 46% T2D remission, dose-dependent, PMID 29221645), Broussard 2012 (short sleep -> insulin resistance, the cross-link to the Sleep report, PMID 23070488).
+-->
+<style>
+  :root{
+    --paper:#F3EEF1; --surface:#FBF7F9; --surface-2:#E6DCE2;
+    --ink:#251A20; --ink-soft:#453742; --muted:#6E6068;
+    --line:#DBD0D6; --line-soft:#E8DFE4;
+    /* PRIMARY accent (berry-magenta = the metabolic signal) - keeps --blood var name */
+    --blood:#A22B6B; --blood-deep:#741A4C; --blood-tint:#EFD3E2;
+    /* SECONDARY accent (steel-slate = clinical, the healthy reference) */
+    --plasma:#45607C; --plasma-soft:#A7B6C8; --plasma-tint:#DFE5EC;
+    --good:#4E8A46; --good-tint:#DEEBD7;
+    --amber:#C0951C; --amber-tint:#F3ECC7;
+    --danger:#B23A2A; --danger-tint:#F1DAD3;
+    --serif:"Charter","Cambria","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:"Seravek","Segoe UI","Avenir Next","Helvetica Neue",system-ui,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,"Liberation Mono",monospace;
+    --wrap:720px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  .page{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .page *{box-sizing:border-box}
+  ::selection{background:var(--blood-tint);color:var(--blood-deep)}
+  .prog{position:fixed;top:0;left:0;height:3px;width:0%;z-index:50;background:linear-gradient(90deg,var(--blood-deep),var(--blood));transition:width .1s linear}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .band{padding:64px 0}
+  .band--tint{background:var(--surface-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .band--ink{background:#1C1218;color:#F0E2E9;border-top:1px solid #382230;border-bottom:1px solid #382230}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.14;letter-spacing:-.01em}
+  h2{font-size:clamp(27px,4.4vw,38px);margin:0 0 .5em}
+  h3{font-size:clamp(21px,3vw,26px);margin:2.2em 0 .5em;line-height:1.2}
+  h4{font-size:19px;margin:1.6em 0 .3em;font-family:var(--sans);font-weight:700;letter-spacing:0}
+  p{margin:0 0 1.05em;max-width:68ch}
+  a{color:var(--blood);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--blood-deep)}
+  strong{font-weight:700;color:var(--ink)}
+  .band--ink strong{color:#fff}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blood);margin:0 0 14px;font-weight:600}
+  .lede{font-size:clamp(19px,2.5vw,22px);line-height:1.55;color:var(--ink-soft)}
+  .small{font-size:14.5px;line-height:1.55;color:var(--muted)}
+  .src{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--muted);margin-top:10px}
+  ul,ol{margin:0 0 1.1em;padding-left:1.25em;max-width:68ch}
+  li{margin:.34em 0}
+  li::marker{color:var(--blood)}
+  hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 210px;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(31px,5.6vw,52px);margin:.12em 0 .4em}
+  .hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,23px);color:var(--blood-deep);max-width:39ch;margin:.2em 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kicker b{color:var(--plasma)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1;max-width:200px;margin:0 auto}}
+  .hero-art{display:flex;justify-content:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .n{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);font-weight:700;color:var(--blood);line-height:1;letter-spacing:-.02em}
+  .stat .n small{font-size:.5em;color:var(--ink-soft)}
+  .stat .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .note{border-left:3px solid var(--plasma);background:var(--plasma-tint);padding:16px 20px;border-radius:0 8px 8px 0;margin:1.6em 0}
+  .note.blood{border-left-color:var(--blood);background:var(--blood-tint)}
+  .note.good{border-left-color:var(--good);background:var(--good-tint)}
+  .note p{margin:0;max-width:none}
+  .note .h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 6px;color:var(--ink-soft)}
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 24px 20px;margin:1.8em 0}
+  .chart .ctitle{font-family:var(--sans);font-weight:700;font-size:17px;margin:0 0 4px}
+  .chart .csub{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+  .bars{display:flex;flex-direction:column;gap:14px}
+  .bar-row{display:grid;grid-template-columns:186px 1fr;gap:14px;align-items:center}
+  .bar-lbl{font-size:14px;text-align:right;color:var(--ink-soft);line-height:1.25}
+  .bar-track{position:relative;background:var(--surface-2);border-radius:6px;height:30px;overflow:hidden}
+  .bar-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.3,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:var(--mono);font-size:12.5px;color:#fff;font-weight:600}
+  .bar-fill.b-blood{background:linear-gradient(90deg,var(--blood-deep),var(--blood))}
+  .bar-fill.b-plasma{background:linear-gradient(90deg,#334a61,var(--plasma))}
+  .bar-fill.b-good{background:linear-gradient(90deg,#3a6c34,var(--good))}
+  @media(max-width:560px){.bar-row{grid-template-columns:1fr;gap:4px}.bar-lbl{text-align:left}}
+  .matrix-wrap{overflow-x:auto;margin:1.4em 0;border:1px solid var(--line);border-radius:12px}
+  .matrix{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);min-width:560px}
+  .matrix th,.matrix td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .matrix thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  .matrix tbody th{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .matrix tbody tr:last-child td,.matrix tbody tr:last-child th{border-bottom:0}
+  .flow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:1.6em 0}
+  .flow .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .flow .step .n{font-family:var(--mono);font-size:12px;color:var(--blood);font-weight:600;letter-spacing:.1em}
+  .flow .step h4{margin:.4em 0 .3em;font-size:15.5px}
+  .flow .step p{font-size:14px;margin:0;color:var(--ink-soft)}
+  @media(max-width:640px){.flow{grid-template-columns:1fr}}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .lever .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:2px}
+  .lever h3{margin:0;font-size:21px}
+  .lever .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .tag.approved{background:var(--good-tint);color:var(--good)}
+  .tag.modest{background:var(--plasma-tint);color:#334a61}
+  .tag.thin{background:var(--blood-tint);color:var(--blood-deep)}
+  .lever .mech{font-size:14.5px;color:var(--muted);margin:.3em 0 1em}
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+  .pc .col{padding:14px 16px 6px}
+  .pc .col.pro{border-right:1px solid var(--line-soft)}
+  .pc .col .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .pc .pro .lab{color:var(--good)}
+  .pc .con .lab{color:var(--danger)}
+  .pc ul{font-size:14px;padding-left:1.1em;margin:0 0 8px;max-width:none}
+  .pc li{margin:.3em 0;color:var(--ink-soft)}
+  .lever .mon{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:11px;margin-top:2px}
+  .lever .mon b{color:var(--ink-soft)}
+  @media(max-width:600px){.pc{grid-template-columns:1fr}.pc .col.pro{border-right:none;border-bottom:1px solid var(--line-soft)}}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .plan .p{border-radius:12px;padding:22px 22px 8px;border:1px solid var(--line)}
+  .plan .now{background:var(--blood-tint);border-color:#dfbccf}
+  .plan .later{background:var(--good-tint);border-color:#c2ddc2}
+  .plan .p h4{font-family:var(--serif);font-size:20px;margin:0 0 2px}
+  .plan .p .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .plan .now .k{color:var(--blood)}.plan .later .k{color:var(--good)}
+  .plan ul{font-size:14.5px;padding-left:1.15em}
+  @media(max-width:640px){.plan{grid-template-columns:1fr}}
+  .grade{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;background:var(--surface)}
+  .grade .g{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:14px 10px;color:#fff;line-height:1.25}
+  .g-avoid{background:var(--danger)}.g-unproven{background:var(--muted)}.g-reasonable{background:var(--amber)}.g-solid{background:var(--good)}
+  .grade .gc{padding:14px 18px}
+  .grade .gc h4{margin:0 0 3px;font-size:16px}
+  .grade .gc p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  @media(max-width:520px){.grade{grid-template-columns:1fr}.grade .g{padding:8px}}
+  .checks{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 22px;margin:1.2em 0}
+  .checks .row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .checks .row:last-child{border-bottom:0}
+  .checks .box{flex:0 0 18px;width:18px;height:18px;border:2px solid var(--blood);border-radius:4px;margin-top:3px}
+  .checks .row p{margin:0;font-size:15.5px}
+  .quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(37,26,32,.10)}
+  .quiz h3{margin:0 0 4px}
+  .q{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .q:last-of-type{border-bottom:0}
+  .q .qt{font-size:15.5px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .opt{display:flex;flex-wrap:wrap;gap:8px}
+  .opt label{cursor:pointer}
+  .opt input{position:absolute;opacity:0;width:0;height:0}
+  .chip{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:22px;font-size:14px;background:var(--paper);transition:.15s;user-select:none}
+  .opt input:checked+.chip{background:var(--blood);border-color:var(--blood);color:#fff;font-weight:600}
+  .opt.stop input:checked+.chip{background:var(--danger);border-color:var(--danger)}
+  .opt input:focus-visible+.chip{outline:2px solid var(--plasma);outline-offset:2px}
+  .qbtn{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  button.run{font-family:var(--sans);font-weight:700;font-size:16px;color:#fff;background:var(--blood);border:0;border-radius:10px;padding:13px 26px;cursor:pointer;transition:.15s}
+  button.run:hover{background:var(--blood-deep)}
+  button.run:focus-visible{outline:2px solid var(--plasma);outline-offset:2px}
+  .reset{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:14px;cursor:pointer;text-decoration:underline}
+  .result{margin-top:18px;border-radius:12px;padding:20px 22px;display:none}
+  .result.show{display:block}
+  .result .band{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .result h4{margin:0 0 8px;font-family:var(--serif);font-size:22px}
+  .result p{margin:0 0 8px;font-size:15px;max-width:none}
+  .result.low{background:var(--good-tint);border:1px solid #c2ddc2}
+  .result.low .band{color:var(--good)}
+  .result.watch{background:var(--plasma-tint);border:1px solid #b9c6d6}
+  .result.watch .band{color:#334a61}
+  .result.act{background:var(--danger-tint);border:1px solid #e6c4bb}
+  .result.act .band{color:var(--danger)}
+  .disc{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:10px}
+  .flags{background:#1A1016;border:1px solid #3c2430;border-radius:14px;padding:24px 26px;color:#EED6E1}
+  .flags h3{color:#fff;margin:0 0 10px}
+  .flags ul{columns:2;column-gap:30px;max-width:none;padding-left:1.15em}
+  .flags li{color:#E4C6D4;margin:.4em 0;break-inside:avoid}
+  .flags li::marker{color:#C77AA0}
+  .flags .fast{margin-top:14px;font-size:14.5px;color:#E0BECE}
+  @media(max-width:560px){.flags ul{columns:1}}
+  .sources{font-size:13.5px;line-height:1.5}
+  .sources ol{max-width:none;padding-left:1.6em}
+  .sources li{margin:.55em 0;color:var(--ink-soft)}
+  .sources a{word-break:break-word}
+  .footer{padding:40px 0 60px;text-align:center}
+  .footer .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blood-deep)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="page">
+<div class="prog" id="prog"></div>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">BlessUp Peptide Library &middot; <b>Foundations, Decoded</b></p>
+        <h1>Insulin resistance, decoded</h1>
+        <p class="lede" style="max-width:39ch;margin:.1em 0 .5em">The quiet driver under weight gain, prediabetes, and heart disease. Most people have some and do not know it, and it is largely reversible.</p>
+        <p class="thesis">This is the engine your GLP medication, your training, and half this library are really working on.</p>
+      </div>
+      <!-- SUBJECT-GROUNDED hero: two post-meal glucose-response curves - healthy returns to baseline, resistant stays elevated. -->
+      <div class="hero-art" aria-hidden="true">
+        <svg width="204" height="316" viewBox="0 0 204 316" fill="none" xmlns="http://www.w3.org/2000/svg" id="irArt">
+          <rect x="14" y="24" width="176" height="268" rx="16" fill="#1C1218"/>
+          <!-- axes -->
+          <line x1="40" y1="80" x2="40" y2="238" stroke="#3c2430" stroke-width="1.5"/>
+          <line x1="40" y1="238" x2="176" y2="238" stroke="#3c2430" stroke-width="1.5"/>
+          <!-- baseline (fasting glucose) -->
+          <line x1="40" y1="214" x2="176" y2="214" stroke="#54364a" stroke-width="1" stroke-dasharray="3 4"/>
+          <!-- healthy curve: rises after a meal, returns to baseline -->
+          <path class="curve healthy" d="M40 214 C 62 214, 70 120, 92 128 C 116 137, 134 206, 176 214"
+                fill="none" stroke="#7B93AE" stroke-width="3" stroke-linecap="round"/>
+          <!-- insulin-resistant curve: rises higher, stays elevated -->
+          <path class="curve resist" d="M40 200 C 66 200, 78 96, 104 100 C 134 105, 150 150, 176 156"
+                fill="none" stroke="#C0448A" stroke-width="3.5" stroke-linecap="round"/>
+          <g font-family="ui-monospace,monospace" font-size="8">
+            <text x="150" y="150" fill="#D67AB0">resistant</text>
+            <text x="128" y="202" fill="#9DB0C6">healthy</text>
+          </g>
+          <text x="108" y="258" font-family="ui-monospace,monospace" font-size="8" fill="#B08296" text-anchor="middle">blood sugar after a meal</text>
+          <text x="108" y="272" font-family="ui-monospace,monospace" font-size="7.5" fill="#7a5a68" text-anchor="middle">one clears it, one cannot</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:44px">
+      <div class="stat"><div class="n">58<small>%</small></div><div class="lbl">fewer new diabetes cases from a lifestyle program in a landmark trial, beating the leading drug</div></div>
+      <div class="stat"><div class="n">46<small>%</small></div><div class="lbl">of people with type 2 diabetes reached remission through weight loss in a controlled trial</div></div>
+      <div class="stat"><div class="n">1</div><div class="lbl">shared root under belly fat, high blood pressure, high triglycerides, and high blood sugar</div></div>
+    </div>
+    <p class="src">Insulin resistance is common, quiet, and mostly reversible. The most powerful levers are behavioral, and modest weight loss changes the whole picture. Full citations at the end.</p>
+  </div>
+</header>
+
+<!-- =============== OPENER =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="lede">If you are in this community for weight loss, recovery, or longevity, you are already working on insulin resistance, whether you name it or not. It is the quiet engine underneath most of it, and understanding it changes how you spend every other effort.</p>
+    <p>Here is the honest version. Insulin is the hormone that tells your cells to take sugar out of your blood and store or burn it. <strong>Insulin resistance</strong> is when your cells stop listening well, so your body pumps out more and more insulin to force the job done. For years this hides: your blood sugar can look normal because the high insulin is compensating. But underneath, that high insulin drives fat storage, hunger, high blood pressure, high triglycerides, and, eventually, the rising blood sugar of prediabetes and type 2 diabetes. It also links to fatty liver, PCOS, heart disease, and more. The genuinely hopeful part, and the honest headline, is that this is one of the most <strong>preventable and reversible</strong> conditions there is, and the strongest levers are not drugs. So the useful thing we can do is walk through what it is, why it matters, and the honest hierarchy of what fixes it. We do honest, not hype.</p>
+    <div class="note">
+      <p class="h">Read this first</p>
+      <p>This is education, not medical advice, and it does not replace your own clinician. Prediabetes and diabetes are diagnosed with simple blood tests (fasting glucose, HbA1c), and knowing your numbers is worth more than any supplement. If you have symptoms of high blood sugar, or a diagnosis you are not actively managing, please see a provider. Any supplement or compound named here is an example for discussion, never a prescription, and diabetes medications must only be changed with your provider.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SELF-CHECK QUIZ =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">90-second self-check</p>
+    <h2>Where does your metabolic health likely stand?</h2>
+    <p>This flags what needs a provider, and if you are clear, points at your highest-leverage next step. It is education and a nudge to get tested, not a diagnosis.</p>
+
+    <div class="quiz" id="quiz">
+      <h3>Metabolic readiness and fit</h3>
+      <p class="small">Answer honestly. Nothing is stored, and no one sees it but you.</p>
+
+      <div class="q">
+        <p class="qt">First, the flags that need a provider. Do any apply? (tap all that are true)</p>
+        <div class="opt stop" id="stops">
+          <label><input type="checkbox" value="1"><span class="chip">Symptoms of high blood sugar: very thirsty, peeing a lot, blurred vision, unexplained weight loss</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Diagnosed prediabetes or diabetes I am not actively managing with anyone</span></label>
+          <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">What is your main goal here?</p>
+        <div class="opt" data-single="route">
+          <label><input type="radio" name="route" value="0"><span class="chip">Lose fat, especially around the middle</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Avoid prediabetes / stay metabolically healthy</span></label>
+          <label><input type="radio" name="route" value="0"><span class="chip">Reverse a high reading I already got</span></label>
+          <label><input type="radio" name="route" value="1"><span class="chip">Just learning / not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">Which of these are true for you? (tap all that apply)</p>
+        <div class="opt" id="factors">
+          <label><input type="checkbox" value="2"><span class="chip">Carrying a lot of weight around the belly</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">A parent or sibling with type 2 diabetes</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">Mostly sedentary, little regular exercise</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="qt">And the daily habits? (tap all that apply)</p>
+        <div class="opt" id="symptoms">
+          <label><input type="checkbox" value="2"><span class="chip">Sugary drinks or lots of refined carbs most days</span></label>
+          <label><input type="checkbox" value="2"><span class="chip">Poor sleep most nights</span></label>
+          <label><input type="checkbox" value="1"><span class="chip">High, chronic, unmanaged stress</span></label>
+        </div>
+      </div>
+
+      <div class="qbtn">
+        <button class="run" id="runQuiz" type="button">See where I land</button>
+        <button class="reset" id="resetQuiz" type="button">Reset</button>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <p class="band" id="rBand"></p>
+        <h4 id="rHead"></h4>
+        <p id="rBody"></p>
+        <p class="disc">This reflection is education only, not a diagnosis. Ask a provider for the simple blood tests, especially if a flag applies to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHAT IT IS + STAGES =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The basics</p>
+    <h2>Why high blood sugar is the last thing to show up</h2>
+    <p>The single most important thing to understand is the <strong>timeline</strong>, because it explains why insulin resistance is missed for years. It does not start with high blood sugar. It ends there.</p>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr><th>Stage</th><th>What is happening</th><th>What a standard test shows</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>1. Cells stop listening</th><td>Fat, muscle, and liver cells respond less to insulin</td><td>Nothing yet; blood sugar looks normal</td></tr>
+          <tr><th>2. Insulin rises</th><td>The pancreas pumps out more insulin to force the job done</td><td>Still normal glucose, but insulin is quietly high</td></tr>
+          <tr><th>3. Compensation strains</th><td>High insulin drives fat storage, hunger, blood pressure, triglycerides</td><td>Glucose creeping up: prediabetes</td></tr>
+          <tr><th>4. The pancreas tires</th><td>It can no longer keep up with the demand</td><td>High blood sugar: type 2 diabetes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>This is why a normal fasting glucose does not mean all is well, and why so many people are surprised by a prediabetes diagnosis. The problem was building for years while the standard number looked fine. It is also why the earlier you act, the easier it is to reverse: at stages one and two, the machinery is strained, not broken.</p>
+
+    <div class="note blood">
+      <p class="h">Metabolic syndrome: one root, many faces</p>
+      <p>Doctors group a cluster together, big waist, high blood pressure, high triglycerides, low HDL, and high blood sugar, as "metabolic syndrome." It is not five separate problems; it is largely one, insulin resistance, showing up in five places. That is good news: fix the root and several of them improve together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHY IT MATTERS CHART =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The hopeful part, honestly</p>
+    <h2>It is one of the most reversible conditions there is</h2>
+    <p>Most chronic conditions you manage. This one, caught early enough, you can often turn around, and the evidence is genuinely strong. Two landmark trials tell the story.</p>
+    <div class="chart" data-animate>
+      <p class="ctitle">What actually changes the outcome</p>
+      <p class="csub">Relative effect on preventing or reversing type 2 diabetes, from major controlled trials.</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-lbl">Lifestyle change (prevention)</div><div class="bar-track"><div class="bar-fill b-blood" data-w="58">58% fewer new diabetes cases</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Metformin (prevention)</div><div class="bar-track"><div class="bar-fill b-plasma" data-w="31">31% fewer new cases</div></div></div>
+        <div class="bar-row"><div class="bar-lbl">Weight loss (remission)</div><div class="bar-track"><div class="bar-fill b-good" data-w="46">46% reached diabetes remission</div></div></div>
+      </div>
+      <p class="src">Prevention: Knowler 2002 (a lifestyle program cut new diabetes 58%, beating metformin's 31%). Remission: Lean 2018 (weight loss put 46% of type 2 diabetics into remission, rising to 86% in those who lost 15 kg or more). Full citations below.</p>
+    </div>
+    <p>Read those numbers carefully. A lifestyle program <strong>out-performed the leading medication</strong> for preventing diabetes, and structured weight loss put nearly half of established type 2 diabetics into remission, with the result scaling directly with how much weight came off. This is not a condition you are stuck with. It is one that responds, often dramatically, to the right effort.</p>
+  </div>
+</section>
+
+<!-- =============== MECHANISM FLOW =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Under the hood</p>
+    <h2>Where the resistance actually comes from</h2>
+    <div class="flow" data-animate>
+      <div class="step"><div class="n">01</div><h4>Fat spills into the wrong places</h4><p>When you take in more energy than you burn for long enough, fat starts collecting not just under the skin but around your organs (visceral fat) and inside the liver and muscle. That misplaced fat is what interferes with insulin signaling.</p></div>
+      <div class="step"><div class="n">02</div><h4>The signal jams</h4><p>Inside those overloaded cells, insulin's message gets muffled. The cell stops opening its doors to sugar as readily, so the pancreas shouts louder (more insulin), which drives yet more fat storage. It becomes a loop.</p></div>
+      <div class="step"><div class="n">03</div><h4>Inactivity and poor sleep pile on</h4><p>Muscle is your biggest sugar sponge, and it soaks up glucose best when you use it. Sitting still, poor sleep, and chronic stress all independently worsen insulin sensitivity, which is why the fixes are not only about food.</p></div>
+    </div>
+    <p>That mechanism is also the map to the fixes. Empty the overloaded cells (lose fat, especially visceral), make the muscle demand sugar again (move), and remove the amplifiers (fix sleep and stress). Almost every effective intervention is doing one of those three things.</p>
+  </div>
+</section>
+
+<!-- =============== THE FIX MENU (lever cards) =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The fix menu, ranked honestly</p>
+    <h2>What actually moves the needle</h2>
+    <p>Not all "blood sugar" advice is equal. Tags show how much each really matters: <span style="color:var(--good);font-weight:600">high impact</span>, <span style="color:#334a61;font-weight:600">solid</span>, or <span style="color:var(--blood-deep);font-weight:600">a real tool, with a provider</span>.</p>
+
+    <div class="lever">
+      <div class="top"><h3>Losing fat, especially visceral fat</h3><span class="tag approved">High impact &middot; the root fix</span></div>
+      <p class="mech">Emptying the overloaded fat out of your liver, muscle, and belly is the single most powerful lever, because it removes the actual cause of the jammed signal. Even modest loss changes the picture.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Even a 5 to 10% loss meaningfully improves insulin sensitivity</li>
+          <li>Structured weight loss put nearly half of type 2 diabetics into remission, dose-dependent</li>
+          <li>It improves the whole metabolic-syndrome cluster at once</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Sustaining the loss is the hard part; crash diets rebound</li>
+          <li>Where you lose it matters; visceral fat is the target, and it responds well to consistency</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> if you change one thing, work toward sustainable fat loss. Modest and kept beats dramatic and rebounded.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Exercise, especially building and using muscle</h3><span class="tag approved">High impact &middot; the sugar sponge</span></div>
+      <p class="mech">Muscle is your largest glucose sink, and it pulls sugar out of the blood without needing much insulin when you contract it. Resistance training builds the sponge; any movement wrings it out.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>A single session improves insulin sensitivity for a day or more</li>
+          <li>Resistance training builds muscle that keeps clearing sugar around the clock</li>
+          <li>A short walk after meals blunts the post-meal blood-sugar spike</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>The benefit fades within days if you stop, so consistency is the whole game</li>
+          <li>It complements fat loss; it does not fully replace it for insulin resistance</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> the most underused lever. Lift to build muscle, and walk after meals. Both are free.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Diet quality: fewer refined carbs, more protein and fiber</h3><span class="tag approved">High impact &middot; the daily lever</span></div>
+      <p class="mech">There is no single magic diet, but the direction is clear: cut sugary drinks and refined carbs (the biggest, fastest blood-sugar spikes), and build meals around protein, fiber, and whole foods that you can actually sustain.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Cutting sugary drinks alone is one of the highest-value single changes</li>
+          <li>Protein and fiber flatten the post-meal spike and keep you full</li>
+          <li>Any pattern that produces a sustainable calorie reduction works</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Extreme or unsustainable diets rebound; the best diet is the one you keep</li>
+          <li>"Low-carb" is a tool, not a moral rule; total intake and consistency matter more</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> start with sugary drinks and refined carbs, add protein and fiber, and pick a pattern you can hold for years.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Sleep and stress</h3><span class="tag modest">Solid &middot; the amplifiers</span></div>
+      <p class="mech">Poor sleep and chronic stress each independently worsen insulin sensitivity, so ignoring them undercuts the food and exercise work. This is the direct bridge to the rest of your health.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Short sleep alone made healthy fat cells markedly more insulin-resistant in a controlled trial</li>
+          <li>Fixing sleep and stress makes the other levers work better, for free</li>
+          <li>Often the missing piece when diet and exercise "should" be working but are not</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>Easy to neglect because it feels unrelated to blood sugar</li>
+          <li>Not a standalone fix; it multiplies the others rather than replacing them</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> do not skip this. See our <a href="https://den.onepin.app/sleep.html">Sleep guide</a>; it is a genuine metabolic lever, not a side note.</p>
+    </div>
+
+    <div class="lever">
+      <div class="top"><h3>Medications, when they are warranted</h3><span class="tag thin">A real tool &middot; with a provider</span></div>
+      <p class="mech">For prediabetes and diabetes, real medications matter. Metformin improves insulin sensitivity, and the GLP-1 and dual-agonist drugs produce large weight loss and blood-sugar improvement. These are provider decisions, not self-experiments.</p>
+      <div class="pc">
+        <div class="col pro"><div class="lab">Pros</div><ul>
+          <li>Metformin is safe, cheap, and reduces diabetes risk (though lifestyle beat it head-to-head)</li>
+          <li>GLP-1 and dual agonists drive substantial weight loss and glycemic improvement</li>
+          <li>The right medication with lifestyle is more powerful than either alone</li>
+        </ul></div>
+        <div class="col con"><div class="lab">Cons</div><ul>
+          <li>They work best with, not instead of, the foundation; stopping often reverses the gains</li>
+          <li>They require a prescription and monitoring, and have their own side effects</li>
+        </ul></div>
+      </div>
+      <p class="mon"><b>Honest read:</b> genuinely useful and, for many, appropriate. See our <a href="https://den.onepin.app/glp-class.html">GLP class guide</a>, and make the call with a provider.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SUPPLEMENTS GRADED =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Cutting through the noise</p>
+    <h2>Blood sugar supplements, graded honestly</h2>
+    <div class="grade"><div class="g g-solid">Solid</div><div class="gc"><h4>Fat loss, muscle and movement, diet quality, and sleep</h4><p>This is where the real, proven, durable results live, strong enough to prevent and even reverse diabetes. Any supplement is a rounding error next to these.</p></div></div>
+    <div class="grade"><div class="g g-reasonable">Reasonable</div><div class="gc"><h4>Getting tested, fiber, and (modestly) berberine</h4><p>Knowing your fasting glucose and HbA1c is the highest-value "supplement" there is. Fiber genuinely helps. Berberine has real but modest glucose-lowering data, it is not a diabetes treatment, has drug interactions, and never replaces the basics.</p></div></div>
+    <div class="grade"><div class="g g-unproven">Unproven</div><div class="gc"><h4>Cinnamon, chromium, and most "blood sugar support" blends</h4><p>Generally low-risk to try, but the evidence is weak and effects are tiny. Do not let them substitute for the levers that actually work, or for getting tested.</p></div></div>
+    <div class="grade"><div class="g g-avoid">Skip</div><div class="gc"><h4>Relying on any supplement instead of testing, treatment, or the foundation</h4><p>Ignoring symptoms or a diagnosis while "managing it with supplements" is how prediabetes quietly becomes diabetes. Test, treat what needs treating, and build the foundation.</p></div></div>
+  </div>
+</section>
+
+<!-- =============== WHERE PEPTIDES FIT =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">The honest tie-in</p>
+    <h2>Where peptides fit into metabolic health</h2>
+    <p>This is the one area of this library where a peptide class genuinely earns its place, so the honest answer is more positive here than usual, with clear limits.</p>
+    <ul>
+      <li><strong>The GLP-1 and dual-agonist drugs are the real deal.</strong> These are peptide medications, and they produce large, well-proven weight loss and blood-sugar improvement. They are the strongest pharmacological tool in this whole space. Our <a href="https://den.onepin.app/glp-class.html">GLP class guide</a> walks the honest differences. They are prescription medicines, used with a provider, not research peptides.</li>
+      <li><strong>Exercise-mimic peptides are promising but unproven.</strong> Compounds like MOTS-c aim to switch on the same AMPK energy pathway exercise does. The biology is real, but there are no completed human dosing trials. Our <a href="https://den.onepin.app/mitochondrial-peptides.html">mitochondrial peptide guide</a> is honest about that gap.</li>
+      <li><strong>The foundation still comes first.</strong> A lifestyle program beat medication head-to-head for prevention, and weight loss drove remission. Peptides and drugs work best on top of that foundation, not instead of it.</li>
+    </ul>
+    <div class="note">
+      <p class="h">The move most people skip</p>
+      <p>Before anything else, get the simple blood tests and know your numbers, fasting glucose, HbA1c, and ideally fasting insulin or a triglyceride-to-HDL ratio. You cannot manage what you have not measured, and the earlier you catch insulin resistance, the more reversible it is. Match the effort to your actual numbers. Matching beats maxing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== NOW / LATER PLAN =============== -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Put it together</p>
+    <h2>A simple, honest plan</h2>
+    <div class="plan">
+      <div class="p now">
+        <p class="k">Start now</p><h4>Measure and move</h4>
+        <ul>
+          <li>Get fasting glucose and HbA1c; know your starting numbers</li>
+          <li>Cut sugary drinks and the worst refined carbs first</li>
+          <li>Walk after meals, and start resistance training</li>
+          <li>Protect your sleep; it is a real metabolic lever</li>
+        </ul>
+      </div>
+      <div class="p later">
+        <p class="k">Then build</p><h4>Sustain and escalate</h4>
+        <ul>
+          <li>Aim for a sustainable 5 to 10% fat loss and hold it</li>
+          <li>Recheck your numbers to see the change and stay motivated</li>
+          <li>For prediabetes or diabetes, discuss medication with a provider</li>
+          <li>Treat peptides and supplements as add-ons, never the plan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUESTIONS TO ASK YOURSELF =============== -->
+<section class="band band--tint">
+  <div class="wrap">
+    <p class="eyebrow">Turn this into action</p>
+    <h2>Questions to ask yourself</h2>
+    <div class="checks">
+      <div class="row"><span class="box"></span><p>Do I actually know my fasting glucose and HbA1c, or am I guessing?</p></div>
+      <div class="row"><span class="box"></span><p>Am I carrying visceral (belly) fat, the kind that most drives insulin resistance?</p></div>
+      <div class="row"><span class="box"></span><p>Am I using my muscle regularly, or is my biggest sugar sponge sitting idle?</p></div>
+      <div class="row"><span class="box"></span><p>Are sugary drinks, refined carbs, poor sleep, or stress quietly working against me?</p></div>
+      <div class="row"><span class="box"></span><p>If I have a diagnosis, am I actually working it with a provider, not just a supplement?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== RED FLAGS =============== -->
+<section class="band">
+  <div class="wrap">
+    <div class="flags">
+      <h3>See a provider, do not self-manage these</h3>
+      <p style="color:#E4C6D4;margin:0 0 12px;max-width:none">Some signs mean you need testing or care now, not a supplement.</p>
+      <ul>
+        <li>Excessive thirst and urination, especially with unexplained weight loss</li>
+        <li>Blurred vision, or persistent fatigue that is new</li>
+        <li>Known prediabetes or diabetes you are not actively managing</li>
+        <li>Numbness or tingling in the feet, or slow-healing wounds</li>
+        <li>Vomiting, confusion, deep rapid breathing, or fruity breath (a medical emergency)</li>
+      </ul>
+      <p class="fast">Very high blood sugar can become an emergency. Prediabetes is a warning, not a life sentence, and it is the best moment to act. Either way, a simple blood test and a provider beat any supplement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== THE BLESSUP TAKE (ink band) =============== -->
+<section class="band band--ink">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--plasma)">The BlessUp take</p>
+    <h2 style="color:#fff">The quiet driver you can actually turn around</h2>
+    <p>Insulin resistance is the engine underneath so much of what this community cares about, weight, energy, recovery, longevity, and it is quiet for years because your blood sugar can look normal while high insulin does the compensating. That is why it gets missed, and why so many people are blindsided by a prediabetes diagnosis. But here is the part worth holding onto: this is one of the most reversible conditions in medicine. A lifestyle program beat the leading drug for preventing diabetes, and structured weight loss put nearly half of established type 2 diabetics into remission, more the more weight they lost. The levers are not exotic: empty the overloaded fat out of your liver and belly, use your muscle so it demands sugar again, cut the sugary drinks and refined carbs, and protect your sleep. Medications, including the genuinely powerful GLP peptide drugs, earn their place on top of that, with a provider, not instead of it. So before optimizing anything advanced, get your numbers, and put your effort where it actually pays: the boring, proven foundation that quietly reverses the thing driving everything else. That is not the small move. It is the one with the best evidence in this entire library.</p>
+  </div>
+</section>
+
+<!-- =============== CLOSER =============== -->
+<section class="band">
+  <div class="wrap footer">
+    <p class="small" style="max-width:62ch;margin:0 auto 18px">This is educational information only and not medical advice; it does not replace evaluation by your own licensed provider. Prediabetes and diabetes are medical diagnoses made with blood tests and managed with a clinician; do not change diabetes medications on your own. Supplements and compounds named here are examples for discussion, not recommendations. Intended for adults 21 and over.</p>
+    <p class="sig">Know your numbers. Bless up.</p>
+  </div>
+</section>
+
+<!-- =============== SOURCES =============== -->
+<section class="band band--tint">
+  <div class="wrap sources">
+    <p class="eyebrow">The evidence</p>
+    <h2 style="font-size:26px">Sources</h2>
+    <p class="small">Retrieved from PubMed. These anchor the core message: insulin resistance and type 2 diabetes are largely preventable by lifestyle (which beat the leading drug), often reversible through weight loss, and directly worsened by poor sleep.</p>
+    <ol>
+      <li>Knowler WC, Barrett-Connor E, Fowler SE, et al; Diabetes Prevention Program Research Group. Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin. <em>N Engl J Med.</em> 2002;346(6):393-403. <a href="https://doi.org/10.1056/NEJMoa012512">doi:10.1056/NEJMoa012512</a> (a lifestyle program cut new diabetes by 58%, beating metformin's 31%)</li>
+      <li>Lean MEJ, Leslie WS, Barnes AC, et al. Primary care-led weight management for remission of type 2 diabetes (DiRECT): an open-label, cluster-randomised trial. <em>Lancet.</em> 2018;391(10120):541-551. <a href="https://doi.org/10.1016/S0140-6736(17)33102-1">doi:10.1016/S0140-6736(17)33102-1</a> (weight loss put 46% of type 2 diabetics into remission at 12 months, rising to 86% in those who lost 15 kg or more)</li>
+      <li>Broussard JL, Ehrmann DA, Van Cauter E, et al. Impaired insulin signaling in human adipocytes after experimental sleep restriction: a randomized, crossover study. <em>Ann Intern Med.</em> 2012;157(8):549-557. <a href="https://doi.org/10.7326/0003-4819-157-8-201210160-00005">doi:10.7326/0003-4819-157-8-201210160-00005</a> (four nights of short sleep made healthy fat cells markedly more insulin-resistant)</li>
+    </ol>
+    <p class="small">Citations retrieved from PubMed. The staged progression of insulin resistance, the role of visceral and ectopic fat, and muscle as the primary glucose-disposal tissue are established metabolic physiology. This report is an honest educational overview, not a diagnosis or a treatment plan; prediabetes and diabetes deserve testing and a clinician.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById("prog");
+  function onScroll(){var h=document.documentElement;var scrolled=(h.scrollTop||document.body.scrollTop);var height=(h.scrollHeight-h.clientHeight)||1;prog.style.width=(scrolled/height*100)+"%";}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // hero: the two glucose curves draw in
+  var curves=document.querySelectorAll("#irArt .curve");
+  curves.forEach(function(c,i){
+    if(reduce) return;
+    var len=c.getTotalLength();
+    c.style.strokeDasharray=len; c.style.strokeDashoffset=len;
+    c.style.transition="stroke-dashoffset 1.3s cubic-bezier(.4,0,.3,1) "+(0.3+i*0.4)+"s";
+  });
+  setTimeout(function(){ curves.forEach(function(c){ c.style.strokeDashoffset=0; }); }, reduce?0:250);
+
+  // animate bars on scroll into view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll(".bar-fill").forEach(function(f){ if(reduce){f.style.transition="none";} f.style.width=f.getAttribute("data-w")+"%"; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.25});
+  document.querySelectorAll("[data-animate]").forEach(function(el){
+    if(reduce){el.querySelectorAll(".bar-fill").forEach(function(f){f.style.width=f.getAttribute("data-w")+"%";});}
+    else io.observe(el);
+  });
+
+  // self-check quiz
+  var runBtn=document.getElementById("runQuiz");
+  var resetBtn=document.getElementById("resetQuiz");
+  var result=document.getElementById("result");
+  var quiz=document.getElementById("quiz");
+  if(runBtn && quiz){
+    function goalIdx(){
+      var chips=quiz.querySelectorAll("input[name=\"route\"]");
+      var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
+      return idx; // 0 fat loss, 1 prevention, 2 reversal, 3 learning
+    }
+    function anyStop(){
+      var boxes=quiz.querySelectorAll("#stops input:checked");
+      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
+      return hit;
+    }
+    function score(){
+      var s=0;
+      quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
+      return s;
+    }
+    function show(band,cls,head,body){
+      result.className="result show "+cls;
+      document.getElementById("rBand").textContent=band;
+      document.getElementById("rHead").textContent=head;
+      document.getElementById("rBody").textContent=body;
+      result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
+    }
+    runBtn.addEventListener("click",function(){
+      if(anyStop()){
+        show("Get evaluated first","act","This needs a provider and a blood test, not a supplement",
+          "You marked something that needs medical attention: symptoms of high blood sugar (excess thirst and urination, blurred vision, unexplained weight loss), or a prediabetes or diabetes diagnosis you are not actively managing. These are situations where testing and a provider come before any self-directed plan, and symptomatic high blood sugar can become serious. Please get the simple blood tests and see someone. The foundation below still matters enormously, but it works alongside proper care, not instead of it.");
+        return;
+      }
+      var s=score();
+      if(s>=5){
+        show("Real risk factors are stacking up","watch","Get tested, then work the foundation",
+          "You flagged several things that drive insulin resistance: belly fat, a family history, being sedentary, sugary drinks and refined carbs, poor sleep, or chronic stress. None of that is a diagnosis, but together it is a clear signal to act early, while this is most reversible. Two moves: get a fasting glucose and HbA1c so you know your real numbers, and start the highest-leverage basics (cut sugary drinks, walk after meals, build some muscle, protect your sleep). Caught early, this responds extremely well.");
+        return;
+      }
+      var map={
+        0:["Losing belly fat","You are aiming at the actual root",
+           "Targeting fat, especially visceral belly fat, is exactly right, because that misplaced fat is what jams insulin signaling in the first place. The encouraging part: even a sustainable 5 to 10% loss meaningfully improves insulin sensitivity, and structured weight loss has put people's type 2 diabetes into remission. Build it from muscle and movement (your biggest sugar sponge), fewer sugary drinks and refined carbs, and protected sleep. The GLP peptide medications are a genuinely powerful accelerator here, with a provider, on top of the foundation, not instead of it."],
+        1:["Staying ahead of it","Prevention is where the evidence is strongest",
+           "Wanting to avoid prediabetes is the highest-return goal in this whole space, because a lifestyle program actually beat the leading medication for preventing diabetes in a landmark trial. Two steps: get your numbers now (fasting glucose, HbA1c) so you have a baseline, and hold the basics, a healthy weight, regular muscle use, whole-food eating, and good sleep. Catching insulin resistance while your blood sugar still looks normal is exactly when it is easiest to reverse."],
+        2:["Reversing a high reading","Genuinely doable, and best done with a provider",
+           "A high reading is a wake-up call, not a life sentence, and the evidence here is honestly hopeful: structured weight loss put 46% of type 2 diabetics into remission, and the more weight lost, the higher the remission rate. Do it with a provider though, because as you improve, any diabetes medications need to be adjusted, and that is not a solo call. Combine sustainable fat loss, muscle and movement, diet quality, and sleep, recheck your numbers to see it working, and use medication as the tool it is meant to be."],
+        3:["Learning first","You are thinking about it the right way",
+           "Understanding this before acting is exactly right. The essentials: insulin resistance is your cells tuning out insulin, so your body over-produces it for years before blood sugar ever rises; it shows up as the metabolic-syndrome cluster (belly fat, blood pressure, triglycerides, sugar) from one shared root; and it is strongly preventable and often reversible through fat loss, muscle use, diet quality, and sleep, with medication as a real add-on. Know your numbers, and put your effort on the proven foundation. Enjoy the education."]
+      };
+      var gi=goalIdx();
+      var m=map[gi>=0?gi:3];
+      show(m[0],"low",m[1],m[2]);
+    });
+    resetBtn.addEventListener("click",function(){
+      quiz.querySelectorAll("input:checked").forEach(function(i){i.checked=false;});
+      result.className="result";
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
