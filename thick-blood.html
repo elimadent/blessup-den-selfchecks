@@ -898,6 +898,39 @@
     return {s:s, hct:hct};
   }
 
+  // Only ever name drivers the reader actually ticked. The score also counts
+  // the hematocrit reading and the dosing pattern, so it can clear a threshold
+  // with zero boxes checked; say what really drove it rather than claiming
+  // drivers that were never reported.
+  function joinList(a){
+    if(a.length===1) return a[0];
+    if(a.length===2) return a[0]+' and '+a[1];
+    return a.slice(0,-1).join(', ')+', and '+a[a.length-1];
+  }
+  function pickedLabels(sel){
+    var out=[];
+    quiz.querySelectorAll(sel).forEach(function(b){
+      if(b.checked && parseInt(b.value,10)>0){
+        var c=b.parentElement?b.parentElement.querySelector('.chip'):null;
+        if(c){
+          var t=c.textContent.trim().replace(/\s+/g,' ');
+          var w=t.split(' ');
+          var keep = w[0]==='I' || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+          if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+          out.push(t);
+        }
+      }
+    });
+    return out;
+  }
+  function hctLabel(){
+    var sel=document.getElementById('q_hct');
+    if(!sel || !sel.options.length) return '';
+    var o=sel.options[sel.selectedIndex];
+    if(!o || !parseInt(o.value,10)) return '';
+    return o.textContent.trim().replace(/\s+/g,' ');
+  }
+
   function show(band,cls,head,body){
     result.className='result show '+cls;
     document.getElementById('rBand').textContent=band;
@@ -913,14 +946,22 @@
       'A hematocrit at or above 54% is where guidelines say to pause or lower testosterone and investigate. This is not a self-fix moment. Contact your provider promptly, recheck the value well-hydrated, and read the short-term plan and red-flag section below. This is manageable, but it needs a professional in the loop now.');
       return;
     }
+    var drivers=pickedLabels('#factors input, #symptoms input');
+    var hctLbl=hctLabel();
     if(r.s>=8){
-      show('Time to act, with your provider','act','Several drivers are stacking up.',
-      'Enough factors are pointing the same direction that this deserves a real conversation with your provider soon, not a wait-and-see. Get a current hematocrit and ferritin, standardize the draw to your trough, and work through the "fix menu" and "questions to ask your provider" below. The good news: most of what is driving this is adjustable.');
+      show('Time to act, with your provider','act',drivers.length?'Several drivers are stacking up.':'Worth a provider conversation.',
+      (drivers.length
+        ? 'You flagged '+joinList(drivers)+'. Enough factors are pointing the same direction that this'
+        : 'You did not flag any of the usual drivers, so what puts you here is your hematocrit reading'+(hctLbl?' ('+hctLbl+')':'')+' along with your dosing pattern. That still')
+      +' deserves a real conversation with your provider soon, not a wait-and-see. Get a current hematocrit and ferritin, standardize the draw to your trough, and work through the "fix menu" and "questions to ask your provider" below. The good news: most of what is driving this is adjustable.');
       return;
     }
     if(r.s>=4){
       show('Worth watching','watch','On the radar, not an alarm.',
-      'You have a couple of things nudging your red cells up. Nothing here says emergency, but it is worth confirming a current, well-hydrated hematocrit and tightening the controllable drivers (hydration, nicotine, sleep/apnea, unnecessary iron). Skim the fix menu and bring the self-audit questions to your next check-in.');
+      (drivers.length
+        ? 'You have a couple of things nudging your red cells up: '+joinList(drivers)+'.'
+        : 'You did not flag any of the usual drivers, so this is coming from your hematocrit reading'+(hctLbl?' ('+hctLbl+')':'')+' and your dosing pattern rather than your habits.')
+      +' Nothing here says emergency, but it is worth confirming a current, well-hydrated hematocrit and tightening the controllable drivers (hydration, nicotine, sleep/apnea, unnecessary iron). Skim the fix menu and bring the self-audit questions to your next check-in.');
       return;
     }
     show('Looking steady','low','Low signal today.',
