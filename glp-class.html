@@ -763,11 +763,29 @@
       var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
       return idx; // 0 large, 1 moderate/gentle, 2 metabolic, 3 learning
     }
-    function anyStop(){
-      // the first four stop checkboxes carry value 1; "None of these" carries 0
-      var boxes=quiz.querySelectorAll("#stops input:checked");
-      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
-      return hit;
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // instead of reciting every option as though they had marked them all.
+    // The first four stop checkboxes carry value 1; "None of these" carries 0.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
     }
     function score(){
       var s=0;
@@ -783,15 +801,17 @@
     }
     runBtn.addEventListener("click",function(){
       // HARD STOP overrides everything
-      if(anyStop()){
+      var picked=pickedLabels("#stops input");
+      if(picked.length){
         show("A hard stop applies","act","This class is not the right tool for you",
-          "You marked one of the absolute lines for this class: a thyroid C-cell or MEN2 history, a history of pancreatitis, or pregnancy, breastfeeding, or trying to conceive. Those are firm contraindications, not cautions. Please do not pursue these compounds, and talk with your provider about safer options for your goal.");
+          "You marked "+(picked.length===1?"one of the absolute lines for this class":"absolute lines for this class")+": "+joinList(picked)+". Those are firm contraindications, not cautions. Please do not pursue these compounds, and talk with your provider about safer options for your goal.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var flagged=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && flagged.length){
         show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
-          "You flagged things that change the calculus: a motility, gallbladder, insulin, or eating-disorder factor, or a shaky foundation and no provider. None of these is an automatic no, but every one of them needs a provider in the loop before you go further, and the protein-and-training base handled first. Get those right, then revisit which lever fits.");
+          "You flagged "+(flagged.length===1?"something that changes":"things that change")+" the calculus: "+joinList(flagged)+". None of these is an automatic no, but every one of them needs a provider in the loop before you go further, and the protein-and-training base handled first. Get those right, then revisit which lever fits.");
         return;
       }
       var map={

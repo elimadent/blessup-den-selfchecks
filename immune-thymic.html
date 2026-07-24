@@ -681,10 +681,28 @@
       var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
       return idx; // 0 support-around-illness, 1 resilience, 2 evidence, 3 learning
     }
-    function anyStop(){
-      var boxes=quiz.querySelectorAll("#stops input:checked");
-      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
-      return hit;
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // instead of reciting every option as though they had marked them all.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
     }
     function score(){
       var s=0;
@@ -699,15 +717,17 @@
       result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
     }
     runBtn.addEventListener("click",function(){
-      if(anyStop()){
+      var picked=pickedLabels("#stops input");
+      if(picked.length){
         show("A hard stop applies","act","This class is not a self-directed project for you",
-          "You marked one of the firm immune lines: an autoimmune disease, a transplant or immunosuppressant medication, or pregnancy. Because these peptides modulate immune behavior (they can push an over-firing or suppressed system in the wrong direction), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your specialist about your goal.");
+          "You marked "+(picked.length===1?"one of the firm immune lines":"firm immune lines")+": "+joinList(picked)+". Because these peptides modulate immune behavior (they can push an over-firing or suppressed system in the wrong direction), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your specialist about your goal.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var flagged=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && flagged.length){
         show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
-          "You flagged things that change the calculus: a cancer history, other immune-related or prescription medication, an autoimmune family history, or a shaky foundation. None is an automatic no, but each needs a provider in the loop, and the immune foundation (sleep, nutrition, zinc and vitamin D, stress) handled first, because for a healthy person that does more than any of these. Then revisit whether this class fits.");
+          "You flagged "+(flagged.length===1?"something that changes":"things that change")+" the calculus: "+joinList(flagged)+". None is an automatic no, but each needs a provider in the loop, and the immune foundation (sleep, nutrition, zinc and vitamin D, stress) handled first, because for a healthy person that does more than any of these. Then revisit whether this class fits.");
         return;
       }
       var map={

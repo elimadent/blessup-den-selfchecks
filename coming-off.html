@@ -770,9 +770,41 @@
   var result=document.getElementById('result');
   var quiz=document.getElementById('quiz');
   if(runBtn && quiz){
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // Several chips here start with the pronoun "I", so restore that one capital.
+    function fixI(t){ return t.replace(/^i(?=$|[^a-z])/,"I"); }
+    function pickedFactors(){ return pickedLabels('#factors input, #symptoms input').map(fixI); }
+    // Time on and cause come from a dropdown and a radio, so read back the
+    // option the user actually chose instead of asserting one for them.
+    function durSel(){return document.getElementById('q_hct');}
+    function durVal(){return parseInt(durSel().value,10)||0;}
+    function durLabel(){var s=durSel(),o=s.options[s.selectedIndex];return o?o.textContent.trim().replace(/\s+/g,' '):'';}
+    function causeRadio(){return quiz.querySelector('input[name="route"]:checked');}
+    function causeLabel(){var r=causeRadio();if(!r) return '';var c=r.parentElement?r.parentElement.querySelector('.chip'):null;return c?c.textContent.trim().replace(/\s+/g,' '):'';}
     function score(){
-      var s=0, dur=parseInt(document.getElementById('q_hct').value,10)||0; s+=dur;
-      var r=quiz.querySelector('input[name="route"]:checked'); var rv=r?parseInt(r.value,10):0; s+=rv;
+      var s=0, dur=durVal(); s+=dur;
+      var r=causeRadio(); var rv=r?parseInt(r.value,10):0; s+=rv;
       quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
       return {s:s, rv:rv};
     }
@@ -785,23 +817,41 @@
     }
     runBtn.addEventListener('click',function(){
       var r=score();
+      var dl=durLabel(), cl=causeLabel();
+      var picked=pickedFactors();
       if(r.rv>=3){
         show('A restart may not be enough','act','Your low testosterone may be from the testicle itself.',
-        'If the cause is primary (the testicle, not the signal), stimulating the brain with SERMs or hCG often will not restore production, because the factory, not the messenger, is the problem. That does not mean coming off is wrong, but it does mean going in with a specialist and honest expectations, and understanding that replacement may be the right long-term answer.');
+        (cl?'You told me the cause was: '+cl+'. ':'')
+        +'If the cause is primary (the testicle, not the signal), stimulating the brain with SERMs or hCG often will not restore production, because the factory, not the messenger, is the problem. That does not mean coming off is wrong, but it does mean going in with a specialist and honest expectations, and understanding that replacement may be the right long-term answer.');
         return;
       }
+      // List only the answers that actually pushed the score, never the full
+      // menu of headwinds.
+      var parts=[];
+      if(r.s>=11 || r.s>=6){
+        if(durVal()>0) parts.push('time on testosterone ('+dl+')');
+        if(r.rv>0 && cl) parts.push('your answer on why you were low ('+cl+')');
+        picked.forEach(function(t){parts.push(t);});
+      }
       if(r.s>=11){
-        show('Plan this carefully, with a specialist','act','Several headwinds are stacking up.',
-        'Longer time on, higher doses, older age, shrunken testes, or a heavy anabolic history all lengthen the road and lower the odds of a quick, full recovery. This is very much a supervised project. Get baseline labs, expect a real runway, bank sperm if fertility matters, and have a plan for the crash window before you change anything.');
+        show('Plan this carefully, with a specialist','act',
+        parts.length>2?'Several headwinds are stacking up.':'There are real headwinds here.',
+        (parts.length?'You told me: '+joinList(parts)+'. ':'')
+        +'This is very much a supervised project. Get baseline labs, expect a real runway, bank sperm if fertility matters, and have a plan for the crash window before you change anything.');
         return;
       }
       if(r.s>=6){
         show('A realistic project, done supervised','watch','Recovery is plausible, but give it a real runway.',
-        'Your picture is mixed, which is normal. With a provider, baseline labs, and patience (and likely hCG plus a SERM if you want to speed it), most men in this zone can bring their own production back. Set expectations for a slow climb, and do not judge recovery before the axis has had months to wake up.');
+        (parts.length?'You told me: '+joinList(parts)+'. ':'')
+        +'Your picture is mixed, which is normal. With a provider, baseline labs, and patience (and likely hCG plus a SERM if you want to speed it), most men in this zone can bring their own production back. Set expectations for a slow climb, and do not judge recovery before the axis has had months to wake up.');
         return;
       }
+      var bits=['time on testosterone ('+dl+')'];
+      if(cl) bits.push('why you were low ('+cl+')');
       show('You look like a reasonable candidate','low','The odds favor a recovery, so do it right.',
-      'Shorter time on, a likely reversible or secondary cause, and few headwinds all point toward a good chance your own engine restarts. Still do it with a provider and labs, still expect a low window, and still give it time. A good candidate who wings it can still have a rough, needlessly long transition.');
+      'You told me: '+joinList(bits)+'.'
+      +(picked.length?' You flagged '+joinList(picked)+'.':' You did not flag any of the headwinds.')
+      +' That points toward a good chance your own engine restarts. Still do it with a provider and labs, still expect a low window, and still give it time. A good candidate who wings it can still have a rough, needlessly long transition.');
     });
     resetBtn.addEventListener('click',function(){
       document.getElementById('q_hct').value='0';

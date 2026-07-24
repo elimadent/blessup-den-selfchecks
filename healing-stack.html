@@ -763,11 +763,38 @@
   var result=document.getElementById('result');
   var quiz=document.getElementById('quiz');
   if(runBtn && quiz){
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // The foundation dropdown is read back verbatim, never asserted.
+    function keySel(){return document.getElementById('q_hct');}
+    function keyLabel(){var s=keySel(),o=s.options[s.selectedIndex];return o?o.textContent.trim().replace(/\s+/g,' '):'';}
+    // The risk branch is driven ONLY by the ticked risk boxes. The foundation
+    // dropdown and the injury-type radio are not risky behaviours, so they must
+    // never be able to trigger risk copy about things the user did not tick.
     function score(){
-      var s=0, key=parseInt(document.getElementById('q_hct').value,10)||0; s+=key;
-      var r=quiz.querySelector('input[name="target"]:checked'); if(r) s+=parseInt(r.value,10);
-      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
-      return {s:s, key:key};
+      var key=parseInt(keySel().value,10)||0, risk=0;
+      quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){risk+=parseInt(c.value,10);});
+      return {risk:risk, key:key};
     }
     function show(band,cls,head,body){
       result.className='result show '+cls;
@@ -778,10 +805,32 @@
     }
     runBtn.addEventListener('click',function(){
       var r=score();
-      if(r.key>=7){ show('Fix the basics first','act','Your foundation is the real project','Before spending a dollar on peptides, get protein, sleep and load management in place. They out-heal any stack, and without them the signal has little to amplify. Build the foundation for a few weeks, then reconsider.'); return; }
-      if(r.s>=8){ show('Slow down and set it up right','act','A few things to sort before you start','Your answers flag some avoidable risk, mixing without knowing the copper rule, no certificate of analysis, expecting a miracle in two weeks, or running open-ended. Close those gaps first. A well-set-up cycle beats an eager, sloppy one every time.'); return; }
-      if(r.s>=4){ show('Worth tightening up','watch','You are close, with a couple of gaps','The pieces are mostly there. Firm up whatever you flagged, source quality, a realistic timeline, a defined cycle, and you are in a reasonable spot to run this thoughtfully with a provider in the loop.'); return; }
-      show('Set up to do this well','low','Foundation solid, expectations realistic','You have the basics handled and sensible expectations. If you choose to run the stack, do it as a defined cycle, respect the copper rule, source carefully, and track one clear outcome so you can judge what actually helped.');
+      var kl=keyLabel();
+      var picked=pickedLabels('#factors input, #symptoms input');
+      if(r.key>=7){
+        show('Fix the basics first','act','Your foundation is the real project',
+        'You said your foundation is: '+kl+'. Before spending a dollar on peptides, get protein, sleep and load management in place. They out-heal any stack, and without them the signal has little to amplify. Build the foundation for a few weeks, then reconsider.'
+        +(picked.length?' You also flagged '+joinList(picked)+', worth closing at the same time.':''));
+        return;
+      }
+      if(r.risk>=4 && picked.length){
+        show('Slow down and set it up right','act','A few things to sort before you start',
+        'You flagged '+joinList(picked)+'. Close those gaps first. A well-set-up cycle beats an eager, sloppy one every time.');
+        return;
+      }
+      if(picked.length){
+        show('Worth tightening up','watch','You are close, with a couple of gaps',
+        'You flagged '+joinList(picked)+'.'+(r.key>0?' You also said your foundation is: '+kl+'.':'')
+        +' The pieces are mostly there. Firm that up and you are in a reasonable spot to run this thoughtfully with a provider in the loop.');
+        return;
+      }
+      if(r.key>0){
+        show('Worth tightening up','watch','The foundation is the gap',
+        'You did not flag any of the risk items, which is good. You did say your foundation is: '+kl+'. Protein, sleep and load management are what actually heal the tissue, so firm that up and you are in a reasonable spot to run this thoughtfully with a provider in the loop.');
+        return;
+      }
+      show('Set up to do this well','low','Foundation solid, expectations realistic',
+      'You said your foundation is: '+kl+', and you did not flag any of the risk items. If you choose to run the stack, do it as a defined cycle, respect the copper rule, source carefully, and track one clear outcome so you can judge what actually helped.');
     });
     resetBtn.addEventListener('click',function(){
       document.getElementById('q_hct').value='0';

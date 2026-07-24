@@ -689,6 +689,53 @@
       var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
       return hit;
     }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // so a result never claims a box they did not check.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // The reason has to match the box that was actually ticked, not recite both.
+    function stopNotes(){
+      var out=[];
+      quiz.querySelectorAll("#stops input").forEach(function(b){
+        if(!b.checked || parseInt(b.value,10)<1) return;
+        var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+        var t=c?c.textContent.toLowerCase():"";
+        if(t.indexOf("cancer")>-1){
+          out.push("Because two of these peptides (IGF-1 LR3 and MGF) are growth-factor signals that tell cells to grow, active or recent cancer is a stop-and-ask-a-specialist situation, not a self-clear one.");
+        }else if(t.indexOf("pregnan")>-1 || t.indexOf("breastfeeding")>-1 || t.indexOf("conceive")>-1){
+          out.push("In pregnancy, breastfeeding, or while trying to conceive, none of these peptides has any human safety data, none is approved for use in people, and deliberately pushing growth-factor and muscle-growth signaling is not something to experiment with while a baby is developing or feeding.");
+        }
+      });
+      return out;
+    }
+    function stopHasCancer(){
+      var hit=false;
+      quiz.querySelectorAll("#stops input").forEach(function(b){
+        if(!b.checked || parseInt(b.value,10)<1) return;
+        var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+        if(c && c.textContent.toLowerCase().indexOf("cancer")>-1) hit=true;
+      });
+      return hit;
+    }
     function score(){
       var s=0;
       quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
@@ -703,14 +750,19 @@
     }
     runBtn.addEventListener("click",function(){
       if(anyStop()){
+        var _stops=pickedLabels("#stops input");
+        var _notes=stopNotes();
         show("A hard stop applies","act","This class is not a self-directed project for you",
-          "You marked one of the firm lines: an active or recent cancer history, or pregnancy. Because two of these peptides (IGF-1 LR3 and MGF) are growth-factor signals that tell cells to grow, active or recent cancer is a stop-and-ask-a-specialist situation, not a self-clear one. Please do not pursue these on your own, and talk with your oncologist or provider about your goal.");
+          (_stops.length?("You marked "+(_stops.length===1?"one of the firm lines":"firm lines")+": "+joinList(_stops)+". "):"")
+          +(_notes.length?(_notes.join(" ")+" "):"")
+          +"Please do not pursue these on your own, and talk with your "+(stopHasCancer()?"oncologist or provider":"provider")+" about your goal.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var _cautions=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && _cautions.length){
         show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
-          "You flagged things that change the calculus: a blood thinner or bleeding disorder (which matters for ACE-031), diabetes or glucose-lowering meds (which make IGF-1 LR3's blood-sugar drop dangerous), not training hard (there is little for a muscle peptide to add to), or planning to source it with no provider. None is an automatic no, but each needs a provider in the loop and the foundation (training, protein, sleep) genuinely handled first, because for real muscle that does more than any of these. Then revisit whether this class fits.");
+          "You flagged "+(_cautions.length===1?"something that changes the calculus":"things that change the calculus")+": "+joinList(_cautions)+". None is an automatic no, but each needs a provider in the loop and the foundation (training, protein, sleep) genuinely handled first, because for real muscle that does more than any of these. Then revisit whether this class fits.");
         return;
       }
       var map={

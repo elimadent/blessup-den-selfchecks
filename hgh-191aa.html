@@ -720,12 +720,70 @@
   document.querySelectorAll('[data-animate]').forEach(function(el){if(reduce){el.querySelectorAll('.bar-fill').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});}else io.observe(el);});
   var runBtn=document.getElementById('runQuiz'),resetBtn=document.getElementById('resetQuiz'),result=document.getElementById('result'),quiz=document.getElementById('quiz');
   if(runBtn&&quiz){
-    function score(){var s=0,d=parseInt(document.getElementById('q_hct').value,10)||0;s+=d;var r=quiz.querySelector('input[name="route"]:checked');if(r)s+=parseInt(r.value,10);quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});return s;}
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // Dose and bloodwork come from a dropdown and a radio, so read back the
+    // option the user actually chose instead of asserting one for them.
+    function doseSel(){return document.getElementById('q_hct');}
+    function doseVal(){return parseInt(doseSel().value,10)||0;}
+    function doseLabel(){var s=doseSel(),o=s.options[s.selectedIndex];return o?o.textContent.trim().replace(/\s+/g,' '):'';}
+    function monRadio(){return quiz.querySelector('input[name="route"]:checked');}
+    function monVal(){var r=monRadio();return r?parseInt(r.value,10):0;}
+    function monLabel(){var r=monRadio();if(!r) return '';var c=r.parentElement?r.parentElement.querySelector('.chip'):null;return c?c.textContent.trim().replace(/\s+/g,' '):'';}
+    function score(){var s=doseVal()+monVal();quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});return s;}
     function show(band,cls,head,body){result.className='result show '+cls;document.getElementById('rBand').textContent=band;document.getElementById('rHead').textContent=head;document.getElementById('rBody').textContent=body;result.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});}
-    runBtn.addEventListener('click',function(){var s=score();
-      if(s>=9){show('Toward the danger end','act','This is drifting into the risky way to run it.','High dose, thin monitoring, or a real risk factor (diabetes/retinopathy/cancer history) are stacking up. This is exactly the pattern that leads to insulin resistance, GH gut, and the acromegaly spectrum. Get IGF-1 and glucose checked, bring the dose down toward physiologic, and do this with a provider before going further.');return;}
-      if(s>=4){show('Worth tightening up','watch','On the radar - a few things to fix.','You are not in the danger zone, but the setup could be safer. Get consistent bloodwork (IGF-1 mid-normal + glucose/A1c), keep the dose physiologic, and address any risk factor with a provider. The safe route is very doable from here.');return;}
-      show('Set up the safe way','low','This looks like the physiologic route.','Low dose, monitoring, and no major red flags is exactly how HGH stays beneficial rather than harmful. Keep IGF-1 mid-normal, keep watching your glucose, and keep a provider in the loop. Well done.');});
+    runBtn.addEventListener('click',function(){
+      var s=score(),dv=doseVal(),dl=doseLabel(),mv=monVal(),ml=monLabel();
+      var picked=pickedLabels('#factors input, #symptoms input');
+      // Only list what actually drove the score: the dose and bloodwork answers
+      // when they carry risk, plus the boxes the user really ticked.
+      var parts=[];
+      if(dv>0) parts.push('the dose you gave ('+dl+')');
+      if(mv>0 && ml) parts.push('your bloodwork answer ('+ml+')');
+      picked.forEach(function(t){parts.push(t);});
+      if(s>=9){
+        show('Toward the danger end','act','This is drifting into the risky way to run it.',
+          (parts.length?'Here is what stacked up: '+joinList(parts)+'. ':'')
+          +'This is exactly the pattern that leads to insulin resistance, GH gut, and the acromegaly spectrum. Get IGF-1 and glucose checked, '
+          +(dv>0?'bring the dose down toward physiologic, and ':'')
+          +'do this with a provider before going further.');
+        return;
+      }
+      if(s>=4){
+        show('Worth tightening up','watch','On the radar - a few things to fix.',
+          (parts.length?'Here is what added up: '+joinList(parts)+'. ':'')
+          +'You are not in the danger zone, but the setup could be safer. Get consistent bloodwork (IGF-1 mid-normal + glucose/A1c), keep the dose physiologic, and address any risk factor with a provider. The safe route is very doable from here.');
+        return;
+      }
+      var bits=['your dose ('+dl+')'];
+      if(ml) bits.push('bloodwork ('+ml+')');
+      show('Set up the safe way','low',dv>0?'This looks like a careful setup.':'This looks like the physiologic route.',
+        'You told me: '+joinList(bits)+'.'
+        +(picked.length?' You also flagged '+joinList(picked)+', so do not let that drift.':' You did not flag any of the risk factors or warning signs.')
+        +(dv>0?' The lower and the better monitored you keep this, the more it stays beneficial rather than harmful.':' That is the physiologic route, which is how HGH stays beneficial rather than harmful.')
+        +' Keep IGF-1 mid-normal, keep watching your glucose, and keep a provider in the loop.'
+        +((!picked.length && mv===0)?' Well done.':''));
+    });
     resetBtn.addEventListener('click',function(){document.getElementById('q_hct').value='0';quiz.querySelectorAll('input:checked').forEach(function(i){i.checked=false;});result.className='result';});
   }
 })();

@@ -732,6 +732,39 @@
       var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
       return hit;
     }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // so a result never claims a box they did not check.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // Only send someone to an oncologist if they actually ticked the cancer line.
+    function stopHasCancer(){
+      var hit=false;
+      quiz.querySelectorAll("#stops input").forEach(function(b){
+        if(!b.checked || parseInt(b.value,10)<1) return;
+        var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+        if(c && c.textContent.toLowerCase().indexOf("cancer")>-1) hit=true;
+      });
+      return hit;
+    }
     function score(){
       var s=0;
       quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
@@ -746,14 +779,19 @@
     }
     runBtn.addEventListener("click",function(){
       if(anyStop()){
+        var _stops=pickedLabels("#stops input");
         show("A hard stop applies","act","This needs a provider before anything",
-          "You marked one of the firm lines: active or recent cancer, pregnancy, or a weakened immune system, active infection, or upcoming surgery. Several of these compounds feed cell growth or suppress immunity (rapamycin especially), so those are stop-and-ask-a-provider situations, not self-clear ones. Please talk with your clinician (and an oncologist if cancer applies) before pursuing any of these.");
+          (_stops.length?("You marked "+(_stops.length===1?"one of the firm lines":"firm lines")+": "+joinList(_stops)+". "):"")
+          +"Several of these compounds feed cell growth or suppress immunity (rapamycin especially), so those are stop-and-ask-a-provider situations, not self-clear ones. Please talk with your clinician "
+          +(stopHasCancer()?"(and an oncologist) ":"")
+          +"before pursuing any of these.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var _cautions=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && _cautions.length){
         show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
-          "You flagged things that change the calculus: prescription meds (especially liver-metabolized ones, which interact with rapamycin), a blood thinner, a cancer family history, or a missing foundation. None is an automatic no, but each needs a provider, and above all the free foundation (fasting, exercise, sleep) handled first, because that outranks everything on the shelf. Then revisit which lever fits.");
+          "You flagged "+(_cautions.length===1?"something that changes the calculus":"things that change the calculus")+": "+joinList(_cautions)+". None is an automatic no, but each needs a provider, and above all the free foundation (fasting, exercise, sleep) handled first, because that outranks everything on the shelf. Then revisit which lever fits.");
         return;
       }
       var map={

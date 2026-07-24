@@ -769,6 +769,47 @@
       quiz.querySelectorAll('#factors input:checked, #symptoms input:checked').forEach(function(c){s+=parseInt(c.value,10);});
       return {s:s, key:key, flags:flags, wada:wada};
     }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked.
+    // The result text used to recite sleep, protein and training load no matter
+    // what, so someone who ticked none of them was still told they had gaps.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
+    // The dropdown and the situation radio are not gap answers, so when they
+    // are what drove the score we name them instead of inventing gaps.
+    function hctLabel(){
+      var el=document.getElementById('q_hct');
+      if(!el || el.selectedIndex<0) return "";
+      if((parseInt(el.value,10)||0)<=0) return "";
+      var t=el.options[el.selectedIndex].text.trim().replace(/\s+/g," ");
+      return t.charAt(0).toLowerCase()+t.slice(1);
+    }
+    function radioLabel(name){
+      var b=quiz.querySelector('input[name="'+name+'"]:checked');
+      if(!b || (parseInt(b.value,10)||0)<=0) return "";
+      var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+      if(!c) return "";
+      var t=c.textContent.trim().replace(/\s+/g," ");
+      return t.charAt(0).toLowerCase()+t.slice(1);
+    }
     function show(band,cls,head,body){
       result.className='result show '+cls;
       document.getElementById('rBand').textContent=band;
@@ -778,10 +819,15 @@
     }
     runBtn.addEventListener('click',function(){
       var r=score();
+      var gaps=pickedLabels('#factors input');
+      var sx=pickedLabels('#symptoms input');
+      var drv=[]; var hl=hctLabel(); if(hl) drv.push(hl); var rl=radioLabel('route'); if(rl) drv.push(rl); drv=drv.concat(sx);
       if(r.wada>=9){ show('Prohibited in tested sport','act','This one is off the table for you','TB-500 is WADA-prohibited (class S2) at all times, in and out of competition. If you are tested, this is not a compound to explore. Put your energy into the foundation and provider-guided rehab instead.'); return; }
       if(r.flags>=2 || r.key>=11){ show('Get evaluated first','act','This is a see-someone situation','What you described is not a recovery-compound question. Please get it properly evaluated by a professional before considering anything else. That is the fastest path to healing.'); return; }
       if(r.s>=8){ show('Evaluation before compounds','act','Get the real picture first','There is enough here that a proper evaluation should come before reaching for any compound. Learn all you want, but let a provider look at the actual issue first.'); return; }
-      if(r.s>=4){ show('Foundation first','watch','Handle the basics before the extras','Your foundation has some gaps to close first: sleep, protein, training load, and the actual cause. Fix those, and you may not need anything else. Keep learning in the meantime.'); return; }
+      if(r.s>=4 && gaps.length){ show('Foundation first','watch','Handle the basics before the extras','Your foundation has '+(gaps.length===1?'a gap':'some gaps')+' to close first: '+joinList(gaps)+(r.key>=4?', plus the actual cause, which has not been properly evaluated':'')+'. Fix those, and you may not need anything else. Keep learning in the meantime.'); return; }
+      if(r.s>=4){ show('Look at the cause first','watch','Handle the basics before the extras','You did not flag any gaps in sleep, protein, or training load, so this is not a foundation problem. '+(drv.length?'What puts you here is what you told us: '+joinList(drv)+'. ':'')+'Keep the foundation where it is, get the actual cause properly looked at before reaching for a compound, and keep learning in the meantime.'); return; }
+      if(gaps.length){ show('Close the gaps first','low','You are approaching this wisely','You are learning before leaping, which is exactly right. You did flag '+(gaps.length===1?'one thing':'a few things')+' worth closing first: '+joinList(gaps)+'. Keep the foundation first, verify any source and its COA, and involve a provider before going further. Enjoy the education.'); return; }
       show('Thinking about it the right way','low','You are approaching this wisely','You are learning before leaping, which is exactly right. Keep the foundation first, verify any source and its COA, and involve a provider before going further. Enjoy the education.');
     });
     resetBtn.addEventListener('click',function(){

@@ -257,9 +257,9 @@
       <div class="q">
         <p class="qt">First, the red flags. Do any of these apply to you? (tap all that are true)</p>
         <div class="opt stop" id="stops">
-          <label><input type="checkbox" value="1"><span class="chip">Loud snoring with gasping, choking, or witnessed pauses in breathing</span></label>
-          <label><input type="checkbox" value="1"><span class="chip">I fall asleep unintentionally during the day, or while driving</span></label>
-          <label><input type="checkbox" value="1"><span class="chip">Insomnia most nights for 3+ months that wrecks my days</span></label>
+          <label><input type="checkbox" value="1" data-rf="apnea"><span class="chip">Loud snoring with gasping, choking, or witnessed pauses in breathing</span></label>
+          <label><input type="checkbox" value="1" data-rf="daytime"><span class="chip">I fall asleep unintentionally during the day, or while driving</span></label>
+          <label><input type="checkbox" value="1" data-rf="insomnia"><span class="chip">Insomnia most nights for 3+ months that wrecks my days</span></label>
           <label><input type="checkbox" value="0"><span class="chip">None of these</span></label>
         </div>
       </div>
@@ -615,10 +615,52 @@
       var idx=-1; chips.forEach(function(c,i){ if(c.checked) idx=i; });
       return idx; // 0 fall asleep, 1 stay asleep, 2 rested, 3 learning
     }
-    function anyStop(){
-      var boxes=quiz.querySelectorAll("#stops input:checked");
-      var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
-      return hit;
+    // Red flags are echoed back using ONLY what the user actually ticked.
+    // The result text used to recite all three, so someone who marked one
+    // flag was told they had reported the other two as well.
+    var RF={
+      apnea:{
+        label:"loud snoring with gasping, choking, or pauses in breathing",
+        note:"That is the classic sleep-apnea pattern, and untreated apnea carries real cardiovascular risk."
+      },
+      daytime:{
+        label:"falling asleep unintentionally during the day, or while driving",
+        note:"Falling asleep at the wheel is urgent on the crash risk alone, and it usually means something is fragmenting your nights."
+      },
+      insomnia:{
+        label:"insomnia most nights for 3+ months that wrecks your days",
+        note:"Insomnia that has run for months is its own condition, and the first-line treatment is CBT-I rather than anything on a shelf."
+      }
+    };
+    function stopFlags(){
+      var out=[];
+      quiz.querySelectorAll("#stops input:checked").forEach(function(b){
+        var k=b.getAttribute("data-rf");
+        if(k && RF[k]) out.push(k);
+      });
+      return out;
+    }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
     }
     function score(){
       var s=0;
@@ -633,15 +675,23 @@
       result.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});
     }
     runBtn.addEventListener("click",function(){
-      if(anyStop()){
+      var flags=stopFlags();
+      if(flags.length){
+        var labels=flags.map(function(k){return RF[k].label;});
+        var notes=flags.map(function(k){return RF[k].note;});
+        var one=flags.length===1;
         show("A red flag applies","act","This is a job for a provider, not a supplement",
-          "You marked a genuine red flag: loud snoring with gasping or breathing pauses (possible sleep apnea), falling asleep unintentionally during the day or at the wheel, or long-standing insomnia that damages your days. These are medical situations that no habit or supplement fixes, and some (like untreated apnea) carry real cardiovascular risk. Please get a proper sleep evaluation; it is worth far more than anything on a shelf. The basics below still help, but they are not a substitute for being seen.");
+          "You marked "+(one?"a genuine red flag":"genuine red flags")+": "+joinList(labels)+". "
+          +notes.join(" ")+" "
+          +(one?"This is a medical situation that no habit or supplement fixes.":"These are medical situations that no habit or supplement fixes.")
+          +" Please get a proper sleep evaluation; it is worth far more than anything on a shelf. The basics below still help, but they are not a substitute for being seen.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var _sab=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && _sab.length){
         show("Fix the basics first","watch","Your habits are likely the real problem, and that is good news",
-          "You flagged several of the big sleep saboteurs: afternoon or evening caffeine, regular evening alcohol, an irregular schedule, bright screens at bedtime, a warm or bright room, or hours outside the healthy range. That is actually encouraging, because these are the highest-leverage, free things to fix. Give it two real weeks: one fixed wake time, morning light, last caffeine by early afternoon, no bedtime alcohol, and a cool dark room. Most people who think they sleep badly are running a fixable routine, not a disorder.");
+          "You flagged "+(_sab.length===1?"one of the big sleep saboteurs":"some of the big sleep saboteurs")+": "+joinList(_sab)+". That is actually encouraging, because these are the highest-leverage, free things to fix. Give it two real weeks: one fixed wake time, morning light, last caffeine by early afternoon, no bedtime alcohol, and a cool dark room. Most people who think they sleep badly are running a fixable routine, not a disorder.");
         return;
       }
       var map={

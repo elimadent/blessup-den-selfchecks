@@ -670,6 +670,29 @@
       var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
       return hit;
     }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // so a result never claims a box they did not check.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
     function score(){
       var s=0;
       quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
@@ -684,14 +707,17 @@
     }
     runBtn.addEventListener("click",function(){
       if(anyStop()){
+        var _stops=pickedLabels("#stops input");
         show("A hard stop applies","act","This class is not a self-directed project for you",
-          "You marked one of the firm lines: an active or recent cancer history, or pregnancy. Because these peptides act on cell survival and growth signaling (Humanin in particular is a pro-survival signal, the wrong direction when cells already resist dying), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your oncologist or provider about your goal.");
+          (_stops.length?("You marked "+(_stops.length===1?"one of the firm lines":"firm lines")+": "+joinList(_stops)+". "):"")
+          +"Because these peptides act on cell survival and growth signaling (Humanin in particular is a pro-survival signal, the wrong direction when cells already resist dying), those are stop-and-ask-a-specialist situations, not self-clear ones. Please do not pursue these on your own, and talk with your oncologist or provider about your goal.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var _cautions=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && _cautions.length){
         show("Handle the setup first","watch","Real cautions in your picture, sort them before anything",
-          "You flagged things that change the calculus: a glucose-lowering drug (which MOTS-c can compound into low blood sugar), reduced kidney function (which matters for SS-31), being sedentary (MOTS-c mostly amplifies training you are already doing), or planning to source it with no provider. None is an automatic no, but each needs a provider in the loop and the energy foundation (training, sleep, nutrition) handled first, because for most people that does more than any of these. Then revisit whether this class fits.");
+          "You flagged "+(_cautions.length===1?"something that changes the calculus":"things that change the calculus")+": "+joinList(_cautions)+". None is an automatic no, but each needs a provider in the loop and the energy foundation (training, sleep, nutrition) handled first, because for most people that does more than any of these. Then revisit whether this class fits.");
         return;
       }
       var map={

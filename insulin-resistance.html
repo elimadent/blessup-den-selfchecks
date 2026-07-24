@@ -637,6 +637,29 @@
       var hit=false; boxes.forEach(function(b){ if(parseInt(b.value,10)>0) hit=true; });
       return hit;
     }
+    function joinList(a){
+      if(a.length===1) return a[0];
+      if(a.length===2) return a[0]+" and "+a[1];
+      return a.slice(0,-1).join(", ")+", and "+a[a.length-1];
+    }
+    // Echo back the user's own wording for whatever they actually ticked,
+    // so a result never claims a box they did not check.
+    function pickedLabels(sel){
+      var out=[];
+      quiz.querySelectorAll(sel).forEach(function(b){
+        if(b.checked && parseInt(b.value,10)>0){
+          var c=b.parentElement?b.parentElement.querySelector(".chip"):null;
+          if(c){
+            var t=c.textContent.trim().replace(/\s+/g," ");
+            var w=t.split(" ");
+            var keep = w[0]==="I" || w[0]==="I'm" || (w.length>1 && /^[A-Z]/.test(w[1]));
+            if(!keep) t=t.charAt(0).toLowerCase()+t.slice(1);
+            out.push(t);
+          }
+        }
+      });
+      return out;
+    }
     function score(){
       var s=0;
       quiz.querySelectorAll("#factors input:checked, #symptoms input:checked").forEach(function(c){s+=parseInt(c.value,10);});
@@ -651,14 +674,17 @@
     }
     runBtn.addEventListener("click",function(){
       if(anyStop()){
+        var _stops=pickedLabels("#stops input");
         show("Get evaluated first","act","This needs a provider and a blood test, not a supplement",
-          "You marked something that needs medical attention: symptoms of high blood sugar (excess thirst and urination, blurred vision, unexplained weight loss), or a prediabetes or diabetes diagnosis you are not actively managing. These are situations where testing and a provider come before any self-directed plan, and symptomatic high blood sugar can become serious. Please get the simple blood tests and see someone. The foundation below still matters enormously, but it works alongside proper care, not instead of it.");
+          (_stops.length?("You marked "+(_stops.length===1?"something that needs medical attention":"things that need medical attention")+": "+joinList(_stops)+". "):"")
+          +"These are situations where testing and a provider come before any self-directed plan, and symptomatic high blood sugar can become serious. Please get the simple blood tests and see someone. The foundation below still matters enormously, but it works alongside proper care, not instead of it.");
         return;
       }
       var s=score();
-      if(s>=5){
+      var _risks=pickedLabels("#factors input, #symptoms input");
+      if(s>=5 && _risks.length){
         show("Real risk factors are stacking up","watch","Get tested, then work the foundation",
-          "You flagged several things that drive insulin resistance: belly fat, a family history, being sedentary, sugary drinks and refined carbs, poor sleep, or chronic stress. None of that is a diagnosis, but together it is a clear signal to act early, while this is most reversible. Two moves: get a fasting glucose and HbA1c so you know your real numbers, and start the highest-leverage basics (cut sugary drinks, walk after meals, build some muscle, protect your sleep). Caught early, this responds extremely well.");
+          "You flagged "+(_risks.length===1?"something that drives insulin resistance":"several things that drive insulin resistance")+": "+joinList(_risks)+". None of that is a diagnosis, but together it is a clear signal to act early, while this is most reversible. Two moves: get a fasting glucose and HbA1c so you know your real numbers, and start the highest-leverage basics (cut sugary drinks, walk after meals, build some muscle, protect your sleep). Caught early, this responds extremely well.");
         return;
       }
       var map={
