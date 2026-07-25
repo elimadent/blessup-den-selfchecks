@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What the July 2026 FDA advisory committee vote on six peptides actually changed: the record, the tallies, the timeline and the costs. Education only.">
+<title>Six Peptides, One Vote: What the FDA Actually Decided</title>
+<style>
+:root{
+  --ink:#12161C; --panel:#191F28; --raised:#212A36; --line:#2B3542; --line-soft:#222B36;
+  --tx:#E7EBF0; --tx2:#A7B2C0; --tx3:#76828F;
+  --gold:#C9A227; --gold-hi:#E0BE55; --gold-dim:#8A711B;
+  --yes:#33A47E; --no:#D2613B; --abs:#7C8BD8;
+  --serif:Georgia,'Iowan Old Style','Source Serif Pro',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+  --mono:ui-monospace,SFMono-Regular,'SF Mono',Consolas,'Liberation Mono',monospace;
+  --measure:68ch;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --ink:#E9ECEF; --panel:#F4F6F7; --raised:#FFFFFF; --line:#CBD2D9; --line-soft:#DDE2E7;
+    --tx:#161B21; --tx2:#4A5560; --tx3:#6E7A86;
+    --gold:#8A6D12; --gold-hi:#6E5709; --gold-dim:#B79A3C;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#12161C; --panel:#191F28; --raised:#212A36; --line:#2B3542; --line-soft:#222B36;
+  --tx:#E7EBF0; --tx2:#A7B2C0; --tx3:#76828F;
+  --gold:#C9A227; --gold-hi:#E0BE55; --gold-dim:#8A711B;
+}
+:root[data-theme="light"]{
+  --ink:#E9ECEF; --panel:#F4F6F7; --raised:#FFFFFF; --line:#CBD2D9; --line-soft:#DDE2E7;
+  --tx:#161B21; --tx2:#4A5560; --tx3:#6E7A86;
+  --gold:#8A6D12; --gold-hi:#6E5709; --gold-dim:#B79A3C;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--tx);font-family:var(--sans);
+  font-size:17px;line-height:1.68;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 24px}
+.wide{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--line);background:
+  linear-gradient(180deg,color-mix(in srgb,var(--gold) 7%,transparent),transparent 62%)}
+.mast-inner{max-width:1120px;margin:0 auto;padding:56px 24px 44px}
+.stamp{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+  border:1px solid color-mix(in srgb,var(--gold) 42%,transparent);
+  padding:6px 12px;border-radius:2px;margin-bottom:26px}
+.stamp b{width:6px;height:6px;background:var(--gold);border-radius:50%;display:block}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,6.2vw,4.1rem);
+  line-height:1.04;letter-spacing:-.022em;margin:0 0 20px;text-wrap:balance;max-width:17ch}
+h1 em{font-style:italic;color:var(--gold)}
+.dek{font-size:clamp(1.04rem,2.1vw,1.24rem);color:var(--tx2);max-width:60ch;margin:0 0 30px;line-height:1.6}
+.byl{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--tx3);display:flex;flex-wrap:wrap;gap:8px 20px;
+  border-top:1px solid var(--line-soft);padding-top:18px}
+
+/* ---------- sections ---------- */
+section{padding:60px 0;border-bottom:1px solid var(--line-soft)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:12px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,
+  color-mix(in srgb,var(--gold) 45%,transparent),transparent)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.5rem);
+  line-height:1.14;letter-spacing:-.016em;margin:0 0 16px;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:400;font-size:1.36rem;line-height:1.25;
+  margin:36px 0 10px;letter-spacing:-.008em}
+p{margin:0 0 18px}
+a{color:var(--gold);text-decoration-color:color-mix(in srgb,var(--gold) 40%,transparent);
+  text-underline-offset:3px}
+a:hover{text-decoration-color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+strong{color:var(--tx);font-weight:600}
+
+/* ---------- callouts ---------- */
+.pull{border-left:2px solid var(--gold);padding:4px 0 4px 22px;margin:30px 0;
+  font-family:var(--serif);font-size:1.28rem;line-height:1.42;color:var(--tx)}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:20px 22px;margin:28px 0}
+.note .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx3);display:block;margin-bottom:8px}
+.note p:last-child{margin-bottom:0}
+.note.warn{border-left:3px solid var(--no)}
+.note.key{border-left:3px solid var(--gold)}
+
+/* ---------- quotes ---------- */
+.qt{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:22px 24px;margin:22px 0}
+.qt blockquote{margin:0 0 12px;font-family:var(--serif);font-size:1.14rem;line-height:1.5;color:var(--tx)}
+.qt cite{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+  color:var(--tx3);line-height:1.5;display:block}
+.qt cite b{color:var(--tx2);font-weight:600}
+.qt.yesvote{border-left:3px solid var(--yes)}
+.qt.novote{border-left:3px solid var(--no)}
+.ednote{border:1px dashed color-mix(in srgb,var(--gold) 55%,transparent);
+  border-radius:3px;padding:18px 20px;margin:14px 0 26px;
+  background:color-mix(in srgb,var(--gold) 6%,transparent)}
+.ednote .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:9px}
+.ednote p{margin:0 0 12px;font-size:15.5px;line-height:1.6}
+.ednote p:last-child{margin-bottom:0}
+
+/* ---------- vote chart ---------- */
+.exhibit{background:var(--panel);border:1px solid var(--line);border-radius:4px;
+  padding:26px 26px 22px;margin:28px 0}
+.exhibit h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx3);margin:0 0 4px;font-weight:500}
+.exhibit .cap{font-family:var(--serif);font-size:1.18rem;color:var(--tx);margin:0 0 20px;line-height:1.3}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 22px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--tx2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:11px;height:11px;border-radius:2px;display:block}
+.vrow{display:grid;grid-template-columns:118px 1fr auto;gap:14px;align-items:center;
+  padding:9px 0;border-top:1px solid var(--line-soft)}
+.vrow:first-of-type{border-top:0}
+.vname{font-family:var(--mono);font-size:12.5px;color:var(--tx);letter-spacing:.02em}
+.vbar{display:flex;height:22px;border-radius:2px;overflow:hidden;gap:2px;background:transparent}
+.vbar i{display:block;height:100%;border-radius:2px}
+.vbar i:first-child{border-radius:2px 1px 1px 2px}
+.vbar i:last-child{border-radius:1px 2px 2px 1px}
+.vtally{font-family:var(--mono);font-size:12px;color:var(--tx2);font-variant-numeric:tabular-nums;
+  white-space:nowrap;letter-spacing:.02em}
+.vtally .rej{color:var(--no);font-weight:600}
+.vrow.rejected .vname{color:var(--no)}
+
+/* ---------- tables ---------- */
+.tscroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:640px}
+caption{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--tx3);padding:16px 18px 0}
+th,td{text-align:left;padding:11px 16px;border-top:1px solid var(--line-soft);vertical-align:top}
+thead th{border-top:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--tx3);font-weight:500;white-space:nowrap;
+  background:color-mix(in srgb,var(--raised) 60%,transparent)}
+tbody tr:hover{background:color-mix(in srgb,var(--raised) 55%,transparent)}
+td.num,th.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.01em}
+
+/* ---------- chips ---------- */
+.chip{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;
+  border:1px solid var(--line);color:var(--tx2);white-space:nowrap}
+.chip.yes{color:var(--yes);border-color:color-mix(in srgb,var(--yes) 45%,transparent);
+  background:color-mix(in srgb,var(--yes) 11%,transparent)}
+.chip.no{color:var(--no);border-color:color-mix(in srgb,var(--no) 45%,transparent);
+  background:color-mix(in srgb,var(--no) 11%,transparent)}
+.chip.abs{color:var(--abs);border-color:color-mix(in srgb,var(--abs) 45%,transparent);
+  background:color-mix(in srgb,var(--abs) 11%,transparent)}
+.chip.tie{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 45%,transparent);
+  background:color-mix(in srgb,var(--gold) 10%,transparent)}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;margin:28px 0;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tlx{position:relative;padding:0 0 26px}
+.tlx::before{content:"";position:absolute;left:-24px;top:6px;width:9px;height:9px;
+  border-radius:50%;background:var(--ink);border:2px solid var(--gold)}
+.tlx.future::before{border-color:var(--tx3);background:var(--ink)}
+.tlx.future .tld{color:var(--tx3)}
+.tld{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4px}
+.tlt{font-family:var(--serif);font-size:1.14rem;line-height:1.3;margin-bottom:4px}
+.tlb{font-size:14.5px;color:var(--tx2);line-height:1.55;margin:0}
+
+/* ---------- price range chart ---------- */
+.prow{display:grid;grid-template-columns:112px 1fr;gap:14px;align-items:center;
+  padding:12px 0;border-top:1px solid var(--line-soft)}
+.prow:first-of-type{border-top:0}
+.ptrack{position:relative;height:34px}
+.pax{position:absolute;left:0;right:0;top:16px;height:1px;background:var(--line)}
+.pband{position:absolute;height:9px;top:12px;border-radius:2px}
+.pband.grey{background:color-mix(in srgb,var(--abs) 78%,transparent)}
+.pband.clin{background:color-mix(in srgb,var(--no) 78%,transparent)}
+.plab{position:absolute;font-family:var(--mono);font-size:10.5px;color:var(--tx2);
+  font-variant-numeric:tabular-nums;white-space:nowrap;top:9px}
+.paxis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;
+  color:var(--tx3);font-variant-numeric:tabular-nums;border-top:1px solid var(--line);
+  padding-top:7px;margin-top:4px}
+
+/* ---------- grid cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:26px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px}
+.card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tx3);margin-bottom:10px}
+.card .v{font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--gold);
+  font-variant-numeric:tabular-nums;margin-bottom:8px}
+.card p{font-size:14px;color:var(--tx2);margin:0;line-height:1.5}
+
+/* ---------- source list ---------- */
+ol.src{font-size:14px;color:var(--tx2);padding-left:22px;line-height:1.55}
+ol.src li{margin-bottom:11px}
+ol.src a{word-break:break-word}
+.medgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:24px 0}
+.med{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+.med .kind{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:7px}
+.med a{font-family:var(--serif);font-size:1.03rem;line-height:1.3;display:block;margin-bottom:6px}
+.med p{font-size:13.5px;color:var(--tx3);margin:0;line-height:1.45}
+
+footer{padding:48px 0 64px;color:var(--tx3);font-size:14px}
+.creed{font-family:var(--serif);font-size:1.16rem;color:var(--gold);letter-spacing:.01em;margin-bottom:14px}
+.disc{font-size:13px;line-height:1.6;color:var(--tx3);border-top:1px solid var(--line-soft);padding-top:18px}
+@media (max-width:640px){
+  body{font-size:16px}
+  .vrow{grid-template-columns:92px 1fr;grid-template-areas:"n b" "t t";row-gap:4px}
+  .vname{grid-area:n}.vbar{grid-area:b}.vtally{grid-area:t;padding-left:0}
+  .prow{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="mast-inner">
+    <div class="stamp"><b></b> Advisory Committee Record &middot; 23&ndash;24 July 2026</div>
+    <h1>Six peptides. One vote. <em>Nothing is legal yet.</em></h1>
+    <p class="dek">An FDA advisory committee recommended six of seven peptides for the compounding list, over the unanimous objection of the agency's own scientists. Here is what that actually does to access, to price, and to the grey market most of us are buying from.</p>
+    <div class="byl">
+      <span>Docket FDA-2025-N-6895</span>
+      <span>~1,860 public comments</span>
+      <span>Non-binding recommendation</span>
+      <span>Education only &middot; 21+</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The vote record</div>
+    <h2>What the committee actually decided</h2>
+    <p>On 23 and 24 July 2026, the FDA's Pharmacy Compounding Advisory Committee reviewed seven peptides for the <strong>503A Bulk Drug Substances List</strong>, the roster of raw ingredients a licensed compounding pharmacy may legally use when making a prescription for one named patient.</p>
+    <p>Each peptide was voted twice, once as free base and once as the acetate salt, for fourteen voting questions in total. Every peptide broke identically across both forms.</p>
+  </div>
+
+  <div class="wide">
+    <div class="exhibit">
+      <h4>Exhibit 1</h4>
+      <p class="cap">Roll call, all seven substances</p>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--yes)"></i> Yes</span>
+        <span><i class="sw" style="background:var(--no)"></i> No</span>
+        <span><i class="sw" style="background:var(--abs)"></i> Abstain</span>
+      </div>
+
+      <div class="vrow">
+        <div class="vname">BPC-157</div>
+        <div class="vbar" role="img" aria-label="8 yes, 6 no, 1 abstain">
+          <i style="background:var(--yes);width:53.3%"></i><i style="background:var(--no);width:40%"></i><i style="background:var(--abs);width:6.7%"></i>
+        </div>
+        <div class="vtally">8 &middot; 6 &middot; 1</div>
+      </div>
+      <div class="vrow">
+        <div class="vname">KPV</div>
+        <div class="vbar" role="img" aria-label="8 yes, 6 no, 1 abstain">
+          <i style="background:var(--yes);width:53.3%"></i><i style="background:var(--no);width:40%"></i><i style="background:var(--abs);width:6.7%"></i>
+        </div>
+        <div class="vtally">8 &middot; 6 &middot; 1</div>
+      </div>
+      <div class="vrow">
+        <div class="vname">TB-500</div>
+        <div class="vbar" role="img" aria-label="8 yes, 6 no, 1 abstain">
+          <i style="background:var(--yes);width:53.3%"></i><i style="background:var(--no);width:40%"></i><i style="background:var(--abs);width:6.7%"></i>
+        </div>
+        <div class="vtally">8 &middot; 6 &middot; 1</div>
+      </div>
+      <div class="vrow">
+        <div class="vname">MOTS-c</div>
+        <div class="vbar" role="img" aria-label="7 yes, 5 no, 2 abstain">
+          <i style="background:var(--yes);width:50%"></i><i style="background:var(--no);width:35.7%"></i><i style="background:var(--abs);width:14.3%"></i>
+        </div>
+        <div class="vtally">7 &middot; 5 &middot; 2</div>
+      </div>
+      <div class="vrow">
+        <div class="vname">Epitalon</div>
+        <div class="vbar" role="img" aria-label="7 yes, 4 no, 1 abstain">
+          <i style="background:var(--yes);width:58.3%"></i><i style="background:var(--no);width:33.3%"></i><i style="background:var(--abs);width:8.3%"></i>
+        </div>
+        <div class="vtally">7 &middot; 4 &middot; 1</div>
+      </div>
+      <div class="vrow">
+        <div class="vname">Semax</div>
+        <div class="vbar" role="img" aria-label="8 yes, 5 no, 1 abstain">
+          <i style="background:var(--yes);width:57.1%"></i><i style="background:var(--no);width:35.7%"></i><i style="background:var(--abs);width:7.1%"></i>
+        </div>
+        <div class="vtally">8 &middot; 5 &middot; 1</div>
+      </div>
+      <div class="vrow rejected">
+        <div class="vname">Emideltide</div>
+        <div class="vbar" role="img" aria-label="6 yes, 7 no, 1 abstain, rejected">
+          <i style="background:var(--yes);width:42.9%"></i><i style="background:var(--no);width:50%"></i><i style="background:var(--abs);width:7.1%"></i>
+        </div>
+        <div class="vtally">6 &middot; 7 &middot; 1 <span class="rej">&nbsp;Rejected</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="note key">
+      <span class="lbl">Why the totals keep changing</span>
+      <p>The number of votes cast differs from question to question, which looks like sloppy reporting and mostly is not. Most of the temporary voting members FDA added were <strong>restricted to the peptides matching their specialty</strong>: a hepatologist voted only on BPC-157, a dermatologist only on KPV and TB-500, two neurologists only on Semax, a pain and addiction specialist only on emideltide. So the eligible pool genuinely changed each time.</p>
+      <p><strong>Corrected 25 July.</strong> An earlier version of this page showed Epitalon at 7&ndash;5&ndash;1 and Semax at 8&ndash;5&ndash;0, following the looser summaries in general coverage. The detailed trade reporting gives <strong>Epitalon 7 yes, 4 no, 1 abstention</strong> and <strong>Semax 8 yes, 5 no, 1 abstention</strong>, and those are the figures shown above. The Epitalon total of 12 is consistent with one member being excluded from that topic. The direction of every vote was never in dispute.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The indications</div>
+    <h2>These were medical votes, not wellness votes</h2>
+    <p>This is the detail the viral version leaves out, and it is the one most likely to matter to you later. The committee did not vote on "gut health" or "longevity." Each peptide was reviewed against a <strong>specific medical indication</strong>, and a prescriber will eventually have to write one of these on a real prescription.</p>
+  </div>
+  <div class="wide">
+    <div class="tscroll">
+      <table>
+        <caption>Reviewed indication vs. the claim circulating online</caption>
+        <thead><tr><th>Peptide</th><th>Indication FDA reviewed</th><th>Claim in the viral post</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">BPC-157</td><td>Ulcerative colitis</td><td>Gut health &amp; repair</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">KPV</td><td>Wound healing, inflammatory conditions</td><td>Inflammation calming</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">TB-500</td><td>Wound healing</td><td>Wound recovery</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">MOTS-c</td><td>Obesity, osteoporosis</td><td>Metabolism &amp; energy</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">Epitalon</td><td>Insomnia</td><td>Sleep &amp; longevity</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">Semax</td><td>Migraine, cerebral ischemia, trigeminal neuralgia</td><td>Brain protection</td><td><span class="chip yes">Recommended</span></td></tr>
+          <tr><td class="mono">Emideltide (DSIP)</td><td>Sleep disorders</td><td>Not mentioned</td><td><span class="chip no">Rejected</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="wrap">
+    <p>A committee weighing BPC-157 for an inflammatory bowel disease is not a committee blessing it for general recovery. Those are different questions with different evidence bars, and the gap between the two columns above is where a lot of disappointment is going to live.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Status check</div>
+    <h2>What changed on the day of the vote: nothing</h2>
+    <p>An advisory committee recommends. FDA decides. To actually add a substance, the agency has to review the record, publish a proposed rule, open a comment period, weigh the comments, and publish a final rule. Reporting puts that at up to a year, and rulemaking routinely runs longer.</p>
+    <p>FDA is free to decline. Given that its own reviewers said no to all seven, declining is a live possibility rather than a technicality.</p>
+
+    <div class="note key">
+      <span class="lbl">The practical test</span>
+      <p>Nobody can fill a BPC-157 prescription because of this vote. No product became legal. No vendor became legitimate. <strong>If a seller cites this vote as proof that what they ship is now approved, that is a lie, and it tells you what you need to know about the seller.</strong></p>
+    </div>
+
+    <h3>The part almost everyone has wrong</h3>
+    <p>A lot of people in this space believe the legal question was already settled in the spring. It was not, and the real sequence matters.</p>
+
+    <div class="tl">
+      <div class="tlx">
+        <div class="tld">Late 2023</div>
+        <div class="tlt">Nineteen peptides moved to Category 2</div>
+        <p class="tlb">FDA places 19 peptides in its "may present significant safety risks" bucket, effectively ending legal compounding. BPC-157 is added in September 2023.</p>
+      </div>
+      <div class="tlx">
+        <div class="tld">27 February 2026</div>
+        <div class="tlt">The Rogan announcement</div>
+        <p class="tlb">The HHS Secretary says on the Joe Rogan podcast that roughly 14 of the 19 are expected to return to Category 1, with an announcement coming "within a couple of weeks." This is where most of the "peptides are legal again" confidence comes from.</p>
+      </div>
+      <div class="tlx">
+        <div class="tld">Never</div>
+        <div class="tlt">That announcement was not published</div>
+        <p class="tlb">FDA did not publish the promised Category 1 move. The statement was intent, not action.</p>
+      </div>
+      <div class="tlx">
+        <div class="tld">April 2026</div>
+        <div class="tlt">Removed from Category 2, but not promoted</div>
+        <p class="tlb">FDA removes peptides including BPC-157 and TB-500 from Category 2, announced 15 April and effective 22 April. Not because it reconsidered the science, but because the original nominations were withdrawn. They were not moved to Category 1. They are not approved and have no USP monograph.</p>
+      </div>
+      <div class="tlx">
+        <div class="tld">23&ndash;24 July 2026</div>
+        <div class="tlt">The advisory committee votes</div>
+        <p class="tlb">Six of seven recommended, against the unanimous advice of FDA's own reviewers. Non-binding.</p>
+      </div>
+      <div class="tlx future">
+        <div class="tld">Next</div>
+        <div class="tlt">Proposed rule, comment period, final rule</div>
+        <p class="tlb">The proposed rule is the document that actually changes anything, and the comment period is the point at which public input carries weight. Watch for that, not for the vote.</p>
+      </div>
+    </div>
+
+    <p>So the current position is a gap: <strong>not expressly prohibited, not authorized.</strong> If you have been operating since spring on the belief that reclassification already happened, that belief rests on a promise that was never executed.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">FDA's objection</div>
+    <h2>The agency's own scientists said no to all seven</h2>
+    <p>Not some. All. FDA's briefing documents concluded that none of the seven met the four-factor framework the agency uses, citing missing human safety data, no universally agreed chemical specification, batch-to-batch inconsistency, and for injectables a risk of immune reactions driven by aggregation and peptide-related impurities.</p>
+    <p>The most quoted moment of the two days came from Russell Wesdyk, the Associate Director for Regulatory Affairs in CDER's Office of Product Quality Assessment, who put the identity problem in terms anyone can follow.</p>
+
+    <div class="qt">
+      <blockquote>&ldquo;When you write a script for TB-500, what form do you think your patients are getting? Does anybody know what form do you think your patients actually get? Does anybody know? I certainly don't, and that's a challenge for us.&rdquo;</blockquote>
+      <cite><b>Russell Wesdyk</b> &middot; Associate Director for Regulatory Affairs, Office of Product Quality Assessment, FDA CDER</cite>
+    </div>
+    <div class="qt">
+      <blockquote>&ldquo;We can't create quality standards until we actually know what it is.&rdquo;</blockquote>
+      <cite><b>Russell Wesdyk</b> &middot; FDA CDER, on the absence of an agreed chemical specification</cite>
+    </div>
+
+    <p>That is not a bureaucratic complaint. It is the observation that two vials labelled TB-500 may not contain the same molecule, which is precisely the problem a compounding pharmacy cannot solve on its own.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Access mechanics</div>
+    <h2>What a listing would actually buy you</h2>
+    <p>Say FDA eventually lists them. That is much narrower than "peptides are legal now."</p>
+    <p>Listing lets a state-licensed pharmacy use the bulk ingredient to make a preparation <strong>against a valid prescription written for a specific, named patient</strong>. It does not authorize retail sale of vials. It does not make the peptide an approved drug. It does not let anyone sell you a vial without a prescriber. And it does not retroactively legalize any existing grey vendor's business model.</p>
+    <p>There is also a supply problem nobody is discussing. A 503A pharmacy must source bulk ingredient from an FDA-registered facility with proper documentation. Most of what circulates today is research-grade material from Chinese suppliers, a chain with no quality infrastructure and no ability to recall a contaminated batch. A listing on paper does not put product on a shelf.</p>
+
+    <div class="note warn">
+      <span class="lbl">If you are drug tested, read this twice</span>
+      <p>A legal prescription does not make a substance permitted in sport. On the 2026 WADA Prohibited List, <strong>BPC-157 falls under S0</strong> as a non-approved substance, and <strong>TB-500 is named explicitly under S2.3</strong> as a thymosin beta-4 derivative. Both are prohibited at all times, in and out of competition.</p>
+      <p>The wrinkle that matters: S0 substances are classed as Specified, while S2 substances are non-Specified, and a non-Specified finding carries the harsher default sanction. In a BPC-157 and TB-500 stack, <strong>the TB-500 side is the one more likely to end a career.</strong> "My doctor prescribed it" is not a defense, and a 503A listing would not change that by a single word.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wide">
+    <div class="eyebrow">The money</div>
+  </div>
+  <div class="wrap">
+    <h2>What it does to cost</h2>
+    <p>Two tiers exist today. The figures below are indicative market ranges drawn from commercial sources rather than audited survey data, and they should be read as orders of magnitude rather than quotes.</p>
+  </div>
+  <div class="wide">
+    <div class="exhibit">
+      <h4>Exhibit 2</h4>
+      <p class="cap">Grey-market vial vs. prescription channel, monthly equivalent</p>
+      <div class="legend">
+        <span><i class="sw" style="background:color-mix(in srgb,var(--abs) 78%,transparent)"></i> Grey market, vial only</span>
+        <span><i class="sw" style="background:color-mix(in srgb,var(--no) 78%,transparent)"></i> Clinic or telehealth, all in</span>
+      </div>
+      <div class="prow">
+        <div class="vname">Grey vial only</div>
+        <div class="ptrack">
+          <div class="pax"></div>
+          <div class="pband grey" style="left:4.3%;width:2.1%;min-width:4px"></div>
+          <div class="plab" style="left:8%">$60&ndash;90</div>
+        </div>
+      </div>
+      <div class="prow">
+        <div class="vname">Compounded drug</div>
+        <div class="ptrack">
+          <div class="pax"></div>
+          <div class="pband clin" style="left:5.7%;width:5%;min-width:4px"></div>
+          <div class="plab" style="left:12%">$80&ndash;150, medication alone</div>
+        </div>
+      </div>
+      <div class="prow">
+        <div class="vname">Telehealth</div>
+        <div class="ptrack">
+          <div class="pax"></div>
+          <div class="pband clin" style="left:10.7%;width:32.1%"></div>
+          <div class="plab" style="left:44%">$150&ndash;600, all in</div>
+        </div>
+      </div>
+      <div class="prow">
+        <div class="vname">Clinic cycle,<br>one peptide</div>
+        <div class="ptrack">
+          <div class="pax"></div>
+          <div class="pband clin" style="left:31.8%;width:1.4%;min-width:5px"></div>
+          <div class="plab" style="left:35%">$445 per cycle</div>
+        </div>
+      </div>
+      <div class="prow">
+        <div class="vname">Clinic cycle,<br>four-peptide stack</div>
+        <div class="ptrack">
+          <div class="pax"></div>
+          <div class="pband clin" style="left:92.5%;width:1.4%;min-width:5px"></div>
+          <div class="plab" style="right:0;text-align:right">$1,295 per cycle</div>
+        </div>
+      </div>
+      <div class="paxis"><span>$0</span><span>$350</span><span>$700</span><span>$1,050</span><span>$1,400</span></div>
+      <p class="mono" style="color:var(--tx3);margin:12px 0 0;font-size:11px">Shared linear scale, monthly or per-cycle equivalent.</p>
+      <p style="color:var(--tx3);margin:10px 0 0;font-size:13px;line-height:1.5">The two cycle figures are one clinic's advertised package pricing, on a ladder that runs $445 for a single peptide, $795 for two, $1,095 for three and $1,295 for four, with financing offered over as long as 26 months. <strong style="color:var(--tx2)">Treat them as one seller's list price, not a market rate.</strong> They come from a single commercial page that was surfaced in research rather than independently opened, which is a weaker standard than everything else on this page.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="pull">The gap is three to seven times, and legalization probably does not close it, because the markup is not in the molecule.</p>
+    <p>Pharmaceutical-grade ingredient runs roughly three to five times research-grade, and that multiplier is driven by documentation, testing and quality systems rather than purity itself. Three to five times on an ingredient is not what turns sixty dollars a month into six hundred. The prescriber visit, the membership, the clinic wrapper and the recurring-revenue model do that.</p>
+    <p>Compounded NAD+ is the closest comparison available, a non-approved sterile injectable sold cash-pay through longevity clinics. The vial runs fifty to two hundred dollars while monthly programs run one hundred fifty to four hundred, at doses a thousand times larger than a peptide dose. <strong>The milligrams are not what you are paying for.</strong></p>
+    <p>There is real evidence on the cheaper side too. Compounded semaglutide undercut the brand by five to seven times while it was legal. Compounded low-dose naltrexone runs twenty to sixty dollars a month and compounded HCG fifty-three to eighty-three per 10,000 IU. A sanctioned channel does not inherently carry a premium.</p>
+    <div class="note key">
+      <span class="lbl">Honest read</span>
+      <p>The vial gets cheaper, more consistent and more accountable. <strong>Your monthly bill probably does not fall</strong>, because you will be buying a program rather than a vial. And essentially none of it will be covered by insurance, since compounded non-approved preparations are almost never covered and there is no approved alternative to have failed first. HSA and FSA funds generally can be used with a legitimate prescription, which is the one real financial break available.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The grey market</div>
+    <h2>What this does to the people selling, and to you buying</h2>
+    <p>Start with the thing that gets repeated most and is most wrong. <strong>"Research use only" has never been a legal shield.</strong> Under federal law a product is a drug based on its intended use, and FDA establishes intended use from website copy, social posts and surrounding circumstances, not from the disclaimer. FDA's warning letters to peptide sellers say it plainly: the evidence from the website establishes the products are intended as drugs for human use. Selling bacteriostatic water alongside the vials is treated as further evidence of human-use intent.</p>
+    <p>That enforcement is neither theoretical nor new.</p>
+  </div>
+
+  <div class="wide">
+    <div class="cards">
+      <div class="card">
+        <div class="k">Warning letters</div>
+        <div class="v">50+</div>
+        <p>Issued across the industry by September 2025, with a documented run of letters to peptide vendors from December 2024 through June 2026.</p>
+      </div>
+      <div class="card">
+        <div class="k">Largest US vendor</div>
+        <div class="v">Closed</div>
+        <p>Peptide Sciences stopped taking orders on 6 March 2026 after more than a decade, months before this vote. No public indictment was identified. It simply stopped.</p>
+      </div>
+      <div class="card">
+        <div class="k">Criminal exposure</div>
+        <div class="v">Sellers</div>
+        <p>None of these six are controlled substances, so there is no DEA scheduling hook and buyers face essentially no personal criminal risk. Enforcement targets the seller.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p>Read that timeline again, because it undercuts both confident narratives. The grey market was already consolidating hard under enforcement pressure with no legal alternative in sight. This vote did not start that.</p>
+
+    <h3>Two forces, pulling opposite ways</h3>
+    <p><strong>The case that it shrinks.</strong> The single best argument grey vendors and their customers have used is "there is no legal way to get this." For these six molecules specifically, that argument dies. A US-based vendor with a brand, a website, a payment processor and identifiable owners is now competing against a licensed channel while remaining an easy target, and we have already watched that exact vendor archetype break.</p>
+    <p><strong>The case that it grows.</strong> This was the largest free advertising event these compounds have ever had, reaching millions who had never heard of BPC-157. The price gap survives legalization. Buyers face no criminal exposure. FDA's headcount did not change. And critically, these six have <strong>no brand-name manufacturer with a patent to defend</strong>, so the wave of private lawsuits strangling grey GLP-1 sellers has no equivalent here. Nobody is going to sue a BPC-157 vendor for infringing a product that does not exist.</p>
+
+    <div class="note">
+      <span class="lbl">The experiment already ran, in reverse</span>
+      <p>When the legal compounded semaglutide channel closed in April and May 2025, demand did not disappear. It migrated to research-chemical vendors. That tells us legal availability and grey volume are inversely coupled, which supports the shrink case. It also tells us price, not legality, decides where people go, which supports the growth case.</p>
+    </div>
+
+    <p class="pull">My read is bifurcation rather than a clean win or loss. The visible, branded, US-facing vendor loses. The offshore and anonymous seller does fine. The total number of people injecting these compounds goes up.</p>
+
+    <p>If you sell in this space, the risk is not that demand vanishes. It is that <strong>being findable becomes the liability</strong>.</p>
+
+    <h3>And spare a thought for the one that lost</h3>
+    <p>Emideltide, which is DSIP, is now in a worse position than if it had never been reviewed. Before 24 July a seller could point to regulatory silence. Now there is a documented FDA review and an advisory committee that declined to recommend it, in the same session where six siblings got through. The same logic extends to every peptide never nominated: a short blessed list creates an implied unblessed list, and everything outside it reads as more clearly illicit than it did when nothing was blessed.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Quality</div>
+    <h2>The problem the vote does not fix</h2>
+    <p>If you take one practical thing from this page, take this.</p>
+    <p>The grey market's entire trust apparatus is the certificate of analysis, and <strong>the COA measures the one thing that is usually fine.</strong> In independent aggregate testing of BPC-157 across hundreds of samples from dozens of vendors, HPLC purity came back consistently high. Fill quantity diverged from the advertised amount by as much as seventy-one percent. You can hold a genuine 99 percent purity COA for a vial containing a fraction, or a large excess, of what the label says.</p>
+  </div>
+  <div class="wide">
+    <div class="tscroll">
+      <table>
+        <caption>What a certificate of analysis does and does not tell you</caption>
+        <thead><tr><th>Test</th><th>What it detects</th><th>Typically on a grey COA?</th></tr></thead>
+        <tbody>
+          <tr><td>HPLC / UPLC purity</td><td>Proportion of the sample that is the target peptide</td><td><span class="chip yes">Usually yes</span></td></tr>
+          <tr><td>Mass spectrometry</td><td>Identity, that it is the right molecule</td><td><span class="chip yes">Often yes</span></td></tr>
+          <tr><td>Fill quantity assay</td><td>How much peptide is actually in the vial</td><td><span class="chip no">Rarely</span></td></tr>
+          <tr><td>Bacterial endotoxin, USP &lt;85&gt;</td><td>Pyrogens from non-sterile manufacturing</td><td><span class="chip no">Rarely</span></td></tr>
+          <tr><td>Sterility, USP &lt;71&gt;</td><td>Microbial contamination. Requires 14-day incubation</td><td><span class="chip no">Almost never</span></td></tr>
+          <tr><td>Heavy metals, ICP-MS</td><td>Arsenic, cadmium, chromium, mercury, lead</td><td><span class="chip no">Rarely</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="wrap">
+    <p>The sterility test is almost never run, and the reason is structural rather than lazy: nobody can hold inventory for fourteen days and still run that business.</p>
+    <p>For a sense of what this means in practice, a peer-reviewed 2024 analysis of semaglutide bought from online sellers without a prescription found measured purity between 7.7 and 14.37 percent against a 99 percent label claim, and <strong>detected endotoxin in every single sample.</strong> Different compound, same supply chain, same incentives.</p>
+
+    <div class="note key">
+      <span class="lbl">Why the harm record looks thin</span>
+      <p>Harm from grey vials is structurally invisible. Adverse event systems capture drugs, not research chemicals. There is no lot number to report against, no recall pathway, and people who believe they are doing something quasi-illegal do not tell their doctor what they injected. <strong>The thin harm record is not evidence of safety. It is evidence of a missing measurement system.</strong></p>
+    </div>
+
+    <p>That is the honest case for a legal channel independent of price: a named prescriber who owns the dose, a pharmacist who checks your other medications, a lot number, a beyond-use date, a recall pathway, and somewhere to go when something goes wrong.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The roster</div>
+    <h2>Who voted, and what they do for a living</h2>
+    <p>This is public-record information about people acting in a public capacity, and it is the part worth reading closely if you want to know whose judgment to trust. Every financial tie below was reported by a named outlet. <strong>Serving on the committee is not wrongdoing, and a disclosed interest is not a bribe.</strong> The point is not to accuse anyone. It is that you can now see the pattern for yourself.</p>
+
+    <div class="note key">
+      <span class="lbl">The distinction almost every summary gets wrong</span>
+      <p>Two different groups of eight were added, and conflating them gets the story backwards.</p>
+      <p><strong>Group one:</strong> eight standing members published on 29 June 2026. Reporting identified most of them as running or advising clinics, pharmacies or telehealth businesses that sell or administer peptides.</p>
+      <p><strong>Group two:</strong> eight <em>temporary</em> voting members added days before the meeting, <em>after</em> the conflict-of-interest criticism landed. Peter Lurie, a former FDA associate commissioner, said they "seem considerably more qualified and less conflicted than the others who were added recently." Several were restricted to voting only on the peptides matching their specialty, which is why the number of votes cast changes from question to question.</p>
+    </div>
+  </div>
+
+  <div class="wide">
+    <div class="tscroll">
+      <table>
+        <caption>Standing voting members, 12 seats. Chair vacant. Designated Federal Officer: Takyiah Stevenson, PharmD</caption>
+        <thead><tr><th>Member</th><th>What they do</th><th>Cohort</th><th>Reported peptide-industry tie</th><th>Vote</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Gabriel Alizaidy</strong>, MD, MS</td><td>Scientific director, Maximus Health, an online clinic</td><td><span class="chip tie">29 June</span></td><td>Clinic offers GLP-1 microdosing and growth hormone peptides. Reported to charge $500 for peptide and hormone consultations</td><td><span class="chip yes">Yes</span> BPC-157</td></tr>
+          <tr><td><strong>Asare B. Christian</strong>, MD, MPH</td><td>Pennsylvania clinic, physical medicine and anti-aging</td><td><span class="chip tie">29 June</span></td><td>Clinic advertises peptide protocols and hormone optimization for pain, muscle growth and longevity</td><td><span class="chip yes">Yes</span> BPC-157</td></tr>
+          <tr><td><strong>Timothy D. Fensky</strong>, RPh, DPh</td><td>Representative, National Association of Boards of Pharmacy</td><td>Not 29 June</td><td>None reported</td><td><span class="chip abs">Abstain</span> recurring</td></tr>
+          <tr><td><strong>Robert "Bobby" Harshbarger III</strong>, PharmD</td><td>Pharmacist, Premiere Pharmacy, the family business. Tennessee state senator</td><td><span class="chip tie">29 June</span></td><td>Family pharmacy sells compounded medications for weight loss, longevity and pain. Son of U.S. Rep. Diana Harshbarger, who wrote to Secretary Kennedy asking that compounders be allowed to make certain peptides</td><td><span class="chip yes">Yes</span> emideltide</td></tr>
+          <tr><td><strong>Melissa Loseke</strong>, DO</td><td>Wellness clinic owner, Omaha, Nebraska</td><td><span class="chip tie">29 June</span></td><td>Concierge clinic in hormone therapy, sexual wellness and regenerative aesthetics</td><td><span class="chip yes">Yes</span> conditional</td></tr>
+          <tr><td><strong>Haleem Mohammed</strong>, MD, MBA</td><td>Global chief medical officer, Gameday Men's Health, a chain reported at 400+ US clinics</td><td><span class="chip tie">29 June</span></td><td>Chain offers sermorelin peptide injections. Reported to run Florida clinics selling peptide, vitamin, testosterone and weight-loss injections</td><td><span class="chip yes">Yes</span> BPC-157, Semax</td></tr>
+          <tr><td><strong>Gerald E. Morris</strong>, MD, MPH</td><td>Board certified in obesity medicine. Affiliation not established in reachable sources</td><td>Not established</td><td>None reported. FDA's own disclosure documents were unreachable, so absence of a report is not proof of absence</td><td>Not reported</td></tr>
+          <tr><td><strong>David D. Pope</strong>, PharmD</td><td>Chief pharmacy officer, XiFin Pharmacy Solutions</td><td>Not established</td><td>Pharmacy software and services. No peptide-selling practice reported</td><td><span class="chip yes">Yes</span> BPC-157 &nbsp;<span class="chip no">No</span> emideltide</td></tr>
+          <tr><td><strong>Elizabeth Rebello</strong>, RPh, MD</td><td>Professor of anesthesiology and perioperative medicine, UT MD Anderson Cancer Center</td><td>Not 29 June</td><td>None reported</td><td><span class="chip no">No</span></td></tr>
+          <tr><td><strong>Brian Serumaga</strong>, PhD</td><td>Director of personalized medicines, United States Pharmacopeia</td><td>Not 29 June</td><td>None reported</td><td><span class="chip no">No</span> Epitalon</td></tr>
+          <tr><td><strong>Joshua Starbuck</strong>, MD, IFMCP</td><td>Functional medicine certified practitioner. Affiliation not established</td><td>Not established</td><td>None reported, and none inferred</td><td>Not reported</td></tr>
+          <tr><td><strong>Kris Wusterhausen</strong>, DO</td><td>Founder, Texas medical practice</td><td><span class="chip tie">29 June</span></td><td>Practice advertises hormone optimization and peptide therapies</td><td><span class="chip yes">Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tscroll">
+      <table>
+        <caption>Temporary voting members, added days before the meeting after conflict criticism</caption>
+        <thead><tr><th>Member</th><th>What they do</th><th>Restricted to</th><th>Reported tie</th><th>Vote</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Todd Durham</strong>, PhD</td><td>SVP clinical and outcomes research, Foundation Fighting Blindness</td><td>Not restricted</td><td>None reported</td><td><span class="chip no">No</span></td></tr>
+          <tr><td><strong>Costantino Iadecola</strong>, MD</td><td>Director, Feil Family Brain and Mind Research Institute, Weill Cornell Medicine</td><td>Semax</td><td>None reported</td><td>Not reported</td></tr>
+          <tr><td><strong>Brian P. Lee</strong>, MD, MAS</td><td>Transplant hepatologist, Keck School of Medicine of USC</td><td>BPC-157</td><td>None reported</td><td><span class="chip no">No</span></td></tr>
+          <tr><td><strong>Josh Mailman</strong></td><td>Board president, Neuroendocrine Tumor Research Foundation. Patient advocate</td><td>Not restricted</td><td>None reported</td><td><span class="chip no">No</span> KPV</td></tr>
+          <tr><td><strong>Friedhelm Sandbrink</strong>, MD</td><td>National Program Director for Pain Management, Veterans Health Administration</td><td>Semax</td><td>None reported</td><td><span class="chip no">No</span> Semax</td></tr>
+          <tr><td><strong>Maral Kibarian Skelsey</strong>, MD</td><td>Director, Dermatologic Surgery Center of Washington. Clinical professor, Georgetown</td><td>KPV, TB-500</td><td>None reported</td><td><span class="chip no">No</span></td></tr>
+          <tr><td><strong>Kevin L. Zacharoff</strong>, MD</td><td>Course director, pain and addiction, Renaissance School of Medicine, Stony Brook</td><td>Emideltide</td><td>None reported</td><td><span class="chip no">No</span> emideltide</td></tr>
+          <tr><td><strong>William C. Zamboni</strong>, PharmD, PhD</td><td>Cancer pharmacology, UNC Eshelman School of Pharmacy</td><td>Not restricted</td><td>None reported</td><td><span class="chip no">No</span> TB-500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="pull">The split tracks professional background closely. Most reported "yes" votes came from clinicians who work with peptides directly. Most reported "no" votes came from academic and hospital specialists who do not.</p>
+    <p><strong>That pattern is real, and it has two honest readings.</strong> You can call it a conflict, which is what several outlets did. You can equally call it expertise: the people who prescribe these compounds every week have watched patients take them, and the people voting no mostly had not. A committee of pure academics would have its own blind spot. Which reading you find persuasive is a judgment call, and this page is not going to make it for you.</p>
+    <p>What the record does not show is anyone voting yes because they were paid to. No source establishes that, FDA's ethics screening issued no conflict-of-interest waivers under the relevant federal statute, and correlation between someone's job and their vote is not proof of motive. Treat the tables as information about who was in the room, not as an accusation.</p>
+    <p>It also matters that <strong>the yes side made a substantive argument, not a commercial one.</strong> Their case was that the legal standard for adding a bulk substance under section 503A is not the standard for approving a new drug, and that refusing access pushes people toward an unregulated supply that is measurably worse. Read the next section before deciding what you think, because the argument in the room was better than the argument online.</p>
+    <p>Two caveats on the tables themselves: individual votes were only reported for some members, and David Pope voted yes on BPC-157 with no reported peptide-selling practice, so the pattern is strong rather than perfect. No vote was inferred from anyone's employer. The one member who abstained throughout, Timothy Fensky, represents the National Association of Boards of Pharmacy, which took no position.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The argument</div>
+    <h2>In their own words</h2>
+    <p>The transcript is more interesting than any summary of it, because both sides made a real argument. Here is the actual exchange.</p>
+
+    <h3>The case for yes: harm reduction</h3>
+    <p>The yes side did not argue the evidence was good. They argued that people are already injecting this, and that a regulated version is safer than what is being bought now.</p>
+
+    <div class="qt yesvote">
+      <blockquote>&ldquo;Just last week, I had a patient whose research-grade whatever that they got from some place that they brought to me to fix was laced with MDMA and ecstasy. That's not protecting the American people.&rdquo;</blockquote>
+      <cite><b>Melissa Loseke, DO</b> &middot; standing member, wellness clinic owner &middot; explaining a conditional yes</cite>
+    </div>
+
+    <div class="ednote">
+      <span class="lbl">Our take</span>
+      <p>We checked this quote and she really did say it. We are not calling anyone a liar. But we are not passing this along as fact either, and we want to say why plainly.</p>
+      <p><strong>Nothing about that story matches what actually turns up when grey vials get tested.</strong> The documented problems are manufacturing problems: fill quantity off by as much as 71 percent from the label, endotoxin in every sample in one peer-reviewed analysis, purity misses, and sometimes the wrong peptide altogether. That is sloppy production, and it is bad enough on its own.</p>
+      <p>A peptide vial containing MDMA is a different kind of claim entirely. It would mean either deliberate adulteration or cross-contamination from a completely unrelated production line, and neither shows up anywhere in the published testing data. Worth noting too that MDMA and ecstasy are the same substance, so "laced with MDMA and ecstasy" is saying the same thing twice. No lab report was entered into the record.</p>
+      <p>So we are filing this one as a story told to win a vote, not as evidence. <strong>The real testing data makes the case better than the scary version does</strong>, and we would rather hand you something that holds up when somebody pushes back on it. If we ever put a claim in front of you that we cannot stand behind, call it out. That is how this is supposed to work.</p>
+    </div>
+    <div class="qt yesvote">
+      <blockquote>&ldquo;As a physician, I have to make sure that I'm keeping patients as safe as possible. So, when I look at something like saying no to this and pushing it to the gray market, am I doing greater harm?&rdquo;</blockquote>
+      <cite><b>Haleem Mohammed, MD, MBA</b> &middot; standing member, Gameday Men's Health</cite>
+    </div>
+    <div class="qt yesvote">
+      <blockquote>&ldquo;Because our duty is to apply the 503A standards, not the Investigational New Drug Application standard.&rdquo;</blockquote>
+      <cite><b>Bobby Harshbarger, PharmD</b> &middot; standing member &middot; the clearest statement of the legal theory behind yes: listing is a lower bar than drug approval, so FDA's approval-grade evidence objections are aimed at the wrong question</cite>
+    </div>
+    <div class="qt yesvote">
+      <blockquote>&ldquo;We watched the FDA's own review board lean on surface-level searches while hundreds of pages of research submitted on time for these meetings went unaddressed.&rdquo;</blockquote>
+      <cite><b>Haleem Mohammed, MD</b> &middot; the sharpest on-record pushback at FDA staff, delivered on day two</cite>
+    </div>
+    <p>And the detail that says the most about the whole proceeding: one member described the data as <strong>"frankly disappointed at how incomplete the data was"</strong> and voted yes anyway.</p>
+
+    <h3>The case for no: we do not know what this is</h3>
+
+    <div class="qt novote">
+      <blockquote>&ldquo;I'm voting on something here, but I don't know what that something is. It's kind of like a black box to me.&rdquo;</blockquote>
+      <cite><b>Josh Mailman</b> &middot; temporary member, patient advocate &middot; during the KPV discussion</cite>
+    </div>
+    <div class="qt novote">
+      <blockquote>&ldquo;I voted 'no' primarily for low-quality evidence around efficacy, the poor characterization of the bulk drug substance and the fact that there are approved medical therapies for all the proposed uses.&rdquo;</blockquote>
+      <cite><b>Todd Durham, PhD</b> &middot; temporary member, Foundation Fighting Blindness &middot; the most complete no rationale on the record</cite>
+    </div>
+    <div class="qt novote">
+      <blockquote>&ldquo;The existing randomized data is showing that BPC-157 may be no better than placebo. I think this endorsement can be potentially harmful and I cannot in good conscience vote yes.&rdquo;</blockquote>
+      <cite><b>Brian P. Lee, MD, MAS</b> &middot; temporary member, Keck School of Medicine of USC &middot; he also noted that roughly 30 percent of patients on placebo report a response, which is the honest answer to "but it worked for me"</cite>
+    </div>
+    <div class="qt novote">
+      <blockquote>&ldquo;I'm concerned that we're responding to a market-induced demand rather than a decision based in solid science.&rdquo;</blockquote>
+      <cite><b>Elizabeth Rebello, RPh, MD</b> &middot; standing member, MD Anderson Cancer Center</cite>
+    </div>
+
+    <div class="note warn">
+      <span class="lbl">The safety point that should not get lost</span>
+      <p>Dermatologist Maral Kibarian Skelsey voted no on TB-500 citing "the paucity of efficacy data and the concern that there is overlap between the function of thymosin beta-4 and its ability to promote tumor progression and metastasis." That is a specific, mechanistic concern about a compound sold widely for recovery, raised by a cancer-adjacent specialist. It deserves more attention than it is getting.</p>
+    </div>
+
+    <h3>FDA's position, stated as plainly as it can be</h3>
+    <div class="qt">
+      <blockquote>&ldquo;If you don't know what it is and I don't know what it is, how do I put it on the list?&rdquo;</blockquote>
+      <cite><b>Russell Wesdyk</b> &middot; FDA CDER &middot; the tightest statement of the agency's threshold objection</cite>
+    </div>
+
+    <h3>From the public comment session</h3>
+    <p>Roughly 1,860 comments were filed to the docket. The line of the two days came from a Georgetown pharmacology professor, answering the harm-reduction argument head on.</p>
+    <div class="qt novote">
+      <blockquote>&ldquo;Would the government endorse manufacturing heroin because it's cleaner than what is sold on the street? Just because a market is large doesn't mean that a product should be legalized. It means that a product should be studied.&rdquo;</blockquote>
+      <cite><b>Adriane Fugh-Berman, MD</b> &middot; professor of pharmacology and physiology, Georgetown University &middot; public testimony</cite>
+    </div>
+    <div class="qt novote">
+      <blockquote>&ldquo;These are unapproved drugs, and many of them that are being considered here today have not been tested on humans at all.&rdquo;</blockquote>
+      <cite><b>Adriane Fugh-Berman, MD</b> &middot; consistent with FDA's finding of zero human clinical studies for KPV, TB-500 and MOTS-c</cite>
+    </div>
+    <div class="qt yesvote">
+      <blockquote>&ldquo;What we are advocating for is to slow down or shut down the gray and black market and to allow patients to have a safe and effective manufacturing process with the proper checks and balances.&rdquo;</blockquote>
+      <cite><b>Brigham Buhler</b> &middot; founder, Ways2Well, a telehealth company marketing hormone optimization and peptides</cite>
+    </div>
+    <p>Also testifying in favour: the chief medical officer of Hims &amp; Hers, a publicly traded telehealth company positioned to sell compounded peptides, whose stock moved on the outcome. Both sides of this room had money in the answer. That is worth knowing when you read anyone's summary of it, including this one.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The patent claim</div>
+    <h2>"They can't be patented" is the opposite of true</h2>
+    <p>This is the load-bearing claim in the post that has been circulating, and it collapses on ten minutes of checking. Peptides are patented constantly. Five of these six have granted US patents you can pull up right now.</p>
+  </div>
+
+  <div class="wide">
+    <div class="tscroll">
+      <table>
+        <caption>Granted patents on the peptides said to be unpatentable</caption>
+        <thead><tr><th>Peptide</th><th class="num">Patent</th><th>Title</th><th>Inventor / assignee</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">BPC-157</td><td class="num"><a href="https://patents.google.com/patent/US9850282B2/en">US 9,850,282</a></td><td>Stable pentadecapeptide salts, process for preparation, use in pharmaceutical preparations and in therapy</td><td>Predrag Sikiric and colleagues</td></tr>
+          <tr><td class="mono">BPC-157</td><td class="num">US 6,288,028</td><td>Salts of the synthetic pentadecapeptide</td><td>Sikiric. Related filings date to at least 1989</td></tr>
+          <tr><td class="mono">KPV</td><td class="num">US 5,028,592</td><td>Antipyretic and anti-inflammatory Lys-Pro-Val compositions</td><td>James M. Lipton, granted 2 July 1991</td></tr>
+          <tr><td class="mono">KPV</td><td class="num"><a href="https://patents.google.com/patent/US5157023A/en">US 5,157,023</a></td><td>Antipyretic and anti-inflammatory Lys-Pro-Val compositions and method of use</td><td>Lipton. Estate ran to Zengen, then MSH Pharma</td></tr>
+          <tr><td class="mono">KPV</td><td class="num"><a href="https://patents.google.com/patent/US6894028B2/en">US 6,894,028</a></td><td>Use of KPV tripeptide for dermatological disorders</td><td>Granted 17 May 2005</td></tr>
+          <tr><td class="mono">TB-500</td><td class="num"><a href="https://patents.google.com/patent/US8143218">US 8,143,218</a></td><td>Treatment of skin, and wound repair, with thymosin beta 4</td><td>Kleinman, Malinda, Goldstein, Sosne. Assigned to RegeneRx Biopharmaceuticals</td></tr>
+          <tr><td class="mono">TB-500</td><td class="num"><a href="https://patents.google.com/patent/US4297276">US 4,297,276</a></td><td>Thymosin beta 3 and beta 4</td><td>The foundational thymosin filing</td></tr>
+          <tr><td class="mono">Epitalon</td><td class="num">US 6,727,227</td><td>Tetrapeptide revealing geroprotective effect, pharmacological substance on its basis, and method of its application</td><td>Vladimir Khavinson, granted 27 April 2004</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p>MOTS-c is also covered by University of Southern California filings from the laboratory that discovered it, and the IP was licensed to a biotech that took an analog into human trials. A specific patent number circulating for it did not verify against the public record, so it is deliberately not listed above.</p>
+
+    <div class="note key">
+      <span class="lbl">The single best artifact</span>
+      <p>The researcher who discovered BPC-157 is listed as chief executive of a company whose own website carries a page titled <strong>"BPC 157 Stable Patent rights for sale."</strong> The molecule is patented, and the patent is openly advertised for sale. It still produced no approved drug.</p>
+    </div>
+
+    <h3>So what is the real reason nobody developed them?</h3>
+    <p>Here is the honest version of the argument the viral post is groping toward, because there <em>is</em> a real economic story. It is just not suppression.</p>
+    <p>A US patent runs twenty years from filing. Patents filed on these compounds in the late 1980s and 1990s <strong>have already expired or are close to it.</strong> An expired patent means anyone can make the molecule, which means no company can recoup the roughly one to two billion dollars and ten-plus years that FDA approval demands. The incentive is gone, not because a conspiracy removed it, but because the clock ran out.</p>
+    <p>There is a second reason, and the peer-reviewed literature names it directly. A 2026 review in <em>Pharmaceutics</em> concluded that the primary barrier to clinical translation is <strong>"the absence of fundamental pharmaceutical science: characterized formulations, validated pharmacokinetics, and a coherent drug development strategy."</strong> Not suppression. Missing homework.</p>
+    <p>And one detail that quietly refutes the whole conspiracy frame: a biotech <em>did</em> license the MOTS-c intellectual property and take an analog through early human trials. Somebody tried. The category is not forbidden. It is just hard, expensive, and unrewarding once the patent clock has run.</p>
+    <p class="pull">"Unpatentable" is a story that explains away missing evidence. The missing evidence is the actual problem.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Go to the source</div>
+    <h2>Watch and read it yourself</h2>
+    <p>Do not take my summary, or anyone's. The primary material is public.</p>
+  </div>
+  <div class="wide">
+    <div class="medgrid">
+      <div class="med">
+        <div class="kind">FDA primary</div>
+        <a href="https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026">PCAC meeting page, 23&ndash;24 July 2026</a>
+        <p>The meeting announcement, roster and links to the briefing packages FDA prepared for each compound.</p>
+      </div>
+      <div class="med">
+        <div class="kind">FDA primary</div>
+        <a href="https://www.fda.gov/media/193711/download">Meeting materials package</a>
+        <p>FDA's own review documents. This is where the agency states its objections compound by compound.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Video</div>
+        <a href="https://www.pbs.org/newshour/health/watch-live-fda-advisory-panel-considers-use-of-peptides">PBS NewsHour: FDA advisory panel considers use of peptides</a>
+        <p>Video coverage of the sessions.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Trade press</div>
+        <a href="https://www.raps.org/resource/fda-advisory-committee-backs-two-more-peptides-rejects-one-for-compounding-list.html">RAPS: day two, two backed, one rejected</a>
+        <p>The most detailed vote-by-vote account, and the source of most member quotes here.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Investigation</div>
+        <a href="https://www.nbcnews.com/health/health-news/peptides-restrictions-ease-fda-panel-recommend-bpc-157-scientists-rcna588879">NBC News: panel with ties to the peptide industry</a>
+        <p>The conflict-of-interest reporting the roster tables above are built on.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Investigation</div>
+        <a href="https://www.statnews.com/2026/02/03/bpc-157-peptide-science-safety-regulatory-questions/">STAT: big claims and scant evidence</a>
+        <p>The best single piece on what is and is not known about BPC-157.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Investigation</div>
+        <a href="https://www.statnews.com/2026/06/01/bpc-157-researcher-predrag-sikiric-addesses-skeptics-questions/">STAT: a Croatian researcher's 50-year quest</a>
+        <p>On the scientist behind BPC-157, his patents, and his answers to skeptics.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Peer reviewed</div>
+        <a href="https://www.jmir.org/2024/1/e65440">JMIR: quality analysis of semaglutide bought online without a prescription</a>
+        <p>Measured purity of 7.7 to 14.37 percent against a 99 percent label claim, endotoxin in every sample.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Peer reviewed</div>
+        <a href="https://www.mdpi.com/1424-8247/18/2/185">Pharmaceuticals: BPC-157 literature and patent review</a>
+        <p>A peer-reviewed review that is, by its own title, partly a patent review. Useful against the unpatentable claim.</p>
+      </div>
+      <div class="med">
+        <div class="kind">Anti-doping</div>
+        <a href="https://www.usada.org/spirit-of-sport/bpc-157-peptide-prohibited/">USADA: BPC-157 is a prohibited peptide</a>
+        <p>Read this before anything else if you are tested in sport or in your job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Where this leaves you</div>
+    <h2>Three honest conclusions</h2>
+    <p><strong>If you use these compounds:</strong> nothing changed this week. Do not let a headline talk you into treating a research vial as a blessed product, and do not let a seller cite this vote as cover. If a legal route opens, expect it to cost more per month and be worth considering anyway, because you are buying oversight and accountability rather than milligrams. If you are drug tested in any capacity, that calculation is stricter for you.</p>
+    <p><strong>If you sell in this space:</strong> the exposure is on you, not your customers, and "research use only" is not the protection you have been told it is. The enforcement trend was already steep before this vote, and a blessed list makes everything off that list look worse.</p>
+    <p><strong>For everyone:</strong> watch for the proposed rule. That document, not this vote, is the thing that actually changes your life, and the comment period is where public input carries weight.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="creed">One God. One Body. One Accord. One Pin.</p>
+    <p class="disc">Research and educational information only, not medical advice. Nothing here is an endorsement to buy, sell, import or self-administer any compound. Prescription decisions belong with a licensed provider who knows your history. 21+.</p>
+  </div>
+</footer>
+</body>
+</html>
